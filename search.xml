@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>pyinstaller精致打包exe</title>
+      <link href="/2022/04/09/pyinstallerPacketExe/"/>
+      <url>/2022/04/09/pyinstallerPacketExe/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pyinstaller精致打包exe"><a href="#pyinstaller精致打包exe" class="headerlink" title="pyinstaller精致打包exe"></a>pyinstaller精致打包exe</h1><p>python是一门解释性语言，所以当代码运行时，需要python.exe等解释器一句一句的对代码进行翻译（运行）。</p><p>每次都要去点开始运行，或者python script.py，这对我一个c&#x2F;c++信仰者，真是太痛苦了，py有时确实很方便，因此研究打包非常有必要。</p><p>（本篇重在阐述pyinstaller打包为什么会这么大，已经我个人用的打包压缩流程）</p><h2 id="pyinstaller工具"><a href="#pyinstaller工具" class="headerlink" title="pyinstaller工具"></a>pyinstaller工具</h2><p>pyinstaller可以很轻松把py程序打包成exe文件，还可以加ico图标，十分nice。</p><h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><p>因为python终究是一门解释语言，依赖解释器环境，pyinstaller，其实打包的是一个可以运行脚本的环境（env）。这里包含python.exe这个脚本解释器，因此生成的exe文件一般都很大10m以上。</p><h3 id="我的痛点"><a href="#我的痛点" class="headerlink" title="我的痛点"></a>我的痛点</h3><p>之前用过python打包过一些文件，大小还算可以接受，15m左右，直到今天，给同学写了一个GUI界面，用了PySide2、numpy、pandas。打包竟然到了100多m，这。。。属实给我蚌埠住了。</p><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406222723.png"></p><p>其实这里面打包了很多没有用的东西，归根到底，是全局环境的问题。</p><p>压缩打包之后，大小几乎就缩小了一半。</p><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406223300.png"></p><p>因为功能过于简单，其实这不大，如果功能开发的多的话，打包也不会大多少的。</p><h3 id="压缩打包解决方案"><a href="#压缩打包解决方案" class="headerlink" title="压缩打包解决方案"></a>压缩打包解决方案</h3><p>上文分析了，py打包的主要原因是因为，全局环境太乱，太复杂，导致一些没有用的东西，也打包进了环境，这十分的憋屈。</p><p>我的解决流程如下：</p><ol><li>利用virtualenv创建一个全新的环境。</li><li>在全局环境中安装所要的库。</li><li>pyinstaller进行打包</li></ol><h4 id="1、virtualenv的安装以及使用"><a href="#1、virtualenv的安装以及使用" class="headerlink" title="1、virtualenv的安装以及使用"></a>1、virtualenv的安装以及使用</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure><p>virtualenv会放在python安装目录下的scripts的文件夹下哈。如果添加环境变量了，就可以直接使用啦</p><p>我们先创建一个新环境。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv 环境名</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406224602.png"></p><p>进入school下可以看到，和python的全局环境差不多哈</p><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406224742.png"></p><p>Lib里可以看pip安装的包，scripts中可以看到pip安装的工具。</p><p>这里主要说一下这scripts下的工具哈。</p><p>使用cd命令进入到scripts中</p><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220406225001038.png"></p><ul><li>pip这几个工具都是一样的，只是名字不一样而已啦，pip3.8这些名字只是为了区分不同python版本下的pip管理工具。这里的pip是新环境下的哈。</li><li>python.exe就是解释器哈。运行的时候用的。</li><li>activate这个可执行文件，是切换环境的哈，运行这个文件，可以进入虚拟环境。</li><li>deacticate这个文件可以退出虚拟环境。</li></ul><p>我们先进入到这个虚拟环境下哈。</p><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406225553.png"></p><p>看到这个后面出现虚拟环境的名字就说明进入到里面了哈。</p><p>现在我们打包一下这个schoolWifi的项目哈</p><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406225733.png"></p><p>这个项目只用到这俩个库哈我们先安装一下所用到的库。</p><p>re库是自带的，所以我们只需要安装requests库。</p><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406225922.png"></p><p>另外还需要装pyinstaller哈</p><p>cd命令切换到打包project的目录下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller -w -F -i xiao.ico main.py</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406230308.png"></p><p>此时已经很小很小了。</p><p>还能不能再小。</p><h2 id="压缩神器upx"><a href="#压缩神器upx" class="headerlink" title="压缩神器upx"></a>压缩神器upx</h2><p>在上面的exe的基础上，upx还能再压缩exe，可谓是锦上添花。</p><h3 id="安装以及使用"><a href="#安装以及使用" class="headerlink" title="安装以及使用"></a>安装以及使用</h3><p>在github官网上下载upx对应系统的压缩包，解压到虚拟环境下的scripts下。</p><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406231432.png"></p><p>可以看到又进一步压缩了一点。实际上这个过程是加壳哈。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
+      <link href="/2022/04/09/hello-world-1/"/>
+      <url>/2022/04/09/hello-world-1/</url>
+      
+        <content type="html"><![CDATA[<head>     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js"></script> </head> <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"><p><a href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"><i class="fa fa-weixin"></i></a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2022/04/09/hello-world/"/>
+      <url>/2022/04/09/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux中service的编写</title>
+      <link href="/2022/01/08/WritingService/"/>
+      <url>/2022/01/08/WritingService/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">vim /lib/systemd/system/服务名.service</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=fraps service</span><br><span class="line">After=network.target syslog.target</span><br><span class="line">Wants=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">ExecStart=/root/frp/frps -c /root/frp/frps.ini  <span class="comment">#此处安实际情况修改</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line">Docker HUB页面：https://hub.docker.com/r/chenhw2/frp</span><br><span class="line"></span><br><span class="line">客户端运行服务创建：vi /lib/systemd/system/frpc.service</span><br><span class="line"></span><br><span class="line">Fprc服务命令：</span><br><span class="line">[Unit]</span><br><span class="line">Description=qqbot</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">ExecStart=/root/push_qq/go-cqhttp</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>翻墙&amp;基本的网络服务器&amp;内网穿透</title>
+      <link href="/2022/01/05/CustomServerInit/"/>
+      <url>/2022/01/05/CustomServerInit/</url>
+      
+        <content type="html"><![CDATA[<h2 id="翻墙VPN的搭建"><a href="#翻墙VPN的搭建" class="headerlink" title="翻墙VPN的搭建"></a>翻墙VPN的搭建</h2><p>主流的翻墙软件有很多</p><ul><li>ssr</li><li>v2</li></ul><p>……</p><p>v2自用一键脚本</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#首先用firewall-cmd开v2的端口</span></span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=v2端口/tcp</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装curl</span></span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install curl -y</span><br><span class="line"></span><br><span class="line"><span class="comment">#以下脚本二选一</span></span><br><span class="line">bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)  <span class="comment">#带面板，要多开个面板端口，ip+端口访问面板，进行v2设置。</span></span><br><span class="line"></span><br><span class="line">bash &lt;(curl -s -L https://git.io/v2ray.sh)<span class="comment">#不带面板，省端口</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#加速器的安装</span></span><br><span class="line"></span><br><span class="line">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; <span class="built_in">chmod</span> +x bbr.sh &amp;&amp; ./bbr.sh</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="基本服务器的安装"><a href="#基本服务器的安装" class="headerlink" title="基本服务器的安装"></a>基本服务器的安装</h2><h3 id="samba服务器（跨系统平台传输文件）"><a href="#samba服务器（跨系统平台传输文件）" class="headerlink" title="samba服务器（跨系统平台传输文件）"></a>samba服务器（跨系统平台传输文件）</h3><p>这个很香，家里的per电脑可以用来做nas。贼方便。</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get upgrade </span><br><span class="line">sudo apt-get update </span><br><span class="line"></span><br><span class="line"><span class="comment">#安装samba服务器</span></span><br><span class="line">sudo apt-get install samba samba-common</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建共享目录</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> /home/zhujiyuan</span><br><span class="line"></span><br><span class="line">sudo <span class="built_in">chmod</span> 777 /home/zhujiyuan</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加samba用户（注意必须是linux下已经有的用户）</span></span><br><span class="line"></span><br><span class="line">sudo smbpasswd -a zhujiyuan</span><br><span class="line"></span><br><span class="line"><span class="comment">#配置smb文件</span></span><br><span class="line"></span><br><span class="line">sudo vim /etc/samba/smb.conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#在文件最后面加上如下,这里可以自定义参考samba的文档</span></span><br><span class="line">[share]</span><br><span class="line">comment = share folder</span><br><span class="line">browseable = <span class="built_in">yes</span></span><br><span class="line">path = /home/zhujiyuan</span><br><span class="line">create mask = 0700</span><br><span class="line">directory mask = 0700</span><br><span class="line">valid <span class="built_in">users</span> = linuxidc</span><br><span class="line">force user = linuxidc</span><br><span class="line">force group = linuxidc</span><br><span class="line">public = <span class="built_in">yes</span></span><br><span class="line">available = <span class="built_in">yes</span></span><br><span class="line">writable = <span class="built_in">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#把samba添加进防火墙白名单</span></span><br><span class="line">firewall-cmd --add-service=samba --permanent</span><br><span class="line"></span><br><span class="line"><span class="comment">#重启samba服务器</span></span><br><span class="line">systemctl restart smbd</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/zhu-jiyuan.github.io/img/linux/image-20220105225934309.png" alt="image-20220105225934309"></p><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul><li>windows下要先在设置中开启smb服务，才能访问</li><li>win+R键，输入\\ip即可。</li></ul><h3 id="apache服务器-搭建网站的"><a href="#apache服务器-搭建网站的" class="headerlink" title="apache服务器(搭建网站的)"></a>apache服务器(搭建网站的)</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp; apt install apache2</span><br></pre></td></tr></table></figure><h2 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h2><p>内网穿透是用来让家里的电脑，通过其他措施，使得其他设备可以通过公网找到它。</p><p>一般家里的网都是经过好几次NAT，使用frp这个开源的软件，可以帮助我们内网穿透。</p><h3 id="内网穿透流程"><a href="#内网穿透流程" class="headerlink" title="内网穿透流程"></a>内网穿透流程</h3><p>通过服务器对局域网的设备进行端口映射。</p><h3 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h3><h4 id="一、搭建内网穿透服务器"><a href="#一、搭建内网穿透服务器" class="headerlink" title="一、搭建内网穿透服务器"></a>一、搭建内网穿透服务器</h4><p>需要用一个有公网ip的服务器。</p><p>去github上下载合适的frp的软件包</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf 软件包</span><br><span class="line"><span class="built_in">cd</span> 软件包</span><br><span class="line"></span><br><span class="line"><span class="comment">#配置服务端文件</span></span><br><span class="line">vim frps.ini</span><br><span class="line"></span><br><span class="line"><span class="comment">#具体可参考官方文档</span></span><br><span class="line">[common]</span><br><span class="line"> bind_port = 7000 </span><br><span class="line"> authentication_method = token</span><br><span class="line"> token = <span class="comment">#连接密码</span></span><br><span class="line"> dashboard_port = 7500</span><br><span class="line"><span class="comment"># dashboard 用户名密码，可选，默认为空,这里是web配置</span></span><br><span class="line"> dashboard_user = admin</span><br><span class="line"> dashboard_pwd = admin</span><br><span class="line"> </span><br><span class="line"> <span class="comment">#启动服务</span></span><br><span class="line"> </span><br><span class="line"> sudo ./frps -c ./frps.ini</span><br></pre></td></tr></table></figure><h4 id="二、配置客户端"><a href="#二、配置客户端" class="headerlink" title="二、配置客户端"></a>二、配置客户端</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#这里我使用的win10，linux等操作系统大同小异</span><br><span class="line"></span><br><span class="line">#打开frpc.ini配置</span><br><span class="line">[common]</span><br><span class="line">server_addr = 服务器ip</span><br><span class="line">server_port = 7000</span><br><span class="line">token = #密码，与服务端相同</span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">remote_port = 7001</span><br><span class="line"></span><br><span class="line">[web]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 80</span><br><span class="line">remote_port = 7002</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>cmd下启动即可。</p><p>用ipad随时随地通过服务器ip远程连接家里的电脑</p><p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/zhu-jiyuan.github.io/img/linux/image-20220105230626923.png" alt="image-20220105230626923"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> server </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> fq </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux服务器初始化（个人自用）</title>
+      <link href="/2022/01/04/linux_init/"/>
+      <url>/2022/01/04/linux_init/</url>
+      
+        <content type="html"><![CDATA[<h1 id="重置root密码"><a href="#重置root密码" class="headerlink" title="重置root密码"></a>重置root密码</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">为了以后省去sudo输入密码。</span></span><br><span class="line">sudo visudo</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在文件最后加上</span></span><br><span class="line">用户名 ALL=(ALL) NOPASSWD: ALL</span><br><span class="line"></span><br></pre></td></tr></table></figure><h1 id="修改apt的源"><a href="#修改apt的源" class="headerlink" title="修改apt的源"></a>修改apt的源</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">先安装vim</span></span><br><span class="line">sudo apt-get install vim -y</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">好习惯，先备份原来的</span></span><br><span class="line">cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">sudo vim /etc/apt/sources.list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">把内容改成</span></span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure><p>更新软件列表</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp; apt upgrade</span><br></pre></td></tr></table></figure><h1 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h1><p>其实这里主要是因为python的一些版本问题。如果没有问题，可跳过</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3</span><br><span class="line">sudo apt install python3-pip</span><br></pre></td></tr></table></figure><h1 id="安装ssh-amp-xrdp-amp-firewalld"><a href="#安装ssh-amp-xrdp-amp-firewalld" class="headerlink" title="安装ssh &amp; xrdp &amp; firewalld"></a>安装ssh &amp; xrdp &amp; firewalld</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ssh</span><br><span class="line"></span><br><span class="line">sudo apt install xrdp</span><br><span class="line"></span><br><span class="line">sudo systemctl status xrdp</span><br><span class="line">sudo adduser xrdp ssl-cert  </span><br><span class="line">sudo systemctl restart xrdp</span><br><span class="line"></span><br><span class="line">sudo apt install firewalld</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
