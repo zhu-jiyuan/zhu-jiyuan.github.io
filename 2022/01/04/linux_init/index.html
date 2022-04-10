@@ -9,15 +9,15 @@
     <script defer src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/all.js"></script> 
     <script defer src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/v4-shims.js"></script> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/all.css">
-    <meta name="description" content="重置root密码 修改apt的源 安装python 安装ssh &amp; xrdp &amp; firewalld    重置root密码1234567sudo passwd root#为了以后省去sudo输入密码。sudo visudo#在文件最后加上用户名 ALL&#x3D;(ALL) NOPASSWD: ALL  修改apt的源1234567891011121314151617#先安装vims">
+    <meta name="description" content="重置root密码1234567sudo passwd root#为了以后省去sudo输入密码。sudo visudo#在文件最后加上用户名 ALL&#x3D;(ALL) NOPASSWD: ALL  修改apt的源1234567891011121314151617#先安装vimsudo apt-get install vim -y#好习惯，先备份原来的cp &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;et">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux服务器初始化（个人自用）">
 <meta property="og:url" content="http://zhujiyuan.xyz/2022/01/04/linux_init/index.html">
 <meta property="og:site_name" content="zhujiyuan">
-<meta property="og:description" content="重置root密码 修改apt的源 安装python 安装ssh &amp; xrdp &amp; firewalld    重置root密码1234567sudo passwd root#为了以后省去sudo输入密码。sudo visudo#在文件最后加上用户名 ALL&#x3D;(ALL) NOPASSWD: ALL  修改apt的源1234567891011121314151617#先安装vims">
+<meta property="og:description" content="重置root密码1234567sudo passwd root#为了以后省去sudo输入密码。sudo visudo#在文件最后加上用户名 ALL&#x3D;(ALL) NOPASSWD: ALL  修改apt的源1234567891011121314151617#先安装vimsudo apt-get install vim -y#好习惯，先备份原来的cp &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;et">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-10T09:24:04.831Z">
+<meta property="article:modified_time" content="2022-04-10T09:46:29.771Z">
 <meta property="article:author" content="zhu jiyuan">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Ubuntu">
@@ -26,23 +26,17 @@
     
       
         
-          
-            <link rel="shortcut icon" href="https://www.gravatar.com/avatar/65de5f37c31cab85f8c70db3720b7db9?s=48">
-          
+          <link rel="shortcut icon" href="/images/favicon.ico">
         
       
       
         
-          
-            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/65de5f37c31cab85f8c70db3720b7db9?s=192" sizes="192x192">
-          
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
         
       
       
         
-          
-            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/65de5f37c31cab85f8c70db3720b7db9?s=180">
-          
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
         
       
     
@@ -128,7 +122,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">重置root密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">修改apt的源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">安装python</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">安装ssh &amp; xrdp &amp; firewalld</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E7%BD%AEroot%E5%AF%86%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">重置root密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9apt%E7%9A%84%E6%BA%90"><span class="toc-number">2.</span> <span class="toc-text">修改apt的源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85python"><span class="toc-number">3.</span> <span class="toc-text">安装python</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ssh-amp-xrdp-amp-firewalld"><span class="toc-number">4.</span> <span class="toc-text">安装ssh &amp; xrdp &amp; firewalld</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -154,7 +148,7 @@
       
         <time datetime="2022-01-03T16:00:00.000Z" itemprop="datePublished">2022-01-04</time>
         
-        (Updated: <time datetime="2022-04-10T09:24:04.831Z" itemprop="dateModified">2022-04-10</time>)
+        (Updated: <time datetime="2022-04-10T09:46:29.771Z" itemprop="dateModified">2022-04-10</time>)
         
       
     </div>
@@ -179,29 +173,19 @@
   
 
   <div class="content" itemprop="articleBody">
-    <!-- toc -->
+    <h1 id="重置root密码"><a href="#重置root密码" class="headerlink" title="重置root密码"></a>重置root密码</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">为了以后省去sudo输入密码。</span></span><br><span class="line">sudo visudo</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在文件最后加上</span></span><br><span class="line">用户名 ALL=(ALL) NOPASSWD: ALL</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><a href="#%E9%87%8D%E7%BD%AEroot%E5%AF%86%E7%A0%81">重置root密码</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9apt%E7%9A%84%E6%BA%90">修改apt的源</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85python">安装python</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85ssh-xrdp-firewalld">安装ssh &amp; xrdp &amp; firewalld</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="重置root密码">重置root密码</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">为了以后省去sudo输入密码。</span></span><br><span class="line">sudo visudo</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在文件最后加上</span></span><br><span class="line">用户名 ALL=(ALL) NOPASSWD: ALL</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1><span id="修改apt的源">修改apt的源</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">先安装vim</span></span><br><span class="line">sudo apt-get install vim -y</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">好习惯，先备份原来的</span></span><br><span class="line">cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">sudo vim /etc/apt/sources.list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">把内容改成</span></span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<h1 id="修改apt的源"><a href="#修改apt的源" class="headerlink" title="修改apt的源"></a>修改apt的源</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">先安装vim</span></span><br><span class="line">sudo apt-get install vim -y</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">好习惯，先备份原来的</span></span><br><span class="line">cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">sudo vim /etc/apt/sources.list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">把内容改成</span></span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line"> deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"> deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
 
 <p>更新软件列表</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp; apt upgrade</span><br></pre></td></tr></table></figure>
 
-<h1><span id="安装python">安装python</span></h1><p>其实这里主要是因为python的一些版本问题。如果没有问题，可跳过</p>
+<h1 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h1><p>其实这里主要是因为python的一些版本问题。如果没有问题，可跳过</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3</span><br><span class="line">sudo apt install python3-pip</span><br></pre></td></tr></table></figure>
 
 
 
-<h1><span id="安装ssh-amp-xrdp-amp-firewalld">安装ssh &amp; xrdp &amp; firewalld</span></h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ssh</span><br><span class="line"></span><br><span class="line">sudo apt install xrdp</span><br><span class="line"></span><br><span class="line">sudo systemctl status xrdp</span><br><span class="line">sudo adduser xrdp ssl-cert  </span><br><span class="line">sudo systemctl restart xrdp</span><br><span class="line"></span><br><span class="line">sudo apt install firewalld</span><br></pre></td></tr></table></figure>
+<h1 id="安装ssh-amp-xrdp-amp-firewalld"><a href="#安装ssh-amp-xrdp-amp-firewalld" class="headerlink" title="安装ssh &amp; xrdp &amp; firewalld"></a>安装ssh &amp; xrdp &amp; firewalld</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ssh</span><br><span class="line"></span><br><span class="line">sudo apt install xrdp</span><br><span class="line"></span><br><span class="line">sudo systemctl status xrdp</span><br><span class="line">sudo adduser xrdp ssl-cert  </span><br><span class="line">sudo systemctl restart xrdp</span><br><span class="line"></span><br><span class="line">sudo apt install firewalld</span><br></pre></td></tr></table></figure>
 
 
   </div>
@@ -238,7 +222,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">重置root密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">修改apt的源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">安装python</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">安装ssh &amp; xrdp &amp; firewalld</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E7%BD%AEroot%E5%AF%86%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">重置root密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9apt%E7%9A%84%E6%BA%90"><span class="toc-number">2.</span> <span class="toc-text">修改apt的源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85python"><span class="toc-number">3.</span> <span class="toc-text">安装python</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ssh-amp-xrdp-amp-firewalld"><span class="toc-number">4.</span> <span class="toc-text">安装ssh &amp; xrdp &amp; firewalld</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
