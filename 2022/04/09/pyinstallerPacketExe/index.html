@@ -9,12 +9,12 @@
     <script defer src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/all.js"></script> 
     <script defer src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/v4-shims.js"></script> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/all.css">
-    <meta name="description" content="pyinstaller精致打包exepython是一门解释性语言，所以当代码运行时，需要python.exe等解释器一句一句的对代码进行翻译（运行）。 每次都要去点开始运行，或者python script.py，这对我一个c&#x2F;c++信仰者，真是太痛苦了，py有时确实很方便，因此研究打包非常有必要。 （本篇重在阐述pyinstaller打包为什么会这么大，已经我个人用的打包压缩流程） py">
+    <meta name="description" content="pyinstaller精致打包exepython是一门解释性语言，所以当代码运行时，需要python.exe等解释器一句一句的对代码进行翻译（运行）。 每次都要去点开始运行，或者python script.py，这对我一个c&#x2F;c++信仰者，真是太痛苦了，py有时确实很方便，因此研究打包非常有必要。 （本篇重在阐述pyinstaller打包为什么会这么大，已经我个人用的打包压缩流程）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pyinstaller精致打包exe">
 <meta property="og:url" content="http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/index.html">
 <meta property="og:site_name" content="zhujiyuan">
-<meta property="og:description" content="pyinstaller精致打包exepython是一门解释性语言，所以当代码运行时，需要python.exe等解释器一句一句的对代码进行翻译（运行）。 每次都要去点开始运行，或者python script.py，这对我一个c&#x2F;c++信仰者，真是太痛苦了，py有时确实很方便，因此研究打包非常有必要。 （本篇重在阐述pyinstaller打包为什么会这么大，已经我个人用的打包压缩流程） py">
+<meta property="og:description" content="pyinstaller精致打包exepython是一门解释性语言，所以当代码运行时，需要python.exe等解释器一句一句的对代码进行翻译（运行）。 每次都要去点开始运行，或者python script.py，这对我一个c&#x2F;c++信仰者，真是太痛苦了，py有时确实很方便，因此研究打包非常有必要。 （本篇重在阐述pyinstaller打包为什么会这么大，已经我个人用的打包压缩流程）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406222723.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406223300.png">
@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406230308.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406231432.png">
 <meta property="article:published_time" content="2022-04-09T08:54:24.253Z">
-<meta property="article:modified_time" content="2022-04-09T15:55:35.277Z">
+<meta property="article:modified_time" content="2022-04-10T09:24:09.454Z">
 <meta property="article:author" content="zhu jiyuan">
 <meta property="article:tag" content="windows">
 <meta property="article:tag" content="python">
@@ -141,7 +141,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pyinstaller%E7%B2%BE%E8%87%B4%E6%89%93%E5%8C%85exe"><span class="toc-number">1.</span> <span class="toc-text">pyinstaller精致打包exe</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pyinstaller%E5%B7%A5%E5%85%B7"><span class="toc-number">1.1.</span> <span class="toc-text">pyinstaller工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E8%B4%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text">本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E7%97%9B%E7%82%B9"><span class="toc-number">1.1.2.</span> <span class="toc-text">我的痛点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E6%89%93%E5%8C%85%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.3.</span> <span class="toc-text">压缩打包解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81virtualenv%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">1、virtualenv的安装以及使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E7%A5%9E%E5%99%A8upx"><span class="toc-number">1.2.</span> <span class="toc-text">压缩神器upx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">安装以及使用</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">pyinstaller精致打包exe</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">pyinstaller工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.1.</span> <span class="toc-text">本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.2.</span> <span class="toc-text">我的痛点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.3.</span> <span class="toc-text">压缩打包解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">1、virtualenv的安装以及使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">压缩神器upx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.1.</span> <span class="toc-text">安装以及使用</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -167,7 +167,7 @@
       
         <time datetime="2022-04-09T08:54:24.253Z" itemprop="datePublished">2022-04-09</time>
         
-        (Updated: <time datetime="2022-04-09T15:55:35.277Z" itemprop="dateModified">2022-04-09</time>)
+        (Updated: <time datetime="2022-04-10T09:24:09.454Z" itemprop="dateModified">2022-04-10</time>)
         
       
     </div>
@@ -192,25 +192,44 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="pyinstaller精致打包exe"><a href="#pyinstaller精致打包exe" class="headerlink" title="pyinstaller精致打包exe"></a>pyinstaller精致打包exe</h1><p>python是一门解释性语言，所以当代码运行时，需要python.exe等解释器一句一句的对代码进行翻译（运行）。</p>
+    <h1><span id="pyinstaller精致打包exe">pyinstaller精致打包exe</span></h1><p>python是一门解释性语言，所以当代码运行时，需要python.exe等解释器一句一句的对代码进行翻译（运行）。</p>
 <p>每次都要去点开始运行，或者python script.py，这对我一个c&#x2F;c++信仰者，真是太痛苦了，py有时确实很方便，因此研究打包非常有必要。</p>
 <p>（本篇重在阐述pyinstaller打包为什么会这么大，已经我个人用的打包压缩流程）</p>
-<h2 id="pyinstaller工具"><a href="#pyinstaller工具" class="headerlink" title="pyinstaller工具"></a>pyinstaller工具</h2><p>pyinstaller可以很轻松把py程序打包成exe文件，还可以加ico图标，十分nice。</p>
-<h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><p>因为python终究是一门解释语言，依赖解释器环境，pyinstaller，其实打包的是一个可以运行脚本的环境（env）。这里包含python.exe这个脚本解释器，因此生成的exe文件一般都很大10m以上。</p>
-<h3 id="我的痛点"><a href="#我的痛点" class="headerlink" title="我的痛点"></a>我的痛点</h3><p>之前用过python打包过一些文件，大小还算可以接受，15m左右，直到今天，给同学写了一个GUI界面，用了PySide2、numpy、pandas。打包竟然到了100多m，这。。。属实给我蚌埠住了。</p>
+<!-- toc -->
+
+<ul>
+<li><a href="#pyinstaller%E5%B7%A5%E5%85%B7">pyinstaller工具</a><ul>
+<li><a href="#%E6%9C%AC%E8%B4%A8">本质</a></li>
+<li><a href="#%E6%88%91%E7%9A%84%E7%97%9B%E7%82%B9">我的痛点</a></li>
+<li><a href="#%E5%8E%8B%E7%BC%A9%E6%89%93%E5%8C%85%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">压缩打包解决方案</a><ul>
+<li><a href="#1-virtualenv%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8">1、virtualenv的安装以及使用</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%8E%8B%E7%BC%A9%E7%A5%9E%E5%99%A8upx">压缩神器upx</a><ul>
+<li><a href="#%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8">安装以及使用</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h2><span id="pyinstaller工具">pyinstaller工具</span></h2><p>pyinstaller可以很轻松把py程序打包成exe文件，还可以加ico图标，十分nice。</p>
+<h3><span id="本质">本质</span></h3><p>因为python终究是一门解释语言，依赖解释器环境，pyinstaller，其实打包的是一个可以运行脚本的环境（env）。这里包含python.exe这个脚本解释器，因此生成的exe文件一般都很大10m以上。</p>
+<h3><span id="我的痛点">我的痛点</span></h3><p>之前用过python打包过一些文件，大小还算可以接受，15m左右，直到今天，给同学写了一个GUI界面，用了PySide2、numpy、pandas。打包竟然到了100多m，这。。。属实给我蚌埠住了。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406222723.png"></p>
 <p>其实这里面打包了很多没有用的东西，归根到底，是全局环境的问题。</p>
 <p>压缩打包之后，大小几乎就缩小了一半。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406223300.png"></p>
 <p>因为功能过于简单，其实这不大，如果功能开发的多的话，打包也不会大多少的。</p>
-<h3 id="压缩打包解决方案"><a href="#压缩打包解决方案" class="headerlink" title="压缩打包解决方案"></a>压缩打包解决方案</h3><p>上文分析了，py打包的主要原因是因为，全局环境太乱，太复杂，导致一些没有用的东西，也打包进了环境，这十分的憋屈。</p>
+<h3><span id="压缩打包解决方案">压缩打包解决方案</span></h3><p>上文分析了，py打包的主要原因是因为，全局环境太乱，太复杂，导致一些没有用的东西，也打包进了环境，这十分的憋屈。</p>
 <p>我的解决流程如下：</p>
 <ol>
 <li>利用virtualenv创建一个全新的环境。</li>
 <li>在全局环境中安装所要的库。</li>
 <li>pyinstaller进行打包</li>
 </ol>
-<h4 id="1、virtualenv的安装以及使用"><a href="#1、virtualenv的安装以及使用" class="headerlink" title="1、virtualenv的安装以及使用"></a>1、virtualenv的安装以及使用</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure>
+<h4><span id="1-virtualenv的安装以及使用">1、virtualenv的安装以及使用</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure>
 
 <p>virtualenv会放在python安装目录下的scripts的文件夹下哈。如果添加环境变量了，就可以直接使用啦</p>
 <p>我们先创建一个新环境。</p>
@@ -246,8 +265,8 @@
 <p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406230308.png"></p>
 <p>此时已经很小很小了。</p>
 <p>还能不能再小。</p>
-<h2 id="压缩神器upx"><a href="#压缩神器upx" class="headerlink" title="压缩神器upx"></a>压缩神器upx</h2><p>在上面的exe的基础上，upx还能再压缩exe，可谓是锦上添花。</p>
-<h3 id="安装以及使用"><a href="#安装以及使用" class="headerlink" title="安装以及使用"></a>安装以及使用</h3><p>在github官网上下载upx对应系统的压缩包，解压到虚拟环境下的scripts下。</p>
+<h2><span id="压缩神器upx">压缩神器upx</span></h2><p>在上面的exe的基础上，upx还能再压缩exe，可谓是锦上添花。</p>
+<h3><span id="安装以及使用">安装以及使用</span></h3><p>在github官网上下载upx对应系统的压缩包，解压到虚拟环境下的scripts下。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406231432.png"></p>
 <p>可以看到又进一步压缩了一点。实际上这个过程是加壳哈。</p>
 
@@ -285,7 +304,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pyinstaller%E7%B2%BE%E8%87%B4%E6%89%93%E5%8C%85exe"><span class="toc-number">1.</span> <span class="toc-text">pyinstaller精致打包exe</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pyinstaller%E5%B7%A5%E5%85%B7"><span class="toc-number">1.1.</span> <span class="toc-text">pyinstaller工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E8%B4%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text">本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E7%97%9B%E7%82%B9"><span class="toc-number">1.1.2.</span> <span class="toc-text">我的痛点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E6%89%93%E5%8C%85%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.3.</span> <span class="toc-text">压缩打包解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81virtualenv%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">1、virtualenv的安装以及使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E7%A5%9E%E5%99%A8upx"><span class="toc-number">1.2.</span> <span class="toc-text">压缩神器upx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">安装以及使用</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">pyinstaller精致打包exe</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">pyinstaller工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.1.</span> <span class="toc-text">本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.2.</span> <span class="toc-text">我的痛点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.3.</span> <span class="toc-text">压缩打包解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">1、virtualenv的安装以及使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">压缩神器upx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.1.</span> <span class="toc-text">安装以及使用</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
