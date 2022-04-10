@@ -9,23 +9,23 @@
     <script defer src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/all.js"></script> 
     <script defer src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/v4-shims.js"></script> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/all.css">
-    <meta name="description" content="翻墙VPN的搭建主流的翻墙软件有很多  ssr v2  …… v2自用一键脚本 123456789101112131415161718#首先用firewall-cmd开v2的端口firewall-cmd --permanent --zone&#x3D;public --add-port&#x3D;v2端口&#x2F;tcp#安装curlsudo apt updatesudo apt install curl -y#以下脚本二选">
+    <meta name="description" content="科学上网VPN的搭建主流的翻墙软件有很多  ssr v2  …… v2自用一键脚本 123456789101112131415161718#首先用firewall-cmd开v2的端口firewall-cmd --permanent --zone&#x3D;public --add-port&#x3D;v2端口&#x2F;tcp#安装curlsudo apt updatesudo apt install curl -y#以下脚本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="翻墙&amp;基本的网络服务器&amp;内网穿透">
+<meta property="og:title" content="科学上网&amp;基本的网络服务器&amp;内网穿透">
 <meta property="og:url" content="http://zhujiyuan.xyz/2022/01/05/CustomServerInit/index.html">
 <meta property="og:site_name" content="zhujiyuan">
-<meta property="og:description" content="翻墙VPN的搭建主流的翻墙软件有很多  ssr v2  …… v2自用一键脚本 123456789101112131415161718#首先用firewall-cmd开v2的端口firewall-cmd --permanent --zone&#x3D;public --add-port&#x3D;v2端口&#x2F;tcp#安装curlsudo apt updatesudo apt install curl -y#以下脚本二选">
+<meta property="og:description" content="科学上网VPN的搭建主流的翻墙软件有很多  ssr v2  …… v2自用一键脚本 123456789101112131415161718#首先用firewall-cmd开v2的端口firewall-cmd --permanent --zone&#x3D;public --add-port&#x3D;v2端口&#x2F;tcp#安装curlsudo apt updatesudo apt install curl -y#以下脚本">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/zhu-jiyuan.github.io/img/linux/image-20220105225934309.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/zhu-jiyuan.github.io/img/linux/image-20220105230626923.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105225934309.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105230626923.png">
 <meta property="article:published_time" content="2022-01-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-09T15:53:41.427Z">
+<meta property="article:modified_time" content="2022-04-10T06:55:05.339Z">
 <meta property="article:author" content="zhu jiyuan">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="fq">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/zhu-jiyuan.github.io/img/linux/image-20220105225934309.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105225934309.png">
     
     
       
@@ -51,7 +51,7 @@
       
     
     <!-- title -->
-    <title>翻墙&amp;基本的网络服务器&amp;内网穿透</title>
+    <title>科学上网&amp;基本的网络服务器&amp;内网穿透</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -120,21 +120,21 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&text=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&is_video=false&description=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=翻墙&amp;基本的网络服务器&amp;内网穿透&body=Check out this article: http://zhujiyuan.xyz/2022/01/05/CustomServerInit/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&name=翻墙&amp;基本的网络服务器&amp;内网穿透&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&t=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&text=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&is_video=false&description=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=科学上网&amp;基本的网络服务器&amp;内网穿透&body=Check out this article: http://zhujiyuan.xyz/2022/01/05/CustomServerInit/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&name=科学上网&amp;基本的网络服务器&amp;内网穿透&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&t=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BF%BB%E5%A2%99VPN%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">翻墙VPN的搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">基本服务器的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#samba%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88%E8%B7%A8%E7%B3%BB%E7%BB%9F%E5%B9%B3%E5%8F%B0%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">samba服务器（跨系统平台传输文件）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">2.1.1.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apache%E6%9C%8D%E5%8A%A1%E5%99%A8-%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E7%9A%84"><span class="toc-number">2.2.</span> <span class="toc-text">apache服务器(搭建网站的)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-number">3.</span> <span class="toc-text">内网穿透</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%B5%81%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">内网穿透流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.2.</span> <span class="toc-text">搭建步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.2.1.</span> <span class="toc-text">一、搭建内网穿透服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AE%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">3.2.2.</span> <span class="toc-text">二、配置客户端</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91VPN%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">科学上网VPN的搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">基本服务器的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#samba%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88%E8%B7%A8%E7%B3%BB%E7%BB%9F%E5%B9%B3%E5%8F%B0%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">samba服务器（跨系统平台传输文件）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">2.1.1.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apache%E6%9C%8D%E5%8A%A1%E5%99%A8-%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E7%9A%84"><span class="toc-number">2.2.</span> <span class="toc-text">apache服务器(搭建网站的)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-number">3.</span> <span class="toc-text">内网穿透</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%B5%81%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">内网穿透流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.2.</span> <span class="toc-text">搭建步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.2.1.</span> <span class="toc-text">一、搭建内网穿透服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AE%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">3.2.2.</span> <span class="toc-text">二、配置客户端</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -146,7 +146,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        翻墙&amp;基本的网络服务器&amp;内网穿透
+        科学上网&amp;基本的网络服务器&amp;内网穿透
     </h1>
 
 
@@ -160,7 +160,7 @@
       
         <time datetime="2022-01-04T16:00:00.000Z" itemprop="datePublished">2022-01-05</time>
         
-        (Updated: <time datetime="2022-04-09T15:53:41.427Z" itemprop="dateModified">2022-04-09</time>)
+        (Updated: <time datetime="2022-04-10T06:55:05.339Z" itemprop="dateModified">2022-04-10</time>)
         
       
     </div>
@@ -185,7 +185,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h2 id="翻墙VPN的搭建"><a href="#翻墙VPN的搭建" class="headerlink" title="翻墙VPN的搭建"></a>翻墙VPN的搭建</h2><p>主流的翻墙软件有很多</p>
+    <h2 id="科学上网VPN的搭建"><a href="#科学上网VPN的搭建" class="headerlink" title="科学上网VPN的搭建"></a>科学上网VPN的搭建</h2><p>主流的翻墙软件有很多</p>
 <ul>
 <li>ssr</li>
 <li>v2</li>
@@ -201,7 +201,7 @@
 <h2 id="基本服务器的安装"><a href="#基本服务器的安装" class="headerlink" title="基本服务器的安装"></a>基本服务器的安装</h2><h3 id="samba服务器（跨系统平台传输文件）"><a href="#samba服务器（跨系统平台传输文件）" class="headerlink" title="samba服务器（跨系统平台传输文件）"></a>samba服务器（跨系统平台传输文件）</h3><p>这个很香，家里的per电脑可以用来做nas。贼方便。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get upgrade </span><br><span class="line">sudo apt-get update </span><br><span class="line"></span><br><span class="line"><span class="comment">#安装samba服务器</span></span><br><span class="line">sudo apt-get install samba samba-common</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建共享目录</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> /home/zhujiyuan</span><br><span class="line"></span><br><span class="line">sudo <span class="built_in">chmod</span> 777 /home/zhujiyuan</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加samba用户（注意必须是linux下已经有的用户）</span></span><br><span class="line"></span><br><span class="line">sudo smbpasswd -a zhujiyuan</span><br><span class="line"></span><br><span class="line"><span class="comment">#配置smb文件</span></span><br><span class="line"></span><br><span class="line">sudo vim /etc/samba/smb.conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#在文件最后面加上如下,这里可以自定义参考samba的文档</span></span><br><span class="line">[share]</span><br><span class="line">comment = share folder</span><br><span class="line">browseable = <span class="built_in">yes</span></span><br><span class="line">path = /home/zhujiyuan</span><br><span class="line">create mask = 0700</span><br><span class="line">directory mask = 0700</span><br><span class="line">valid <span class="built_in">users</span> = linuxidc</span><br><span class="line">force user = linuxidc</span><br><span class="line">force group = linuxidc</span><br><span class="line">public = <span class="built_in">yes</span></span><br><span class="line">available = <span class="built_in">yes</span></span><br><span class="line">writable = <span class="built_in">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#把samba添加进防火墙白名单</span></span><br><span class="line">firewall-cmd --add-service=samba --permanent</span><br><span class="line"></span><br><span class="line"><span class="comment">#重启samba服务器</span></span><br><span class="line">systemctl restart smbd</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/zhu-jiyuan.github.io/img/linux/image-20220105225934309.png" alt="image-20220105225934309"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105225934309.png" alt="image-20220105225934309"></p>
 <h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
 <li>windows下要先在设置中开启smb服务，才能访问</li>
 <li>win+R键，输入\\ip即可。</li>
@@ -219,7 +219,7 @@
 
 <p>cmd下启动即可。</p>
 <p>用ipad随时随地通过服务器ip远程连接家里的电脑</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/zhu-jiyuan.github.io/img/linux/image-20220105230626923.png" alt="image-20220105230626923"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105230626923.png" alt="image-20220105230626923"></p>
 
   </div>
 </article>
@@ -255,22 +255,22 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BF%BB%E5%A2%99VPN%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">翻墙VPN的搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">基本服务器的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#samba%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88%E8%B7%A8%E7%B3%BB%E7%BB%9F%E5%B9%B3%E5%8F%B0%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">samba服务器（跨系统平台传输文件）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">2.1.1.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apache%E6%9C%8D%E5%8A%A1%E5%99%A8-%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E7%9A%84"><span class="toc-number">2.2.</span> <span class="toc-text">apache服务器(搭建网站的)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-number">3.</span> <span class="toc-text">内网穿透</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%B5%81%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">内网穿透流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.2.</span> <span class="toc-text">搭建步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.2.1.</span> <span class="toc-text">一、搭建内网穿透服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AE%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">3.2.2.</span> <span class="toc-text">二、配置客户端</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91VPN%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">科学上网VPN的搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">基本服务器的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#samba%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88%E8%B7%A8%E7%B3%BB%E7%BB%9F%E5%B9%B3%E5%8F%B0%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">samba服务器（跨系统平台传输文件）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">2.1.1.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apache%E6%9C%8D%E5%8A%A1%E5%99%A8-%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E7%9A%84"><span class="toc-number">2.2.</span> <span class="toc-text">apache服务器(搭建网站的)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-number">3.</span> <span class="toc-text">内网穿透</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%B5%81%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">内网穿透流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.2.</span> <span class="toc-text">搭建步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.2.1.</span> <span class="toc-text">一、搭建内网穿透服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AE%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">3.2.2.</span> <span class="toc-text">二、配置客户端</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&text=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&is_video=false&description=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=翻墙&amp;基本的网络服务器&amp;内网穿透&body=Check out this article: http://zhujiyuan.xyz/2022/01/05/CustomServerInit/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&name=翻墙&amp;基本的网络服务器&amp;内网穿透&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&t=翻墙&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&text=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&is_video=false&description=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=科学上网&amp;基本的网络服务器&amp;内网穿透&body=Check out this article: http://zhujiyuan.xyz/2022/01/05/CustomServerInit/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&title=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&name=科学上网&amp;基本的网络服务器&amp;内网穿透&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zhujiyuan.xyz/2022/01/05/CustomServerInit/&t=科学上网&amp;基本的网络服务器&amp;内网穿透"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
