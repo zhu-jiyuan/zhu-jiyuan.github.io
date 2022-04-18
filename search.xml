@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>machine_learning_9_week</title>
+      <link href="/2022/04/18/machine-learning-9-week/"/>
+      <url>/2022/04/18/machine-learning-9-week/</url>
+      
+        <content type="html"><![CDATA[<h1 id="machine-learning-9周学习"><a href="#machine-learning-9周学习" class="headerlink" title="machine learning 9周学习"></a>machine learning 9周学习</h1><p>开个新坑哈，本文只需更新，关于对机器学习的一些想法和9周学习的简单概况。</p><p>本文所有向量默认为列向量。</p><p><i class="fa-solid fa-atom"></i></p><p>所有实例均在<a href="https://www.bilibili.com/video/BV1Li4y1S7Ac"><i class="fa-brands fa-bilibili"></i></a> </p><h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><h3 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h3><p>线性回归是我的入坑点，简单的说，线性回归是用<strong>线性函数</strong>解决一些拟合、分类等问题。</p><p>人类的科学局限于数学的发展，可往往数学是复杂的、抽象的、劝退大多数人学习的，就连科学家也不例外，我们希望使用最简单的数学，去解决问题。</p><p>下面我们来看一下这个令我们愉快的线性函数。</p><p>线性函数，y &#x3D; w1<em>x1 + w2</em>x2 + …… +b</p><p>或者用它的矩阵表达形式<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>Y</mi><mo>&#x3D;</mo><mi>X</mi><mo>⋅</mo><mi>W</mi><mo>+</mo><mi>b</mi></math></p><p>使用矩阵表达，极大的节约了我们书写的时间，也方便阅读，十分酸爽。</p><h3 id="如何使用它解决问题"><a href="#如何使用它解决问题" class="headerlink" title="如何使用它解决问题"></a>如何使用它解决问题</h3><p>现在我们要用这个函数去拟合一组数据或者曲线。例如女生身高与腿长的关系，iris数据集的关系，等等</p><p>我们假设身高与腿长成正比。</p><p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>E</mi><mo>&#x3D;</mo><mo stretchy="false">(</mo><mi>Y</mi><mo>−</mo><mi>W</mi><mo>⋅</mo><mi>X</mi><mo>−</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></math></p><p>其中E是方差，Y是真实结果，<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>W</mi><mo>⋅</mo><mi>X</mi><mo>+</mo><mi>b</mi><mo>是预测结果。</mo></math></p><p>根据我们中学学的知识，E越小，说明我们预测的越接近真实情况。</p><p>我们不妨再多看一眼这个函数，X是给出来的，只有W,b不知道，E是W和b的多元函数，这不就是E(W,b)吗。</p><p>再根据我们所学的导数，就可以找到E最小时W和b的值是多少，从而拟合他们。</p><p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>E</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>W</mi></mrow></mfrac><mo>&#x3D;</mo><mn>0</mn></math></p><p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>E</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>b</mi></mrow></mfrac><mo>&#x3D;</mo><mn>0</mn></math></p><p>但是这样直接去求得极值，总觉得不够机器学习，我想让机器自己去找到这个值，而不是直接算出来（这里可以用西瓜书上的正则方程去直接求出来W_b的列向量，因为后续矩阵求导会介绍，所以这里不展开）。</p><p>下面我们来介绍梯度下降和一个简单的小小小神经元。</p><h3 id="梯度下降初相识"><a href="#梯度下降初相识" class="headerlink" title="梯度下降初相识"></a>梯度下降初相识</h3><p>当我们面对比较大的数据，直接去求w_b的值，往往不妥，一口吃个胖子，令人头大。所以我们采用另一种方法，随机梯度下降。</p><p>一口吃不完的东西，分开食之。</p><p>我们先随机初始化w_b。然后每次抽取一个样本更新w_b。</p><p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>W</mi><mo>&#x3D;</mo><mi>W</mi><mo>−</mo><mi>α</mi><mo>∗</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>E</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>W</mi></mrow></mfrac></math></p><p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>b</mi><mo>&#x3D;</mo><mi>b</mi><mo>−</mo><mi>α</mi><mo>∗</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>E</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>b</mi></mrow></mfrac></math></p><p>α是学习率，在0-1之间。</p><p>在今后的笔记中，将会尽可能去用这种方法去解决问题。</p><ul><li>梯度下降可以帮助我们了解中间的过程。</li><li>还有助于我们在使用python这种解释型语言时，更方便交互。</li></ul><h2 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h2><p>我突然想说一说深度学习，看懂上面的线性回归后，其实你可以搭建一个属于自己的神经网络了。</p><p>我想我们这时候来说deep learning最好。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> note </tag>
+            
+            <tag> ML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hi,markdown.</title>
       <link href="/2022/04/09/Hi-markdown/"/>
       <url>/2022/04/09/Hi-markdown/</url>
