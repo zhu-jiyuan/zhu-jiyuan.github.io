@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang=en>
 <head>
     <!-- so meta -->
     <meta charset="utf-8">
@@ -12,10 +12,10 @@
     <meta name="description" content="pyinstaller精致打包exe python是一门解释性语言，所以当代码运行时，需要python.exe等解释器一句一句的对代码进行翻译（运行）。 每次都要去点开始运行，或者python script.py，这对我一个c&#x2F;c++信仰者，真是太痛苦了，py有时确实很方便，因此研究打包非常有必要。 （本篇重在阐述pyinstaller打包为什么会这么大，已经我个人用的打包压缩流程） pyinst">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pyinstaller精致打包exe">
-<meta property="og:url" content="http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/index.html">
+<meta property="og:url" content="http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/index.html">
 <meta property="og:site_name" content="zhujiyuan">
 <meta property="og:description" content="pyinstaller精致打包exe python是一门解释性语言，所以当代码运行时，需要python.exe等解释器一句一句的对代码进行翻译（运行）。 每次都要去点开始运行，或者python script.py，这对我一个c&#x2F;c++信仰者，真是太痛苦了，py有时确实很方便，因此研究打包非常有必要。 （本篇重在阐述pyinstaller打包为什么会这么大，已经我个人用的打包压缩流程） pyinst">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406222723.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406223300.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406224602.png">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406225922.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406230308.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406231432.png">
-<meta property="article:published_time" content="2022-04-09T08:54:24.253Z">
+<meta property="article:published_time" content="2022-04-30T12:36:29.919Z">
 <meta property="article:modified_time" content="2022-04-10T09:46:34.555Z">
 <meta property="article:author" content="zhu jiyuan">
 <meta property="article:tag" content="windows">
@@ -62,6 +62,8 @@
     <!-- rss -->
     
     
+      <link rel="alternate" href="/true" title="zhujiyuan" type="application/atom+xml" />
+    
 	<!-- mathjax -->
 	
 		<script type="text/x-mathjax-config">
@@ -79,24 +81,24 @@
 <body class="max-width mx-auto px3 ltr">
     
       <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="القائمة"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="القائمة"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" aria-label="الأعلى" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
   <span id="menu">
     <span id="nav">
       <ul>
         <!--
-       --><li><a href="/">首页</a></li><!--
+       --><li><a href="/">Home</a></li><!--
      --><!--
-       --><li><a href="/about/">关于</a></li><!--
+       --><li><a href="/about/">About</a></li><!--
      --><!--
-       --><li><a href="/archives/">归档</a></li><!--
+       --><li><a href="/archives/">Writing</a></li><!--
      --><!--
-       --><li><a href="/tags/">标签</a></li><!--
+       --><li><a href="/tags/">Tag</a></li><!--
      --><!--
-       --><li><a href="/categories/">分类</a></li><!--
+       --><li><a href="/categories/">Category</a></li><!--
      --><!--
-       --><li><a href="/search/">搜索</a></li><!--
+       --><li><a href="/search/">Search</a></li><!--
      -->
       </ul>
     </span>
@@ -104,33 +106,33 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="上一篇" href="/2022/04/09/Hi-markdown/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post" href="/2022/04/30/redmiAx6/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="下一篇" href="/2022/01/08/WritingService/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post" href="/2022/04/21/win11-android/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
-        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="分享文章" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">上一篇</span>
-      <span id="i-next" class="info" style="display:none;">下一篇</span>
-      <span id="i-top" class="info" style="display:none;">返回顶部</span>
-      <span id="i-share" class="info" style="display:none;">分享文章</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&text=pyinstaller精致打包exe"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&is_video=false&description=pyinstaller精致打包exe"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=pyinstaller精致打包exe&body=Check out this article: http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&name=pyinstaller精致打包exe&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&t=pyinstaller精致打包exe"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&text=pyinstaller精致打包exe"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&is_video=false&description=pyinstaller精致打包exe"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=pyinstaller精致打包exe&body=Check out this article: http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&name=pyinstaller精致打包exe&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&t=pyinstaller精致打包exe"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -159,7 +161,7 @@
       
     <div class="postdate">
       
-        <time datetime="2022-04-09T08:54:24.253Z" itemprop="datePublished">2022-04-09</time>
+        <time datetime="2022-04-30T12:36:29.919Z" itemprop="datePublished">2022-04-30</time>
         
         (Updated: <time datetime="2022-04-10T09:46:34.555Z" itemprop="dateModified">2022-04-10</time>)
         
@@ -251,12 +253,12 @@
   </div>
 </article>
 
-
     <div class="blog-post-comments">
-        <div id="utterances_thread">
-            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
         </div>
     </div>
+
 
 
         
@@ -266,17 +268,17 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">首页</a></li>
+          <li><a href="/">Home</a></li>
          
-          <li><a href="/about/">关于</a></li>
+          <li><a href="/about/">About</a></li>
          
-          <li><a href="/archives/">归档</a></li>
+          <li><a href="/archives/">Writing</a></li>
          
-          <li><a href="/tags/">标签</a></li>
+          <li><a href="/tags/">Tag</a></li>
          
-          <li><a href="/categories/">分类</a></li>
+          <li><a href="/categories/">Category</a></li>
          
-          <li><a href="/search/">搜索</a></li>
+          <li><a href="/search/">Search</a></li>
         
       </ul>
     </div>
@@ -287,26 +289,26 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&text=pyinstaller精致打包exe"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&is_video=false&description=pyinstaller精致打包exe"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=pyinstaller精致打包exe&body=Check out this article: http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&name=pyinstaller精致打包exe&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zhujiyuan.xyz/2022/04/09/pyinstallerPacketExe/&t=pyinstaller精致打包exe"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&text=pyinstaller精致打包exe"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&is_video=false&description=pyinstaller精致打包exe"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=pyinstaller精致打包exe&body=Check out this article: http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&title=pyinstaller精致打包exe"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&name=pyinstaller精致打包exe&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zhujiyuan.xyz/2022/04/30/pyinstallerPacketExe/&t=pyinstaller精致打包exe"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -325,17 +327,17 @@
     <nav>
       <ul>
         <!--
-       --><li><a href="/">首页</a></li><!--
+       --><li><a href="/">Home</a></li><!--
      --><!--
-       --><li><a href="/about/">关于</a></li><!--
+       --><li><a href="/about/">About</a></li><!--
      --><!--
-       --><li><a href="/archives/">归档</a></li><!--
+       --><li><a href="/archives/">Writing</a></li><!--
      --><!--
-       --><li><a href="/tags/">标签</a></li><!--
+       --><li><a href="/tags/">Tag</a></li><!--
      --><!--
-       --><li><a href="/categories/">分类</a></li><!--
+       --><li><a href="/categories/">Category</a></li><!--
      --><!--
-       --><li><a href="/search/">搜索</a></li><!--
+       --><li><a href="/search/">Search</a></li><!--
      -->
       </ul>
     </nav>
@@ -365,7 +367,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -376,7 +378,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.trigger.setAttribute('aria-label', "Copied!");
       e.clearSelection();
     })
   })
@@ -405,27 +407,19 @@
 
 <!-- Disqus Comments -->
 
-<!-- utterances Comments -->
-
     <script type="text/javascript">
-      var utterances_repo = 'zhu-jiyuan/freeTalk';
-      var utterances_issue_term = 'pathname';
-      var utterances_label = 'Comment';
-      var utterances_theme = 'github-dark';
+        var disqus_shortname = 'zhujiyuan';
 
-      (function(){
-          var script = document.createElement('script');
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
-          script.src = 'https://utteranc.es/client.js';
-          script.setAttribute('repo', utterances_repo);
-          script.setAttribute('issue-term', 'pathname');
-          script.setAttribute('label', utterances_label);
-          script.setAttribute('theme', utterances_theme);
-          script.setAttribute('crossorigin', 'anonymous');
-          script.async = true;
-          (document.getElementById('utterances_thread')).appendChild(script);
-      }());
-  </script>
+<!-- utterances Comments -->
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

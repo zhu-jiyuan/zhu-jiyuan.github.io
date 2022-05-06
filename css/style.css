@@ -325,7 +325,7 @@ body .h1 {
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
-  font-size: 1.5em;
+  font-size: 1.75em;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -335,26 +335,27 @@ body .h2 {
   display: block;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  color: #111;
+  color: rgba(212,67,118,0.808);
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.65rem;
 }
 body h3 {
-  color: #111;
-  text-decoration: underline;
+  color: rgba(212,67,118,0.596);
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.45rem;
 }
-body h4,
+body h4 {
+  color: rgba(212,67,118,0.467);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
 body h5,
 body h6 {
-  display: inline;
-  text-decoration: none;
-  color: #666;
+  color: rgba(212,67,118,0.486);
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 body h3,
 body h4,
@@ -400,7 +401,7 @@ body abbr {
 body ul,
 body ol,
 body dl {
-  line-height: 1.725;
+  line-height: 1.8;
 }
 body ul ul,
 body ol ul,
@@ -419,7 +420,7 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   overflow: auto;
   display: block;
 }
@@ -428,7 +429,7 @@ body th {
   border-bottom: 1px dashed #666;
   color: #111;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 15px;
 }
 body td {
   padding: 0 8px;
@@ -482,9 +483,9 @@ body {
   color: #363533;
   font-display: swap;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Menlo", "Meslo LG", monospace;
-  line-height: 1.725;
+  line-height: 1.8;
   text-rendering: geometricPrecision;
   flex: 1;
   -moz-osx-font-smoothing: grayscale;
@@ -510,15 +511,15 @@ body {
   -webkit-hyphens: manual;
 }
 .content a {
-  color: #363533;
+  color: #d44375;
   text-decoration: none;
-  background-image: linear-gradient(transparent, transparent 5px, #363533 5px, #363533);
+  background-image: linear-gradient(transparent, transparent 5px, #2bbc8a 5px, #2bbc8a);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
 }
 .content a:hover {
-  background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
+  color: #2bbc8a;
 }
 .content a.icon {
   background: none;
@@ -841,8 +842,8 @@ body {
   display: none;
 }
 #header-post #toc .toc-level-2 {
-  color: #363533;
-  font-size: 0.8rem;
+  color: #d44375;
+  font-size: 0.9rem;
 }
 #header-post #toc .toc-level-2:before {
   color: #d44375;
@@ -1022,7 +1023,7 @@ body {
 }
 #footer-post #toc-footer .toc-level-2 {
   color: #363533;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 #footer-post #toc-footer .toc-level-2:before {
   color: #d44375;
@@ -1109,12 +1110,12 @@ article header .postdate {
 }
 article .content h2:before {
   position: absolute;
-  top: -4px;
-  left: -1rem;
+  top: -1px;
+  left: -1.6rem;
   color: #d44375;
   content: "#";
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.65rem;
 }
 article .content img,
 article .content video {
@@ -1411,9 +1412,9 @@ article .content .caption {
   color: #e2e0de;
   font-display: swap;
   font-weight: 400;
-  font-size: 11.200000000000001px;
+  font-size: 12.8px;
   font-family: "Menlo", "Meslo LG", monospace;
-  line-height: 1.725;
+  line-height: 1.8;
   text-rendering: geometricPrecision;
   text-align: center;
   word-wrap: break-word;
