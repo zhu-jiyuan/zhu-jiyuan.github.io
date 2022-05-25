@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <script defer src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/all.js"></script> 
+    <script defer src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/v4-shims.js"></script> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/all.css">
+    <meta name="description" content="最近也是产出高峰期耶~ 咱的电脑是一个对于物理学学生十分够用拉跨的笔电。 在我大二下学期，平时从不耍脾气的它，硬盘坏了，咱的代码自然是未能渡劫。  有了上次教训之后嘞，时隔3个月，好吧，半年。终于开始学一手Git，来解决一下这个问题了。 下面的内容是看的git官网下的book。  git简介 为什么学习Git Git就是用来解决版本控制，和避免像我刚刚那样，硬盘坏了，再也回不去了。 传统的版本控制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习Git">
+<meta property="og:url" content="http://zhujiyuan.xyz/2022/05/12/git-learning/index.html">
+<meta property="og:site_name" content="David&#39;blog">
+<meta property="og:description" content="最近也是产出高峰期耶~ 咱的电脑是一个对于物理学学生十分够用拉跨的笔电。 在我大二下学期，平时从不耍脾气的它，硬盘坏了，咱的代码自然是未能渡劫。  有了上次教训之后嘞，时隔3个月，好吧，半年。终于开始学一手Git，来解决一下这个问题了。 下面的内容是看的git官网下的book。  git简介 为什么学习Git Git就是用来解决版本控制，和避免像我刚刚那样，硬盘坏了，再也回不去了。 传统的版本控制">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512180313240.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181105529.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181358000.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512184737778.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183249206.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183441894.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512205411242.png">
+<meta property="article:published_time" content="2022-05-12T09:51:20.000Z">
+<meta property="article:modified_time" content="2022-05-12T13:00:36.962Z">
+<meta property="article:author" content="zhu jiyuan">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512180313240.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>学习Git</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/feed.xml" title="David'blog" type="application/atom+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2022/05/10/quantumult-x-and-js/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://zhujiyuan.xyz/2022/05/12/git-learning/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&text=学习Git"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&title=学习Git"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&is_video=false&description=学习Git"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=学习Git&body=Check out this article: http://zhujiyuan.xyz/2022/05/12/git-learning/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&title=学习Git"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&title=学习Git"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&title=学习Git"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&title=学习Git"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&name=学习Git&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zhujiyuan.xyz/2022/05/12/git-learning/&t=学习Git"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">git简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6%E4%B9%A0Git"><span class="toc-number">1.1.</span> <span class="toc-text">为什么学习Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">git的工作流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%BF%AB%E7%85%A7%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.1.</span> <span class="toc-text">版本控制快照的创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E9%83%A8%E6%9C%AC%E5%9C%B0%E5%8C%96"><span class="toc-number">1.2.2.</span> <span class="toc-text">全部本地化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C"><span class="toc-number">1.2.3.</span> <span class="toc-text">校验</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEgit"><span class="toc-number">2.</span> <span class="toc-text">配置git</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">用户信息</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%B8%AE%E5%8A%A9"><span class="toc-number">3.</span> <span class="toc-text">获取帮助</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        学习Git
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">zhu jiyuan</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-05-12T09:51:20.000Z" itemprop="datePublished">2022-05-12</time>
+        
+        (Updated: <time datetime="2022-05-12T13:00:36.962Z" itemprop="dateModified">2022-05-12</time>)
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/note/">note</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/git/" rel="tag">git</a>, <a class="tag-link-link" href="/tags/note/" rel="tag">note</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>最近也是产出高峰期耶~</p>
+<p>咱的电脑是一个对于<strong>物理学</strong>学生十分够用<s>拉跨</s>的笔电。</p>
+<p>在我大二下学期，平时从不耍脾气的它，硬盘坏了，咱的代码自然是未能渡劫。</p>
+<img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512180313240.png" alt="image-20220512180313240" style="zoom: 8%;" />
+<p>有了上次教训之后嘞，时隔3个月，好吧，半年。终于开始学一手Git，来解决一下这个问题了。</p>
+<p>下面的内容是看的git官网下的book。</p>
+<hr>
+<h2 id="git简介">git简介</h2>
+<h3 id="为什么学习Git">为什么学习Git</h3>
+<p>Git就是用来解决版本控制，和避免像我刚刚那样，硬盘坏了，再也回不去了。</p>
+<p>传统的版本控制，把东西上传到一台机器上面，所有人通过SSH登取出来就好，但是可能会出现咱电脑的硬盘耍小脾气的情况。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181105529.png" alt="传统的版本控制"></p>
+<p>Git是分布式的版本控制。就是说，服务器宕机了，在任何一个fork的主机上都可恢复数据。好耶~</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181358000.png" alt="分布式的版本控制"></p>
+<h3 id="git的工作流程">git的工作流程</h3>
+<p>流程官网写的实在太好了！落泪~<s>忍不住copy</s></p>
+<p>git有三种状态 <strong>已提交（committed）</strong>、<strong>已修改（modified）</strong> 和 <strong>已暂存（staged）</strong>。</p>
+<ul>
+<li>已修改表示修改了文件，但还没保存到数据库中。</li>
+<li>已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
+<li>已提交表示数据已经安全地保存在本地数据库中。</li>
+</ul>
+<p>这会让我们的 Git 项目拥有三个阶段：工作区、暂存区以及 Git 目录。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512184737778.png" alt="image-20220512184737778"></p>
+<p>工作区是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
+<p>暂存区是一个文件，保存了下次将要提交的文件列表信息，一般在 Git 仓库目录中。 按照 Git 的术语叫做“索引”，不过一般说法还是叫“暂存区”。</p>
+<p>Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，复制的就是这里的数据。</p>
+<p>基本的 Git 工作流程如下：</p>
+<ol>
+<li>在工作区中修改文件。</li>
+<li>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</li>
+<li>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</li>
+</ol>
+<p>如果 Git 目录中保存着特定版本的文件，就属于 <strong>已提交</strong> 状态。 如果文件已修改并放入暂存区，就属于 <strong>已暂存</strong> 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 <strong>已修改</strong> 状态。</p>
+<h4 id="版本控制快照的创建">版本控制快照的创建</h4>
+<blockquote>
+<p>快照可以理解为简单的备份</p>
+</blockquote>
+<p>有些版本是这样储存的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183249206.png" alt="image-20220512183249206"></p>
+<p>Git是这样的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183441894.png" alt="image-20220512183441894"></p>
+<p>不管文件改变没，都会在快照中备份，但是为了效率，如果文件没改变，git会备份一个指向源文件的指针。</p>
+<h4 id="全部本地化">全部本地化</h4>
+<p>git拉取的是全部的镜像，所以当咱想要查看某个版本的文件时，在本地查看就好啦~</p>
+<h4 id="校验">校验</h4>
+<p>git会在存储数据前，对所有的文件进行sha-1的hash转换，git的索引就是这个hash值，o（1）的时间复杂度查找哦~</p>
+<p>这个校验，也会让文件即使发生一个空格的变化，也会被记录下来。好耶~</p>
+<h2 id="配置git">配置git</h2>
+<p>git会记录每个用户的上传等信息，因此，需要配置信息。</p>
+<p>正如官网所说</p>
+<blockquote>
+<p>安装完 Git 之后，要做的第一件事就是设置你的用户名和邮件地址。 这一点很重要，因为每一个 Git 提交都会使用这些信息，它们会写入到你的每一次提交中，不可更改</p>
+</blockquote>
+<h5 id="用户信息">用户信息</h5>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;zhu-jiyuan&quot;</span></span><br><span class="line">git config --global user.email 848433033@qq.com</span><br></pre></td></tr></table></figure>
+<p>–global表示的是全局配置。</p>
+<p>咱可以用下面的命令，来看配置在哪</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list --show-origin</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512205411242.png" alt="image-20220512205411242"></p>
+<p>列出全部的配置列表（包含全局和局部</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list </span><br></pre></td></tr></table></figure>
+<p>官网中提示道：你可能会看到重复的变量名，因为 Git 会从不同的文件中读取同一个配置（例如：<code>/etc/gitconfig</code> 与 <code>~/.gitconfig</code>）。 这种情况下，Git 会使用它找到的每一个变量的最后一个配置。</p>
+<p>你可以通过输入 <code>git config &lt;key&gt;</code>： 来检查 Git 的某一项配置</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config user.name</span></span><br><span class="line">John Doe</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Note</th>
+<th>由于 Git 会从多个文件中读取同一配置变量的不同值，因此你可能会在其中看到意料之外的值而不知道为什么。 此时，你可以查询 Git 中该变量的 <strong>原始</strong> 值，它会告诉你哪一个配置文件最后设置了该值：<code>$ git config --show-origin rerere.autoUpdate file:/home/johndoe/.gitconfig	false</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="获取帮助">获取帮助</h2>
+<p>若你使用 Git 时需要获取帮助，有三种等价的方法可以找到 Git 命令的综合手册（manpage）：</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git <span class="built_in">help</span> &lt;verb&gt;</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git &lt;verb&gt; --<span class="built_in">help</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">man git-&lt;verb&gt;</span></span><br></pre></td></tr></table></figure>
+<p>例如，要想获得 <code>git config</code> 命令的手册，执行</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git <span class="built_in">help</span> config</span></span><br></pre></td></tr></table></figure>
+<p>这些命令很棒，因为你随时随地可以使用而无需联网。 如果你觉得手册或者本书的内容还不够用，你可以尝试在 Freenode IRC 服务器 <a target="_blank" rel="noopener" href="https://freenode.net/">https://freenode.net</a> 上的 <code>#git</code> 或 <code>#github</code> 频道寻求帮助。 这些频道经常有上百人在线，他们都精通 Git 并且乐于助人。</p>
+<p>此外，如果你不需要全面的手册，只需要可用选项的快速参考，那么可以用 <code>-h</code> 选项获得更简明的 “help” 输出：</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git add -h</span></span><br><span class="line">usage: git add [&lt;options&gt;] [--] &lt;pathspec&gt;...</span><br><span class="line"></span><br><span class="line">    -n, --dry-run         dry run</span><br><span class="line">    -v, --verbose         be verbose</span><br><span class="line"></span><br><span class="line">    -i, --interactive     interactive picking</span><br><span class="line">    -p, --patch           select hunks interactively</span><br><span class="line">    -e, --edit            edit current diff and apply</span><br><span class="line">    -f, --force           allow adding otherwise ignored files</span><br><span class="line">    -u, --update          update tracked files</span><br><span class="line">    --renormalize         renormalize EOL of tracked files (implies -u)</span><br><span class="line">    -N, --intent-to-add   record only the fact that the path will be added later</span><br><span class="line">    -A, --all             add changes from all tracked and untracked files</span><br><span class="line">    --ignore-removal      ignore paths removed in the working tree (same as --no-all)</span><br><span class="line">    --refresh             don&#x27;t add, only refresh the index</span><br><span class="line">    --ignore-errors       just skip files which cannot be added because of errors</span><br><span class="line">    --ignore-missing      check if - even missing - files are ignored in dry run</span><br><span class="line">    --chmod (+|-)x        override the executable bit of the listed files</span><br></pre></td></tr></table></figure>
+<p>我也不想抄，可是它<s>叫我哥哥诶</s>写的太好了。</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tag</a></li>
+         
+          <li><a href="/categories/">Category</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">git简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6%E4%B9%A0Git"><span class="toc-number">1.1.</span> <span class="toc-text">为什么学习Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">git的工作流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%BF%AB%E7%85%A7%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.1.</span> <span class="toc-text">版本控制快照的创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E9%83%A8%E6%9C%AC%E5%9C%B0%E5%8C%96"><span class="toc-number">1.2.2.</span> <span class="toc-text">全部本地化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C"><span class="toc-number">1.2.3.</span> <span class="toc-text">校验</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEgit"><span class="toc-number">2.</span> <span class="toc-text">配置git</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">用户信息</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%B8%AE%E5%8A%A9"><span class="toc-number">3.</span> <span class="toc-text">获取帮助</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://zhujiyuan.xyz/2022/05/12/git-learning/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&text=学习Git"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&title=学习Git"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&is_video=false&description=学习Git"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=学习Git&body=Check out this article: http://zhujiyuan.xyz/2022/05/12/git-learning/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&title=学习Git"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&title=学习Git"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&title=学习Git"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&title=学习Git"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zhujiyuan.xyz/2022/05/12/git-learning/&name=学习Git&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zhujiyuan.xyz/2022/05/12/git-learning/&t=学习Git"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022
+    zhu jiyuan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-212913942-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-212913942-1');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'zhujiyuan';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+<!-- utterances Comments -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
