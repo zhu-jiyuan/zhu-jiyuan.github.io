@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.ohayo.live</id>
+    <title>ohayo&#39;s blog • Posts by &#34;linux&#34; tag</title>
+    <link href="https://blog.ohayo.live" />
+    <updated>2022-01-07T16:00:00.000Z</updated>
+    <category term="Linux" />
+    <category term="tex" />
+    <category term="math" />
+    <category term="单调栈" />
+    <category term="note" />
+    <category term="log" />
+    <category term="cpp" />
+    <category term="python" />
+    <category term="JavaScript" />
+    <entry>
+        <id>https://blog.ohayo.live/CS/linux/WritingService/</id>
+        <title>linux中的service</title>
+        <link rel="alternate" href="https://blog.ohayo.live/CS/linux/WritingService/"/>
+        <content type="html">&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; /lib/systemd/system/服务名.service&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-ini&#34; data-language=&#34;ini&#34;&gt;&lt;code class=&#34;language-ini&#34;&gt;
+&lt;span class=&#34;token comment&#34;&gt;#例如frp的服务端&lt;/span&gt;
+
+&lt;span class=&#34;token section&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token section-name selector&#34;&gt;Unit&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;Description&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;fraps service&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;After&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;network.target syslog.target&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;Wants&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;network.target&lt;/span&gt;
+
+&lt;span class=&#34;token section&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token section-name selector&#34;&gt;Service&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;Type&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;simple&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;ExecStart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;/root/frp/frps -c /root/frp/frps.ini  #此处安实际情况修改&lt;/span&gt;
+
+&lt;span class=&#34;token section&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token section-name selector&#34;&gt;Install&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;WantedBy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;multi-user.target&lt;/span&gt;
+
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-ini&#34; data-language=&#34;ini&#34;&gt;&lt;code class=&#34;language-ini&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;#客户端运行服务创建：vi /lib/systemd/system/frpc.service&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;#qq机器人的服务&lt;/span&gt;
+&lt;span class=&#34;token section&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token section-name selector&#34;&gt;Unit&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;Description&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;qqbot&lt;/span&gt;
+
+&lt;span class=&#34;token section&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token section-name selector&#34;&gt;Service&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;Type&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;simple&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;ExecStart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;/root/push_qq/go-cqhttp&lt;/span&gt;
+
+&lt;span class=&#34;token section&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token section-name selector&#34;&gt;Install&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;WantedBy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;multi-user.target&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="Linux" />
+        <category term="note" />
+        <updated>2022-01-07T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.ohayo.live/CS/linux/CustomServerInit/</id>
+        <title>科学上网&amp;基本的网络服务器&amp;内网穿透</title>
+        <link rel="alternate" href="https://blog.ohayo.live/CS/linux/CustomServerInit/"/>
+        <content type="html">&lt;h1 id=&#34;科学上网vpn的搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#科学上网vpn的搭建&#34;&gt;&lt;/a&gt; 科学上网VPN的搭建&lt;/h1&gt;
+&lt;p&gt;v2一键脚本&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;#首先用firewall-cmd开v2的端口&lt;/span&gt;
+firewall-cmd &lt;span class=&#34;token parameter variable&#34;&gt;--permanent&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;--zone&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;public --add-port&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;v2端口/tcp
+
+&lt;span class=&#34;token comment&#34;&gt;#安装curl&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;#以下脚本二选一&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;bash&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-Ls&lt;/span&gt; https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;#带面板，要多开个面板端口，ip+端口访问面板，进行v2设置。&lt;/span&gt;
+
+&lt;span class=&#34;token function&#34;&gt;bash&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-s&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-L&lt;/span&gt; https://git.io/v2ray.sh&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;#不带面板，省端口&lt;/span&gt;
+
+
+&lt;span class=&#34;token comment&#34;&gt;#加速器的安装&lt;/span&gt;
+
+&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; +x bbr.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./bbr.sh
+
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;基本服务器的安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本服务器的安装&#34;&gt;&lt;/a&gt; 基本服务器的安装&lt;/h1&gt;
+&lt;h2 id=&#34;samba服务器跨系统平台传输文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#samba服务器跨系统平台传输文件&#34;&gt;&lt;/a&gt; samba服务器（跨系统平台传输文件）&lt;/h2&gt;
+&lt;p&gt;家里的per电脑可以用来做nas。贼方便。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; upgrade 
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; update 
+
+&lt;span class=&#34;token comment&#34;&gt;#安装samba服务器&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; samba samba-common
+
+&lt;span class=&#34;token comment&#34;&gt;#创建共享目录&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;mkdir&lt;/span&gt; /home/zhujiyuan
+
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;777&lt;/span&gt; /home/zhujiyuan
+
+&lt;span class=&#34;token comment&#34;&gt;#添加samba用户（注意必须是linux下已经有的用户）&lt;/span&gt;
+
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; smbpasswd &lt;span class=&#34;token parameter variable&#34;&gt;-a&lt;/span&gt; zhujiyuan
+
+&lt;span class=&#34;token comment&#34;&gt;#配置smb文件&lt;/span&gt;
+
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; /etc/samba/smb.conf
+
+&lt;span class=&#34;token comment&#34;&gt;#在文件最后面加上如下,这里可以自定义参考samba的文档&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;share&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+comment &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; share folder
+browseable &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;yes&lt;/span&gt;
+path &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; /home/zhujiyuan
+create mask &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; 0700
+directory mask &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; 0700
+valid &lt;span class=&#34;token function&#34;&gt;users&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; linuxidc
+force user &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; linuxidc
+force group &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; linuxidc
+public &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;yes&lt;/span&gt;
+available &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;yes&lt;/span&gt;
+writable &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;yes&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;#把samba添加进防火墙白名单&lt;/span&gt;
+firewall-cmd --add-service&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;samba &lt;span class=&#34;token parameter variable&#34;&gt;--permanent&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;#重启samba服务器&lt;/span&gt;
+systemctl restart smbd
+
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105225934309.png&#34; alt=&#34;image-20220105225934309&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;注意&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意&#34;&gt;&lt;/a&gt; 注意&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;windows下要先在设置中开启smb服务，才能访问&lt;/li&gt;
+&lt;li&gt;win+R键，输入\\ip即可。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;apache服务器搭建网站的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#apache服务器搭建网站的&#34;&gt;&lt;/a&gt; apache服务器(搭建网站的)&lt;/h2&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; apache2&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;内网穿透&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内网穿透&#34;&gt;&lt;/a&gt; 内网穿透&lt;/h2&gt;
+&lt;p&gt;内网穿透是用来让家里的电脑，通过其他措施，使得其他设备可以通过公网找到它。&lt;/p&gt;
+&lt;p&gt;一般家里的网都是经过好几次NAT，使用frp这个开源的软件，可以帮助我们内网穿透。&lt;/p&gt;
+&lt;h3 id=&#34;内网穿透流程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内网穿透流程&#34;&gt;&lt;/a&gt; 内网穿透流程&lt;/h3&gt;
+&lt;p&gt;通过服务器对局域网的设备进行端口映射。&lt;/p&gt;
+&lt;h3 id=&#34;搭建步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#搭建步骤&#34;&gt;&lt;/a&gt; 搭建步骤&lt;/h3&gt;
+&lt;h4 id=&#34;一-搭建内网穿透服务器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-搭建内网穿透服务器&#34;&gt;&lt;/a&gt; 一、搭建内网穿透服务器&lt;/h4&gt;
+&lt;p&gt;需要用一个有公网ip的服务器。&lt;/p&gt;
+&lt;p&gt;去github上下载合适的frp的软件包&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;tar&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-xzvf&lt;/span&gt; 软件包
+&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; 软件包
+
+&lt;span class=&#34;token comment&#34;&gt;#配置服务端文件&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; frps.ini
+
+&lt;span class=&#34;token comment&#34;&gt;#具体可参考官方文档&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;common&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+ bind_port &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;7000&lt;/span&gt; 
+ authentication_method &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; token
+ token &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#连接密码&lt;/span&gt;
+ dashboard_port &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;7500&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;# dashboard 用户名密码，可选，默认为空,这里是web配置&lt;/span&gt;
+ dashboard_user &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; admin
+ dashboard_pwd &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; admin
+ 
+ &lt;span class=&#34;token comment&#34;&gt;#启动服务&lt;/span&gt;
+ 
+ &lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; ./frps &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; ./frps.ini&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;二-配置客户端&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二-配置客户端&#34;&gt;&lt;/a&gt; 二、配置客户端&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-ini&#34; data-language=&#34;ini&#34;&gt;&lt;code class=&#34;language-ini&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;#这里我使用的win10，linux等操作系统大同小异&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;#打开frpc.ini配置&lt;/span&gt;
+&lt;span class=&#34;token section&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token section-name selector&#34;&gt;common&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;server_addr&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;服务器ip&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;server_port&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;7000&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;token&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;#密码，与服务端相同&lt;/span&gt;
+
+&lt;span class=&#34;token section&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token section-name selector&#34;&gt;ssh&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;tcp&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;local_ip&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;127.0.0.1&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;local_port&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;22&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;remote_port&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;7001&lt;/span&gt;
+
+&lt;span class=&#34;token section&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token section-name selector&#34;&gt;web&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;tcp&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;local_ip&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;127.0.0.1&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;local_port&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;80&lt;/span&gt;
+&lt;span class=&#34;token key attr-name&#34;&gt;remote_port&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;7002&lt;/span&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;cmd下启动即可。&lt;/p&gt;
+&lt;p&gt;用ipad随时随地通过服务器ip远程连接家里的电脑&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105230626923.png&#34; alt=&#34;image-20220105230626923&#34; /&gt;&lt;/p&gt;
+</content>
+        <category term="Linux" />
+        <updated>2022-01-04T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.ohayo.live/CS/linux/linux_init/</id>
+        <title>linux服务器初始化（个人自用）</title>
+        <link rel="alternate" href="https://blog.ohayo.live/CS/linux/linux_init/"/>
+        <content type="html">&lt;h1 id=&#34;重置root密码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重置root密码&#34;&gt;&lt;/a&gt; 重置root密码&lt;/h1&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;passwd&lt;/span&gt; root
+
+&lt;span class=&#34;token comment&#34;&gt;#为了以后省去sudo输入密码。&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; visudo
+&lt;span class=&#34;token comment&#34;&gt;#在文件最后加上&lt;/span&gt;
+用户名 &lt;span class=&#34;token assign-left variable&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;ALL&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; NOPASSWD: ALL
+
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;安装vim并设置主编辑器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装vim并设置主编辑器&#34;&gt;&lt;/a&gt; 安装vim并设置主编辑器&lt;/h1&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;
+select-editor&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220421130919271.png&#34; alt=&#34;image-20220421130919271&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;给vi起别名&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#给vi起别名&#34;&gt;&lt;/a&gt; 给vi起别名&lt;/h2&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;alias vi=vim&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt; /etc/profile
+&lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; /etc/profile&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;修改apt的源&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#修改apt的源&#34;&gt;&lt;/a&gt; 修改apt的源&lt;/h1&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;#先安装vim&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;#好习惯，先备份原来的&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;cp&lt;/span&gt; /etc/apt/sources.list /etc/apt/sources.list.bak
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; /etc/apt/sources.list
+
+&lt;span class=&#34;token comment&#34;&gt;#把内容改成&lt;/span&gt;
+ deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+ deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+ deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+ deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+ deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+ deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+ deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+ deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+ deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+ deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更新软件列表&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; upgrade&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;安装python&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装python&#34;&gt;&lt;/a&gt; 安装python&lt;/h1&gt;
+&lt;p&gt;其实这里主要是因为python的一些版本问题。如果没有问题，可跳过&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; python3
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; python3-pip&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;安装ssh-xrdp-firewalld&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装ssh-xrdp-firewalld&#34;&gt;&lt;/a&gt; 安装ssh &amp;amp; xrdp &amp;amp; firewalld&lt;/h1&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;ssh&lt;/span&gt;
+
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; xrdp
+
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; systemctl status xrdp
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; adduser xrdp ssl-cert  
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; systemctl restart xrdp
+
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; firewalld&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="Linux" />
+        <category term="note" />
+        <updated>2022-01-03T16:00:00.000Z</updated>
+    </entry>
+</feed>

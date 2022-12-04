@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.ohayo.live</id>
+    <title>ohayo&#39;s blog • Posts by &#34;log&#34; category</title>
+    <link href="https://blog.ohayo.live" />
+    <updated>2022-04-30T12:47:11.000Z</updated>
+    <category term="Linux" />
+    <category term="tex" />
+    <category term="math" />
+    <category term="单调栈" />
+    <category term="note" />
+    <category term="log" />
+    <category term="cpp" />
+    <category term="python" />
+    <category term="JavaScript" />
+    <entry>
+        <id>https://blog.ohayo.live/log/redmiAx6/</id>
+        <title>折腾红米ax6</title>
+        <link rel="alternate" href="https://blog.ohayo.live/log/redmiAx6/"/>
+        <content type="html">&lt;p&gt;此篇记录一下前段时间折腾路由器的经历。哈哈哈哈哈，真是太爽了，路由器这东西，真上头。&lt;/p&gt;
+&lt;p&gt;📍&lt;/p&gt;
+&lt;h1 id=&#34;选择路由器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#选择路由器&#34;&gt;&lt;/a&gt; 选择路由器&lt;/h1&gt;
+&lt;p&gt;我选的是红米ax6，这款路由器，可以说是理财产品了，哈哈哈哈，价格一直涨，二手原价卖。就离谱。&lt;/p&gt;
+&lt;p&gt;我主要是看重它以下几点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;芯片好，高通的芯片，散热刚刚滴~&lt;/li&gt;
+&lt;li&gt;支持wifi6&lt;/li&gt;
+&lt;li&gt;穿墙也不错&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;加上看好碰见小米商城有货，我直接手起刀落。&lt;/p&gt;
+&lt;p&gt;长个样子。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220505005059497.png&#34; alt=&#34;image-20220505005059497&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;刷openwrt&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#刷openwrt&#34;&gt;&lt;/a&gt; 刷openwrt&lt;/h1&gt;
+&lt;p&gt;openwrt一个开源的路由器系统，可玩性强，深受“大家”喜爱，我也不例外，诶~，年轻就是折腾。&lt;/p&gt;
+&lt;p&gt;我用的openwrt是直接在恩山下载一个网友的。不得不说，英雄所见略同。这个网友和我一样，只有一个需求，就是能科学上网就行啦。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430210845243.png&#34; alt=&#34;image-20220430210845243&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;插件这块大家可以自己装啦。&lt;/p&gt;
+&lt;p&gt;米家的固件实在是苦不堪言，红米ax6跑千M网和玩一样，根本没有压力。我选择openwrt更高的自由度。&lt;/p&gt;
+&lt;h2 id=&#34;解锁ssh&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解锁ssh&#34;&gt;&lt;/a&gt; 解锁SSH&lt;/h2&gt;
+&lt;p&gt;ax6最难刷机的原因就是SSH太难解。&lt;/p&gt;
+&lt;p&gt;我是参考的b站这位网友给的教程，解锁的。&lt;a href=&#34;https://www.bilibili.com/video/BV1q94y1f7fj&#34;&gt;视频链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我不是特别喜欢这个视频的风格，所以这里我简单概括一下他说的这些东西。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;将AX6的固件降级为1.0.18版本&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;红米ax6解锁需要一个openwrt路由（能上网的）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用虚拟机搭建一个openwrt系统的虚拟路由，就是开一个虚拟机。配置网络环境虚拟机网络环境&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;上传wireless.sh文件到虚拟机，执行 sh /root/wireless.sh&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;#wireless.sh如下&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;#!/bin/ash&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;# SPDX-License-Identifier: GPL-3.0-only&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;#&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;# Copyright (C) 2020 yyjdelete&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;# Copyright (C) 2021 Robert Marko &amp;lt;robimarko@gmail.com&gt;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;# Copyright (C) 2021 Tianling Shen &amp;lt;cnsztl@immortalwrt.org&gt;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;#&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;# Original threads:&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;# Redmi AX6 AX3000: https://www.right.com.cn/forum/thread-4060726-1-1.html&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;# Xiaomi AX6000/AX9000: https://forum.openwrt.org/t/openwrt-support-for-xiaomi-ax9000/98908/34&lt;/span&gt;
+
+&lt;span class=&#34;token assign-left variable&#34;&gt;info_font&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token entity&#34; title=&#34;\033&#34;&gt;\033&lt;/span&gt;[36m[Info]&lt;span class=&#34;token entity&#34; title=&#34;\033&#34;&gt;\033&lt;/span&gt;[0m&#34;&lt;/span&gt;
+&lt;span class=&#34;token assign-left variable&#34;&gt;success_font&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token entity&#34; title=&#34;\033&#34;&gt;\033&lt;/span&gt;[32m[Success]&lt;span class=&#34;token entity&#34; title=&#34;\033&#34;&gt;\033&lt;/span&gt;[0m&#34;&lt;/span&gt;
+&lt;span class=&#34;token assign-left variable&#34;&gt;warning_font&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token entity&#34; title=&#34;\033&#34;&gt;\033&lt;/span&gt;[33m[Warning]&lt;span class=&#34;token entity&#34; title=&#34;\033&#34;&gt;\033&lt;/span&gt;[0m&#34;&lt;/span&gt;
+
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;warning_font&amp;#125;&lt;/span&gt; Please make sure your router has wireless support!&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;warning_font&amp;#125;&lt;/span&gt; Please make sure your router is restored to factory settings (not configured)!&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;warning_font&amp;#125;&lt;/span&gt; Please make sure you&#39;ve backed up the network and wireless settings!&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;warning_font&amp;#125;&lt;/span&gt; Please make sure you&#39;ve connected the router via *wired ethernet*!&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;warning_font&amp;#125;&lt;/span&gt; Running this script will change your *network* settings!&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;read&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-p&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Use Ctrl+C to exit or press enter key to continue...&#34;&lt;/span&gt;
+
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;info_font&amp;#125;&lt;/span&gt; Adding xqsystem controller...&#34;&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;cat&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/usr/lib/lua/luci/controller/admin/xqsystem.lua&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;EOF
+module(&#34;luci.controller.admin.xqsystem&#34;, package.seeall)
+
+function index()
+    local page   = node(&#34;api&#34;)
+    page.target  = firstchild()
+    page.title   = (&#34;&#34;)
+    page.order   = 100
+    page.index = true
+    page   = node(&#34;api&#34;,&#34;xqsystem&#34;)
+    page.target  = firstchild()
+    page.title   = (&#34;&#34;)
+    page.order   = 100
+    page.index = true
+    entry(&amp;#123;&#34;api&#34;, &#34;xqsystem&#34;, &#34;token&#34;&amp;#125;, call(&#34;getToken&#34;), (&#34;&#34;), 103, 0x08)
+end
+
+local LuciHttp = require(&#34;luci.http&#34;)
+
+function getToken()
+    local result = &amp;#123;&amp;#125;
+    result[&#34;code&#34;] = 0
+    result[&#34;token&#34;] = &#34;; nvram set ssh_en=1; nvram set uart_en=1; nvram set boot_wait=on; nvram commit; uci set wireless.@wifi-iface[0].key=\&lt;span class=&#34;token variable&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;`&lt;/span&gt;mkxqimage -I&lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;`&lt;/span&gt;&lt;/span&gt;; uci commit; sed -i &#39;s/channel=.*/channel=&lt;span class=&#34;token entity&#34; title=&#34;\&amp;quot;&#34;&gt;\&#34;&lt;/span&gt;debug&lt;span class=&#34;token entity&#34; title=&#34;\&amp;quot;&#34;&gt;\&#34;&lt;/span&gt;/g&#39; /etc/init.d/dropbear; /etc/init.d/dropbear start;&#34;
+    LuciHttp.write_json(result)
+end
+EOF&lt;/span&gt;
+
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;info_font&amp;#125;&lt;/span&gt; Changing network settings...&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-x&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;# /etc/config/dhcp&lt;/span&gt;
+uci &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;dhcp.lan.ra_management&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;1&#39;&lt;/span&gt;
+uci del dhcp.lan.start
+uci del dhcp.lan.limit
+uci del dhcp.lan.leasetime
+uci &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;dhcp.lan.ignore&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;1&#39;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;# /etc/config/network&lt;/span&gt;
+uci &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;network.lan.ipaddr&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;169.254.31.1&#39;&lt;/span&gt;
+uci &lt;span class=&#34;token parameter variable&#34;&gt;-q&lt;/span&gt; commit
+&lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; +x
+
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;success_font&amp;#125;&lt;/span&gt; All settings are applied.&lt;span class=&#34;token entity&#34; title=&#34;\n&#34;&gt;\n&lt;/span&gt;&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;info_font&amp;#125;&lt;/span&gt; Please now disconnect from this router, and connect to your Xiaomi/Redmi router.&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;info_font&amp;#125;&lt;/span&gt; For Xiaomi AX3000/AX6000/AX9000:&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;       Open your browser, access the following URL:&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;         http://192.168.31.1/cgi-bin/luci/;stok=&amp;lt;STOK&gt;/api/xqsystem/extendwifi_connect_inited_router?ssid=MEDIATEK-ARM-IS-GREAT&amp;amp;password=ARE-YOU-OK&amp;amp;admin_username=root&amp;amp;admin_password=admin&amp;amp;admin_nonce=xxx&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;
+
+
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;warning_font&amp;#125;&lt;/span&gt; Restarting network...&#34;&lt;/span&gt;
+wifi reload &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/dev/null&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt;
+/etc/init.d/network restart &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/dev/null&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打开windows移动热点，这时候电脑就会多出来一个网卡（这个热点的）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;把刚刚刷好的openwrt桥接到windows热点上。ps:热点必须联网&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登录AX6，复制当前AX6后台链接中 “stock=” 后面的字符串；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;替换链接中相应的数据后，复制到浏览器点击回车，解锁SSH；&lt;br /&gt;
+&lt;a href=&#34;http://192.168.31.1/cgi-bin/luci/;stok=&#34;&gt;http://192.168.31.1/cgi-bin/luci/;stok=&lt;/a&gt;&lt;stock&gt;/api/xqsystem/extendwifi_connect_inited_router?ssid=op&amp;amp;password=12345678&amp;amp;admin_username=root&amp;amp;admin_password=password&amp;amp;admin_nonce=xxx&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提示解锁成功之后，再次登录ax6后台，5G频段路由密码，就是SSH密码了&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;到这里SSH就解锁了。&lt;/p&gt;
+&lt;h2 id=&#34;刷入openwrt&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#刷入openwrt&#34;&gt;&lt;/a&gt; 刷入openwrt&lt;/h2&gt;
+&lt;p&gt;红米ax6有两个系统分区，你在0区，就把openwrt刷到0区，反之刷到1区。&lt;/p&gt;
+&lt;p&gt;就是说，你在0分区刷，固件会上传到1分区。你在1分区刷，固件会上传到0分区。所以刷之前要切换分区先。&lt;/p&gt;
+&lt;p&gt;我这里没扩容，因为第一次刷的那个路由器变砖了，我在网上没找到很完善的扩容方案。不扩容只能刷30m以下的哈，超过会变砖，用小米官方的刷机软件可求回来。但是扩容刷机失败，不能用小米官网的刷机求了。。。&lt;/p&gt;
+&lt;p&gt;这样就不会出现变砖的情况了。&lt;/p&gt;
+&lt;p&gt;下面以1分区举例&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;检测当前分区&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;nvram get flag_last_success&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切换分区&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;nvram &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;flag_last_success&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;
+nvram &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;flag_boot_rootfs&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;
+nvram commit
+&lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;把openwrt的固件上传到/tmp下面，第一次上传.ubi后缀的文件的哈&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430212942511.png&#34; alt=&#34;image-20220430212942511&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;刷入固件&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;ubiformat /dev/mtd13 &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-f&lt;/span&gt; /tmp/你上传的固件文件名&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切换分区&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;nvram &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;flag_last_success&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
+nvram &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;flag_boot_rootfs&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
+nvram commit
+&lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;结束。&lt;/p&gt;
+&lt;p&gt;剩下的就是切换不同系统的代码了&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;OP切换到小米系统
+fw_setenv  flag_last_success &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;
+fw_setenv flag_boot_rootfs &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;
+
+小米系统切换到OP
+nvram &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;flag_last_success&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
+nvram &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;flag_boot_rootfs&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
+nvram commit
+&lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430213828289.png&#34; alt=&#34;image-20220430213828289&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我想解锁完ssh之后就已经实现完全自由啦。还有什么是比一个linux更自由的呢~&lt;/p&gt;
+&lt;h1 id=&#34;接入校园网&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#接入校园网&#34;&gt;&lt;/a&gt; 接入校园网&lt;/h1&gt;
+&lt;p&gt;河南师范大学的校园网，狗的一，一个账号一个设备。这能行吗？？？咱就是说，一百个不同意。&lt;/p&gt;
+&lt;p&gt;ax6有两个频段，5G和2.4G，学校的也是分这俩个频段。&lt;/p&gt;
+&lt;p&gt;这里要科普一下这个5G和2.4G频段哈。这里是频率，不是我们手机上说的那个5G时代哈。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;5G频段在信号强距离时，抗干扰能力远大于2.4G，其下载速度和上传速度明显哈。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.4G频段信号范围比较广哈，穿墙效果更好。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其实从物理也可得出来啦，5G频段，频率大了，波长短了，衍射效果不好，粒子性更强。波长大的，会更易绕过墙壁等障碍物。&lt;/p&gt;
+&lt;p&gt;我所在的寝室校园网5G很好。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430222656166.png&#34; alt=&#34;image-20220430222656166&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我的方案是，用路由器的5G信道，连接到校园网5G网上，在ssh连接路由器，curl命令，发送一个post请求，完成web认证。之后用路由器的2.4G频段就可以上网了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430222926530.png&#34; alt=&#34;image-20220430222926530&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430223040679.png&#34; alt=&#34;image-20220430223040679&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430223440228.png&#34; alt=&#34;image-20220430223440228&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;在定时运行这个shell脚本，就可以让路由器一直使用学校的校园网啦。&lt;/p&gt;
+&lt;p&gt;速度与直连校园网无差别。十分nice&lt;/p&gt;
+&lt;p&gt;唉，先到这吧，学校没有ipv6，难受了，加上我的笔记本没法插网线，没法远程开机，难受~。让我们上了研究生再写这篇文章吧。&lt;/p&gt;
+</content>
+        <category term="log" />
+        <updated>2022-04-30T12:47:11.000Z</updated>
+    </entry>
+</feed>
