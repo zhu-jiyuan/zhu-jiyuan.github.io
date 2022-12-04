@@ -5,8 +5,8 @@
         <link>https://blog.ohayo.live</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Wed, 04 May 2022 23:40:49 +0800</pubDate>
-        <lastBuildDate>Wed, 04 May 2022 23:40:49 +0800</lastBuildDate>
+        <pubDate>Wed, 04 May 2022 15:40:49 +0000</pubDate>
+        <lastBuildDate>Wed, 04 May 2022 15:40:49 +0000</lastBuildDate>
         <category>tex</category>
         <category>math</category>
         <category>note</category>
@@ -21,7 +21,7 @@
             <title>Quantumult X一款神奇的软件</title>
             <link>https://blog.ohayo.live/soft/quantumultx/quantumult-x-note/</link>
             <category>log</category>
-            <pubDate>Wed, 04 May 2022 23:40:49 +0800</pubDate>
+            <pubDate>Wed, 04 May 2022 15:40:49 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;quantumult x，一款路由软件。&lt;br /&gt;
 简单的说，这个软件可以实现如下&lt;/p&gt;
 &lt;ul&gt;
@@ -101,7 +101,7 @@
 &lt;h2 id=&#34;调试js问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#调试js问题&#34;&gt;&lt;/a&gt; 调试js问题&lt;/h2&gt;
 &lt;p&gt;quantumult x的js调试太不方便了，对我来说，我目前手上没得mac。只有iPad和iPhone个一台。&lt;br /&gt;
 我的方案是，  &lt;s&gt;windows电脑搭建一个samba服务器，苹果自带的文件可以直接连默认端口的samba服务器，然后让quantumult x直接跑samba里面的js。&lt;/s&gt;  windows下挂载iCloud云盘，直接修改quantumult x下的js文件。&lt;br /&gt;
-&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220509213606111.png&#34; alt=&#34;image-20220509213606111&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220509213606111.png&#34; alt=&#34;image-20220509213606111&#34; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h1 id=&#34;change-logs&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#change-logs&#34;&gt;&lt;/a&gt; Change logs&lt;/h1&gt;
 &lt;h2 id=&#34;may-92022&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#may-92022&#34;&gt;&lt;/a&gt; May 9,2022&lt;/h2&gt;
@@ -120,7 +120,7 @@
             <title>折腾红米ax6</title>
             <link>https://blog.ohayo.live/log/redmiAx6/</link>
             <category>log</category>
-            <pubDate>Sat, 30 Apr 2022 20:47:11 +0800</pubDate>
+            <pubDate>Sat, 30 Apr 2022 12:47:11 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;此篇记录一下前段时间折腾路由器的经历。哈哈哈哈哈，真是太爽了，路由器这东西，真上头。&lt;/p&gt;
 &lt;p&gt;📍&lt;/p&gt;
 &lt;h1 id=&#34;选择路由器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#选择路由器&#34;&gt;&lt;/a&gt; 选择路由器&lt;/h1&gt;
@@ -133,11 +133,11 @@
 &lt;/ul&gt;
 &lt;p&gt;加上看好碰见小米商城有货，我直接手起刀落。&lt;/p&gt;
 &lt;p&gt;长个样子。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220505005059497.png&#34; alt=&#34;image-20220505005059497&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220505005059497.png&#34; alt=&#34;image-20220505005059497&#34; /&gt;&lt;/p&gt;
 &lt;h1 id=&#34;刷openwrt&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#刷openwrt&#34;&gt;&lt;/a&gt; 刷openwrt&lt;/h1&gt;
 &lt;p&gt;openwrt一个开源的路由器系统，可玩性强，深受“大家”喜爱，我也不例外，诶~，年轻就是折腾。&lt;/p&gt;
 &lt;p&gt;我用的openwrt是直接在恩山下载一个网友的。不得不说，英雄所见略同。这个网友和我一样，只有一个需求，就是能科学上网就行啦。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430210845243.png&#34; alt=&#34;image-20220430210845243&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430210845243.png&#34; alt=&#34;image-20220430210845243&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;插件这块大家可以自己装啦。&lt;/p&gt;
 &lt;p&gt;米家的固件实在是苦不堪言，红米ax6跑千M网和玩一样，根本没有压力。我选择openwrt更高的自由度。&lt;/p&gt;
 &lt;h2 id=&#34;解锁ssh&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解锁ssh&#34;&gt;&lt;/a&gt; 解锁SSH&lt;/h2&gt;
@@ -273,7 +273,7 @@ nvram commit
 &lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;把openwrt的固件上传到/tmp下面，第一次上传.ubi后缀的文件的哈&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430212942511.png&#34; alt=&#34;image-20220430212942511&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;把openwrt的固件上传到/tmp下面，第一次上传.ubi后缀的文件的哈&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430212942511.png&#34; alt=&#34;image-20220430212942511&#34; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;刷入固件&lt;/p&gt;
@@ -299,7 +299,7 @@ nvram &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;
 nvram &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;flag_boot_rootfs&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
 nvram commit
 &lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430213828289.png&#34; alt=&#34;image-20220430213828289&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430213828289.png&#34; alt=&#34;image-20220430213828289&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;我想解锁完ssh之后就已经实现完全自由啦。还有什么是比一个linux更自由的呢~&lt;/p&gt;
 &lt;h1 id=&#34;接入校园网&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#接入校园网&#34;&gt;&lt;/a&gt; 接入校园网&lt;/h1&gt;
 &lt;p&gt;河南师范大学的校园网，狗的一，一个账号一个设备。这能行吗？？？咱就是说，一百个不同意。&lt;/p&gt;
@@ -315,11 +315,11 @@ nvram commit
 &lt;/ul&gt;
 &lt;p&gt;其实从物理也可得出来啦，5G频段，频率大了，波长短了，衍射效果不好，粒子性更强。波长大的，会更易绕过墙壁等障碍物。&lt;/p&gt;
 &lt;p&gt;我所在的寝室校园网5G很好。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430222656166.png&#34; alt=&#34;image-20220430222656166&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430222656166.png&#34; alt=&#34;image-20220430222656166&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;我的方案是，用路由器的5G信道，连接到校园网5G网上，在ssh连接路由器，curl命令，发送一个post请求，完成web认证。之后用路由器的2.4G频段就可以上网了。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430222926530.png&#34; alt=&#34;image-20220430222926530&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430223040679.png&#34; alt=&#34;image-20220430223040679&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430223440228.png&#34; alt=&#34;image-20220430223440228&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430222926530.png&#34; alt=&#34;image-20220430222926530&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430223040679.png&#34; alt=&#34;image-20220430223040679&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220430223440228.png&#34; alt=&#34;image-20220430223440228&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;在定时运行这个shell脚本，就可以让路由器一直使用学校的校园网啦。&lt;/p&gt;
 &lt;p&gt;速度与直连校园网无差别。十分nice&lt;/p&gt;
 &lt;p&gt;唉，先到这吧，学校没有ipv6，难受了，加上我的笔记本没法插网线，没法远程开机，难受~。让我们上了研究生再写这篇文章吧。&lt;/p&gt;

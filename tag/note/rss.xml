@@ -5,8 +5,8 @@
         <link>https://blog.ohayo.live</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 26 Sep 2022 20:37:41 +0800</pubDate>
-        <lastBuildDate>Mon, 26 Sep 2022 20:37:41 +0800</lastBuildDate>
+        <pubDate>Mon, 26 Sep 2022 12:37:41 +0000</pubDate>
+        <lastBuildDate>Mon, 26 Sep 2022 12:37:41 +0000</lastBuildDate>
         <category>tex</category>
         <category>math</category>
         <category>note</category>
@@ -21,7 +21,7 @@
             <title>哈夫曼树应用-压缩文件</title>
             <link>https://blog.ohayo.live/CS/dataStruct/tree/huffmanTreeCompress/</link>
             <category>note</category>
-            <pubDate>Mon, 26 Sep 2022 20:37:41 +0800</pubDate>
+            <pubDate>Mon, 26 Sep 2022 12:37:41 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;大家好~时隔好几天，我来给大家讲哈夫曼树和它的应用了！&lt;br /&gt;
 在此前，我们很少谈及c/cpp语言对字节或者bit的操作，或者说是二进制文件的操作。因为今天我内容涉及到bit以及字节的操作，所以我们不得不介绍一些c/cpp与字节的知识。&lt;br /&gt;
 我们将从哈夫曼树开始，构造一棵哈夫曼树，补充一些c/cpp的操作，实现一个简陋的无损压缩&amp;amp;&amp;amp;解压的core。&lt;/p&gt;
@@ -548,7 +548,7 @@
             <title>树与二叉树补充I</title>
             <link>https://blog.ohayo.live/CS/dataStruct/tree/patchOfTree/</link>
             <category>note</category>
-            <pubDate>Tue, 20 Sep 2022 19:13:07 +0800</pubDate>
+            <pubDate>Tue, 20 Sep 2022 11:13:07 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;大家好，按照之前的计划，我们本应该去应用二叉树，实现一些应用的。然鹅，树与森林以及二叉树之间的关系、线索二叉树这些，没有给大家说。这可能会影响大家对之前知识的理解，所以还是补充一下。&lt;br /&gt;
 我知道你已经迫不及待去敲代码了，学好这些理论可以&lt;code&gt;让你更加清晰的认识代码&lt;/code&gt;，帮助你写出&lt;code&gt;更出色的代码&lt;/code&gt;，以及&lt;code&gt;节省思考如何写代码的时间&lt;/code&gt;。这是非常有必要的。&lt;br /&gt;
 当你十分清楚流程，以及思路时，背后的代码，就像喝汤一样。&lt;/p&gt;
@@ -596,7 +596,7 @@
 &lt;p&gt;我想用代码来说明，如果实在不懂，可以参考王道考研上的线索二叉树。&lt;/p&gt;
 &lt;p&gt;拿中序线索二叉树来说。&lt;/p&gt;
 &lt;p&gt;例如这个树&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/LXNDH89l2Wio5Ma.png&#34; alt=&#34;image-20220919225056910&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/LXNDH89l2Wio5Ma.png&#34; alt=&#34;image-20220919225056910&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;中序遍历结果CBEGDFA&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; pre&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 
@@ -668,24 +668,24 @@
 &lt;h1 id=&#34;树-森林和二叉树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树-森林和二叉树&#34;&gt;&lt;/a&gt; 树、森林和二叉树&lt;/h1&gt;
 &lt;p&gt;在此之前，我们需要简单介绍一下树的存储方式。&lt;/p&gt;
 &lt;p&gt;偷个懒儿&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/k2ANYyWaxbcUMmd.png&#34; alt=&#34;image-20220920220653858&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/Ou5Zf3KIa4TimEL.png&#34; alt=&#34;image-20220920220723803&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/pIwl2STkJPrLahF.png&#34; alt=&#34;image-20220920220801573&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/k2ANYyWaxbcUMmd.png&#34; alt=&#34;image-20220920220653858&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/Ou5Zf3KIa4TimEL.png&#34; alt=&#34;image-20220920220723803&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/pIwl2STkJPrLahF.png&#34; alt=&#34;image-20220920220801573&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;树为什么能转换成二叉树，树的孩子兄弟表示法，对应一棵唯一的二叉树，所以可以转换。&lt;/p&gt;
 &lt;p&gt;树转二叉树&lt;/p&gt;
 &lt;p&gt;按照老师例题上的树&lt;/p&gt;
 &lt;p&gt;需要先转换为孩子兄弟表示，然后顺时针旋转45度。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/fj8iJqnGszKaFM6.png&#34; alt=&#34;image-20220920221601911&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/fj8iJqnGszKaFM6.png&#34; alt=&#34;image-20220920221601911&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;二叉树转换树，类似进行相反操作。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/Ce5uxNQqlwdhYPO.png&#34; alt=&#34;image-20220920221700534&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/Ce5uxNQqlwdhYPO.png&#34; alt=&#34;image-20220920221700534&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;森林转二叉树，只需要把森林里的树，全部转为二叉树，再连接头结点即可&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/E7zrsvABcOn8kJg.png&#34; alt=&#34;image-20220920221814212&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/E7zrsvABcOn8kJg.png&#34; alt=&#34;image-20220920221814212&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;二叉树转森林&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/DSnRYc59yFbOVMZ.png&#34; alt=&#34;image-20220920221843020&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/DSnRYc59yFbOVMZ.png&#34; alt=&#34;image-20220920221843020&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;遍历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#遍历&#34;&gt;&lt;/a&gt; 遍历&lt;/h2&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/z73RXmIxUVhakrM.png&#34; alt=&#34;image-20220920223510888&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/z73RXmIxUVhakrM.png&#34; alt=&#34;image-20220920223510888&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;树没有中序遍历，因为不知道那个结点是中间的。森林只有两种先和中，就是左到右，依次按照前根或者后根遍历。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/PIGgosyRh9HmVju.png&#34; alt=&#34;image-20220920224538474&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/PIGgosyRh9HmVju.png&#34; alt=&#34;image-20220920224538474&#34; /&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -693,13 +693,13 @@
             <title>树与二叉树</title>
             <link>https://blog.ohayo.live/CS/dataStruct/tree/tree/</link>
             <category>note</category>
-            <pubDate>Mon, 19 Sep 2022 12:24:13 +0800</pubDate>
+            <pubDate>Mon, 19 Sep 2022 04:24:13 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;在写这个笔记之前，我从来不敢面对树，希望可以通过这次笔记，来克服心中对树的阴影。&lt;/p&gt;
 &lt;p&gt;废话，不多说，费曼要讲课啦~&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;树与森林&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树与森林&#34;&gt;&lt;/a&gt; 树与森林&lt;/h1&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/zjuKDBnc6d8kTNZ.png&#34; alt=&#34;image-20220919163736434&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/zjuKDBnc6d8kTNZ.png&#34; alt=&#34;image-20220919163736434&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;这就是两棵树，暂且称左边的为&lt;code&gt;树A&lt;/code&gt;,右边的为&lt;code&gt;树B&lt;/code&gt;，很明显，我们调换树A的b、c的顺序，两棵树就相同了。&lt;/p&gt;
 &lt;p&gt;按照这种思路，树可以分为有序树和无序树。&lt;/p&gt;
 &lt;ul&gt;
@@ -719,12 +719,12 @@
 &lt;p&gt;森林由树组成，如果我们把树研究明白了，森林就会容易很多。所以我们先研究树。&lt;/p&gt;
 &lt;p&gt;在介绍下面的东西时，我们不得不引入树的一些相关术语，便于我们去进一步讨论。&lt;/p&gt;
 &lt;h2 id=&#34;术语介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#术语介绍&#34;&gt;&lt;/a&gt; 术语介绍&lt;/h2&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/xy1uo64FKhNpOLj.png&#34; alt=&#34;image-20220919171417169&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/xy1uo64FKhNpOLj.png&#34; alt=&#34;image-20220919171417169&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;这棵树上的小圆圈，叫&lt;code&gt;结点&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;A是B、C、D的&lt;code&gt;父结点&lt;/code&gt;。B、C、D是A的&lt;code&gt;子结点&lt;/code&gt;。而A没有父结点，又称为根结点。&lt;/p&gt;
 &lt;p&gt;K、L这些没有子节点的，又称为&lt;code&gt;叶子结点&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;还记得之前学过的离散数学吗？有个叫&lt;code&gt;度&lt;/code&gt;的东西。这里我们临时先画一棵简单的树&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/DtUOaJXk3rq8xgi.png&#34; alt=&#34;image-20220919171620732&#34; /&gt;{height=“250px” width=“250px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/DtUOaJXk3rq8xgi.png&#34; alt=&#34;image-20220919171620732&#34; /&gt;{height=“250px” width=“250px”}&lt;/p&gt;
 &lt;p&gt;这棵树，很像离散数学的有向图。而树中每个结点的度数，就是这里结点的&lt;code&gt;出度&lt;/code&gt;。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;结点a的度数2&lt;/li&gt;
@@ -734,13 +734,13 @@
 &lt;p&gt;所以树结点的度数就是[该结点连接的子结点个数]{.red}&lt;/p&gt;
 &lt;p&gt;树的度就是全部结点中的最大度数。&lt;/p&gt;
 &lt;p&gt;好，忘掉刚刚那个图，回到之前的图中。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/xy1uo64FKhNpOLj.png&#34; alt=&#34;image-20220919171417169&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/xy1uo64FKhNpOLj.png&#34; alt=&#34;image-20220919171417169&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;树的层数，就是看有几层。&lt;/p&gt;
 &lt;p&gt;树的深度等于层数。这个数就是4层，深度为4.&lt;/p&gt;
 &lt;p&gt;C、G这样就是一棵子树，子树的深度，就是从当前的层数往下数有多少层，C、G这个深度就是2。而D、H、M这个就是3。&lt;/p&gt;
 &lt;p&gt;[重点是树的性质！]{.red}&lt;/p&gt;
 &lt;h2 id=&#34;树的性质&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树的性质&#34;&gt;&lt;/a&gt; 树的性质&lt;/h2&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/DtUOaJXk3rq8xgi.png&#34; alt=&#34;image-20220919171620732&#34; /&gt;{height=“250px” width=“250px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/DtUOaJXk3rq8xgi.png&#34; alt=&#34;image-20220919171620732&#34; /&gt;{height=“250px” width=“250px”}&lt;/p&gt;
 &lt;p&gt;因为刚刚说，每个结点的度就是出度，一个出度就对应一条边。&lt;/p&gt;
 &lt;p&gt;所以，度数=边数。&lt;/p&gt;
 &lt;p&gt;从下往上看，每个子节点都有一个父节点，即对应一条边连接子、父结点，只有根结点没有父节点。&lt;/p&gt;
@@ -770,7 +770,7 @@
 &lt;p&gt;树的学习暂时告一段落，树在计算机中，并不容易表示，因此有大佬给出了二叉树，它具有唯一性，并且方便计算机操作。&lt;/p&gt;
 &lt;p&gt;学了这么多，还没有见过代码，请不要失望！下面将带你走进计算机与树。&lt;/p&gt;
 &lt;h1 id=&#34;二叉树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二叉树&#34;&gt;&lt;/a&gt; 二叉树&lt;/h1&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;二叉树是一棵有序树，树的度为2。&lt;/p&gt;
 &lt;p&gt;翻译一下&lt;/p&gt;
 &lt;ul&gt;
@@ -778,7 +778,7 @@
 &lt;li&gt;每个结点的度数最大是2&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;如果有三个结点，那么会有5种形状的二叉树。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/3HBActni5fpJg4k.png&#34; alt=&#34;image-20220919181106537&#34; /&gt;{height=“200px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/3HBActni5fpJg4k.png&#34; alt=&#34;image-20220919181106537&#34; /&gt;{height=“200px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;二叉树中，有两种值得我们去关注的特殊情况&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -790,11 +790,11 @@
 &lt;/ul&gt;
 &lt;p&gt;举个栗子&lt;/p&gt;
 &lt;p&gt;满二叉树&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/Ab9iseSdIC52pBJ.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/Ab9iseSdIC52pBJ.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;完全二叉树&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;满二叉树不难理解，完全二叉树就是每层从左到右依次放入结点，从顶层开始。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/7DMOp2HcqiNQZgk.png&#34; alt=&#34;image-20220919200839322&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/7DMOp2HcqiNQZgk.png&#34; alt=&#34;image-20220919200839322&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;这个就不是，第三层没有按照顺序放。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;树的性质同样适用于二叉树。那么我们根据树的性质，很容易得到二叉树的一些性质。&lt;/p&gt;
@@ -822,7 +822,7 @@
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;完全二叉树结点序号除2，结果为父节点序号。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;​	&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;​	&lt;img src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;​	4/2 = 2&lt;/p&gt;
 &lt;p&gt;​	5/2 = 2（地板除）&lt;/p&gt;
 &lt;p&gt;​	结点序号/2，结果都为父节点序号。&lt;/p&gt;
@@ -831,12 +831,12 @@
 &lt;h2 id=&#34;二叉树的存储&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二叉树的存储&#34;&gt;&lt;/a&gt; 二叉树的存储&lt;/h2&gt;
 &lt;p&gt;就像前面所学的，二叉树也分为顺序存储、链式存储。&lt;/p&gt;
 &lt;h3 id=&#34;顺序存储&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#顺序存储&#34;&gt;&lt;/a&gt; 顺序存储&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;可以这样存储。&lt;/p&gt;
 &lt;p&gt;如果不是这样完全二叉树，可以用一个特殊字符补成完全二叉树。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/xr9MZlQiavbqnC1.png&#34; alt=&#34;image-20220919201655444&#34; /&gt;{height=“180px” width=“180px”}&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/J2a1zEeOnkrwYlQ.png&#34; alt=&#34;image-20220919201705283&#34; /&gt;{height=“180px” width=“180px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/xr9MZlQiavbqnC1.png&#34; alt=&#34;image-20220919201655444&#34; /&gt;{height=“180px” width=“180px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/J2a1zEeOnkrwYlQ.png&#34; alt=&#34;image-20220919201705283&#34; /&gt;{height=“180px” width=“180px”}&lt;/p&gt;
 &lt;p&gt;此时就可以存储了&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;如果是这样的极端情况会很浪费空间，&lt;/p&gt;
@@ -862,7 +862,7 @@
 &lt;li&gt;后序遍历&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;在这里，我不得不放出来一张生动形象的图片，供大家参考。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/dtplzwjrPnHSW5B.png&#34; alt=&#34;image-20220919203316683&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/dtplzwjrPnHSW5B.png&#34; alt=&#34;image-20220919203316683&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;我们使用的递归遍历，每个结点，会经历三次，而先、中、后，三种顺序，分别对应这三次时间段。&lt;/p&gt;
 &lt;p&gt;所以，先序就是第一次经过的时候访问该结点，中序是第二次经过的时候，后续是第三次经过的时候。&lt;/p&gt;
 &lt;p&gt;接下来，我将按照此树，给出代码以及运行结果。&lt;/p&gt;
@@ -903,7 +903,7 @@
 &lt;hr /&gt;
 &lt;p&gt;应该不难理解这里的遍历过程。接下来，我们将介绍另一种遍历方式。&lt;/p&gt;
 &lt;h3 id=&#34;层遍历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#层遍历&#34;&gt;&lt;/a&gt; 层遍历&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/dtplzwjrPnHSW5B.png&#34; alt=&#34;image-20220919203316683&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/dtplzwjrPnHSW5B.png&#34; alt=&#34;image-20220919203316683&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;逐层进行遍历。这更直观。&lt;/p&gt;
 &lt;p&gt;结果=&amp;gt; ABCDEFG。这用大脑太容易写出来了，只需要从第一层到最后一层，每层从左到右排列就可以得到。&lt;/p&gt;
 &lt;p&gt;那么，我们如何通过计算机进行这样的遍历呢？&lt;/p&gt;
@@ -942,9 +942,9 @@
 &lt;p&gt;中序=&amp;gt;DBFEGAC&lt;/p&gt;
 &lt;p&gt;先序中可以看出A为根结点&lt;/p&gt;
 &lt;p&gt;那么在中序,DBFEG&lt;code&gt;A&lt;/code&gt;C，A的左边为左子树，右边为右子树。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/JZrOpeV6hndyqPW.png&#34; alt=&#34;image-20220919212722920&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/JZrOpeV6hndyqPW.png&#34; alt=&#34;image-20220919212722920&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;再看D&lt;code&gt;B&lt;/code&gt;FEG在先序中，B在前面，B的左边是左子树，右边是右子树。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/wZ4HhSRQ2F8xcpJ.png&#34; alt=&#34;image-20220919212734273&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/wZ4HhSRQ2F8xcpJ.png&#34; alt=&#34;image-20220919212734273&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;依次类推，就可以得到一个确定二叉树&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;后序+中序同理&lt;/p&gt;
@@ -963,7 +963,7 @@
 &lt;p&gt;例如，我们可以用顺序存储的方式将数据转换成二叉树。&lt;/p&gt;
 &lt;p&gt;我想介绍递归+先序，来生成树。&lt;/p&gt;
 &lt;p&gt;例如我们想生成这棵树。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/LXNDH89l2Wio5Ma.png&#34; alt=&#34;image-20220919225056910&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/LXNDH89l2Wio5Ma.png&#34; alt=&#34;image-20220919225056910&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;需要先写出来先序，注意空结点用#或者特殊符号表示。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//先序 string expression = &#34;ABC##DE#G##F##&#34;&lt;/span&gt;
 &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
@@ -1027,7 +1027,7 @@ string expression &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;
     &lt;span class=&#34;token function&#34;&gt;foreachFloor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;viceRoot&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;在这里，给出copy以及clean的结果图。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/5FUDOQfnERy4TjK.png&#34; alt=&#34;image-20220920103448252&#34; /&gt;{height=“300px” width=“450px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/5FUDOQfnERy4TjK.png&#34; alt=&#34;image-20220920103448252&#34; /&gt;{height=“300px” width=“450px”}&lt;/p&gt;
 &lt;p&gt;可以看到root树已经没有了，而viceroot树是复制的，仍然存在。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;到这里，我们已经完成了二叉树的基本操作，但我们不得不继续探索，仅仅这些只能让我们能够了解二叉树的操作与构成，远不能解决实际问题。下面我们将做一些实例应用二叉树。&lt;/p&gt;
@@ -1037,10 +1037,10 @@ string expression &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;
 &lt;li&gt;二叉树叶子结点数&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;大家可以发现，二叉树的操作基本都与遍历有关，所以，请大家一定要熟悉遍历的三种方式，以及遍历一笔图。在这里，不得不再次引用遍历图，来加强大家的印象。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/dtplzwjrPnHSW5B.png&#34; alt=&#34;image-20220919203316683&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/19/dtplzwjrPnHSW5B.png&#34; alt=&#34;image-20220919203316683&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;h3 id=&#34;计算二叉树深度&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#计算二叉树深度&#34;&gt;&lt;/a&gt; 计算二叉树深度&lt;/h3&gt;
 &lt;p&gt;还拿这个图来说&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/LXNDH89l2Wio5Ma.png&#34; alt=&#34;image-20220919225056910&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/09/20/LXNDH89l2Wio5Ma.png&#34; alt=&#34;image-20220919225056910&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
 &lt;p&gt;用大脑很容易计算出，深度为5。那么计算机应该怎么得到这个呢。&lt;/p&gt;
 &lt;p&gt;一个办法是，后序遍历，就是从最左边的最小面开始。统计左右子树的深度。&lt;/p&gt;
 &lt;p&gt;这个栗子。&lt;/p&gt;
@@ -1192,7 +1192,7 @@ string expression &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;
             <title>字符串匹配</title>
             <link>https://blog.ohayo.live/CS/dataStruct/stringAndKMP/</link>
             <category>note</category>
-            <pubDate>Mon, 29 Aug 2022 22:40:35 +0800</pubDate>
+            <pubDate>Mon, 29 Aug 2022 14:40:35 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;子串匹配问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#子串匹配问题&#34;&gt;&lt;/a&gt; 子串匹配问题&lt;/h1&gt;
 &lt;p&gt;子串匹配又叫模式串匹配&lt;/p&gt;
 &lt;p&gt;例如 &lt;code&gt;ab&lt;/code&gt; 是 &lt;code&gt;sdabc&lt;/code&gt;的子串，&lt;code&gt;ab&lt;/code&gt;又称为模式串，&lt;code&gt;sdabc&lt;/code&gt;又成为主串。&lt;/p&gt;
@@ -1216,7 +1216,7 @@ string expression &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;
 &lt;h2 id=&#34;kmp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kmp&#34;&gt;&lt;/a&gt; KMP&lt;/h2&gt;
 &lt;p&gt;可以先看，维基百科中的介绍&lt;/p&gt;
 &lt;p&gt;这里代码实现主要难在next数组求解上，这里引用一下b站的一张图片，来解释next数组求解第二种情况，有时间可以看一下up的视频。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/08/30/oswj4h1KYORkaBr.png&#34; alt=&#34;image-20220830170135048&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/08/30/oswj4h1KYORkaBr.png&#34; alt=&#34;image-20220830170135048&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;iostream&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;vector&gt;&lt;/span&gt;&lt;/span&gt;
 
@@ -1333,7 +1333,7 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
             <title>栈、队列和数组</title>
             <link>https://blog.ohayo.live/CS/dataStruct/stackQueueArray/</link>
             <category>note</category>
-            <pubDate>Thu, 25 Aug 2022 23:11:11 +0800</pubDate>
+            <pubDate>Thu, 25 Aug 2022 15:11:11 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;stack&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#stack&#34;&gt;&lt;/a&gt; stack&lt;/h1&gt;
 &lt;h2 id=&#34;顺序栈&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#顺序栈&#34;&gt;&lt;/a&gt; 顺序栈&lt;/h2&gt;
 &lt;p&gt;利用数组，进行栈的操作&lt;/p&gt;
@@ -1521,11 +1521,11 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
             <title>学习Git</title>
             <link>https://blog.ohayo.live/learning/git-learning/</link>
             <category>note</category>
-            <pubDate>Thu, 12 May 2022 17:51:20 +0800</pubDate>
+            <pubDate>Thu, 12 May 2022 09:51:20 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;最近也是产出高峰期耶~&lt;/p&gt;
 &lt;p&gt;咱的电脑是一个对于&lt;strong&gt;物理学&lt;/strong&gt;学生十分够用&lt;s&gt;拉跨&lt;/s&gt;的笔电。&lt;/p&gt;
 &lt;p&gt;在我大二下学期，平时从不耍脾气的它，硬盘坏了，咱的代码自然是未能渡劫。&lt;/p&gt;
-&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512180313240.png&#34; alt=&#34;image-20220512180313240&#34; style=&#34;zoom: 8%;&#34; /&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512180313240.png&#34; alt=&#34;image-20220512180313240&#34; style=&#34;zoom: 8%;&#34; /&gt;
 &lt;p&gt;有了上次教训之后嘞，时隔3个月，好吧，半年。终于开始学一手Git，来解决一下这个问题了。&lt;/p&gt;
 &lt;p&gt;下面的内容是看的git官网下的book。&lt;/p&gt;
 &lt;hr /&gt;
@@ -1533,9 +1533,9 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
 &lt;h1 id=&#34;为什么学习git&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为什么学习git&#34;&gt;&lt;/a&gt; 为什么学习Git&lt;/h1&gt;
 &lt;p&gt;Git就是用来解决版本控制，和避免像我刚刚那样，硬盘坏了，再也回不去了。&lt;/p&gt;
 &lt;p&gt;传统的版本控制，把东西上传到一台机器上面，所有人通过SSH登取出来就好，但是可能会出现咱电脑的硬盘耍小脾气的情况。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181105529.png&#34; alt=&#34;传统的版本控制&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181105529.png&#34; alt=&#34;传统的版本控制&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Git是分布式的版本控制。就是说，服务器宕机了，在任何一个fork的主机上都可恢复数据。好耶~&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181358000.png&#34; alt=&#34;分布式的版本控制&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181358000.png&#34; alt=&#34;分布式的版本控制&#34; /&gt;&lt;/p&gt;
 &lt;h1 id=&#34;git的工作流程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git的工作流程&#34;&gt;&lt;/a&gt; git的工作流程&lt;/h1&gt;
 &lt;p&gt;流程官网写的实在太好了！落泪~&lt;s&gt;忍不住copy&lt;/s&gt;&lt;/p&gt;
 &lt;p&gt;git有三种状态 &lt;strong&gt;已提交（committed）&lt;/strong&gt;、&lt;strong&gt;已修改（modified）&lt;/strong&gt; 和 &lt;strong&gt;已暂存（staged）&lt;/strong&gt;。&lt;/p&gt;
@@ -1545,7 +1545,7 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
 &lt;li&gt;已提交表示数据已经安全地保存在本地数据库中。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;这会让我们的 Git 项目拥有三个阶段：工作区、暂存区以及 Git 目录。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512184737778.png&#34; alt=&#34;image-20220512184737778&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512184737778.png&#34; alt=&#34;image-20220512184737778&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;工作区是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。&lt;/p&gt;
 &lt;p&gt;暂存区是一个文件，保存了下次将要提交的文件列表信息，一般在 Git 仓库目录中。 按照 Git 的术语叫做“索引”，不过一般说法还是叫“暂存区”。&lt;/p&gt;
 &lt;p&gt;Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，复制的就是这里的数据。&lt;/p&gt;
@@ -1561,9 +1561,9 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
 &lt;p&gt;快照可以理解为简单的备份&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;有些版本是这样储存的&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183249206.png&#34; alt=&#34;image-20220512183249206&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183249206.png&#34; alt=&#34;image-20220512183249206&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Git是这样的&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183441894.png&#34; alt=&#34;image-20220512183441894&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183441894.png&#34; alt=&#34;image-20220512183441894&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;不管文件改变没，都会在快照中备份，但是为了效率，如果文件没改变，git会备份一个指向源文件的指针。&lt;/p&gt;
 &lt;h2 id=&#34;全部本地化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#全部本地化&#34;&gt;&lt;/a&gt; 全部本地化&lt;/h2&gt;
 &lt;p&gt;git拉取的是全部的镜像，所以当咱想要查看某个版本的文件时，在本地查看就好啦~&lt;/p&gt;
@@ -1582,7 +1582,7 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
 &lt;p&gt;–global表示的是全局配置。&lt;/p&gt;
 &lt;p&gt;咱可以用下面的命令，来看配置在哪&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; config &lt;span class=&#34;token parameter variable&#34;&gt;--list&lt;/span&gt; --show-origin&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512205411242.png&#34; alt=&#34;image-20220512205411242&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512205411242.png&#34; alt=&#34;image-20220512205411242&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;列出全部的配置列表（包含全局和局部&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; config &lt;span class=&#34;token parameter variable&#34;&gt;--list&lt;/span&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;官网中提示道：你可能会看到重复的变量名，因为 Git 会从不同的文件中读取同一个配置（例如：&lt;code&gt;/etc/gitconfig&lt;/code&gt; 与 &lt;code&gt;~/.gitconfig&lt;/code&gt;）。 这种情况下，Git 会使用它找到的每一个变量的最后一个配置。&lt;/p&gt;
@@ -1640,7 +1640,7 @@ usage: git add [&amp;lt;options&amp;gt;] [--] &amp;lt;pathspec&amp;gt;...
             <link>https://blog.ohayo.live/CS/cpp/c-five-zone/</link>
             <category>note</category>
             <category>cpp</category>
-            <pubDate>Tue, 19 Apr 2022 21:02:40 +0800</pubDate>
+            <pubDate>Tue, 19 Apr 2022 13:02:40 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;今天开始学习使用c++，之前一直使用python比较多。语言各有千秋，只有最合适。好啦，现在到了使用c++的时候惹。希望我能够喜欢上这个语言。&lt;/p&gt;
 &lt;p&gt;let’s go!😽&lt;/p&gt;
 &lt;h2 id=&#34;内存四大区&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内存四大区&#34;&gt;&lt;/a&gt; 内存四大区&lt;/h2&gt;
@@ -1683,7 +1683,7 @@ usage: git add [&amp;lt;options&amp;gt;] [--] &amp;lt;pathspec&amp;gt;...
             <link>https://blog.ohayo.live/CS/linux/WritingService/</link>
             <category>note</category>
             <category>Linux</category>
-            <pubDate>Sat, 08 Jan 2022 00:00:00 +0800</pubDate>
+            <pubDate>Fri, 07 Jan 2022 16:00:00 +0000</pubDate>
             <description><![CDATA[ &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; /lib/systemd/system/服务名.service&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;line-numbers language-ini&#34; data-language=&#34;ini&#34;&gt;&lt;code class=&#34;language-ini&#34;&gt;
 &lt;span class=&#34;token comment&#34;&gt;#例如frp的服务端&lt;/span&gt;
@@ -1721,7 +1721,7 @@ usage: git add [&amp;lt;options&amp;gt;] [--] &amp;lt;pathspec&amp;gt;...
             <link>https://blog.ohayo.live/CS/linux/linux_init/</link>
             <category>note</category>
             <category>Linux</category>
-            <pubDate>Tue, 04 Jan 2022 00:00:00 +0800</pubDate>
+            <pubDate>Mon, 03 Jan 2022 16:00:00 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;重置root密码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重置root密码&#34;&gt;&lt;/a&gt; 重置root密码&lt;/h1&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;passwd&lt;/span&gt; root
 
@@ -1734,7 +1734,7 @@ usage: git add [&amp;lt;options&amp;gt;] [--] &amp;lt;pathspec&amp;gt;...
 &lt;h1 id=&#34;安装vim并设置主编辑器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装vim并设置主编辑器&#34;&gt;&lt;/a&gt; 安装vim并设置主编辑器&lt;/h1&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;
 select-editor&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220421130919271.png&#34; alt=&#34;image-20220421130919271&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220421130919271.png&#34; alt=&#34;image-20220421130919271&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;给vi起别名&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#给vi起别名&#34;&gt;&lt;/a&gt; 给vi起别名&lt;/h2&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;alias vi=vim&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt; /etc/profile
 &lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; /etc/profile&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
