@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
+
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="null//null" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
+  <link rel="manifest" href="/images/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/orange/pace-theme-big-counter.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.ohayo.live","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}},"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="科学上网VPN的搭建 v2一键脚本 #首先用firewall-cmd开v2的端口 firewall-cmd --permanent --zone&#x3D;public --add-port&#x3D;v2端口&#x2F;tcp  #安装curl sudo apt update sudo apt install curl -y  #以下脚本二选一 bash &lt;(curl -Ls https:&#x2F;&#x2F;raw.githubus">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="科学上网&amp;基本的网络服务器&amp;内网穿透">
+<meta property="og:url" content="https://blog.ohayo.live/CS/linux/CustomServerInit/index.html">
+<meta property="og:site_name" content="ohayo&#39;s blog">
+<meta property="og:description" content="科学上网VPN的搭建 v2一键脚本 #首先用firewall-cmd开v2的端口 firewall-cmd --permanent --zone&#x3D;public --add-port&#x3D;v2端口&#x2F;tcp  #安装curl sudo apt update sudo apt install curl -y  #以下脚本二选一 bash &lt;(curl -Ls https:&#x2F;&#x2F;raw.githubus">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105225934309.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105230626923.png">
+<meta property="article:published_time" content="2022-01-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-04T13:57:42.591Z">
+<meta property="article:author" content="ohayo">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105225934309.png">
+
+
+<link rel="canonical" href="https://blog.ohayo.live/CS/linux/CustomServerInit/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.ohayo.live/CS/linux/CustomServerInit/","path":"CS/linux/CustomServerInit/","title":"科学上网&基本的网络服务器&内网穿透"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>科学上网&基本的网络服务器&内网穿透 | ohayo's blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">ohayo's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-books"><a href="https://reading.k8s.li/" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>Books</a></li><li class="menu-item menu-item-kindle"><a href="https://kindle.k8s.li/" rel="noopener" target="_blank"><i class="fa fa-swatchbook fa-fw"></i>Kindle</a></li><li class="menu-item menu-item-friend"><a href="/friends.html" rel="section"><i class="fa fa-link fa-fw"></i>Friend</a></li><li class="menu-item menu-item-about"><a href="/about.html" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91vpn%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text"> 科学上网VPN的搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text"> 基本服务器的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#samba%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B7%A8%E7%B3%BB%E7%BB%9F%E5%B9%B3%E5%8F%B0%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text"> samba服务器（跨系统平台传输文件）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E7%9A%84"><span class="nav-number">2.2.</span> <span class="nav-text"> apache服务器(搭建网站的)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="nav-number">2.3.</span> <span class="nav-text"> 内网穿透</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.1.</span> <span class="nav-text"> 内网穿透流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.3.2.</span> <span class="nav-text"> 搭建步骤</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ohayo" src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">ohayo</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhu-jiyuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhu-jiyuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ohayo1213@outlook.com" title="E-Mail → mailto:ohayo1213@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa-solid fa-square-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.ohayo.live/CS/linux/CustomServerInit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ohayo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ohayo's blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="科学上网&基本的网络服务器&内网穿透 | ohayo's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          科学上网&基本的网络服务器&内网穿透
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-05 00:00:00" itemprop="dateCreated datePublished" datetime="2022-01-05T00:00:00+08:00">2022-01-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-12-04 21:57:42" itemprop="dateModified" datetime="2022-12-04T21:57:42+08:00">2022-12-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/CS/linux/CustomServerInit/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="CS/linux/CustomServerInit/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="科学上网vpn的搭建"><a class="markdownIt-Anchor" href="#科学上网vpn的搭建"></a> 科学上网VPN的搭建</h1>
+<p>v2一键脚本</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#首先用firewall-cmd开v2的端口</span>
+firewall-cmd <span class="token parameter variable">--permanent</span> <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span>v2端口/tcp
+
+<span class="token comment">#安装curl</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> update
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">curl</span> <span class="token parameter variable">-y</span>
+
+<span class="token comment">#以下脚本二选一</span>
+<span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token function">curl</span> <span class="token parameter variable">-Ls</span> https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh<span class="token punctuation">)</span>  <span class="token comment">#带面板，要多开个面板端口，ip+端口访问面板，进行v2设置。</span>
+
+<span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token function">curl</span> <span class="token parameter variable">-s</span> <span class="token parameter variable">-L</span> https://git.io/v2ray.sh<span class="token punctuation">)</span><span class="token comment">#不带面板，省端口</span>
+
+
+<span class="token comment">#加速器的安装</span>
+
+<span class="token function">wget</span> --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> +x bbr.sh <span class="token operator">&amp;&amp;</span> ./bbr.sh
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="基本服务器的安装"><a class="markdownIt-Anchor" href="#基本服务器的安装"></a> 基本服务器的安装</h1>
+<h2 id="samba服务器跨系统平台传输文件"><a class="markdownIt-Anchor" href="#samba服务器跨系统平台传输文件"></a> samba服务器（跨系统平台传输文件）</h2>
+<p>家里的per电脑可以用来做nas。贼方便。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> upgrade 
+<span class="token function">sudo</span> <span class="token function">apt-get</span> update 
+
+<span class="token comment">#安装samba服务器</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> samba samba-common
+
+<span class="token comment">#创建共享目录</span>
+<span class="token function">sudo</span> <span class="token function">mkdir</span> /home/zhujiyuan
+
+<span class="token function">sudo</span> <span class="token function">chmod</span> <span class="token number">777</span> /home/zhujiyuan
+
+<span class="token comment">#添加samba用户（注意必须是linux下已经有的用户）</span>
+
+<span class="token function">sudo</span> smbpasswd <span class="token parameter variable">-a</span> zhujiyuan
+
+<span class="token comment">#配置smb文件</span>
+
+<span class="token function">sudo</span> <span class="token function">vim</span> /etc/samba/smb.conf
+
+<span class="token comment">#在文件最后面加上如下,这里可以自定义参考samba的文档</span>
+<span class="token punctuation">[</span>share<span class="token punctuation">]</span>
+comment <span class="token operator">=</span> share folder
+browseable <span class="token operator">=</span> <span class="token function">yes</span>
+path <span class="token operator">=</span> /home/zhujiyuan
+create mask <span class="token operator">=</span> 0700
+directory mask <span class="token operator">=</span> 0700
+valid <span class="token function">users</span> <span class="token operator">=</span> linuxidc
+force user <span class="token operator">=</span> linuxidc
+force group <span class="token operator">=</span> linuxidc
+public <span class="token operator">=</span> <span class="token function">yes</span>
+available <span class="token operator">=</span> <span class="token function">yes</span>
+writable <span class="token operator">=</span> <span class="token function">yes</span>
+
+<span class="token comment">#把samba添加进防火墙白名单</span>
+firewall-cmd --add-service<span class="token operator">=</span>samba <span class="token parameter variable">--permanent</span>
+
+<span class="token comment">#重启samba服务器</span>
+systemctl restart smbd
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105225934309.png" alt="image-20220105225934309"></p>
+<h3 id="注意"><a class="markdownIt-Anchor" href="#注意"></a> 注意</h3>
+<ul>
+<li>windows下要先在设置中开启smb服务，才能访问</li>
+<li>win+R键，输入\\ip即可。</li>
+</ul>
+<h2 id="apache服务器搭建网站的"><a class="markdownIt-Anchor" href="#apache服务器搭建网站的"></a> apache服务器(搭建网站的)</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;</span> <span class="token function">apt</span> <span class="token function">install</span> apache2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="内网穿透"><a class="markdownIt-Anchor" href="#内网穿透"></a> 内网穿透</h2>
+<p>内网穿透是用来让家里的电脑，通过其他措施，使得其他设备可以通过公网找到它。</p>
+<p>一般家里的网都是经过好几次NAT，使用frp这个开源的软件，可以帮助我们内网穿透。</p>
+<h3 id="内网穿透流程"><a class="markdownIt-Anchor" href="#内网穿透流程"></a> 内网穿透流程</h3>
+<p>通过服务器对局域网的设备进行端口映射。</p>
+<h3 id="搭建步骤"><a class="markdownIt-Anchor" href="#搭建步骤"></a> 搭建步骤</h3>
+<h4 id="一-搭建内网穿透服务器"><a class="markdownIt-Anchor" href="#一-搭建内网穿透服务器"></a> 一、搭建内网穿透服务器</h4>
+<p>需要用一个有公网ip的服务器。</p>
+<p>去github上下载合适的frp的软件包</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-xzvf</span> 软件包
+<span class="token builtin class-name">cd</span> 软件包
+
+<span class="token comment">#配置服务端文件</span>
+<span class="token function">vim</span> frps.ini
+
+<span class="token comment">#具体可参考官方文档</span>
+<span class="token punctuation">[</span>common<span class="token punctuation">]</span>
+ bind_port <span class="token operator">=</span> <span class="token number">7000</span> 
+ authentication_method <span class="token operator">=</span> token
+ token <span class="token operator">=</span> <span class="token comment">#连接密码</span>
+ dashboard_port <span class="token operator">=</span> <span class="token number">7500</span>
+<span class="token comment"># dashboard 用户名密码，可选，默认为空,这里是web配置</span>
+ dashboard_user <span class="token operator">=</span> admin
+ dashboard_pwd <span class="token operator">=</span> admin
+ 
+ <span class="token comment">#启动服务</span>
+ 
+ <span class="token function">sudo</span> ./frps <span class="token parameter variable">-c</span> ./frps.ini<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="二-配置客户端"><a class="markdownIt-Anchor" href="#二-配置客户端"></a> 二、配置客户端</h4>
+<pre class="line-numbers language-ini" data-language="ini"><code class="language-ini"><span class="token comment">#这里我使用的win10，linux等操作系统大同小异</span>
+
+<span class="token comment">#打开frpc.ini配置</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">common</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">server_addr</span> <span class="token punctuation">=</span> <span class="token value attr-value">服务器ip</span>
+<span class="token key attr-name">server_port</span> <span class="token punctuation">=</span> <span class="token value attr-value">7000</span>
+<span class="token key attr-name">token</span> <span class="token punctuation">=</span> <span class="token value attr-value">#密码，与服务端相同</span>
+
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">ssh</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">type</span> <span class="token punctuation">=</span> <span class="token value attr-value">tcp</span>
+<span class="token key attr-name">local_ip</span> <span class="token punctuation">=</span> <span class="token value attr-value">127.0.0.1</span>
+<span class="token key attr-name">local_port</span> <span class="token punctuation">=</span> <span class="token value attr-value">22</span>
+<span class="token key attr-name">remote_port</span> <span class="token punctuation">=</span> <span class="token value attr-value">7001</span>
+
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">web</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">type</span> <span class="token punctuation">=</span> <span class="token value attr-value">tcp</span>
+<span class="token key attr-name">local_ip</span> <span class="token punctuation">=</span> <span class="token value attr-value">127.0.0.1</span>
+<span class="token key attr-name">local_port</span> <span class="token punctuation">=</span> <span class="token value attr-value">80</span>
+<span class="token key attr-name">remote_port</span> <span class="token punctuation">=</span> <span class="token value attr-value">7002</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>cmd下启动即可。</p>
+<p>用ipad随时随地通过服务器ip远程连接家里的电脑</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105230626923.png" alt="image-20220105230626923"></p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/CS/linux/linux_init/" rel="prev" title="linux服务器初始化（个人自用）">
+                  <i class="fa fa-chevron-left"></i> linux服务器初始化（个人自用）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/CS/linux/WritingService/" rel="next" title="linux中的service">
+                  linux中的service <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ohayo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.css" integrity="sha256-Wk20U9mS/kHGcSgkjSiRezW5exqT6wAOKwySOaLotXM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.js","integrity":"sha256-etSqbSVF4+Lwe8MGk/Vanc1sR+mWv+qOG73fxWw9p94="}}</script>
+  <script src="/js/third-party/math/katex.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"zhujiyuan","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
