@@ -7,13 +7,13 @@
         <language>zh-CN</language>
         <pubDate>Mon, 26 Sep 2022 20:37:41 +0800</pubDate>
         <lastBuildDate>Mon, 26 Sep 2022 20:37:41 +0800</lastBuildDate>
-        <category>Linux</category>
         <category>tex</category>
         <category>math</category>
-        <category>单调栈</category>
         <category>note</category>
+        <category>单调栈</category>
         <category>log</category>
         <category>cpp</category>
+        <category>Linux</category>
         <category>python</category>
         <category>JavaScript</category>
         <item>
@@ -1631,8 +1631,8 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
             <guid isPermalink="true">https://blog.ohayo.live/CS/linux/WritingService/</guid>
             <title>linux中的service</title>
             <link>https://blog.ohayo.live/CS/linux/WritingService/</link>
-            <category>Linux</category>
             <category>note</category>
+            <category>Linux</category>
             <pubDate>Sat, 08 Jan 2022 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; /lib/systemd/system/服务名.service&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;line-numbers language-ini&#34; data-language=&#34;ini&#34;&gt;&lt;code class=&#34;language-ini&#34;&gt;
@@ -1800,8 +1800,8 @@ systemctl restart smbd
             <guid isPermalink="true">https://blog.ohayo.live/CS/linux/linux_init/</guid>
             <title>linux服务器初始化（个人自用）</title>
             <link>https://blog.ohayo.live/CS/linux/linux_init/</link>
-            <category>Linux</category>
             <category>note</category>
+            <category>Linux</category>
             <pubDate>Tue, 04 Jan 2022 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;重置root密码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重置root密码&#34;&gt;&lt;/a&gt; 重置root密码&lt;/h1&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;passwd&lt;/span&gt; root

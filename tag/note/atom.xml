@@ -4,13 +4,13 @@
     <title>ohayo&#39;s blog • Posts by &#34;note&#34; tag</title>
     <link href="https://blog.ohayo.live" />
     <updated>2022-09-26T12:37:41.000Z</updated>
-    <category term="Linux" />
     <category term="tex" />
     <category term="math" />
-    <category term="单调栈" />
     <category term="note" />
+    <category term="单调栈" />
     <category term="log" />
     <category term="cpp" />
+    <category term="Linux" />
     <category term="python" />
     <category term="JavaScript" />
     <entry>
@@ -1708,8 +1708,8 @@ usage: git add [&amp;lt;options&amp;gt;] [--] &amp;lt;pathspec&amp;gt;...
 &lt;span class=&#34;token section&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token section-name selector&#34;&gt;Install&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;token key attr-name&#34;&gt;WantedBy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;multi-user.target&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 </content>
-        <category term="Linux" />
         <category term="note" />
+        <category term="Linux" />
         <updated>2022-01-07T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -1767,8 +1767,8 @@ select-editor&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#3
 
 &lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; firewalld&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 </content>
-        <category term="Linux" />
         <category term="note" />
+        <category term="Linux" />
         <updated>2022-01-03T16:00:00.000Z</updated>
     </entry>
 </feed>

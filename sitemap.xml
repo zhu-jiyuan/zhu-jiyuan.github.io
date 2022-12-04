@@ -200,13 +200,6 @@
 
   
   <url>
-    <loc>https://blog.ohayo.live/tags/Linux/</loc>
-    <lastmod>2022-12-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.ohayo.live/tags/tex/</loc>
     <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -221,14 +214,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ohayo.live/tags/%E5%8D%95%E8%B0%83%E6%A0%88/</loc>
+    <loc>https://blog.ohayo.live/tags/note/</loc>
     <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.ohayo.live/tags/note/</loc>
+    <loc>https://blog.ohayo.live/tags/%E5%8D%95%E8%B0%83%E6%A0%88/</loc>
     <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -243,6 +236,13 @@
   
   <url>
     <loc>https://blog.ohayo.live/tags/cpp/</loc>
+    <lastmod>2022-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ohayo.live/tags/Linux/</loc>
     <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -279,6 +279,20 @@
   </url>
   
   <url>
+    <loc>https://blog.ohayo.live/categories/log/</loc>
+    <lastmod>2022-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ohayo.live/categories/soft/</loc>
+    <lastmod>2022-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.ohayo.live/categories/CS/</loc>
     <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -293,7 +307,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ohayo.live/categories/log/</loc>
+    <loc>https://blog.ohayo.live/categories/CS/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -315,20 +329,6 @@
   
   <url>
     <loc>https://blog.ohayo.live/categories/CS/python/</loc>
-    <lastmod>2022-12-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ohayo.live/categories/CS/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2022-12-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ohayo.live/categories/soft/</loc>
     <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
