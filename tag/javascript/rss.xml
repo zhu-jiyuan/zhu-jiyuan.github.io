@@ -7,9 +7,9 @@
         <language>zh-CN</language>
         <pubDate>Tue, 10 May 2022 08:43:35 +0000</pubDate>
         <lastBuildDate>Tue, 10 May 2022 08:43:35 +0000</lastBuildDate>
+        <category>note</category>
         <category>tex</category>
         <category>math</category>
-        <category>note</category>
         <category>单调栈</category>
         <category>log</category>
         <category>cpp</category>
@@ -22,12 +22,7 @@
             <link>https://blog.ohayo.live/soft/quantumultx/quantumult-x-and-js/</link>
             <category>JavaScript</category>
             <pubDate>Tue, 10 May 2022 08:43:35 +0000</pubDate>
-            <description><![CDATA[ &lt;p&gt;:::info&lt;br /&gt;
-Quantumult X是大二上学期入手的。本着15块钱不能白花的想法，这些天研究了一下。&lt;/p&gt;
-&lt;p&gt;上一篇内容大致说了一下Quantumult X，但是最激动人心的莫过于可以运行JavaScript。&lt;/p&gt;
-&lt;p&gt;&lt;ins&gt;请自行补充&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript&#34;&gt;JavaScript基础知识&lt;/a&gt;。&lt;/ins&gt;&lt;br /&gt;
-:::&lt;/p&gt;
-&lt;h1 id=&#34;b站签到&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#b站签到&#34;&gt;&lt;/a&gt; b站签到&amp;gt;.&amp;lt;&lt;/h1&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;b站签到&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#b站签到&#34;&gt;&lt;/a&gt; b站签到&amp;gt;.&amp;lt;&lt;/h1&gt;
 &lt;h2 id=&#34;抓签到包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#抓签到包&#34;&gt;&lt;/a&gt; 抓签到包&lt;/h2&gt;
 &lt;p&gt;F12，签到，找签到数据包&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220510170502967.png&#34; alt=&#34;image-20220510170502967&#34; /&gt;&lt;/p&gt;

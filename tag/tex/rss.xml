@@ -7,9 +7,9 @@
         <language>zh-CN</language>
         <pubDate>Tue, 29 Nov 2022 13:18:06 +0000</pubDate>
         <lastBuildDate>Tue, 29 Nov 2022 13:18:06 +0000</lastBuildDate>
+        <category>note</category>
         <category>tex</category>
         <category>math</category>
-        <category>note</category>
         <category>单调栈</category>
         <category>log</category>
         <category>cpp</category>
@@ -17,9 +17,9 @@
         <category>python</category>
         <category>JavaScript</category>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/tex-math/</guid>
+            <guid isPermalink="true">https://blog.ohayo.live/learning/tex-math/</guid>
             <title>简单的数学tex</title>
-            <link>https://blog.ohayo.live/tex-math/</link>
+            <link>https://blog.ohayo.live/learning/tex-math/</link>
             <category>tex</category>
             <category>math</category>
             <pubDate>Tue, 29 Nov 2022 13:18:06 +0000</pubDate>

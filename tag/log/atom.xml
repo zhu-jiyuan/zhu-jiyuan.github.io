@@ -3,10 +3,10 @@
     <id>https://blog.ohayo.live</id>
     <title>ohayo&#39;s blog • Posts by &#34;log&#34; tag</title>
     <link href="https://blog.ohayo.live" />
-    <updated>2022-05-04T15:40:49.000Z</updated>
+    <updated>2022-12-05T08:15:00.000Z</updated>
+    <category term="note" />
     <category term="tex" />
     <category term="math" />
-    <category term="note" />
     <category term="单调栈" />
     <category term="log" />
     <category term="cpp" />
@@ -14,103 +14,18 @@
     <category term="python" />
     <category term="JavaScript" />
     <entry>
-        <id>https://blog.ohayo.live/soft/quantumultx/quantumult-x-note/</id>
-        <title>Quantumult X一款神奇的软件</title>
-        <link rel="alternate" href="https://blog.ohayo.live/soft/quantumultx/quantumult-x-note/"/>
-        <content type="html">&lt;p&gt;quantumult x，一款路由软件。&lt;br /&gt;
-简单的说，这个软件可以实现如下&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;VPN代理&lt;/li&gt;
-&lt;li&gt;路由分流&lt;/li&gt;
-&lt;li&gt;捕获网络请求，也就是在应用层抓包&lt;/li&gt;
-&lt;li&gt;重写数据包&lt;/li&gt;
-&lt;li&gt;执行JavaScript脚本&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这款软件的性价比太高了，很遗憾的是，作者没有给予相关的文档，所以开始的小白很难折腾。还好作者在GitHub上给了相关的sample。&lt;a href=&#34;https://github.com/crossutility/Quantumult-X&#34;&gt;quantumult x官方&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;相关资料&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#相关资料&#34;&gt;&lt;/a&gt; 相关资料&lt;/h1&gt;
-&lt;p&gt;这里我收集了一些网上的资料。&lt;/p&gt;
-&lt;p&gt;大致配置，相关功能的介绍几乎都在这个作者写的====&amp;gt;&lt;a href=&#34;https://www.notion.so/Quantumult-X-1d32ddc6e61c4892ad2ec5ea47f00917&#34;&gt;Quantumult-X不完全教程&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;这篇文章大致讲了配置文件的基本格式，以及各个功能。&lt;/p&gt;
-&lt;h1 id=&#34;术语简解&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#术语简解&#34;&gt;&lt;/a&gt; 术语简解&lt;/h1&gt;
-&lt;p&gt;简单解释一下，这几个在配置文件中的模块是啥意思。详细的请看上面的教程。&lt;/p&gt;
-&lt;p&gt;首先说一下quantumult x支持远程挂载文件，就你可以直接过载github或者服务器上托管的配置或者规则。&lt;/p&gt;
-&lt;p&gt;所有在remote标签下的都是远程挂载的配置文件，在local下都是本地的配置文件。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;分流（filter），比如你有一个科学上网的节点，国内网站你想直接用本地的网，国外网站用自己的节点。这个需要分流进行实现。分流一共三类。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;direct，走本地的网络，直连&lt;/li&gt;
-&lt;li&gt;reject，直接丢掉，不入站。把广告的host走reject，就会把广告屏蔽掉。&lt;/li&gt;
-&lt;li&gt;proxy，代理，就是走选择的代理节点。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;重写（rewrite），这个是quantumult x里的BEST功能之一了，你可以把收到的response进行重写，再返回给你的设备，这样就可以破解一些东西。同时还可以重写request。十分强大。后续再说。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;server，这个就是节点。节点就在这里添加。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;general是一般配置，这个在相关资料里说的很清楚了。不懂可以去那里看哈。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;dns，域名解析，你可以多添加几个dns服务器，quantumult x会测试这些dns服务器，选择最优的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;policy，策略组，这是quantumult x进行解耦的神器，不得不说作者有些东西，为了更方便管理分流和节点，quantumult x提出了策略组，策略组可以管理特定的host走哪个分流，或者那个节点。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;task，quantumult x执行js脚本的配置。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;http_backend，http捕获配置，没研究过这个，待填坑。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;mitm，在添加完quantumult x的CA证书后，quantumult x有权力对你的流量进行分析包含https，但是它不会全部进行分析，只对hostname里面的host进行分析。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置&#34;&gt;&lt;/a&gt; 配置&lt;/h1&gt;
-&lt;p&gt;我的配置分流参考了这几位作者的。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/KOP-XIAO/QuantumultX&#34;&gt;KOP-XIAO&lt;/a&gt;的资源解析器&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/DivineEngine/Profiles&#34;&gt;DivineEngine&lt;/a&gt;的分流、重写策略&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/nondanee/UnblockNeteaseMusic&#34;&gt;网易云解锁&lt;/a&gt;，自己的国内服务器搭建的。&lt;/li&gt;
-&lt;li&gt;以及自己做的一些分流规则，重写规则&lt;/li&gt;
-&lt;li&gt;自己的JavaScript脚本&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;规则不难写，很多前人收集好的，fork一份备份，换成自己的，定时更新备份。就行啦。&lt;/p&gt;
-&lt;p&gt;了解完大致的规则，慢慢就会做出来适合自己的配置。十分的香。&lt;/p&gt;
-&lt;h1 id=&#34;javascript之疑惑&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#javascript之疑惑&#34;&gt;&lt;/a&gt; JavaScript之疑惑&lt;/h1&gt;
-&lt;p&gt;&lt;s&gt;quantumult x没有给相关的api文档，这可真是太难受了，家人们，破防了。还好有些人以及写好了一些js示例。加上sample上面有些注释。。。我大致悟到了这么多东西。&lt;/s&gt;&lt;/p&gt;
-&lt;p&gt;JS所有的API，都在自带的配置模板里，如果之前没有用过JavaScript发送网络请求等，还是十分建议参考=&amp;gt;&lt;a href=&#34;https://zhujiyuan.xyz/2022/05/10/quantumult-x-and-js/&#34;&gt;这篇&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;cookie问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cookie问题&#34;&gt;&lt;/a&gt; cookie问题&lt;/h2&gt;
-&lt;p&gt;quantumult x内封装了一个轻量级数据库，存放键值对，就是quantumult x的持久化策略，利用重写，捕获request包的headers，可以放到里面供js脚本使用。&lt;/p&gt;
-&lt;h2 id=&#34;jd签到的脚本怎么写&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jd签到的脚本怎么写&#34;&gt;&lt;/a&gt; jd签到的脚本怎么写？&lt;/h2&gt;
-&lt;p&gt;GitHub开源的京东脚本作者，写了一个env环境的class，这个类可以更方便的发post，get等请求，同时判断是quantumult x还是小火箭等app。&lt;/p&gt;
-&lt;h2 id=&#34;广告过滤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#广告过滤&#34;&gt;&lt;/a&gt; 广告过滤&lt;/h2&gt;
-&lt;p&gt;这个是quantumult x一个很吸引人的地方了，quantumult x可以分流过滤广告，就是自己设置或者抄别人的规则，广告全部走reject。练习可以找QQ空间的广告联系。&lt;br /&gt;
-最nb的是js重写过滤，重写可以在request和response两个地方运行js脚本，之前有过python爬虫经验的狂喜！！！知道该怎么做了吧，这个就不说了。&lt;/p&gt;
-&lt;h2 id=&#34;网易云音乐解锁&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#网易云音乐解锁&#34;&gt;&lt;/a&gt; 网易云音乐解锁&lt;/h2&gt;
-&lt;p&gt;这个就是在服务器上搭建一个节点，然后在你进网易云听歌的时候，网易云音乐域名走服务器搭建的这个节点，返回给你其他音乐平台的歌曲直链。设置好分流和策略组即可。&lt;br /&gt;
-这个节点搭建坑比较多。回头说&lt;/p&gt;
-&lt;h2 id=&#34;调试js问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#调试js问题&#34;&gt;&lt;/a&gt; 调试js问题&lt;/h2&gt;
-&lt;p&gt;quantumult x的js调试太不方便了，对我来说，我目前手上没得mac。只有iPad和iPhone个一台。&lt;br /&gt;
-我的方案是，  &lt;s&gt;windows电脑搭建一个samba服务器，苹果自带的文件可以直接连默认端口的samba服务器，然后让quantumult x直接跑samba里面的js。&lt;/s&gt;  windows下挂载iCloud云盘，直接修改quantumult x下的js文件。&lt;br /&gt;
-&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220509213606111.png&#34; alt=&#34;image-20220509213606111&#34; /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h1 id=&#34;change-logs&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#change-logs&#34;&gt;&lt;/a&gt; Change logs&lt;/h1&gt;
-&lt;h2 id=&#34;may-92022&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#may-92022&#34;&gt;&lt;/a&gt; May 9,2022&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Javascript在另一篇。&lt;/li&gt;
-&lt;li&gt;更改js调试方案。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;may-252022&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#may-252022&#34;&gt;&lt;/a&gt; May 25,2022&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;更新JavaScript问题&lt;/li&gt;
-&lt;/ul&gt;
+        <id>https://blog.ohayo.live/log/hexo-log/</id>
+        <title>hexo博客更新</title>
+        <link rel="alternate" href="https://blog.ohayo.live/log/hexo-log/"/>
+        <content type="html">&lt;h2 id=&#34;更新动机&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#更新动机&#34;&gt;&lt;/a&gt; 更新动机&lt;/h2&gt;
+&lt;p&gt;一直没找到写作、UI都让我感觉很舒服的主题。&lt;/p&gt;
+&lt;p&gt;之前的主题很好看，有很多插件，更多的是用来写「笔记」或者「练习题」，因为写作很不方便，而且时不时渲染会出错，每次都要写好久，就有了这次的换主题。&lt;/p&gt;
+&lt;h2 id=&#34;以后安排&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#以后安排&#34;&gt;&lt;/a&gt; 以后安排&lt;/h2&gt;
+&lt;p&gt;之前的hexo主题，会写以后的错题、考试等等。&lt;br /&gt;
+这个主题会记录数学、分享等等，同时会接着改造。&lt;/p&gt;
 </content>
         <category term="log" />
-        <updated>2022-05-04T15:40:49.000Z</updated>
+        <updated>2022-12-05T08:15:00.000Z</updated>
     </entry>
     <entry>
         <id>https://blog.ohayo.live/log/redmiAx6/</id>
