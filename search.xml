@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>第一次在网上写日记</title>
+    <url>/journal/day-1/</url>
+    <content><![CDATA[<h2 id="多云转晴"><a class="markdownIt-Anchor" href="#多云转晴"></a> 多云转晴</h2>
+<p>本来应该<em>12月5号</em>开始记录日记的，学校封宿舍，导致什么也不想做。今天解放啦～</p>
+<h2 id="昨天有趣的一天"><a class="markdownIt-Anchor" href="#昨天有趣的一天"></a> 「昨天」有趣的一天</h2>
+<p>昨天，一个室友突然阳了，其他人都很紧张，我居然有点儿兴奋🥰，不是因为室友阳了！就是那种看到大家都慌的一，我就很开心。</p>
+<p>本来其他室友也要去隔离，晚上校领导突然说放开了，不用去了，短短一天之内，校领导改变了三次主意，这么好的领导！哪里找！我单方面给予领导1w个拥护。</p>
+<h2 id="疑案追声"><a class="markdownIt-Anchor" href="#疑案追声"></a> 疑案追声</h2>
+<p>真好玩，配音真的好好啊。不说了，去玩疑案追声了。</p>
+<p>PS:这是一篇测试文。</p>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>学习Git</title>
     <url>/learning/git-learning/</url>
     <content><![CDATA[<p>最近也是产出高峰期耶~</p>
@@ -581,7 +600,7 @@ nums1 中的所有整数同样出现在 nums2 中</p>
 这个主题会记录数学、分享等等，同时会接着改造。</p>
 ]]></content>
       <categories>
-        <category>-log</category>
+        <category>log</category>
       </categories>
       <tags>
         <tag>log</tag>

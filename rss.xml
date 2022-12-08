@@ -5,8 +5,9 @@
         <link>https://blog.ohayo.live</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 05 Dec 2022 08:15:00 +0000</pubDate>
-        <lastBuildDate>Mon, 05 Dec 2022 08:15:00 +0000</lastBuildDate>
+        <pubDate>Thu, 08 Dec 2022 09:13:48 +0000</pubDate>
+        <lastBuildDate>Thu, 08 Dec 2022 09:13:48 +0000</lastBuildDate>
+        <category>journal</category>
         <category>note</category>
         <category>tex</category>
         <category>math</category>
@@ -16,6 +17,22 @@
         <category>Linux</category>
         <category>python</category>
         <category>JavaScript</category>
+        <item>
+            <guid isPermalink="true">https://blog.ohayo.live/journal/day-1/</guid>
+            <title>第一次在网上写日记</title>
+            <link>https://blog.ohayo.live/journal/day-1/</link>
+            <category>journal</category>
+            <pubDate>Thu, 08 Dec 2022 09:13:48 +0000</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;多云转晴&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多云转晴&#34;&gt;&lt;/a&gt; 多云转晴&lt;/h2&gt;
+&lt;p&gt;本来应该&lt;em&gt;12月5号&lt;/em&gt;开始记录日记的，学校封宿舍，导致什么也不想做。今天解放啦～&lt;/p&gt;
+&lt;h2 id=&#34;昨天有趣的一天&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#昨天有趣的一天&#34;&gt;&lt;/a&gt; 「昨天」有趣的一天&lt;/h2&gt;
+&lt;p&gt;昨天，一个室友突然阳了，其他人都很紧张，我居然有点儿兴奋🥰，不是因为室友阳了！就是那种看到大家都慌的一，我就很开心。&lt;/p&gt;
+&lt;p&gt;本来其他室友也要去隔离，晚上校领导突然说放开了，不用去了，短短一天之内，校领导改变了三次主意，这么好的领导！哪里找！我单方面给予领导1w个拥护。&lt;/p&gt;
+&lt;h2 id=&#34;疑案追声&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#疑案追声&#34;&gt;&lt;/a&gt; 疑案追声&lt;/h2&gt;
+&lt;p&gt;真好玩，配音真的好好啊。不说了，去玩疑案追声了。&lt;/p&gt;
+&lt;p&gt;PS:这是一篇测试文。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://blog.ohayo.live/log/hexo-log/</guid>
             <title>hexo博客更新</title>
@@ -2038,124 +2055,6 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
 &lt;p&gt;在github官网上下载upx对应系统的压缩包，解压到虚拟环境下的scripts下。&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/QQ%E6%88%AA%E5%9B%BE20220406231432.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;可以看到又进一步压缩了一点。实际上这个过程是加壳哈。&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://blog.ohayo.live/learning/git-learning/</guid>
-            <title>学习Git</title>
-            <link>https://blog.ohayo.live/learning/git-learning/</link>
-            <category>note</category>
-            <pubDate>Thu, 12 May 2022 09:51:20 +0000</pubDate>
-            <description><![CDATA[ &lt;p&gt;最近也是产出高峰期耶~&lt;/p&gt;
-&lt;p&gt;咱的电脑是一个对于&lt;strong&gt;物理学&lt;/strong&gt;学生十分够用&lt;s&gt;拉跨&lt;/s&gt;的笔电。&lt;/p&gt;
-&lt;p&gt;在我大二下学期，平时从不耍脾气的它，硬盘坏了，咱的代码自然是未能渡劫。&lt;/p&gt;
-&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512180313240.png&#34; alt=&#34;image-20220512180313240&#34; style=&#34;zoom: 8%;&#34; /&gt;
-&lt;p&gt;有了上次教训之后嘞，时隔3个月，好吧，半年。终于开始学一手Git，来解决一下这个问题了。&lt;/p&gt;
-&lt;p&gt;下面的内容是看的git官网下的book。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;&lt;/a&gt; &lt;/h2&gt;
-&lt;h1 id=&#34;为什么学习git&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为什么学习git&#34;&gt;&lt;/a&gt; 为什么学习Git&lt;/h1&gt;
-&lt;p&gt;Git就是用来解决版本控制，和避免像我刚刚那样，硬盘坏了，再也回不去了。&lt;/p&gt;
-&lt;p&gt;传统的版本控制，把东西上传到一台机器上面，所有人通过SSH登取出来就好，但是可能会出现咱电脑的硬盘耍小脾气的情况。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181105529.png&#34; alt=&#34;传统的版本控制&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Git是分布式的版本控制。就是说，服务器宕机了，在任何一个fork的主机上都可恢复数据。好耶~&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181358000.png&#34; alt=&#34;分布式的版本控制&#34; /&gt;&lt;/p&gt;
-&lt;h1 id=&#34;git的工作流程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git的工作流程&#34;&gt;&lt;/a&gt; git的工作流程&lt;/h1&gt;
-&lt;p&gt;流程官网写的实在太好了！落泪~&lt;s&gt;忍不住copy&lt;/s&gt;&lt;/p&gt;
-&lt;p&gt;git有三种状态 &lt;strong&gt;已提交（committed）&lt;/strong&gt;、&lt;strong&gt;已修改（modified）&lt;/strong&gt; 和 &lt;strong&gt;已暂存（staged）&lt;/strong&gt;。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已修改表示修改了文件，但还没保存到数据库中。&lt;/li&gt;
-&lt;li&gt;已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。&lt;/li&gt;
-&lt;li&gt;已提交表示数据已经安全地保存在本地数据库中。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这会让我们的 Git 项目拥有三个阶段：工作区、暂存区以及 Git 目录。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512184737778.png&#34; alt=&#34;image-20220512184737778&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;工作区是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。&lt;/p&gt;
-&lt;p&gt;暂存区是一个文件，保存了下次将要提交的文件列表信息，一般在 Git 仓库目录中。 按照 Git 的术语叫做“索引”，不过一般说法还是叫“暂存区”。&lt;/p&gt;
-&lt;p&gt;Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，复制的就是这里的数据。&lt;/p&gt;
-&lt;p&gt;基本的 Git 工作流程如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在工作区中修改文件。&lt;/li&gt;
-&lt;li&gt;将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。&lt;/li&gt;
-&lt;li&gt;提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;如果 Git 目录中保存着特定版本的文件，就属于 &lt;strong&gt;已提交&lt;/strong&gt; 状态。 如果文件已修改并放入暂存区，就属于 &lt;strong&gt;已暂存&lt;/strong&gt; 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 &lt;strong&gt;已修改&lt;/strong&gt; 状态。&lt;/p&gt;
-&lt;h2 id=&#34;版本控制快照的创建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#版本控制快照的创建&#34;&gt;&lt;/a&gt; 版本控制快照的创建&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;快照可以理解为简单的备份&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;有些版本是这样储存的&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183249206.png&#34; alt=&#34;image-20220512183249206&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Git是这样的&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183441894.png&#34; alt=&#34;image-20220512183441894&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;不管文件改变没，都会在快照中备份，但是为了效率，如果文件没改变，git会备份一个指向源文件的指针。&lt;/p&gt;
-&lt;h2 id=&#34;全部本地化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#全部本地化&#34;&gt;&lt;/a&gt; 全部本地化&lt;/h2&gt;
-&lt;p&gt;git拉取的是全部的镜像，所以当咱想要查看某个版本的文件时，在本地查看就好啦~&lt;/p&gt;
-&lt;h2 id=&#34;校验&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#校验&#34;&gt;&lt;/a&gt; 校验&lt;/h2&gt;
-&lt;p&gt;git会在存储数据前，对所有的文件进行sha-1的hash转换，git的索引就是这个hash值，o（1）的时间复杂度查找哦~&lt;/p&gt;
-&lt;p&gt;这个校验，也会让文件即使发生一个空格的变化，也会被记录下来。好耶~&lt;/p&gt;
-&lt;h1 id=&#34;配置git&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置git&#34;&gt;&lt;/a&gt; 配置git&lt;/h1&gt;
-&lt;p&gt;git会记录每个用户的上传等信息，因此，需要配置信息。&lt;/p&gt;
-&lt;p&gt;正如官网所说&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;安装完 Git 之后，要做的第一件事就是设置你的用户名和邮件地址。 这一点很重要，因为每一个 Git 提交都会使用这些信息，它们会写入到你的每一次提交中，不可更改&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;用户信息&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用户信息&#34;&gt;&lt;/a&gt; 用户信息&lt;/h2&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; config &lt;span class=&#34;token parameter variable&#34;&gt;--global&lt;/span&gt; user.name &lt;span class=&#34;token string&#34;&gt;&#34;zhu-jiyuan&#34;&lt;/span&gt;
-&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; config &lt;span class=&#34;token parameter variable&#34;&gt;--global&lt;/span&gt; user.email &lt;span class=&#34;token number&#34;&gt;848433033&lt;/span&gt;@qq.com&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;–global表示的是全局配置。&lt;/p&gt;
-&lt;p&gt;咱可以用下面的命令，来看配置在哪&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; config &lt;span class=&#34;token parameter variable&#34;&gt;--list&lt;/span&gt; --show-origin&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512205411242.png&#34; alt=&#34;image-20220512205411242&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;列出全部的配置列表（包含全局和局部&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; config &lt;span class=&#34;token parameter variable&#34;&gt;--list&lt;/span&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;官网中提示道：你可能会看到重复的变量名，因为 Git 会从不同的文件中读取同一个配置（例如：&lt;code&gt;/etc/gitconfig&lt;/code&gt; 与 &lt;code&gt;~/.gitconfig&lt;/code&gt;）。 这种情况下，Git 会使用它找到的每一个变量的最后一个配置。&lt;/p&gt;
-&lt;p&gt;你可以通过输入 &lt;code&gt;git config &amp;lt;key&amp;gt;&lt;/code&gt;： 来检查 Git 的某一项配置&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-console&#34; data-language=&#34;console&#34;&gt;&lt;code class=&#34;language-console&#34;&gt;$ git config user.name
-John Doe&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Note&lt;/th&gt;
-&lt;th&gt;由于 Git 会从多个文件中读取同一配置变量的不同值，因此你可能会在其中看到意料之外的值而不知道为什么。 此时，你可以查询 Git 中该变量的 &lt;strong&gt;原始&lt;/strong&gt; 值，它会告诉你哪一个配置文件最后设置了该值：&lt;code&gt;$ git config --show-origin rerere.autoUpdate file:/home/johndoe/.gitconfig	false&lt;/code&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1 id=&#34;获取帮助&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#获取帮助&#34;&gt;&lt;/a&gt; 获取帮助&lt;/h1&gt;
-&lt;p&gt;若你使用 Git 时需要获取帮助，有三种等价的方法可以找到 Git 命令的综合手册（manpage）：&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-console&#34; data-language=&#34;console&#34;&gt;&lt;code class=&#34;language-console&#34;&gt;$ git help &amp;lt;verb&amp;gt;
-$ git &amp;lt;verb&amp;gt; --help
-$ man git-&amp;lt;verb&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;例如，要想获得 &lt;code&gt;git config&lt;/code&gt; 命令的手册，执行&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-console&#34; data-language=&#34;console&#34;&gt;&lt;code class=&#34;language-console&#34;&gt;$ git help config&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这些命令很棒，因为你随时随地可以使用而无需联网。 如果你觉得手册或者本书的内容还不够用，你可以尝试在 Freenode IRC 服务器 &lt;a href=&#34;https://freenode.net/&#34;&gt;https://freenode.net&lt;/a&gt; 上的 &lt;code&gt;#git&lt;/code&gt; 或 &lt;code&gt;#github&lt;/code&gt; 频道寻求帮助。 这些频道经常有上百人在线，他们都精通 Git 并且乐于助人。&lt;/p&gt;
-&lt;p&gt;此外，如果你不需要全面的手册，只需要可用选项的快速参考，那么可以用 &lt;code&gt;-h&lt;/code&gt; 选项获得更简明的 “help” 输出：&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-console&#34; data-language=&#34;console&#34;&gt;&lt;code class=&#34;language-console&#34;&gt;$ git add -h
-usage: git add [&amp;lt;options&amp;gt;] [--] &amp;lt;pathspec&amp;gt;...
-
-    -n, --dry-run         dry run
-    -v, --verbose         be verbose
-
-    -i, --interactive     interactive picking
-    -p, --patch           select hunks interactively
-    -e, --edit            edit current diff and apply
-    -f, --force           allow adding otherwise ignored files
-    -u, --update          update tracked files
-    --renormalize         renormalize EOL of tracked files (implies -u)
-    -N, --intent-to-add   record only the fact that the path will be added later
-    -A, --all             add changes from all tracked and untracked files
-    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
-    --refresh             don&amp;#39;t add, only refresh the index
-    --ignore-errors       just skip files which cannot be added because of errors
-    --ignore-missing      check if - even missing - files are ignored in dry run
-    --chmod (+|-)x        override the executable bit of the listed files&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;我也不想抄，可是它&lt;s&gt;叫我哥哥诶&lt;/s&gt;写的太好了。&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

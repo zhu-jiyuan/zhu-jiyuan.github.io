@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "ohayo's blog • All posts by \"journal\" tag",
+    "description": null,
+    "home_page_url": "https://blog.ohayo.live",
+    "items": [
+        {
+            "id": "https://blog.ohayo.live/journal/day-1/",
+            "url": "https://blog.ohayo.live/journal/day-1/",
+            "title": "第一次在网上写日记",
+            "date_published": "2022-12-08T09:13:48.000Z",
+            "content_html": "<h2 id=\"多云转晴\"><a class=\"markdownIt-Anchor\" href=\"#多云转晴\"></a> 多云转晴</h2>\n<p>本来应该<em>12月5号</em>开始记录日记的，学校封宿舍，导致什么也不想做。今天解放啦～</p>\n<h2 id=\"昨天有趣的一天\"><a class=\"markdownIt-Anchor\" href=\"#昨天有趣的一天\"></a> 「昨天」有趣的一天</h2>\n<p>昨天，一个室友突然阳了，其他人都很紧张，我居然有点儿兴奋🥰，不是因为室友阳了！就是那种看到大家都慌的一，我就很开心。</p>\n<p>本来其他室友也要去隔离，晚上校领导突然说放开了，不用去了，短短一天之内，校领导改变了三次主意，这么好的领导！哪里找！我单方面给予领导1w个拥护。</p>\n<h2 id=\"疑案追声\"><a class=\"markdownIt-Anchor\" href=\"#疑案追声\"></a> 疑案追声</h2>\n<p>真好玩，配音真的好好啊。不说了，去玩疑案追声了。</p>\n<p>PS:这是一篇测试文。</p>\n",
+            "tags": [
+                "journal"
+            ]
+        }
+    ]
+}

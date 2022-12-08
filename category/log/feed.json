@@ -5,6 +5,16 @@
     "home_page_url": "https://blog.ohayo.live",
     "items": [
         {
+            "id": "https://blog.ohayo.live/log/hexo-log/",
+            "url": "https://blog.ohayo.live/log/hexo-log/",
+            "title": "hexo博客更新",
+            "date_published": "2022-12-05T08:15:00.000Z",
+            "content_html": "<h2 id=\"更新动机\"><a class=\"markdownIt-Anchor\" href=\"#更新动机\"></a> 更新动机</h2>\n<p>一直没找到写作、UI都让我感觉很舒服的主题。</p>\n<p>之前的主题很好看，有很多插件，更多的是用来写「笔记」或者「练习题」，因为写作很不方便，而且时不时渲染会出错，每次都要写好久，就有了这次的换主题。</p>\n<h2 id=\"以后安排\"><a class=\"markdownIt-Anchor\" href=\"#以后安排\"></a> 以后安排</h2>\n<p>之前的hexo主题，会写以后的错题、考试等等。<br />\n这个主题会记录数学、分享等等，同时会接着改造。</p>\n",
+            "tags": [
+                "log"
+            ]
+        },
+        {
             "id": "https://blog.ohayo.live/log/redmiAx6/",
             "url": "https://blog.ohayo.live/log/redmiAx6/",
             "title": "折腾红米ax6",
