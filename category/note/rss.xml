@@ -7,10 +7,10 @@
         <language>zh-CN</language>
         <pubDate>Tue, 29 Nov 2022 13:18:06 +0000</pubDate>
         <lastBuildDate>Tue, 29 Nov 2022 13:18:06 +0000</lastBuildDate>
+        <category>math</category>
         <category>journal</category>
         <category>note</category>
         <category>tex</category>
-        <category>math</category>
         <category>单调栈</category>
         <category>log</category>
         <category>cpp</category>
@@ -21,8 +21,8 @@
             <guid isPermalink="true">https://blog.ohayo.live/learning/tex-math/</guid>
             <title>简单的数学tex</title>
             <link>https://blog.ohayo.live/learning/tex-math/</link>
-            <category>tex</category>
             <category>math</category>
+            <category>tex</category>
             <pubDate>Tue, 29 Nov 2022 13:18:06 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;tex中的数学表示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tex中的数学表示&#34;&gt;&lt;/a&gt; Tex中的数学表示&lt;/h1&gt;
 &lt;h2 id=&#34;官网文档&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#官网文档&#34;&gt;&lt;/a&gt; 官网文档&lt;/h2&gt;

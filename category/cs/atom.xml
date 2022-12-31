@@ -4,10 +4,10 @@
     <title>ohayo&#39;s blog • Posts by &#34;cs&#34; category</title>
     <link href="https://blog.ohayo.live" />
     <updated>2022-09-26T12:37:41.000Z</updated>
+    <category term="math" />
     <category term="journal" />
     <category term="note" />
     <category term="tex" />
-    <category term="math" />
     <category term="单调栈" />
     <category term="log" />
     <category term="cpp" />
@@ -690,11 +690,7 @@
         <id>https://blog.ohayo.live/CS/dataStruct/tree/tree/</id>
         <title>树与二叉树</title>
         <link rel="alternate" href="https://blog.ohayo.live/CS/dataStruct/tree/tree/"/>
-        <content type="html">&lt;blockquote&gt;
-&lt;p&gt;在写这个笔记之前，我从来不敢面对树，希望可以通过这次笔记，来克服心中对树的阴影。&lt;/p&gt;
-&lt;p&gt;废话，不多说，费曼要讲课啦~&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;树与森林&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树与森林&#34;&gt;&lt;/a&gt; 树与森林&lt;/h1&gt;
+        <content type="html">&lt;h1 id=&#34;树与森林&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树与森林&#34;&gt;&lt;/a&gt; 树与森林&lt;/h1&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/zjuKDBnc6d8kTNZ.png&#34; alt=&#34;image-20220919163736434&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;这就是两棵树，暂且称左边的为&lt;code&gt;树A&lt;/code&gt;,右边的为&lt;code&gt;树B&lt;/code&gt;，很明显，我们调换树A的b、c的顺序，两棵树就相同了。&lt;/p&gt;
 &lt;p&gt;按照这种思路，树可以分为有序树和无序树。&lt;/p&gt;

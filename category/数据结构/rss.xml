@@ -7,10 +7,10 @@
         <language>zh-CN</language>
         <pubDate>Mon, 26 Sep 2022 12:37:41 +0000</pubDate>
         <lastBuildDate>Mon, 26 Sep 2022 12:37:41 +0000</lastBuildDate>
+        <category>math</category>
         <category>journal</category>
         <category>note</category>
         <category>tex</category>
-        <category>math</category>
         <category>单调栈</category>
         <category>log</category>
         <category>cpp</category>
@@ -695,11 +695,7 @@
             <link>https://blog.ohayo.live/CS/dataStruct/tree/tree/</link>
             <category>note</category>
             <pubDate>Mon, 19 Sep 2022 04:24:13 +0000</pubDate>
-            <description><![CDATA[ &lt;blockquote&gt;
-&lt;p&gt;在写这个笔记之前，我从来不敢面对树，希望可以通过这次笔记，来克服心中对树的阴影。&lt;/p&gt;
-&lt;p&gt;废话，不多说，费曼要讲课啦~&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;树与森林&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树与森林&#34;&gt;&lt;/a&gt; 树与森林&lt;/h1&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;树与森林&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树与森林&#34;&gt;&lt;/a&gt; 树与森林&lt;/h1&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/zjuKDBnc6d8kTNZ.png&#34; alt=&#34;image-20220919163736434&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;这就是两棵树，暂且称左边的为&lt;code&gt;树A&lt;/code&gt;,右边的为&lt;code&gt;树B&lt;/code&gt;，很明显，我们调换树A的b、c的顺序，两棵树就相同了。&lt;/p&gt;
 &lt;p&gt;按照这种思路，树可以分为有序树和无序树。&lt;/p&gt;

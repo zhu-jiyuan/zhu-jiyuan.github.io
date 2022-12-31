@@ -3,11 +3,11 @@
     <id>https://blog.ohayo.live</id>
     <title>ohayo&#39;s blog • Posts by &#34;journal&#34; category</title>
     <link href="https://blog.ohayo.live" />
-    <updated>2022-12-08T09:13:48.000Z</updated>
+    <updated>2022-12-31T04:27:57.000Z</updated>
+    <category term="math" />
     <category term="journal" />
     <category term="note" />
     <category term="tex" />
-    <category term="math" />
     <category term="单调栈" />
     <category term="log" />
     <category term="cpp" />
@@ -15,8 +15,37 @@
     <category term="python" />
     <category term="JavaScript" />
     <entry>
+        <id>https://blog.ohayo.live/journal/day02/</id>
+        <title>log-是时候迈向新阶段了！</title>
+        <link rel="alternate" href="https://blog.ohayo.live/journal/day02/"/>
+        <content type="html">&lt;p&gt;就在昨天晚上，我正在床上津津有味的看一篇有关快速幂的博文，这小菜一碟～，简单简单，小小快速幂可笑可笑。往下一划，发现这个博主还写了一篇「快速取模」的文章，死去的回忆开始攻击我。&lt;/p&gt;
+&lt;p&gt;计算机是如何实现加减乘除、取模运算？&lt;/p&gt;
+&lt;p&gt;只记得这是计算机组成原理的东西，完蛋了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/61FFA961-08C5-4C57-816A-8A5CF398CD93.jpeg&#34; alt=&#34;61FFA961-08C5-4C57-816A-8A5CF398CD93&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我没有养成计算机思考思维！&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;endl
+  &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//out&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;// 3&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;// -1&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;WTF&lt;/code&gt;，计算机组成原理，从「数字电路」和「模拟电路」一步步把计算机构建出来，电路基础又依赖于「离散数学」和「物理学」的部分知识。OK梳理完毕。&lt;/p&gt;
+&lt;p&gt;这是自自学python的第三次迈向新阶段。&lt;/p&gt;
+&lt;h2 id=&#34;impossible-mission&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#impossible-mission&#34;&gt;&lt;/a&gt; impossible mission&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[ ] 电路&lt;/li&gt;
+&lt;li&gt;[ ] 物理和数学&lt;/li&gt;
+&lt;li&gt;[ ] 计算机组成原理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一个星期，达到看到代码能想到硬件实现、电路。&lt;/p&gt;
+&lt;h2 id=&#34;后续&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#后续&#34;&gt;&lt;/a&gt; 后续&lt;/h2&gt;
+&lt;p&gt;马上就要开始毕业设计了，完成这次的mission，争取记录一下毕业设计的一些东西。&lt;/p&gt;
+</content>
+        <category term="journal" />
+        <updated>2022-12-31T04:27:57.000Z</updated>
+    </entry>
+    <entry>
         <id>https://blog.ohayo.live/journal/day-1/</id>
-        <title>第一次在网上写日记</title>
+        <title>log-第一次在网上写日记</title>
         <link rel="alternate" href="https://blog.ohayo.live/journal/day-1/"/>
         <content type="html">&lt;h2 id=&#34;多云转晴&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多云转晴&#34;&gt;&lt;/a&gt; 多云转晴&lt;/h2&gt;
 &lt;p&gt;本来应该&lt;em&gt;12月5号&lt;/em&gt;开始记录日记的，学校封宿舍，导致什么也不想做。今天解放啦～&lt;/p&gt;
