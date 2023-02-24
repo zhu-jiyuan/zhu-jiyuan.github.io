@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.ohayo.live</id>
+    <title>ohayo&#39;s blog • Posts by &#34;soft&#34; tag</title>
+    <link href="https://blog.ohayo.live" />
+    <updated>2023-02-24T07:34:42.000Z</updated>
+    <category term="soft" />
+    <category term="math" />
+    <category term="journal" />
+    <category term="note" />
+    <category term="tex" />
+    <category term="单调栈" />
+    <category term="log" />
+    <category term="cpp" />
+    <category term="Linux" />
+    <category term="python" />
+    <category term="JavaScript" />
+    <entry>
+        <id>https://blog.ohayo.live/mac-ssh/</id>
+        <title>macbook免密ssh</title>
+        <link rel="alternate" href="https://blog.ohayo.live/mac-ssh/"/>
+        <content type="html">&lt;p&gt;win 下使用ssh很方便，xshell很方便，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！&lt;/p&gt;
+&lt;h2 id=&#34;配置公私钥对&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置公私钥对&#34;&gt;&lt;/a&gt; 配置公私钥对&lt;/h2&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; ~/.ssh
+
+ssh-keygen &lt;span class=&#34;token parameter variable&#34;&gt;-t&lt;/span&gt; ed25519 &lt;span class=&#34;token parameter variable&#34;&gt;-C&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Comment&#34;&lt;/span&gt;
+
+ssh-copy-id &lt;span class=&#34;token parameter variable&#34;&gt;-i&lt;/span&gt; 公钥文件名 root@服务器ip
+
+ssh-add &lt;span class=&#34;token parameter variable&#34;&gt;-K&lt;/span&gt; 私钥文件名
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;进入ssh配置文件夹下&lt;/li&gt;
+&lt;li&gt;生成公私钥对&lt;/li&gt;
+&lt;li&gt;把公钥上传到服务器&lt;/li&gt;
+&lt;li&gt;把私钥添加到ssh列表中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注：「有些mac第三步之后就可以登陆了」&lt;/p&gt;
+</content>
+        <category term="soft" />
+        <updated>2023-02-24T07:34:42.000Z</updated>
+    </entry>
+</feed>

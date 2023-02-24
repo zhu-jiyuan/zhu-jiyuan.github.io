@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>macbook免密ssh</title>
+    <url>/mac-ssh/</url>
+    <content><![CDATA[<p>win 下使用ssh很方便，xshell很方便，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！</p>
+<h2 id="配置公私钥对"><a class="markdownIt-Anchor" href="#配置公私钥对"></a> 配置公私钥对</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
+<span class="token builtin class-name">cd</span> ~/.ssh
+
+ssh-keygen <span class="token parameter variable">-t</span> ed25519 <span class="token parameter variable">-C</span> <span class="token string">"Comment"</span>
+
+ssh-copy-id <span class="token parameter variable">-i</span> 公钥文件名 root@服务器ip
+
+ssh-add <span class="token parameter variable">-K</span> 私钥文件名
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>进入ssh配置文件夹下</li>
+<li>生成公私钥对</li>
+<li>把公钥上传到服务器</li>
+<li>把私钥添加到ssh列表中</li>
+</ol>
+<p>注：「有些mac第三步之后就可以登陆了」</p>
+]]></content>
+      <categories>
+        <category>MacBook</category>
+      </categories>
+      <tags>
+        <tag>soft</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>快速幂</title>
     <url>/quick-multiplication/</url>
     <content><![CDATA[<h1 id="快速幂"><a class="markdownIt-Anchor" href="#快速幂"></a> 快速幂</h1>
