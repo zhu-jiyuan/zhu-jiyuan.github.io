@@ -3,7 +3,7 @@
   <entry>
     <title>macbook免密ssh</title>
     <url>/mac-ssh/</url>
-    <content><![CDATA[<p>win 下使用ssh很方便，xshell很方便，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！</p>
+    <content><![CDATA[<p>win 下使用xshell等软件连接服务器很便捷，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！</p>
 <h2 id="配置公私钥对"><a class="markdownIt-Anchor" href="#配置公私钥对"></a> 配置公私钥对</h2>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
 <span class="token builtin class-name">cd</span> ~/.ssh

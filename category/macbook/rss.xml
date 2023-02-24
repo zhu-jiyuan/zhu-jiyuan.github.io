@@ -24,7 +24,7 @@
             <link>https://blog.ohayo.live/mac-ssh/</link>
             <category>soft</category>
             <pubDate>Fri, 24 Feb 2023 07:34:42 +0000</pubDate>
-            <description><![CDATA[ &lt;p&gt;win 下使用ssh很方便，xshell很方便，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;win 下使用xshell等软件连接服务器很便捷，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！&lt;/p&gt;
 &lt;h2 id=&#34;配置公私钥对&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置公私钥对&#34;&gt;&lt;/a&gt; 配置公私钥对&lt;/h2&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;
 &lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; ~/.ssh
