@@ -5,8 +5,9 @@
         <link>https://blog.ohayo.live</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Tue, 19 Apr 2022 13:02:40 +0000</pubDate>
-        <lastBuildDate>Tue, 19 Apr 2022 13:02:40 +0000</lastBuildDate>
+        <pubDate>Sat, 22 Apr 2023 10:16:45 +0000</pubDate>
+        <lastBuildDate>Sat, 22 Apr 2023 10:16:45 +0000</lastBuildDate>
+        <category>cpp</category>
         <category>soft</category>
         <category>math</category>
         <category>journal</category>
@@ -14,16 +15,78 @@
         <category>tex</category>
         <category>单调栈</category>
         <category>log</category>
-        <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
         <category>JavaScript</category>
         <item>
+            <guid isPermalink="true">https://blog.ohayo.live/dosign-pattern-1/</guid>
+            <title>设计模式-八大设计原则（一）</title>
+            <link>https://blog.ohayo.live/dosign-pattern-1/</link>
+            <category>cpp</category>
+            <pubDate>Sat, 22 Apr 2023 10:16:45 +0000</pubDate>
+            <description><![CDATA[ &lt;p align=&#34;center&#34;&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423000022.png&#34; height=300px width=300px&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「你所用的面向对象，空有招式，但无内涵」&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;只学招式，不学心法，武功瓶颈难以突破，更有甚者潜心修炼，数十年如一日，却不及他人一个月，走火入魔，此举实在是得不偿失。&lt;br /&gt;
+你是否想如同杨过那样，年纪轻轻就已经成为武林大侠，即使郭靖一样的资质，也可以在短期内，上能九天揽月，下能五洋抓鳖。是的，你妹看错！&lt;br /&gt;
+&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423003635.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423192658.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;设计模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#设计模式&#34;&gt;&lt;/a&gt; 设计模式&lt;/h1&gt;
+&lt;p&gt;只要你学过java、python或者是cpp等任意一门面向对象语言，23种设计模式代码部分都能看懂。代码部分都能理解，直接开始上手干它，不就完了吗？非也非也，小伙子，这些代码只是辅助理解23种设计模式是如何解决日常编程问题的，其中真经要诀不可得也。&lt;br /&gt;
+所以嘞，在学习设计模式时，我们要关注『 如何使用设计模式八大原则分析问题，解决问题』，而不是用什么设计模式。&lt;/p&gt;
+&lt;p&gt;如能理解八大原则，坚持数日，大事可成矣。&lt;/p&gt;
+&lt;h2 id=&#34;依赖倒置原则dip&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#依赖倒置原则dip&#34;&gt;&lt;/a&gt; 依赖倒置原则（DIP）&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;高层模块（稳定）不应该依赖于低层模块（变化），二者都应该依赖于抽象&lt;/li&gt;
+&lt;li&gt;抽象不应该依赖于实现细节（变化），实现细节应该依赖于抽象（稳定）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;开放封闭原则ocp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#开放封闭原则ocp&#34;&gt;&lt;/a&gt; 开放封闭原则（OCP）&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;对扩展开放，对更改封闭&lt;/li&gt;
+&lt;li&gt;类模块应该是可扩展的，但是不可修改的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;单一职责原则srp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单一职责原则srp&#34;&gt;&lt;/a&gt; 单一职责原则（SRP）&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;一个类应该仅有一个引起他变化的原因&lt;/li&gt;
+&lt;li&gt;变化的方向隐含着类的职责&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;liskov替换原则lsp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#liskov替换原则lsp&#34;&gt;&lt;/a&gt; Liskov替换原则（LSP）&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;子类必须能够替换它们的基类（IS-A）&lt;/li&gt;
+&lt;li&gt;继承表达类型抽象&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;接口隔离原则isp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#接口隔离原则isp&#34;&gt;&lt;/a&gt; 接口隔离原则（ISP）&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;不应该强迫客户程序依赖它们不用的方法&lt;/li&gt;
+&lt;li&gt;接口应该小而完备&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;优先使用对象组合而不是类继承&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#优先使用对象组合而不是类继承&#34;&gt;&lt;/a&gt; 优先使用对象组合，而不是类继承&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;类继承通常为“白箱复用”，对象组合通常为“黑箱复用”&lt;/li&gt;
+&lt;li&gt;继承在某种程度上继承了很多基类的函数，破坏了封装性，子类父类的耦合度过高&lt;/li&gt;
+&lt;li&gt;用对象组合只要求被组合的对象具有良好的接口定义即可&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;封装变化点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#封装变化点&#34;&gt;&lt;/a&gt; 封装变化点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;使用封装来创建对象之间的分界点，让设计者可以在分界点的一侧进行修改，而不会对另一侧产生不良影响，实现对象之间的松耦合。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;针对接口编程不要针对实现编程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#针对接口编程不要针对实现编程&#34;&gt;&lt;/a&gt; 针对接口编程，不要针对实现编程&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;不将变量类型声明为某个特定的具体类，而声明为某个接口类&lt;/li&gt;
+&lt;li&gt;客户程序无需知晓对象的具体类型，只需要知道对象所具有的接口即可&lt;/li&gt;
+&lt;li&gt;减少系统中各部分的依赖关系，从而实现“高内聚、低耦合”的类设计方案&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;p&gt;在以后的分析中，比如代码，要先看违背了哪些原则，再去看哪些变化、哪些稳定，之后利用23种方法，问题便迎刃而解。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://blog.ohayo.live/CS/cpp/c-five-zone/</guid>
             <title>c++的四大区</title>
             <link>https://blog.ohayo.live/CS/cpp/c-five-zone/</link>
-            <category>note</category>
             <category>cpp</category>
+            <category>note</category>
             <pubDate>Tue, 19 Apr 2022 13:02:40 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;今天开始学习使用c++，之前一直使用python比较多。语言各有千秋，只有最合适。好啦，现在到了使用c++的时候惹。希望我能够喜欢上这个语言。&lt;/p&gt;
 &lt;p&gt;let’s go!😽&lt;/p&gt;

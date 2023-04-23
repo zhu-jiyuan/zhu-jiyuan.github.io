@@ -4,6 +4,7 @@
     <title>ohayo&#39;s blog • Posts by &#34;单调栈&#34; tag</title>
     <link href="https://blog.ohayo.live" />
     <updated>2022-08-30T14:05:15.000Z</updated>
+    <category term="cpp" />
     <category term="soft" />
     <category term="math" />
     <category term="journal" />
@@ -11,7 +12,6 @@
     <category term="tex" />
     <category term="单调栈" />
     <category term="log" />
-    <category term="cpp" />
     <category term="Linux" />
     <category term="python" />
     <category term="JavaScript" />
@@ -74,7 +74,7 @@ nums1 中的所有整数同样出现在 nums2 中&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;单调栈就可以得到ans数组啦。&lt;/p&gt;
-&lt;p&gt;[把&lt;code&gt;list&lt;/code&gt;逆序依次放入stack中]{.dot .pink}&lt;/p&gt;
+&lt;p&gt;把&lt;code&gt;list&lt;/code&gt;逆序依次放入stack中&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;放5时&lt;/p&gt;
 &lt;p&gt;stack = []&lt;/p&gt;

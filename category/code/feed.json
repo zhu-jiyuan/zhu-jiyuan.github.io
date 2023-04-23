@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "ohayo's blog • All posts by \"code\" category",
+    "description": null,
+    "home_page_url": "https://blog.ohayo.live",
+    "items": [
+        {
+            "id": "https://blog.ohayo.live/dosign-pattern-1/",
+            "url": "https://blog.ohayo.live/dosign-pattern-1/",
+            "title": "设计模式-八大设计原则（一）",
+            "date_published": "2023-04-22T10:16:45.000Z",
+            "content_html": "<p align=\"center\"><img data-src=\"https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423000022.png\" height=300px width=300px></p>\n<blockquote>\n<p>「你所用的面向对象，空有招式，但无内涵」</p>\n</blockquote>\n<p>只学招式，不学心法，武功瓶颈难以突破，更有甚者潜心修炼，数十年如一日，却不及他人一个月，走火入魔，此举实在是得不偿失。<br />\n你是否想如同杨过那样，年纪轻轻就已经成为武林大侠，即使郭靖一样的资质，也可以在短期内，上能九天揽月，下能五洋抓鳖。是的，你妹看错！<br />\n<img data-src=\"https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423003635.png\" alt=\"image.png\" /></p>\n<p><img data-src=\"https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423192658.png\" alt=\"image.png\" /></p>\n<h1 id=\"设计模式\"><a class=\"markdownIt-Anchor\" href=\"#设计模式\"></a> 设计模式</h1>\n<p>只要你学过java、python或者是cpp等任意一门面向对象语言，23种设计模式代码部分都能看懂。代码部分都能理解，直接开始上手干它，不就完了吗？非也非也，小伙子，这些代码只是辅助理解23种设计模式是如何解决日常编程问题的，其中真经要诀不可得也。<br />\n所以嘞，在学习设计模式时，我们要关注『 如何使用设计模式八大原则分析问题，解决问题』，而不是用什么设计模式。</p>\n<p>如能理解八大原则，坚持数日，大事可成矣。</p>\n<h2 id=\"依赖倒置原则dip\"><a class=\"markdownIt-Anchor\" href=\"#依赖倒置原则dip\"></a> 依赖倒置原则（DIP）</h2>\n<ol>\n<li>高层模块（稳定）不应该依赖于低层模块（变化），二者都应该依赖于抽象</li>\n<li>抽象不应该依赖于实现细节（变化），实现细节应该依赖于抽象（稳定）</li>\n</ol>\n<h2 id=\"开放封闭原则ocp\"><a class=\"markdownIt-Anchor\" href=\"#开放封闭原则ocp\"></a> 开放封闭原则（OCP）</h2>\n<ol>\n<li>对扩展开放，对更改封闭</li>\n<li>类模块应该是可扩展的，但是不可修改的</li>\n</ol>\n<h2 id=\"单一职责原则srp\"><a class=\"markdownIt-Anchor\" href=\"#单一职责原则srp\"></a> 单一职责原则（SRP）</h2>\n<ol>\n<li>一个类应该仅有一个引起他变化的原因</li>\n<li>变化的方向隐含着类的职责</li>\n</ol>\n<h2 id=\"liskov替换原则lsp\"><a class=\"markdownIt-Anchor\" href=\"#liskov替换原则lsp\"></a> Liskov替换原则（LSP）</h2>\n<ol>\n<li>子类必须能够替换它们的基类（IS-A）</li>\n<li>继承表达类型抽象</li>\n</ol>\n<h2 id=\"接口隔离原则isp\"><a class=\"markdownIt-Anchor\" href=\"#接口隔离原则isp\"></a> 接口隔离原则（ISP）</h2>\n<ol>\n<li>不应该强迫客户程序依赖它们不用的方法</li>\n<li>接口应该小而完备</li>\n</ol>\n<h2 id=\"优先使用对象组合而不是类继承\"><a class=\"markdownIt-Anchor\" href=\"#优先使用对象组合而不是类继承\"></a> 优先使用对象组合，而不是类继承</h2>\n<ol>\n<li>类继承通常为“白箱复用”，对象组合通常为“黑箱复用”</li>\n<li>继承在某种程度上继承了很多基类的函数，破坏了封装性，子类父类的耦合度过高</li>\n<li>用对象组合只要求被组合的对象具有良好的接口定义即可</li>\n</ol>\n<h2 id=\"封装变化点\"><a class=\"markdownIt-Anchor\" href=\"#封装变化点\"></a> 封装变化点</h2>\n<ol>\n<li>使用封装来创建对象之间的分界点，让设计者可以在分界点的一侧进行修改，而不会对另一侧产生不良影响，实现对象之间的松耦合。</li>\n</ol>\n<h2 id=\"针对接口编程不要针对实现编程\"><a class=\"markdownIt-Anchor\" href=\"#针对接口编程不要针对实现编程\"></a> 针对接口编程，不要针对实现编程</h2>\n<ol>\n<li>不将变量类型声明为某个特定的具体类，而声明为某个接口类</li>\n<li>客户程序无需知晓对象的具体类型，只需要知道对象所具有的接口即可</li>\n<li>减少系统中各部分的依赖关系，从而实现“高内聚、低耦合”的类设计方案</li>\n</ol>\n<hr />\n<p>在以后的分析中，比如代码，要先看违背了哪些原则，再去看哪些变化、哪些稳定，之后利用23种方法，问题便迎刃而解。</p>\n",
+            "tags": [
+                "cpp"
+            ]
+        }
+    ]
+}
