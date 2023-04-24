@@ -5,21 +5,11 @@
     "home_page_url": "https://blog.ohayo.live",
     "items": [
         {
-            "id": "https://blog.ohayo.live/journal/day02/",
-            "url": "https://blog.ohayo.live/journal/day02/",
+            "id": "https://blog.ohayo.live/journal/day_1/",
+            "url": "https://blog.ohayo.live/journal/day_1/",
             "title": "log-是时候迈向新阶段了！",
             "date_published": "2022-12-31T04:27:57.000Z",
-            "content_html": "<p>就在昨天晚上，我正在床上津津有味的看一篇有关快速幂的博文，这小菜一碟～，简单简单，小小快速幂可笑可笑。往下一划，发现这个博主还写了一篇「快速取模」的文章，死去的回忆开始攻击我。</p>\n<p>计算机是如何实现加减乘除、取模运算？</p>\n<p>只记得这是计算机组成原理的东西，完蛋了。</p>\n<p><img data-src=\"https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/61FFA961-08C5-4C57-816A-8A5CF398CD93.jpeg\" alt=\"61FFA961-08C5-4C57-816A-8A5CF398CD93\" /></p>\n<p>我没有养成计算机思考思维！</p>\n<pre class=\"line-numbers language-cpp\" data-language=\"cpp\"><code class=\"language-cpp\">cout<span class=\"token operator\">&lt;&lt;</span><span class=\"token number\">7</span><span class=\"token operator\">/</span><span class=\"token number\">4</span><span class=\"token operator\">&lt;&lt;</span>endl\n  <span class=\"token operator\">&lt;&lt;</span><span class=\"token operator\">-</span><span class=\"token number\">7</span><span class=\"token operator\">/</span><span class=\"token number\">4</span><span class=\"token punctuation\">;</span>\n<span class=\"token comment\">//out</span>\n<span class=\"token comment\">// 3</span>\n<span class=\"token comment\">// -1</span><span aria-hidden=\"true\" class=\"line-numbers-rows\"><span></span><span></span><span></span><span></span><span></span></span></code></pre>\n<p><code>WTF</code>，计算机组成原理，从「数字电路」和「模拟电路」一步步把计算机构建出来，电路基础又依赖于「离散数学」和「物理学」的部分知识。OK梳理完毕。</p>\n<p>这是自自学python的第三次迈向新阶段。</p>\n<h2 id=\"impossible-mission\"><a class=\"markdownIt-Anchor\" href=\"#impossible-mission\"></a> impossible mission</h2>\n<ul>\n<li>[ ] 电路</li>\n<li>[ ] 物理和数学</li>\n<li>[ ] 计算机组成原理</li>\n</ul>\n<p>一个星期，达到看到代码能想到硬件实现、电路。</p>\n<h2 id=\"后续\"><a class=\"markdownIt-Anchor\" href=\"#后续\"></a> 后续</h2>\n<p>马上就要开始毕业设计了，完成这次的mission，争取记录一下毕业设计的一些东西。</p>\n",
-            "tags": [
-                "journal"
-            ]
-        },
-        {
-            "id": "https://blog.ohayo.live/journal/day-1/",
-            "url": "https://blog.ohayo.live/journal/day-1/",
-            "title": "log-第一次在网上写日记",
-            "date_published": "2022-12-08T09:13:48.000Z",
-            "content_html": "<h2 id=\"多云转晴\"><a class=\"markdownIt-Anchor\" href=\"#多云转晴\"></a> 多云转晴</h2>\n<p>本来应该<em>12月5号</em>开始记录日记的，学校封宿舍，导致什么也不想做。今天解放啦～</p>\n<h2 id=\"昨天有趣的一天\"><a class=\"markdownIt-Anchor\" href=\"#昨天有趣的一天\"></a> 「昨天」有趣的一天</h2>\n<p>昨天，一个室友突然阳了，其他人都很紧张，我居然有点儿兴奋🥰，不是因为室友阳了！就是那种看到大家都慌的一，我就很开心。</p>\n<p>本来其他室友也要去隔离，晚上校领导突然说放开了，不用去了，短短一天之内，校领导改变了三次主意，这么好的领导！哪里找！我单方面给予领导1w个拥护。</p>\n<h2 id=\"疑案追声\"><a class=\"markdownIt-Anchor\" href=\"#疑案追声\"></a> 疑案追声</h2>\n<p>真好玩，配音真的好好啊。不说了，去玩疑案追声了。</p>\n<p>PS:这是一篇测试文。</p>\n",
+            "content_html": "<p>就在昨天晚上，我正在床上津津有味的看一篇有关快速幂的博文，这小菜一碟～，简单简单，小小快速幂可笑可笑。往下一划，发现这个博主还写了一篇「快速取模」的文章，死去的回忆开始攻击我。</p>\n<p>计算机是如何实现加减乘除、取模运算？</p>\n<p>只记得这是计算机组成原理的东西，完蛋了。</p>\n<p><img data-src=\"https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/61FFA961-08C5-4C57-816A-8A5CF398CD93.jpeg\" alt=\"61FFA961-08C5-4C57-816A-8A5CF398CD93\" /></p>\n<p>我没有养成计算机思考思维！</p>\n<pre class=\"line-numbers language-cpp\" data-language=\"cpp\"><code class=\"language-cpp\">cout<span class=\"token operator\">&lt;&lt;</span><span class=\"token number\">7</span><span class=\"token operator\">/</span><span class=\"token number\">4</span><span class=\"token operator\">&lt;&lt;</span>endl\n  <span class=\"token operator\">&lt;&lt;</span><span class=\"token operator\">-</span><span class=\"token number\">7</span><span class=\"token operator\">/</span><span class=\"token number\">4</span><span class=\"token punctuation\">;</span>\n<span class=\"token comment\">//out</span>\n<span class=\"token comment\">// 3</span>\n<span class=\"token comment\">// -1</span><span aria-hidden=\"true\" class=\"line-numbers-rows\"><span></span><span></span><span></span><span></span><span></span></span></code></pre>\n<p><code>WTF</code>，计算机组成原理，从「数字电路」和「模拟电路」一步步把计算机构建出来，电路基础又依赖于「离散数学」和「物理学」的部分知识。OK梳理完毕。</p>\n<p>这是自自学python的第三次迈向新阶段。</p>\n<h2 id=\"impossible-mission\"><a class=\"markdownIt-Anchor\" href=\"#impossible-mission\"></a> impossible mission</h2>\n<ul>\n<li>[x] 电路</li>\n<li>[x] 物理和数学</li>\n<li>[x] 计算机组成原理</li>\n</ul>\n<p>一个星期，达到看到代码能想到硬件实现、电路。</p>\n<h2 id=\"后续\"><a class=\"markdownIt-Anchor\" href=\"#后续\"></a> 后续</h2>\n<p>马上就要开始毕业设计了，完成这次的mission，争取记录一下毕业设计的一些东西。</p>\n",
             "tags": [
                 "journal"
             ]

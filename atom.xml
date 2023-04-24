@@ -105,9 +105,9 @@ ssh-add &lt;span class=&#34;token parameter variable&#34;&gt;-K&lt;/span&gt; 私
         <updated>2023-02-24T07:34:42.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.ohayo.live/journal/day02/</id>
+        <id>https://blog.ohayo.live/journal/day_1/</id>
         <title>log-是时候迈向新阶段了！</title>
-        <link rel="alternate" href="https://blog.ohayo.live/journal/day02/"/>
+        <link rel="alternate" href="https://blog.ohayo.live/journal/day_1/"/>
         <content type="html">&lt;p&gt;就在昨天晚上，我正在床上津津有味的看一篇有关快速幂的博文，这小菜一碟～，简单简单，小小快速幂可笑可笑。往下一划，发现这个博主还写了一篇「快速取模」的文章，死去的回忆开始攻击我。&lt;/p&gt;
 &lt;p&gt;计算机是如何实现加减乘除、取模运算？&lt;/p&gt;
 &lt;p&gt;只记得这是计算机组成原理的东西，完蛋了。&lt;/p&gt;
@@ -122,9 +122,9 @@ ssh-add &lt;span class=&#34;token parameter variable&#34;&gt;-K&lt;/span&gt; 私
 &lt;p&gt;这是自自学python的第三次迈向新阶段。&lt;/p&gt;
 &lt;h2 id=&#34;impossible-mission&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#impossible-mission&#34;&gt;&lt;/a&gt; impossible mission&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;[ ] 电路&lt;/li&gt;
-&lt;li&gt;[ ] 物理和数学&lt;/li&gt;
-&lt;li&gt;[ ] 计算机组成原理&lt;/li&gt;
+&lt;li&gt;[x] 电路&lt;/li&gt;
+&lt;li&gt;[x] 物理和数学&lt;/li&gt;
+&lt;li&gt;[x] 计算机组成原理&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;一个星期，达到看到代码能想到硬件实现、电路。&lt;/p&gt;
 &lt;h2 id=&#34;后续&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#后续&#34;&gt;&lt;/a&gt; 后续&lt;/h2&gt;
@@ -192,22 +192,6 @@ ssh-add &lt;span class=&#34;token parameter variable&#34;&gt;-K&lt;/span&gt; 私
 </content>
         <category term="math" />
         <updated>2022-12-30T06:53:21.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://blog.ohayo.live/journal/day-1/</id>
-        <title>log-第一次在网上写日记</title>
-        <link rel="alternate" href="https://blog.ohayo.live/journal/day-1/"/>
-        <content type="html">&lt;h2 id=&#34;多云转晴&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多云转晴&#34;&gt;&lt;/a&gt; 多云转晴&lt;/h2&gt;
-&lt;p&gt;本来应该&lt;em&gt;12月5号&lt;/em&gt;开始记录日记的，学校封宿舍，导致什么也不想做。今天解放啦～&lt;/p&gt;
-&lt;h2 id=&#34;昨天有趣的一天&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#昨天有趣的一天&#34;&gt;&lt;/a&gt; 「昨天」有趣的一天&lt;/h2&gt;
-&lt;p&gt;昨天，一个室友突然阳了，其他人都很紧张，我居然有点儿兴奋🥰，不是因为室友阳了！就是那种看到大家都慌的一，我就很开心。&lt;/p&gt;
-&lt;p&gt;本来其他室友也要去隔离，晚上校领导突然说放开了，不用去了，短短一天之内，校领导改变了三次主意，这么好的领导！哪里找！我单方面给予领导1w个拥护。&lt;/p&gt;
-&lt;h2 id=&#34;疑案追声&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#疑案追声&#34;&gt;&lt;/a&gt; 疑案追声&lt;/h2&gt;
-&lt;p&gt;真好玩，配音真的好好啊。不说了，去玩疑案追声了。&lt;/p&gt;
-&lt;p&gt;PS:这是一篇测试文。&lt;/p&gt;
-</content>
-        <category term="journal" />
-        <updated>2022-12-08T09:13:48.000Z</updated>
     </entry>
     <entry>
         <id>https://blog.ohayo.live/log/hexo-log/</id>
@@ -1680,5 +1664,156 @@ string expression &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;
 </content>
         <category term="note" />
         <updated>2022-09-19T04:24:13.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.ohayo.live/leetcode/monotonousStack/</id>
+        <title>单调栈</title>
+        <link rel="alternate" href="https://blog.ohayo.live/leetcode/monotonousStack/"/>
+        <content type="html">&lt;h1 id=&#34;question&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#question&#34;&gt;&lt;/a&gt; Question&lt;/h1&gt;
+&lt;p&gt;nums1 中数字 x 的 下一个更大元素 是指 x 在 nums2 中对应位置 右侧 的 第一个 比 x 大的元素。&lt;/p&gt;
+&lt;p&gt;给你两个 没有重复元素 的数组 nums1 和 nums2 ，下标从 0 开始计数，其中nums1 是 nums2 的子集。&lt;/p&gt;
+&lt;p&gt;对于每个 0 &amp;lt;= i &amp;lt; nums1.length ，找出满足 nums1[i] == nums2[j] 的下标 j ，并且在 nums2 确定 nums2[j] 的 下一个更大元素 。如果不存在下一个更大元素，那么本次查询的答案是 -1 。&lt;/p&gt;
+&lt;p&gt;返回一个长度为 nums1.length 的数组 ans 作为答案，满足 ans[i] 是如上所述的 下一个更大元素 。&lt;/p&gt;
+&lt;p&gt;示例 1：&lt;/p&gt;
+&lt;p&gt;输入：nums1 = [4,1,2], nums2 = [1,3,4,2].&lt;br /&gt;
+输出：[-1,3,-1]&lt;br /&gt;
+解释：nums1 中每个值的下一个更大元素如下所述：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4 ，用加粗斜体标识，nums2 = [1,3,4,2]。不存在下一个更大元素，所以答案是 -1 。&lt;/li&gt;
+&lt;li&gt;1 ，用加粗斜体标识，nums2 = [1,3,4,2]。下一个更大元素是 3 。&lt;/li&gt;
+&lt;li&gt;2 ，用加粗斜体标识，nums2 = [1,3,4,2]。不存在下一个更大元素，所以答案是 -1 。&lt;br /&gt;
+示例 2：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;输入：nums1 = [2,4], nums2 = [1,2,3,4].&lt;br /&gt;
+输出：[3,-1]&lt;br /&gt;
+解释：nums1 中每个值的下一个更大元素如下所述：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2 ，用加粗斜体标识，nums2 = [1,2,3,4]。下一个更大元素是 3 。&lt;/li&gt;
+&lt;li&gt;4 ，用加粗斜体标识，nums2 = [1,2,3,4]。不存在下一个更大元素，所以答案是 -1 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;提示：&lt;/p&gt;
+&lt;p&gt;1 &amp;lt;= nums1.length &amp;lt;= nums2.length &amp;lt;= 1000&lt;br /&gt;
+0 &amp;lt;= nums1[i], nums2[i] &amp;lt;= 104&lt;br /&gt;
+nums1和nums2中所有整数 互不相同&lt;br /&gt;
+nums1 中的所有整数同样出现在 nums2 中&lt;/p&gt;
+&lt;h1 id=&#34;单调栈&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单调栈&#34;&gt;&lt;/a&gt; 单调栈&lt;/h1&gt;
+&lt;p&gt;只要是这类问题，找下一个最小，就可以使用单调栈。&lt;/p&gt;
+&lt;p&gt;举个栗子&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;list = [1,6,4,2,5]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;对应每个数的下一个更大元素&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;list&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;1&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;6&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;4&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;2&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;5&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ans&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;6&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;单调栈就可以得到ans数组啦。&lt;/p&gt;
+&lt;p&gt;把&lt;code&gt;list&lt;/code&gt;逆序依次放入stack中&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;放5时&lt;/p&gt;
+&lt;p&gt;stack = []&lt;/p&gt;
+&lt;p&gt;因为stack为空，所以没有元素比5大，此时ans[4] = -1&lt;/p&gt;
+&lt;p&gt;再把5入栈&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;放2时&lt;/p&gt;
+&lt;p&gt;stack = [5]&lt;/p&gt;
+&lt;p&gt;因为栈顶元素5&amp;gt;2，直接ans[3] = 5&lt;/p&gt;
+&lt;p&gt;再把2入栈&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;放4时&lt;/p&gt;
+&lt;p&gt;stack = [5,2]&lt;/p&gt;
+&lt;p&gt;4&amp;gt;栈顶元素2，让2出栈&lt;/p&gt;
+&lt;p&gt;此时 stack = [5]&lt;/p&gt;
+&lt;p&gt;4&amp;lt;栈顶元素5，直接ans[2] = 5&lt;/p&gt;
+&lt;p&gt;再把4入栈&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;放6时&lt;/p&gt;
+&lt;p&gt;stack = [5,4]&lt;/p&gt;
+&lt;p&gt;因为6大于栈顶元素4&lt;/p&gt;
+&lt;p&gt;4出栈&lt;/p&gt;
+&lt;p&gt;因为6大于栈顶元素5&lt;/p&gt;
+&lt;p&gt;5出栈&lt;/p&gt;
+&lt;p&gt;stack = []&lt;/p&gt;
+&lt;p&gt;栈空，所以6没有更大的元素，ans[1] = -1&lt;/p&gt;
+&lt;p&gt;把6压入栈&lt;/p&gt;
+&lt;p&gt;…&lt;/p&gt;
+&lt;p&gt;以上就是单调栈的全部了&lt;/p&gt;
+&lt;h1 id=&#34;answer&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#answer&#34;&gt;&lt;/a&gt; Answer&lt;/h1&gt;
+&lt;h2 id=&#34;bf&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bf&#34;&gt;&lt;/a&gt; BF&lt;/h2&gt;
+&lt;p&gt;暴力法&lt;/p&gt;
+&lt;p&gt;时间复杂度O(n^2)&lt;/p&gt;
+&lt;p&gt;空间复杂度O(1)&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+    vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;nextGreaterElement&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; nums1&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; nums2&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        vector &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; ans&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        ans&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;reserve&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums1&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; j&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;a&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;nums1&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+            &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+                &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+                    &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+                        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+                            ans&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push_back&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+                            &lt;span class=&#34;token keyword&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+                        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+                    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+                    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;ans&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push_back&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+                &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+            
+
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; ans&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;单调栈-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单调栈-2&#34;&gt;&lt;/a&gt; 单调栈&lt;/h2&gt;
+&lt;p&gt;利用hash表事先一次遍历，把num2数组的下一个更大找出来。&lt;/p&gt;
+&lt;p&gt;然后遍历num1，依次再hash表里查询即可。&lt;/p&gt;
+&lt;p&gt;时间复杂度O(n+m)，空间复杂度O(m),m是num2的长度，n是num1的长度。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+    vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;nextGreaterElement&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; nums1&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; nums2&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+        stack&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        unordered_map&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; hash&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;ans&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        ans&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;reserve&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums1&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+            &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;empty&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;=&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;top&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+                s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;pop&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+            hash&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;empty&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;top&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+            s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;a&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;nums1&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+            ans&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push_back&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;hash&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; ans&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;练习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#练习&#34;&gt;&lt;/a&gt; 练习&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/&#34;&gt;1475. 商品折扣后的最终价格&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/next-greater-element-i/&#34;&gt;496. 下一个更大元素 I&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="单调栈" />
+        <updated>2022-08-30T14:05:15.000Z</updated>
     </entry>
 </feed>
