@@ -3,7 +3,7 @@
     <id>https://blog.ohayo.live</id>
     <title>ohayo&#39;s blog</title>
     <link href="https://blog.ohayo.live" />
-    <updated>2023-04-22T10:16:45.000Z</updated>
+    <updated>2023-04-23T12:25:31.000Z</updated>
     <category term="cpp" />
     <category term="soft" />
     <category term="math" />
@@ -16,6 +16,453 @@
     <category term="python" />
     <category term="JavaScript" />
     <entry>
+        <id>https://blog.ohayo.live/dosign-pattern-2/</id>
+        <title>设计模式-23种（二）</title>
+        <link rel="alternate" href="https://blog.ohayo.live/dosign-pattern-2/"/>
+        <content type="html">&lt;h1 id=&#34;组件协同模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#组件协同模式&#34;&gt;&lt;/a&gt; 组件协同模式&lt;/h1&gt;
+&lt;p&gt;现代软件专业分工之后的第一个结果是「框架与应用程序的划分」，「组件协作」模式通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时的常用模式。&lt;br /&gt;
+下面是组件协同模式的三种典型模式。&lt;/p&gt;
+&lt;h2 id=&#34;template-method模板方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#template-method模板方法&#34;&gt;&lt;/a&gt; Template Method（模板方法）&lt;/h2&gt;
+&lt;p&gt;模板方法，就像高中老师讲的做题步骤一样，比如高考卷里的圆锥曲线题。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先设直线方程&lt;/li&gt;
+&lt;li&gt;把直线方程代入圆锥曲线&lt;/li&gt;
+&lt;li&gt;利用求根公式的定理，算出&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;x_{1}+x_{2},x_{1}*x_{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.73333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6597200000000001em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;…&lt;br /&gt;
+很多时候，题目都可以用这样一个通用的模板方法来解决，只需换掉一丢丢的不同，大致步骤都是一样。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在代码编程中，模板方法就使用的相当多，通常，子类只需要重写父类给出的「可重写的方法」即可。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//base class&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Library&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+
+    &lt;span class=&#34;token comment&#34;&gt;//稳定 template method&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Run&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+        &lt;span class=&#34;token function&#34;&gt;Step1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Step2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//支持变化 ==&gt; 虚函数的多态调用&lt;/span&gt;
+
+            &lt;span class=&#34;token function&#34;&gt;Step3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+            &lt;span class=&#34;token function&#34;&gt;Step4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//支持变化 ==&gt; 虚函数的多态调用&lt;/span&gt;
+
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;Step5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Library&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;protected&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Step1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//稳定&lt;/span&gt;
+
+        &lt;span class=&#34;token comment&#34;&gt;//.....&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Step3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//稳定&lt;/span&gt;
+
+        &lt;span class=&#34;token comment&#34;&gt;//.....&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Step5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//稳定&lt;/span&gt;
+
+        &lt;span class=&#34;token comment&#34;&gt;//.....&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Step2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//变化&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Step4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//变化&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个例子中base类给出了两个纯虚函数，我们可以override这两个函数，做一些符合自己的变化。&lt;/p&gt;
+&lt;p&gt;在调用的时候只需如下即可。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+	Library &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; app &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Application&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//Application 是Library的子类，并且重写了两个纯虚虚函数&lt;/span&gt;
+	app&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;熟悉安卓开发的同学，应该非常熟悉，很多时候，都是重写一个函数，例如生命周期的resume，stop函数等等，系统会自动调用，你重写之后的方法，是不是很神奇嘞，其中的奥秘就是这样捏。&lt;/p&gt;
+&lt;h3 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;&lt;/a&gt; 总结&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;定义：「定义一个操作中的算法的骨架（稳定），而将一些步骤延迟（变化）到子类中。Template Method使得子类可以不改变（复用）一个算法的结构即可重定义（override重写）该算法的某些特定步骤」&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下面是它的结构图。&lt;br /&gt;
+&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230424215309.png&#34; alt=&#34;image.png&#34; /&gt;&lt;br /&gt;
+模板方法是不是很好用，不要你调用我！让我来调用你。&lt;/p&gt;
+&lt;h2 id=&#34;strategy策略模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strategy策略模式&#34;&gt;&lt;/a&gt; Strategy（策略模式）&lt;/h2&gt;
+&lt;p&gt;策略模式特别像模板方法。举个栗子，就能马上明白。&lt;/p&gt;
+&lt;p&gt;比如应用程序切换语言。&lt;br /&gt;
+语言可能以后还会添加，可能有些人会这样写程序。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Language&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+	ZH_CN&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+	ENGLISH
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+	Language cur_set_lang &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;get_cur_lang&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;cur_set_lang&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;ZH_CN&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//中文处理&lt;/span&gt;
+	&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;cur_set_lang&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;ENGLISH&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//英文处理&lt;/span&gt;
+	&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;试想一下，我们现在要增加另一门语言，比如台湾繁体。在上述代码里，就要在枚举类型中添加，同时还要在main函数中的if判断中增加新的处理。&lt;br /&gt;
+当项目大起来时，直接修改，往往会令人抓狂。这十分的不优雅。&lt;/p&gt;
+&lt;p&gt;策略模式，就可以很好的解决这个问题。&lt;br /&gt;
+可以看出来，每个if中都要对相应的语言做处理，我们可以给它抽象出来。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Language&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+	&lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Language&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;天啊，看到这里，相比你已经知道了后续部分了，没错就像模板方法一样。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//中文类cpp文件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Chinese&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token base-clause&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Language&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+	&lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;override&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//中文处理&lt;/span&gt;
+	&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+	&lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Chinese&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//相关资源释放&lt;/span&gt;
+	&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//英文类cpp文件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;English&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token base-clause&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Language&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+	&lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;override&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//英文处理&lt;/span&gt;
+	&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+	&lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;English&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//相关资源释放&lt;/span&gt;
+	&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如此这般，添加新语言，只需要创建一个新的class类文件即可，避免了直接在源码上修改。&lt;br /&gt;
+调用过程也变的简洁明了。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//值得一提的是，一般会与工厂方法一起使用，因为工厂方法还没介绍，先不要啦。&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+	Language&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; cur_set_lang &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;get_cur_lang&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+	cur_set_lang&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;总结-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结-2&#34;&gt;&lt;/a&gt; 总结&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;定义：「定义一系列算法，把它们一个个封装起来，并且使他们可互相替换（变化）。该模式使得算法可独立于使用它的客户程序（稳定）而变化（扩展，子变化）。」&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;结构如下&lt;br /&gt;
+&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230424225921.png&#34; alt=&#34;image.png&#34; /&gt;&lt;br /&gt;
+策略模式，可以很好的解决if else 这种没有止境或者不确定后续是否还会添加其他选项的代码，实在是妙啊。&lt;/p&gt;
+&lt;h2 id=&#34;observe-event观察者模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#observe-event观察者模式&#34;&gt;&lt;/a&gt; Observe | Event（观察者模式）&lt;/h2&gt;
+&lt;p&gt;观察者一般都是站在第三方角度上，observe中文有着「观察」的意思，而Event有着「事件」的意思，从字面意思上直观了解，不是那么容易懂。举个例子，当一个程序跑起来了，我们想看一下中间过程中发生的情况，这时我们就可以插入一段「代码（像Log）」可以让我们观察程序中间过程中的执行情况，也可以把这个观察，说成一种事件，「观察程序中间过程」事件。&lt;/p&gt;
+&lt;p&gt;比如一个分割文件的程序，我们想加一个进度条来显示实时进度，先来看一个简单的例子。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//main.cpp&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;MainForm&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token base-clause&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Form&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+    TextBox&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; txtFilePath&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    TextBox&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; txtFileNumber&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    ProgressBar&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; progressBar&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+  
+
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Button1_Click&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+        string filePath &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; txtFilePath&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getText&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; number &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;atoi&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;txtFileNumber&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getText&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;c_str&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+        FileSplitter &lt;span class=&#34;token function&#34;&gt;splitter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;filePath&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; number&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; progressBar&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        splitter&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在上面这段代码里，我们像&lt;code&gt;FileSplitter&lt;/code&gt;类中传入了一个进度条实例来显示进度。&lt;br /&gt;
+如果我们的&lt;code&gt;FileSplitter&lt;/code&gt;类如下。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//FileSplitter.cpp&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;FileSplitter&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+    string m_filePath&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; m_fileNumber&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    ProgressBar&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; m_progressBar&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+
+    &lt;span class=&#34;token function&#34;&gt;FileSplitter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; string&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; filePath&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; fileNumber&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; ProgressBar&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; progressBar&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+
+        &lt;span class=&#34;token function&#34;&gt;m_filePath&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;filePath&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+
+        &lt;span class=&#34;token function&#34;&gt;m_fileNumber&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;fileNumber&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+
+        &lt;span class=&#34;token function&#34;&gt;m_progressBar&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;progressBar&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+
+        &lt;span class=&#34;token comment&#34;&gt;//1.读取大文件&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//2.分批次向小文件中写入&lt;/span&gt;
+
+        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; m_fileNumber&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+            &lt;span class=&#34;token comment&#34;&gt;//...&lt;/span&gt;
+
+            &lt;span class=&#34;token keyword&#34;&gt;float&lt;/span&gt; progressValue &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; m_fileNumber&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+            progressValue &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt; progressValue&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+            m_progressBar&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;setValue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;progressValue&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样写没毛病，让我们试想一下，如果此时我们再加一个进度条，比如在终端上打印进度信息，或者再加几个观察进度程序，如此上面的&lt;code&gt;FileSplitter&lt;/code&gt;类将不能满足我们的要求。&lt;/p&gt;
+&lt;p&gt;『我们有时需要让一个类引起的变化，通知到其他一个或多个类。 』&lt;/p&gt;
+&lt;p&gt;继续之前的例子，按照我们的要求，当&lt;code&gt;FileSplitter&lt;/code&gt;类变化时，其中我们加入的多个进度条类也会发生变化，也就是说&lt;code&gt;FileSplitter&lt;/code&gt;类变化会通知其他进度条类。&lt;br /&gt;
+&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230425214659.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这些需要&lt;code&gt;FileSplitter&lt;/code&gt;类应该具有一些共同的函数等，可以把这些东西给抽象为一个接口。&lt;br /&gt;
+例如这样&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;IProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;DoProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;float&lt;/span&gt; value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;IProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;此时&lt;code&gt;FileSplitter&lt;/code&gt;类就要这样修改了&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;FileSplitter&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+    string m_filePath&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; m_fileNumber&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    List&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;IProgress&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;  m_iprogressList&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 抽象通知机制，支持多个观察者&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+
+    &lt;span class=&#34;token function&#34;&gt;FileSplitter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; string&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; filePath&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; fileNumber&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+
+        &lt;span class=&#34;token function&#34;&gt;m_filePath&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;filePath&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+
+        &lt;span class=&#34;token function&#34;&gt;m_fileNumber&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;fileNumber&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+
+    &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+        &lt;span class=&#34;token comment&#34;&gt;//1.读取大文件&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//2.分批次向小文件中写入&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; m_fileNumber&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+            &lt;span class=&#34;token comment&#34;&gt;//...&lt;/span&gt;
+            &lt;span class=&#34;token keyword&#34;&gt;float&lt;/span&gt; progressValue &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; m_fileNumber&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+            progressValue &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt; progressValue&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+            &lt;span class=&#34;token function&#34;&gt;onProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;progressValue&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//发送通知&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;addIProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;IProgress&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; iprogress&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+        m_iprogressList&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push_back&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;iprogress&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+
+    &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;removeIProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;IProgress&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; iprogress&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+        m_iprogressList&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;remove&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;iprogress&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+
+&lt;span class=&#34;token keyword&#34;&gt;protected&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;onProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;float&lt;/span&gt; value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+        &lt;span class=&#34;token keyword&#34;&gt;auto&lt;/span&gt; itor&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;m_iprogressList&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;begin&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;itor &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; m_iprogressList&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+
+            &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;itor&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;DoProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//更新进度条&lt;/span&gt;
+
+            itor&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们用一个&lt;code&gt;vector&lt;/code&gt;容器存储需要通知的类，这些需要通知的类，需要继承&lt;code&gt;IProgress&lt;/code&gt;接口，并且实现其中的纯虚函数，如此，我们就可以这样很方便的完成需求。&lt;br /&gt;
+调用如下&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;MainForm&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token base-clause&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Form&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;IProgress&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+    TextBox&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; txtFilePath&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    TextBox&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; txtFileNumber&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    ProgressBar&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; progressBar&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Button1_Click&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+        string filePath &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; txtFilePath&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getText&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; number &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;atoi&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;txtFileNumber&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getText&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;c_str&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        ConsoleNotifier cn&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        FileSplitter &lt;span class=&#34;token function&#34;&gt;splitter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;filePath&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; number&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+        splitter&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;addIProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//订阅通知&lt;/span&gt;
+
+        splitter&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;addIProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;cn&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;； &lt;span class=&#34;token comment&#34;&gt;//订阅通知&lt;/span&gt;
+
+        splitter&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+        splitter&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;removeIProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;DoProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;float&lt;/span&gt; value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;override&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+        progressBar&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;setValue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ConsoleNotifier&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token base-clause&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;IProgress&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;DoProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;float&lt;/span&gt; value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;override&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+        cout &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;.&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;总结-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结-3&#34;&gt;&lt;/a&gt; 总结&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;定义：「定义对象间的一种一对多（变化）的依赖关系，以便当一个对象（subject）的状态发生改变时，所有依赖于它的对象都得到通知并自动更新。」&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;结构如下&lt;br /&gt;
+&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230425215654.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;是不是有种学到啦的感觉，观察者模式，可以让一个类通知许多类的改变，仅仅把这些的共同地方抽象出来，就可以让 代码变的健壮起来。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h1 id=&#34;单一职责模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单一职责模式&#34;&gt;&lt;/a&gt; 单一职责模式&lt;/h1&gt;
+&lt;p&gt;在软件组件的设计中，如果责任划分的不清晰，使用继承得到的结果往往是随着需求的变化，子类急剧膨胀，同时充斥着重复代码，这时候的关键是&lt;strong&gt;划清责任&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;下面介绍两种经典的单一职责模式可以很快帮助我们理解。&lt;/p&gt;
+&lt;h2 id=&#34;装饰器模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#装饰器模式&#34;&gt;&lt;/a&gt; 装饰器模式&lt;/h2&gt;
+&lt;p&gt;比如我们要做一个基于TCP的文件传输的小工具，IO方面，我们肯定需要处理文件流、网络流，甚至可能需要对这些流进行加密，或者对流进行缓存。&lt;/p&gt;
+&lt;p&gt;那么如果我们这些写，先抽象一个&lt;code&gt;Stream&lt;/code&gt;的抽象类，包含&lt;code&gt;read(),seek(),write()&lt;/code&gt; 三种方法。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Stream&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;：
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Read&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; number&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Seek&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; position&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Write&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Stream&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;很容易就会想到文件流、网络流继承&lt;code&gt;Stream&lt;/code&gt;。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;FileStream&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;：
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Read&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; number&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		    &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Seek&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; position&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		    &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Write&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		    &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Stream&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;NetworkStream&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;：
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Read&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; number&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		    &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Seek&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; position&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		    &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Write&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		    &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Stream&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;假设现在我们需要加密流和缓存流，新手一般会这样写。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;CryptoFileStream&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token base-clause&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;FileStream&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Read&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; number&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//额外的加密操作...&lt;/span&gt;
+        &lt;span class=&#34;token class-name&#34;&gt;FileStream&lt;/span&gt;&lt;span class=&#34;token double-colon punctuation&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Read&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;number&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//读文件流&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Seek&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; position&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//额外的加密操作...&lt;/span&gt;
+        &lt;span class=&#34;token class-name&#34;&gt;FileStream&lt;/span&gt;&lt;span class=&#34;token double-colon punctuation&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Seek&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;position&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//定位文件流&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//额外的加密操作...&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Write&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;byte data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//额外的加密操作...&lt;/span&gt;
+        &lt;span class=&#34;token class-name&#34;&gt;FileStream&lt;/span&gt;&lt;span class=&#34;token double-colon punctuation&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Write&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//写文件流&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//额外的加密操作...&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;CryptoNetworkStream&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token base-clause&#34;&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;NetworkStream&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Read&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; number&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//额外的加密操作...&lt;/span&gt;
+        &lt;span class=&#34;token class-name&#34;&gt;NetworkStream&lt;/span&gt;&lt;span class=&#34;token double-colon punctuation&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Read&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;number&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//读网络流&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Seek&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; position&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//额外的加密操作...&lt;/span&gt;
+        &lt;span class=&#34;token class-name&#34;&gt;NetworkStream&lt;/span&gt;&lt;span class=&#34;token double-colon punctuation&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Seek&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;position&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//定位网络流&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//额外的加密操作...&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;virtual&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Write&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;byte data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//额外的加密操作...&lt;/span&gt;
+        &lt;span class=&#34;token class-name&#34;&gt;NetworkStream&lt;/span&gt;&lt;span class=&#34;token double-colon punctuation&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Write&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//写网络流&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//额外的加密操作...&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//-------------------&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//缓存流&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;BufferFileStream&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token base-clause&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;FileStream&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+	&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;BufferNetworkStream&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token base-clause&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;FileStream&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+	&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在，回头看一下代码，很明显，每当我们去添加一个扩展功能类，比如反转流，这样就要再继承 &lt;code&gt;FileStream、NetworkStream&lt;/code&gt;写两个类，或者当我们去添加一个流，比如内存流，这样就要继承内存流去写很多扩展类。&lt;/p&gt;
+&lt;p&gt;假设，&lt;code&gt;FileStream、NetworkStream&lt;/code&gt;这样的类有&lt;strong&gt;N&lt;/strong&gt;个，加密流这样的扩展有&lt;strong&gt;M&lt;/strong&gt;个，那么一共要写&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1+N+N*M&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.72777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.76666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;个。&lt;br /&gt;
+&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230427013929.png&#34; alt=&#34;Pasted image 20230427013929&#34; /&gt;&lt;/p&gt;
+</content>
+        <category term="cpp" />
+        <updated>2023-04-23T12:25:31.000Z</updated>
+    </entry>
+    <entry>
         <id>https://blog.ohayo.live/dosign-pattern-1/</id>
         <title>设计模式-八大设计原则（一）</title>
         <link rel="alternate" href="https://blog.ohayo.live/dosign-pattern-1/"/>
@@ -27,7 +474,7 @@
 你是否想如同杨过那样，年纪轻轻就已经成为武林大侠，即使郭靖一样的资质，也可以在短期内，上能九天揽月，下能五洋抓鳖。是的，你妹看错！&lt;br /&gt;
 &lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423003635.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423192658.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
-&lt;h1 id=&#34;设计模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#设计模式&#34;&gt;&lt;/a&gt; 设计模式&lt;/h1&gt;
+&lt;h2 id=&#34;设计模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#设计模式&#34;&gt;&lt;/a&gt; 设计模式&lt;/h2&gt;
 &lt;p&gt;只要你学过java、python或者是cpp等任意一门面向对象语言，23种设计模式代码部分都能看懂。代码部分都能理解，直接开始上手干它，不就完了吗？非也非也，小伙子，这些代码只是辅助理解23种设计模式是如何解决日常编程问题的，其中真经要诀不可得也。&lt;br /&gt;
 所以嘞，在学习设计模式时，我们要关注『 如何使用设计模式八大原则分析问题，解决问题』，而不是用什么设计模式。&lt;/p&gt;
 &lt;p&gt;如能理解八大原则，坚持数日，大事可成矣。&lt;/p&gt;
@@ -1664,156 +2111,5 @@ string expression &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;
 </content>
         <category term="note" />
         <updated>2022-09-19T04:24:13.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://blog.ohayo.live/leetcode/monotonousStack/</id>
-        <title>单调栈</title>
-        <link rel="alternate" href="https://blog.ohayo.live/leetcode/monotonousStack/"/>
-        <content type="html">&lt;h1 id=&#34;question&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#question&#34;&gt;&lt;/a&gt; Question&lt;/h1&gt;
-&lt;p&gt;nums1 中数字 x 的 下一个更大元素 是指 x 在 nums2 中对应位置 右侧 的 第一个 比 x 大的元素。&lt;/p&gt;
-&lt;p&gt;给你两个 没有重复元素 的数组 nums1 和 nums2 ，下标从 0 开始计数，其中nums1 是 nums2 的子集。&lt;/p&gt;
-&lt;p&gt;对于每个 0 &amp;lt;= i &amp;lt; nums1.length ，找出满足 nums1[i] == nums2[j] 的下标 j ，并且在 nums2 确定 nums2[j] 的 下一个更大元素 。如果不存在下一个更大元素，那么本次查询的答案是 -1 。&lt;/p&gt;
-&lt;p&gt;返回一个长度为 nums1.length 的数组 ans 作为答案，满足 ans[i] 是如上所述的 下一个更大元素 。&lt;/p&gt;
-&lt;p&gt;示例 1：&lt;/p&gt;
-&lt;p&gt;输入：nums1 = [4,1,2], nums2 = [1,3,4,2].&lt;br /&gt;
-输出：[-1,3,-1]&lt;br /&gt;
-解释：nums1 中每个值的下一个更大元素如下所述：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;4 ，用加粗斜体标识，nums2 = [1,3,4,2]。不存在下一个更大元素，所以答案是 -1 。&lt;/li&gt;
-&lt;li&gt;1 ，用加粗斜体标识，nums2 = [1,3,4,2]。下一个更大元素是 3 。&lt;/li&gt;
-&lt;li&gt;2 ，用加粗斜体标识，nums2 = [1,3,4,2]。不存在下一个更大元素，所以答案是 -1 。&lt;br /&gt;
-示例 2：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;输入：nums1 = [2,4], nums2 = [1,2,3,4].&lt;br /&gt;
-输出：[3,-1]&lt;br /&gt;
-解释：nums1 中每个值的下一个更大元素如下所述：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;2 ，用加粗斜体标识，nums2 = [1,2,3,4]。下一个更大元素是 3 。&lt;/li&gt;
-&lt;li&gt;4 ，用加粗斜体标识，nums2 = [1,2,3,4]。不存在下一个更大元素，所以答案是 -1 。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;提示：&lt;/p&gt;
-&lt;p&gt;1 &amp;lt;= nums1.length &amp;lt;= nums2.length &amp;lt;= 1000&lt;br /&gt;
-0 &amp;lt;= nums1[i], nums2[i] &amp;lt;= 104&lt;br /&gt;
-nums1和nums2中所有整数 互不相同&lt;br /&gt;
-nums1 中的所有整数同样出现在 nums2 中&lt;/p&gt;
-&lt;h1 id=&#34;单调栈&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单调栈&#34;&gt;&lt;/a&gt; 单调栈&lt;/h1&gt;
-&lt;p&gt;只要是这类问题，找下一个最小，就可以使用单调栈。&lt;/p&gt;
-&lt;p&gt;举个栗子&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;list = [1,6,4,2,5]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;对应每个数的下一个更大元素&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;list&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;1&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;6&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;4&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;2&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;5&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;ans&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;6&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;5&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;5&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;单调栈就可以得到ans数组啦。&lt;/p&gt;
-&lt;p&gt;把&lt;code&gt;list&lt;/code&gt;逆序依次放入stack中&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;放5时&lt;/p&gt;
-&lt;p&gt;stack = []&lt;/p&gt;
-&lt;p&gt;因为stack为空，所以没有元素比5大，此时ans[4] = -1&lt;/p&gt;
-&lt;p&gt;再把5入栈&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;放2时&lt;/p&gt;
-&lt;p&gt;stack = [5]&lt;/p&gt;
-&lt;p&gt;因为栈顶元素5&amp;gt;2，直接ans[3] = 5&lt;/p&gt;
-&lt;p&gt;再把2入栈&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;放4时&lt;/p&gt;
-&lt;p&gt;stack = [5,2]&lt;/p&gt;
-&lt;p&gt;4&amp;gt;栈顶元素2，让2出栈&lt;/p&gt;
-&lt;p&gt;此时 stack = [5]&lt;/p&gt;
-&lt;p&gt;4&amp;lt;栈顶元素5，直接ans[2] = 5&lt;/p&gt;
-&lt;p&gt;再把4入栈&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;放6时&lt;/p&gt;
-&lt;p&gt;stack = [5,4]&lt;/p&gt;
-&lt;p&gt;因为6大于栈顶元素4&lt;/p&gt;
-&lt;p&gt;4出栈&lt;/p&gt;
-&lt;p&gt;因为6大于栈顶元素5&lt;/p&gt;
-&lt;p&gt;5出栈&lt;/p&gt;
-&lt;p&gt;stack = []&lt;/p&gt;
-&lt;p&gt;栈空，所以6没有更大的元素，ans[1] = -1&lt;/p&gt;
-&lt;p&gt;把6压入栈&lt;/p&gt;
-&lt;p&gt;…&lt;/p&gt;
-&lt;p&gt;以上就是单调栈的全部了&lt;/p&gt;
-&lt;h1 id=&#34;answer&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#answer&#34;&gt;&lt;/a&gt; Answer&lt;/h1&gt;
-&lt;h2 id=&#34;bf&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bf&#34;&gt;&lt;/a&gt; BF&lt;/h2&gt;
-&lt;p&gt;暴力法&lt;/p&gt;
-&lt;p&gt;时间复杂度O(n^2)&lt;/p&gt;
-&lt;p&gt;空间复杂度O(1)&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
-    vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;nextGreaterElement&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; nums1&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; nums2&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-        vector &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; ans&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        ans&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;reserve&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums1&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; j&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;a&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;nums1&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-            &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-                &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-                    &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-                        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-                            ans&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push_back&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-                            &lt;span class=&#34;token keyword&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-                        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-                    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-                    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;ans&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push_back&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-                &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-            
-
-        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; ans&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;单调栈-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单调栈-2&#34;&gt;&lt;/a&gt; 单调栈&lt;/h2&gt;
-&lt;p&gt;利用hash表事先一次遍历，把num2数组的下一个更大找出来。&lt;/p&gt;
-&lt;p&gt;然后遍历num1，依次再hash表里查询即可。&lt;/p&gt;
-&lt;p&gt;时间复杂度O(n+m)，空间复杂度O(m),m是num2的长度，n是num1的长度。&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
-    vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;nextGreaterElement&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; nums1&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; nums2&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-
-        stack&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        unordered_map&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; hash&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        vector&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;ans&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        ans&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;reserve&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums1&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-            &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;empty&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;=&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;top&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-                s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;pop&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-            hash&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;empty&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;top&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-            s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-
-        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;a&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;nums1&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-            ans&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push_back&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;hash&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; ans&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;练习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#练习&#34;&gt;&lt;/a&gt; 练习&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/&#34;&gt;1475. 商品折扣后的最终价格&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/next-greater-element-i/&#34;&gt;496. 下一个更大元素 I&lt;/a&gt;&lt;/p&gt;
-</content>
-        <category term="单调栈" />
-        <updated>2022-08-30T14:05:15.000Z</updated>
     </entry>
 </feed>

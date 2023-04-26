@@ -25,7 +25,8 @@
             <category>note</category>
             <category>Linux</category>
             <pubDate>Fri, 07 Jan 2022 16:00:00 +0000</pubDate>
-            <description><![CDATA[ &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; /lib/systemd/system/服务名.service&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+            <description><![CDATA[ &lt;h2 id=&#34;服务编写&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#服务编写&#34;&gt;&lt;/a&gt; 服务编写&lt;/h2&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; /lib/systemd/system/服务名.service&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;line-numbers language-ini&#34; data-language=&#34;ini&#34;&gt;&lt;code class=&#34;language-ini&#34;&gt;
 &lt;span class=&#34;token comment&#34;&gt;#例如frp的服务端&lt;/span&gt;
 
@@ -54,6 +55,8 @@
 
 &lt;span class=&#34;token section&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token section-name selector&#34;&gt;Install&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;token key attr-name&#34;&gt;WantedBy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token value attr-value&#34;&gt;multi-user.target&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;设置开机自启&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#设置开机自启&#34;&gt;&lt;/a&gt; 设置开机自启&lt;/h2&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;systemctl &lt;span class=&#34;token builtin class-name&#34;&gt;enable&lt;/span&gt; frp&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
  ]]></description>
         </item>
         <item>
