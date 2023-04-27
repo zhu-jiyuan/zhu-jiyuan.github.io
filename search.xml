@@ -507,7 +507,72 @@
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>现在，回头看一下代码，很明显，每当我们去添加一个扩展功能类，比如反转流，这样就要再继承 <code>FileStream、NetworkStream</code>写两个类，或者当我们去添加一个流，比如内存流，这样就要继承内存流去写很多扩展类。</p>
 <p>假设，<code>FileStream、NetworkStream</code>这样的类有<strong>N</strong>个，加密流这样的扩展有<strong>M</strong>个，那么一共要写<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>N</mi><mo>+</mo><mi>N</mi><mo>∗</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">1+N+N*M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>个。<br />
-<img data-src="https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230427013929.png" alt="Pasted image 20230427013929" /></p>
+<img data-src="https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230427013929.png" alt="Pasted image 20230427013929" /><br />
+不难发现，在扩展类中，实现的东西都相同，很容易联系到多态。那么扩展类就可以写成下面这样，比如<code>CryptoStream</code>类。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">CryptoStream</span> <span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Stream</span></span><span class="token punctuation">&#123;</span>
+Stream<span class="token operator">*</span> stream<span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token function">CryptoStream</span><span class="token punctuation">(</span>Stream<span class="token operator">*</span> s<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">stream</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>	
+	<span class="token punctuation">&#125;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">char</span> <span class="token function">Read</span><span class="token punctuation">(</span><span class="token keyword">int</span> number<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//额外的加密操作...</span>
+        stream<span class="token operator">-></span><span class="token function">Read</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//读文件流</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Seek</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//额外的加密操作...</span>
+        stream<span class="token operator">-></span><span class="token function">Seek</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//定位文件流</span>
+        <span class="token comment">//额外的加密操作...</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Write</span><span class="token punctuation">(</span>byte data<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//额外的加密操作...</span>
+        stream<span class="token operator">-></span><span class="token function">Write</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//写文件流</span>
+        <span class="token comment">//额外的加密操作...</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如此我们就可以省下很多重复的代码，只需要<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>N</mi><mo>+</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">1+N+M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>，非常nice。但是当我写出<code>BufferStream</code>类时，你会发现这其中又可以提出来共同的成员。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">BufferStream</span> <span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Stream</span></span><span class="token punctuation">&#123;</span>
+Stream<span class="token operator">*</span> stream<span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token function">BufferStream</span><span class="token punctuation">(</span>Stream<span class="token operator">*</span> s<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">stream</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>	
+	<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到<code>stream</code>这个成员变量重复了，可以把这个给抽出来，单独写成一个类。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">DecoratorStream<span class="token operator">:</span> <span class="token keyword">public</span> Stream<span class="token punctuation">&#123;</span>
+<span class="token keyword">protected</span><span class="token operator">:</span>
+    Stream<span class="token operator">*</span> stream<span class="token punctuation">;</span><span class="token comment">//...</span>
+    <span class="token function">DecoratorStream</span><span class="token punctuation">(</span>Stream <span class="token operator">*</span> stm<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">stream</span><span class="token punctuation">(</span>stm<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样在以后写扩展类时，继承这个<code>DecoratorStream</code>，既可以清楚意图，又减少了代码的重复。<br />
+例如<code>BufferStream</code>类就可以写成下面这样。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">BufferStream</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">DecoratorStream</span></span><span class="token punctuation">&#123;</span>
+
+<span class="token keyword">public</span><span class="token operator">:</span>
+
+    <span class="token function">BufferStream</span><span class="token punctuation">(</span>Stream<span class="token operator">*</span> stm<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">DecoratorStream</span><span class="token punctuation">(</span>stm<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//...</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>调用程序如下</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">Process</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">//运行时装配</span>
+    FileStream<span class="token operator">*</span> s1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token function">FileStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    CryptoStream<span class="token operator">*</span> s2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token function">CryptoStream</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    BufferStream<span class="token operator">*</span> s3<span class="token operator">=</span><span class="token keyword">new</span> <span class="token function">BufferedStream</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    BufferStream<span class="token operator">*</span> s4<span class="token operator">=</span><span class="token keyword">new</span> <span class="token function">BufferedStream</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="总结-4"><a class="markdownIt-Anchor" href="#总结-4"></a> 总结</h3>
+<p>定义：动态（组合）地给一个对象增加一些额外的职责。就增加功能而言，Decorator模式比生成子类（继承）更为灵活（消除重复代码&amp;减少子类个数）</p>
+<p>结构如下<br />
+<img data-src="https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230428012216.png" alt="Pasted image 20230428012216" /><br />
+<strong>仔细想想，其实CryptoFileStream继承FileStream是不合理的，因为前者仅仅是后者的一个扩展，并没有is a的关系，也不朝着同一个方向变化。</strong></p>
 ]]></content>
       <categories>
         <category>code</category>
