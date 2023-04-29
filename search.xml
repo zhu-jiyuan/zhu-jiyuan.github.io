@@ -419,7 +419,7 @@
 <h1 id="单一职责模式"><a class="markdownIt-Anchor" href="#单一职责模式"></a> 单一职责模式</h1>
 <p>在软件组件的设计中，如果责任划分的不清晰，使用继承得到的结果往往是随着需求的变化，子类急剧膨胀，同时充斥着重复代码，这时候的关键是<strong>划清责任</strong>。</p>
 <p>下面介绍两种经典的单一职责模式可以很快帮助我们理解。</p>
-<h2 id="装饰器模式"><a class="markdownIt-Anchor" href="#装饰器模式"></a> 装饰器模式</h2>
+<h2 id="decorator装饰器模式"><a class="markdownIt-Anchor" href="#decorator装饰器模式"></a> Decorator（装饰器模式）</h2>
 <p>比如我们要做一个基于TCP的文件传输的小工具，IO方面，我们肯定需要处理文件流、网络流，甚至可能需要对这些流进行加密，或者对流进行缓存。</p>
 <p>那么如果我们这些写，先抽象一个<code>Stream</code>的抽象类，包含<code>read(),seek(),write()</code> 三种方法。</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Stream</span><span class="token punctuation">&#123;</span>
@@ -573,6 +573,202 @@ Stream<span class="token operator">*</span> stream<span class="token punctuation
 <p>结构如下<br />
 <img data-src="https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230428012216.png" alt="Pasted image 20230428012216" /><br />
 <strong>仔细想想，其实CryptoFileStream继承FileStream是不合理的，因为前者仅仅是后者的一个扩展，并没有is a的关系，也不朝着同一个方向变化。</strong></p>
+<h2 id="bridge桥模式"><a class="markdownIt-Anchor" href="#bridge桥模式"></a> Bridge（桥模式）</h2>
+<p>桥模式与装饰器模式十分相似，都是为了解决继承使得类数量爆炸增长的问题。</p>
+<p>举个例子，现在要开发一个即时通讯软件，新手一般会先抽象一个类。<br />
+比如</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Messager</span><span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Login</span><span class="token punctuation">(</span>string username<span class="token punctuation">,</span> string password<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendMessage</span><span class="token punctuation">(</span>string message<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendPicture</span><span class="token punctuation">(</span>Image image<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">PlaySound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">DrawShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">WriteText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token operator">~</span><span class="token function">Messager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这很不错，PC和mobile端继承Messager，后续再继承pc类开发pc上的不同版本，例如lite，prefect版本等等。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">PCMessagerBase</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Messager</span></span><span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">PlaySound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//**********</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">DrawShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//*********</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">WriteText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//**********</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//**********</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MobileMessagerBase</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Messager</span></span><span class="token punctuation">&#123;</span>
+
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接着写一下PC端的版本。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">PCMessagerLite</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">PCMessagerBase</span></span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Login</span><span class="token punctuation">(</span>string username<span class="token punctuation">,</span> string password<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">PCMessagerBase</span><span class="token double-colon punctuation">::</span><span class="token function">Connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//........</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendMessage</span><span class="token punctuation">(</span>string message<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">PCMessagerBase</span><span class="token double-colon punctuation">::</span><span class="token function">WriteText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//........</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendPicture</span><span class="token punctuation">(</span>Image image<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">PCMessagerBase</span><span class="token double-colon punctuation">::</span><span class="token function">DrawShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//........</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+  
+  
+  
+
+<span class="token keyword">class</span> <span class="token class-name">PCMessagerPerfect</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">PCMessagerBase</span></span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Login</span><span class="token punctuation">(</span>string username<span class="token punctuation">,</span> string password<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">PCMessagerBase</span><span class="token double-colon punctuation">::</span><span class="token function">PlaySound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//********</span>
+        <span class="token class-name">PCMessagerBase</span><span class="token double-colon punctuation">::</span><span class="token function">Connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//........</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendMessage</span><span class="token punctuation">(</span>string message<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">PCMessagerBase</span><span class="token double-colon punctuation">::</span><span class="token function">PlaySound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//********</span>
+        <span class="token class-name">PCMessagerBase</span><span class="token double-colon punctuation">::</span><span class="token function">WriteText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//........</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendPicture</span><span class="token punctuation">(</span>Image image<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">PCMessagerBase</span><span class="token double-colon punctuation">::</span><span class="token function">PlaySound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//********</span>
+        <span class="token class-name">PCMessagerBase</span><span class="token double-colon punctuation">::</span><span class="token function">DrawShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//........</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这仅仅是PC端的，如果算上mobile端，又要加上两个业务类，加一个Linux平台，可能就要一个Linux base类，和两个业务类。<br />
+假如有N个平台，M个版本 ，那么总共就要写<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>N</mi><mo>+</mo><mi>N</mi><mo>∗</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">1+N+N*M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>个类，想想就十分可怕。</p>
+<p>学习过上一节，很自然就会想「能不能使用多态来代替这个继承」。</p>
+<p>首先我们先把<code>Messager</code>类分开，因为pc base类与mobile base类，仅仅实现了基础的部分，并没有实现login这些功能。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Messager</span><span class="token punctuation">&#123;</span>
+<span class="token keyword">protected</span><span class="token operator">:</span>
+     MessagerImp<span class="token operator">*</span> messagerImp<span class="token punctuation">;</span><span class="token comment">//...</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Login</span><span class="token punctuation">(</span>string username<span class="token punctuation">,</span> string password<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendMessage</span><span class="token punctuation">(</span>string message<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendPicture</span><span class="token punctuation">(</span>Image image<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">virtual</span> <span class="token operator">~</span><span class="token function">Messager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+  
+<span class="token keyword">class</span> <span class="token class-name">MessagerImp</span><span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">PlaySound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">DrawShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">WriteText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">virtual</span> <span class="token function">MessagerImp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>下面只需让pc base类与mobile base类去实现MessagerImp接口，而业务类继承<code>Messager</code>类。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">PCMessagerImp</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">MessagerImp</span></span><span class="token punctuation">&#123;</span>
+
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">PlaySound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//**********</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">DrawShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//**********</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">WriteText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//**********</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//**********</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">MobileMessagerImp</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">MessagerImp</span></span><span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">MessagerLite</span> <span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Messager</span></span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Login</span><span class="token punctuation">(</span>string username<span class="token punctuation">,</span> string password<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        messagerImp<span class="token operator">-></span><span class="token function">Connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//........</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendMessage</span><span class="token punctuation">(</span>string message<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        messagerImp<span class="token operator">-></span><span class="token function">WriteText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//........</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendPicture</span><span class="token punctuation">(</span>Image image<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        messagerImp<span class="token operator">-></span><span class="token function">DrawShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//........</span>
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MessagerPerfect</span>  <span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Messager</span> 
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Login</span><span class="token punctuation">(</span><span class="token class-name">string</span> <span class="token class-name">username</span><span class="token punctuation">,</span> <span class="token class-name">string</span> <span class="token class-name">password</span><span class="token punctuation">)</span></span><span class="token punctuation">&#123;</span>
+        messagerImp<span class="token operator">-></span><span class="token function">PlaySound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//********</span>
+        messagerImp<span class="token operator">-></span><span class="token function">Connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//........</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendMessage</span><span class="token punctuation">(</span>string message<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        messagerImp<span class="token operator">-></span><span class="token function">PlaySound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//********</span>
+        messagerImp<span class="token operator">-></span><span class="token function">WriteText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//........</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SendPicture</span><span class="token punctuation">(</span>Image image<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        messagerImp<span class="token operator">-></span><span class="token function">PlaySound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//********</span>
+        messagerImp<span class="token operator">-></span><span class="token function">DrawShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//........</span>
+
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样类的数量就缩短到了<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>N</mi><mo>+</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">1+N+M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>.<br />
+调用主程序，可以写成如下格式。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">PCMessagerImp <span class="token operator">*</span> pc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">PCMessagerImp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Messager<span class="token operator">*</span> mp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">MessagerPerfect</span><span class="token punctuation">(</span>pc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Messager<span class="token operator">*</span> ml <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">MessagerLite</span><span class="token punctuation">(</span>pc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="总结-5"><a class="markdownIt-Anchor" href="#总结-5"></a> 总结</h3>
+<p><strong>定义：将抽象部分（业务功能）与实现部分（平台实现）分离，使它们都可以独立地变化。</strong></p>
+<p>结构如下<br />
+<img data-src="https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230428224539.png" alt="Pasted image 20230428224539" /><br />
+桥模式与装饰器模式，都有异曲同工之妙，都是将继承换为多态，总而避免了类数量的急剧增长。</p>
+<hr />
+<h1 id="对象创建模式"><a class="markdownIt-Anchor" href="#对象创建模式"></a> 对象创建模式</h1>
+<p>通过“对象创建” 模式绕开new，来避免对象创建（new）过程中所导致的紧耦合（依赖具体类），从而支持对象创建的稳定。它是接口抽象之后的第一步工作。</p>
+<p>简单来说，就是让这个类文件中new的对象，像virtual函数那样，晚绑定。<br />
+也就是依赖倒置原则，不依赖与实现，应该依赖与抽象。</p>
+<p>如果一个类文件中，有一处实现，那么可能在以后的过程中，就要去改这个类文件。</p>
 ]]></content>
       <categories>
         <category>code</category>
