@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.ohayo.live</id>
+    <title>ohayo&#39;s blog • Posts by &#34;app&#34; tag</title>
+    <link href="https://blog.ohayo.live" />
+    <updated>2023-05-27T09:14:19.000Z</updated>
+    <category term="cpp" />
+    <category term="app" />
+    <category term="soft" />
+    <category term="math" />
+    <category term="journal" />
+    <category term="note" />
+    <category term="tex" />
+    <category term="单调栈" />
+    <category term="log" />
+    <category term="Linux" />
+    <category term="python" />
+    <category term="JavaScript" />
+    <entry>
+        <id>https://blog.ohayo.live/install-app/</id>
+        <title>ubuntu一些应用</title>
+        <link rel="alternate" href="https://blog.ohayo.live/install-app/"/>
+        <content type="html">&lt;h2 id=&#34;背景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#背景&#34;&gt;&lt;/a&gt; 背景&lt;/h2&gt;
+&lt;p&gt;在公司实习时，用的环境是Linux，之前配置的大多是Linux服务器相关的比较多，忽略了很多应用带来的体验。于是打算写一下自己平时比较喜欢的几个Linux应用，方便以后自己配置环境。&lt;/p&gt;
+&lt;p&gt;本文使用的环境是wsl下的Ubuntu22.04.&lt;/p&gt;
+&lt;h2 id=&#34;oh-my-zsh&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#oh-my-zsh&#34;&gt;&lt;/a&gt; oh-my-zsh&lt;/h2&gt;
+&lt;p&gt;oh-my-zsh是zsh终端的插件，可以给zsh换主题，加强zsh的体验。&lt;br /&gt;
+Ubuntu默认是使用的bash，需要先安装zsh。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;zsh&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;#安装oh-my-zsh&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class=&#34;token variable&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在安装过程中，你可能需要科学上网，这里我用的是clash lan代理。&lt;br /&gt;
+比如默认使用的是bash终端。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; ~/.bashrc
+
+&lt;span class=&#34;token comment&#34;&gt;#在最后一行添加，具体根据clash配置调整&lt;/span&gt;
+&lt;span class=&#34;token assign-left variable&#34;&gt;host_ip&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;192.168&lt;/span&gt;.1.104
+&lt;span class=&#34;token builtin class-name&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;http_proxy&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;http://&lt;span class=&#34;token variable&#34;&gt;$host_ip&lt;/span&gt;:7890&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;https_proxy&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;http://&lt;span class=&#34;token variable&#34;&gt;$host_ip&lt;/span&gt;:7890&#34;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;#重写加载终端&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样之后再安装zsh等等，也可以给zsh配置中加入这条。&lt;/p&gt;
+&lt;p&gt;我最喜欢的主题是&lt;code&gt;gentoo&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; ~/.zshrc
+&lt;span class=&#34;token comment&#34;&gt;#把theme换成gentoo&lt;/span&gt;
+&lt;span class=&#34;token assign-left variable&#34;&gt;ZSH_THEME&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;gentoo&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230527173150.png&#34; alt=&#34;Pasted image 20230527173150&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;简洁美观，还显示git分支。&lt;/p&gt;
+&lt;h2 id=&#34;安装lua&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装lua&#34;&gt;&lt;/a&gt; 安装lua&lt;/h2&gt;
+&lt;p&gt;推荐使用lua官网&lt;a href=&#34;http://www.lua.org/download.html&#34;&gt;Lua: download&lt;/a&gt;进行安装，以确保安装的是最新版本。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-R&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-O&lt;/span&gt; http://www.lua.org/ftp/lua-5.4.6.tar.gz
+&lt;span class=&#34;token function&#34;&gt;tar&lt;/span&gt; zxf lua-5.4.6.tar.gz
+&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; lua-5.4.6
+&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; linux &lt;span class=&#34;token builtin class-name&#34;&gt;test&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装luarocks&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装luarocks&#34;&gt;&lt;/a&gt; 安装luarocks&lt;/h2&gt;
+&lt;p&gt;luarocks是lua一个很好用的第三方包管理工具，推荐官网安装&lt;a href=&#34;https://luarocks.org/#quick-start&#34;&gt;LuaRocks - The Lua package manager&lt;/a&gt;以确保是最新版本。&lt;/p&gt;
+&lt;p&gt;因为我是自己编译安装的lua，和apt等命令行安装的路径可能不同，这里要知道lua的安装路径是哪里，不然luarocks不能和lua匹配，各种问题接踵而来。&lt;br /&gt;
+&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230527174202.png&#34; alt=&#34;Pasted image 20230527174202&#34; /&gt;&lt;br /&gt;
+在安装lua时可以看到安装目录。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; https://luarocks.org/releases/luarocks-3.9.2.tar.gz
+&lt;span class=&#34;token function&#34;&gt;tar&lt;/span&gt; zxpf luarocks-3.9.2.tar.gz
+&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; luarocks-3.9.2
+
+&lt;span class=&#34;token comment&#34;&gt;#安装需要的第三方软件&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;unzip&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;#设置为和lua一样的安装路径（在同一级文件夹下）&lt;/span&gt;
+./configure --with-lua&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;/usr/local --with-lua-include&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;/usr/local/include
+&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以安装penlight库进行一些测试&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-lua&#34; data-language=&#34;lua&#34;&gt;&lt;code class=&#34;language-lua&#34;&gt;vim test&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;lua
+
+&lt;span class=&#34;token keyword&#34;&gt;local&lt;/span&gt; class &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; require &lt;span class=&#34;token string&#34;&gt;&#34;pl.class&#34;&lt;/span&gt;
+class&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Dog&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; Dog&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;_init&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+
+        self&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; name
+&lt;span class=&#34;token keyword&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; Dog&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;say&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;wow,wow,wow, i am &#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;..&lt;/span&gt; self&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;local&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Dog&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;zhu&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+
+i&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;say&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="app" />
+        <updated>2023-05-27T09:14:19.000Z</updated>
+    </entry>
+</feed>

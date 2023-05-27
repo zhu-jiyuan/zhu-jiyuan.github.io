@@ -3,8 +3,9 @@
     <id>https://blog.ohayo.live</id>
     <title>ohayo&#39;s blog</title>
     <link href="https://blog.ohayo.live" />
-    <updated>2023-04-23T12:25:31.000Z</updated>
+    <updated>2023-05-27T09:14:19.000Z</updated>
     <category term="cpp" />
+    <category term="app" />
     <category term="soft" />
     <category term="math" />
     <category term="journal" />
@@ -15,6 +16,83 @@
     <category term="Linux" />
     <category term="python" />
     <category term="JavaScript" />
+    <entry>
+        <id>https://blog.ohayo.live/install-app/</id>
+        <title>ubuntu一些应用</title>
+        <link rel="alternate" href="https://blog.ohayo.live/install-app/"/>
+        <content type="html">&lt;h2 id=&#34;背景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#背景&#34;&gt;&lt;/a&gt; 背景&lt;/h2&gt;
+&lt;p&gt;在公司实习时，用的环境是Linux，之前配置的大多是Linux服务器相关的比较多，忽略了很多应用带来的体验。于是打算写一下自己平时比较喜欢的几个Linux应用，方便以后自己配置环境。&lt;/p&gt;
+&lt;p&gt;本文使用的环境是wsl下的Ubuntu22.04.&lt;/p&gt;
+&lt;h2 id=&#34;oh-my-zsh&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#oh-my-zsh&#34;&gt;&lt;/a&gt; oh-my-zsh&lt;/h2&gt;
+&lt;p&gt;oh-my-zsh是zsh终端的插件，可以给zsh换主题，加强zsh的体验。&lt;br /&gt;
+Ubuntu默认是使用的bash，需要先安装zsh。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;zsh&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;#安装oh-my-zsh&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class=&#34;token variable&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在安装过程中，你可能需要科学上网，这里我用的是clash lan代理。&lt;br /&gt;
+比如默认使用的是bash终端。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; ~/.bashrc
+
+&lt;span class=&#34;token comment&#34;&gt;#在最后一行添加，具体根据clash配置调整&lt;/span&gt;
+&lt;span class=&#34;token assign-left variable&#34;&gt;host_ip&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;192.168&lt;/span&gt;.1.104
+&lt;span class=&#34;token builtin class-name&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;http_proxy&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;http://&lt;span class=&#34;token variable&#34;&gt;$host_ip&lt;/span&gt;:7890&#34;&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;https_proxy&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;http://&lt;span class=&#34;token variable&#34;&gt;$host_ip&lt;/span&gt;:7890&#34;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;#重写加载终端&lt;/span&gt;
+&lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样之后再安装zsh等等，也可以给zsh配置中加入这条。&lt;/p&gt;
+&lt;p&gt;我最喜欢的主题是&lt;code&gt;gentoo&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; ~/.zshrc
+&lt;span class=&#34;token comment&#34;&gt;#把theme换成gentoo&lt;/span&gt;
+&lt;span class=&#34;token assign-left variable&#34;&gt;ZSH_THEME&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;gentoo&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230527173150.png&#34; alt=&#34;Pasted image 20230527173150&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;简洁美观，还显示git分支。&lt;/p&gt;
+&lt;h2 id=&#34;安装lua&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装lua&#34;&gt;&lt;/a&gt; 安装lua&lt;/h2&gt;
+&lt;p&gt;推荐使用lua官网&lt;a href=&#34;http://www.lua.org/download.html&#34;&gt;Lua: download&lt;/a&gt;进行安装，以确保安装的是最新版本。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-R&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-O&lt;/span&gt; http://www.lua.org/ftp/lua-5.4.6.tar.gz
+&lt;span class=&#34;token function&#34;&gt;tar&lt;/span&gt; zxf lua-5.4.6.tar.gz
+&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; lua-5.4.6
+&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; linux &lt;span class=&#34;token builtin class-name&#34;&gt;test&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装luarocks&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装luarocks&#34;&gt;&lt;/a&gt; 安装luarocks&lt;/h2&gt;
+&lt;p&gt;luarocks是lua一个很好用的第三方包管理工具，推荐官网安装&lt;a href=&#34;https://luarocks.org/#quick-start&#34;&gt;LuaRocks - The Lua package manager&lt;/a&gt;以确保是最新版本。&lt;/p&gt;
+&lt;p&gt;因为我是自己编译安装的lua，和apt等命令行安装的路径可能不同，这里要知道lua的安装路径是哪里，不然luarocks不能和lua匹配，各种问题接踵而来。&lt;br /&gt;
+&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230527174202.png&#34; alt=&#34;Pasted image 20230527174202&#34; /&gt;&lt;br /&gt;
+在安装lua时可以看到安装目录。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; https://luarocks.org/releases/luarocks-3.9.2.tar.gz
+&lt;span class=&#34;token function&#34;&gt;tar&lt;/span&gt; zxpf luarocks-3.9.2.tar.gz
+&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; luarocks-3.9.2
+
+&lt;span class=&#34;token comment&#34;&gt;#安装需要的第三方软件&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;unzip&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;#设置为和lua一样的安装路径（在同一级文件夹下）&lt;/span&gt;
+./configure --with-lua&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;/usr/local --with-lua-include&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;/usr/local/include
+&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以安装penlight库进行一些测试&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-lua&#34; data-language=&#34;lua&#34;&gt;&lt;code class=&#34;language-lua&#34;&gt;vim test&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;lua
+
+&lt;span class=&#34;token keyword&#34;&gt;local&lt;/span&gt; class &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; require &lt;span class=&#34;token string&#34;&gt;&#34;pl.class&#34;&lt;/span&gt;
+class&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Dog&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; Dog&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;_init&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+
+        self&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; name
+&lt;span class=&#34;token keyword&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; Dog&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;say&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;wow,wow,wow, i am &#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;..&lt;/span&gt; self&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;local&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Dog&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;zhu&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+
+i&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;say&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="app" />
+        <updated>2023-05-27T09:14:19.000Z</updated>
+    </entry>
     <entry>
         <id>https://blog.ohayo.live/dosign-pattern-2/</id>
         <title>设计模式-23种（二）</title>
@@ -1877,500 +1955,5 @@ F(n) = \Pi_{\substack{i=1}}^{n}n
 </content>
         <category term="note" />
         <updated>2022-09-20T11:13:07.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://blog.ohayo.live/CS/dataStruct/tree/tree/</id>
-        <title>树与二叉树</title>
-        <link rel="alternate" href="https://blog.ohayo.live/CS/dataStruct/tree/tree/"/>
-        <content type="html">&lt;h1 id=&#34;树与森林&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树与森林&#34;&gt;&lt;/a&gt; 树与森林&lt;/h1&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/zjuKDBnc6d8kTNZ.png&#34; alt=&#34;image-20220919163736434&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;这就是两棵树，暂且称左边的为&lt;code&gt;树A&lt;/code&gt;,右边的为&lt;code&gt;树B&lt;/code&gt;，很明显，我们调换树A的b、c的顺序，两棵树就相同了。&lt;/p&gt;
-&lt;p&gt;按照这种思路，树可以分为有序树和无序树。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;树
-&lt;ul&gt;
-&lt;li&gt;有序树&lt;/li&gt;
-&lt;li&gt;无序树&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;有序树：树A和树B不同，因为左右有次序，不能颠倒。&lt;/p&gt;
-&lt;p&gt;无序树：树A和树B相同，可以颠倒次序。&lt;/p&gt;
-&lt;p&gt;这就是树啦，那么森林顾名思义，就是很多的树。&lt;/p&gt;
-&lt;p&gt;树A与树B共同在一起就是一个森林。&lt;/p&gt;
-&lt;p&gt;森林就是这样很多&lt;code&gt;不相交的树组成&lt;/code&gt;，同时仅仅一棵树也可以勉强称为森林。即便这有些勉强。。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;森林由树组成，如果我们把树研究明白了，森林就会容易很多。所以我们先研究树。&lt;/p&gt;
-&lt;p&gt;在介绍下面的东西时，我们不得不引入树的一些相关术语，便于我们去进一步讨论。&lt;/p&gt;
-&lt;h2 id=&#34;术语介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#术语介绍&#34;&gt;&lt;/a&gt; 术语介绍&lt;/h2&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/xy1uo64FKhNpOLj.png&#34; alt=&#34;image-20220919171417169&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;这棵树上的小圆圈，叫&lt;code&gt;结点&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;A是B、C、D的&lt;code&gt;父结点&lt;/code&gt;。B、C、D是A的&lt;code&gt;子结点&lt;/code&gt;。而A没有父结点，又称为根结点。&lt;/p&gt;
-&lt;p&gt;K、L这些没有子节点的，又称为&lt;code&gt;叶子结点&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;还记得之前学过的离散数学吗？有个叫&lt;code&gt;度&lt;/code&gt;的东西。这里我们临时先画一棵简单的树&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/DtUOaJXk3rq8xgi.png&#34; alt=&#34;image-20220919171620732&#34; /&gt;{height=“250px” width=“250px”}&lt;/p&gt;
-&lt;p&gt;这棵树，很像离散数学的有向图。而树中每个结点的度数，就是这里结点的&lt;code&gt;出度&lt;/code&gt;。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;结点a的度数2&lt;/li&gt;
-&lt;li&gt;结点c的度数0&lt;/li&gt;
-&lt;li&gt;结点b的度数0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;所以树结点的度数就是[该结点连接的子结点个数]{.red}&lt;/p&gt;
-&lt;p&gt;树的度就是全部结点中的最大度数。&lt;/p&gt;
-&lt;p&gt;好，忘掉刚刚那个图，回到之前的图中。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/xy1uo64FKhNpOLj.png&#34; alt=&#34;image-20220919171417169&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;树的层数，就是看有几层。&lt;/p&gt;
-&lt;p&gt;树的深度等于层数。这个数就是4层，深度为4.&lt;/p&gt;
-&lt;p&gt;C、G这样就是一棵子树，子树的深度，就是从当前的层数往下数有多少层，C、G这个深度就是2。而D、H、M这个就是3。&lt;/p&gt;
-&lt;p&gt;[重点是树的性质！]{.red}&lt;/p&gt;
-&lt;h2 id=&#34;树的性质&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树的性质&#34;&gt;&lt;/a&gt; 树的性质&lt;/h2&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/DtUOaJXk3rq8xgi.png&#34; alt=&#34;image-20220919171620732&#34; /&gt;{height=“250px” width=“250px”}&lt;/p&gt;
-&lt;p&gt;因为刚刚说，每个结点的度就是出度，一个出度就对应一条边。&lt;/p&gt;
-&lt;p&gt;所以，度数=边数。&lt;/p&gt;
-&lt;p&gt;从下往上看，每个子节点都有一个父节点，即对应一条边连接子、父结点，只有根结点没有父节点。&lt;/p&gt;
-&lt;p&gt;所以，结点个数-1 = 边数&lt;/p&gt;
-&lt;h3 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;&lt;/a&gt; 总结&lt;/h3&gt;
-&lt;p&gt;度数=边数=结点个数-1&lt;/p&gt;
-&lt;p&gt;不妨来一个简单的小问题&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在一棵度为4的树T中，若有20个度数为4的结点，10个度为3的结点，1个度为2的结点，10个度为1的结点，则树T的叶节点个数是[]{.gap}。{.quiz}
-&lt;ul&gt;
-&lt;li&gt;41&lt;/li&gt;
-&lt;li&gt;82 {.correct}&lt;/li&gt;
-&lt;li&gt;113&lt;/li&gt;
-&lt;li&gt;122&lt;br /&gt;
-{.options}&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;解析如下&lt;br /&gt;
-因为边数=度数，叶子结点度数为0&lt;br /&gt;
-所以，边数= 20x4+10x3+1x2+10x2=122，又因为，边数=结点个数-1&lt;br /&gt;
-边数 = 20+10+1+10-1 + 叶子结点&lt;br /&gt;
-所以，叶子结点 = 122-40 = 82&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;p&gt;树的学习暂时告一段落，树在计算机中，并不容易表示，因此有大佬给出了二叉树，它具有唯一性，并且方便计算机操作。&lt;/p&gt;
-&lt;p&gt;学了这么多，还没有见过代码，请不要失望！下面将带你走进计算机与树。&lt;/p&gt;
-&lt;h1 id=&#34;二叉树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二叉树&#34;&gt;&lt;/a&gt; 二叉树&lt;/h1&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;二叉树是一棵有序树，树的度为2。&lt;/p&gt;
-&lt;p&gt;翻译一下&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;二叉树有序&lt;/li&gt;
-&lt;li&gt;每个结点的度数最大是2&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果有三个结点，那么会有5种形状的二叉树。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/3HBActni5fpJg4k.png&#34; alt=&#34;image-20220919181106537&#34; /&gt;{height=“200px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;二叉树中，有两种值得我们去关注的特殊情况&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;满二叉树，除最后一层外，其余层结点度数全部为2。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;完全二叉树，按照编号顺序排列的二叉树。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;举个栗子&lt;/p&gt;
-&lt;p&gt;满二叉树&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/Ab9iseSdIC52pBJ.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;完全二叉树&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;满二叉树不难理解，完全二叉树就是每层从左到右依次放入结点，从顶层开始。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/7DMOp2HcqiNQZgk.png&#34; alt=&#34;image-20220919200839322&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;这个就不是，第三层没有按照顺序放。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;树的性质同样适用于二叉树。那么我们根据树的性质，很容易得到二叉树的一些性质。&lt;/p&gt;
-&lt;h2 id=&#34;二叉树的性质&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二叉树的性质&#34;&gt;&lt;/a&gt; 二叉树的性质&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;叶子结点个数 = 度为2的结点个数+1&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;​	边数 = 结点度数 = n1 + 2xn2&lt;/p&gt;
-&lt;p&gt;​	这里n1为度数为1的结点个数，n2为度数为2的结点个数，依次类推。&lt;/p&gt;
-&lt;p&gt;​	边数 = 结点个数-1 = n0+n1+n2-1&lt;/p&gt;
-&lt;p&gt;​	所以，n0 = n2+1&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;第i层，最多有&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;2^{i-1}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.824664em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.824664em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;个结点，一个i层二叉树，最多有&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;2^{i}-1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.907994em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.824664em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;个结点。&lt;/p&gt;
-&lt;p&gt;假设有i=3，满二叉树时，结点最多。&lt;/p&gt;
-&lt;p&gt;第一层 1个&lt;/p&gt;
-&lt;p&gt;第二层 2个&lt;/p&gt;
-&lt;p&gt;第三层 4个&lt;/p&gt;
-&lt;p&gt;第四层 8个&lt;/p&gt;
-&lt;p&gt;第i层 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;2^{i-1}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.824664em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.824664em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 个&lt;/p&gt;
-&lt;p&gt;…&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;​	等比数列，i层就是等比数列前n项和=&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;a1(1-q^{n})/(1-q)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.664392em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;完全二叉树结点序号除2，结果为父节点序号。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;​	&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;​	4/2 = 2&lt;/p&gt;
-&lt;p&gt;​	5/2 = 2（地板除）&lt;/p&gt;
-&lt;p&gt;​	结点序号/2，结果都为父节点序号。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;二叉树的性质，十分简单，到现在为止，你已经知道这个二叉树的理论部分了。此后，我们将一起探索二叉树的使用，最后并制作一个简易计算器，如果时间充足，我们将利用哈夫曼编码，来实现一个压缩程序。&lt;/p&gt;
-&lt;h2 id=&#34;二叉树的存储&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二叉树的存储&#34;&gt;&lt;/a&gt; 二叉树的存储&lt;/h2&gt;
-&lt;p&gt;就像前面所学的，二叉树也分为顺序存储、链式存储。&lt;/p&gt;
-&lt;h3 id=&#34;顺序存储&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#顺序存储&#34;&gt;&lt;/a&gt; 顺序存储&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/z43TM2bBVn7k6O9.png&#34; alt=&#34;image-20220919180830179&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;可以这样存储。&lt;/p&gt;
-&lt;p&gt;如果不是这样完全二叉树，可以用一个特殊字符补成完全二叉树。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/xr9MZlQiavbqnC1.png&#34; alt=&#34;image-20220919201655444&#34; /&gt;{height=“180px” width=“180px”}&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/J2a1zEeOnkrwYlQ.png&#34; alt=&#34;image-20220919201705283&#34; /&gt;{height=“180px” width=“180px”}&lt;/p&gt;
-&lt;p&gt;此时就可以存储了&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果是这样的极端情况会很浪费空间，&lt;/p&gt;
-&lt;p&gt;而链式存储可以很好的解决这个问题。&lt;/p&gt;
-&lt;h3 id=&#34;链式存储&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#链式存储&#34;&gt;&lt;/a&gt; 链式存储&lt;/h3&gt;
-&lt;p&gt;我们需要定义一个结点数据类型&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    node &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; lchild&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    node &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; rchild&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;稍后我们会主要使用这种存储方式。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;说了这么多，还没有讲如何生成一个二叉树，对二叉树的操作也没有系统化。&lt;/p&gt;
-&lt;p&gt;但是请你先不要急着写代码，了解完二叉树的遍历，这些东西将迎刃而解。&lt;/p&gt;
-&lt;h2 id=&#34;二叉树的遍历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二叉树的遍历&#34;&gt;&lt;/a&gt; 二叉树的遍历&lt;/h2&gt;
-&lt;p&gt;二叉树的遍历，通常采用递归进行操作，这里主要讲述递归操作，了解完这些主要操作，我知道，你肯定觉得很没意思，到时候将介绍其他遍历方式。如果你以前不知道，将会令你大开眼界。&lt;/p&gt;
-&lt;p&gt;那么先让我们学习一下三个最常见的遍历操作。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;先序遍历&lt;/li&gt;
-&lt;li&gt;中序遍历&lt;/li&gt;
-&lt;li&gt;后序遍历&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;在这里，我不得不放出来一张生动形象的图片，供大家参考。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/dtplzwjrPnHSW5B.png&#34; alt=&#34;image-20220919203316683&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;我们使用的递归遍历，每个结点，会经历三次，而先、中、后，三种顺序，分别对应这三次时间段。&lt;/p&gt;
-&lt;p&gt;所以，先序就是第一次经过的时候访问该结点，中序是第二次经过的时候，后续是第三次经过的时候。&lt;/p&gt;
-&lt;p&gt;接下来，我将按照此树，给出代码以及运行结果。&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//此数的结点&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    node &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; lchild&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    node &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; rchild&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;先序遍历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#先序遍历&#34;&gt;&lt;/a&gt; 先序遍历&lt;/h3&gt;
-&lt;p&gt;按照第一次经过结点就访问，如图所示的路线经过，依次是&lt;code&gt;根--左--右&lt;/code&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;foreachPreOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;foreachPreOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;foreachPreOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;结果=&amp;gt;ABDEFGC&lt;/p&gt;
-&lt;h3 id=&#34;中序遍历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#中序遍历&#34;&gt;&lt;/a&gt; 中序遍历&lt;/h3&gt;
-&lt;p&gt;按照第二次经过结点就访问，如图所示的路线经过，依次是&lt;code&gt;左--根--右&lt;/code&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;foreachInOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;foreachInOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;foreachInOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;结果=&amp;gt;DBFEGAC&lt;/p&gt;
-&lt;h3 id=&#34;后序遍历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#后序遍历&#34;&gt;&lt;/a&gt; 后序遍历&lt;/h3&gt;
-&lt;p&gt;按照第三次经过结点就访问，如图所示的路线经过，依次是&lt;code&gt;左--右--根&lt;/code&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;foreachPostOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;foreachPostOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;foreachPostOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;结果=&amp;gt;DFGEBCA&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;应该不难理解这里的遍历过程。接下来，我们将介绍另一种遍历方式。&lt;/p&gt;
-&lt;h3 id=&#34;层遍历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#层遍历&#34;&gt;&lt;/a&gt; 层遍历&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/dtplzwjrPnHSW5B.png&#34; alt=&#34;image-20220919203316683&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;逐层进行遍历。这更直观。&lt;/p&gt;
-&lt;p&gt;结果=&amp;gt; ABCDEFG。这用大脑太容易写出来了，只需要从第一层到最后一层，每层从左到右排列就可以得到。&lt;/p&gt;
-&lt;p&gt;那么，我们如何通过计算机进行这样的遍历呢？&lt;/p&gt;
-&lt;p&gt;上面的递归，其实就是用的栈，这里我们采用队列即可实现这样的效果。&lt;/p&gt;
-&lt;p&gt;我们先建立一个队列Q。放入tree根结点。&lt;/p&gt;
-&lt;p&gt;此时Q=[A]&lt;/p&gt;
-&lt;p&gt;把队首元素的左右结点放入Q=[A,B,C]&lt;/p&gt;
-&lt;p&gt;再让队首出队Q=[B,C]，result=A&lt;/p&gt;
-&lt;p&gt;把队首元素的左右结点放入Q=[B,C,D,E]&lt;/p&gt;
-&lt;p&gt;再让队首出队Q=[C,D,E],result=AB&lt;/p&gt;
-&lt;p&gt;…依次进行直到Q=[]&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;foreachFloor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    queue&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; q&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;empty&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-        node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; top &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;front&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;top&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;top&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;top&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;top&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;top&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;pop&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;栈和队列，真是让人猝不及防。但不得不说妙啊！&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;二叉树的遍历，到这已经说完，然而，二叉树的生成，复制，删除，这些操作，还没讲。接下来，就是这些操作了，学习这些操作前，请务必理清楚&lt;code&gt;遍历&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;由于操作涉及到二叉树的生成，为了让大家更清晰，这里必须要补充一点，遍历结果与二叉树的关系。&lt;/p&gt;
-&lt;h2 id=&#34;遍历结果确定二叉树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#遍历结果确定二叉树&#34;&gt;&lt;/a&gt; 遍历结果确定二叉树&lt;/h2&gt;
-&lt;p&gt;先说结论。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;先序+中序，可以确定二叉树&lt;/li&gt;
-&lt;li&gt;后续+中序，可以确定二叉树&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;为啥先序+后序不能确定二叉树？我们先将为啥前两种为啥可以确定二叉树&lt;/p&gt;
-&lt;p&gt;根据上面的遍历结果&lt;/p&gt;
-&lt;p&gt;先序=&amp;gt;ABDEFGC&lt;/p&gt;
-&lt;p&gt;中序=&amp;gt;DBFEGAC&lt;/p&gt;
-&lt;p&gt;先序中可以看出A为根结点&lt;/p&gt;
-&lt;p&gt;那么在中序,DBFEG&lt;code&gt;A&lt;/code&gt;C，A的左边为左子树，右边为右子树。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/JZrOpeV6hndyqPW.png&#34; alt=&#34;image-20220919212722920&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;再看D&lt;code&gt;B&lt;/code&gt;FEG在先序中，B在前面，B的左边是左子树，右边是右子树。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/wZ4HhSRQ2F8xcpJ.png&#34; alt=&#34;image-20220919212734273&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;依次类推，就可以得到一个确定二叉树&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;后序+中序同理&lt;/p&gt;
-&lt;p&gt;后序=&amp;gt;DFGEBCA&lt;/p&gt;
-&lt;p&gt;中序=&amp;gt;DBFEGAC&lt;/p&gt;
-&lt;p&gt;由后序可知A为根节点。&lt;/p&gt;
-&lt;p&gt;先序中可以看出A为根结点&lt;/p&gt;
-&lt;p&gt;那么在中序,DBFEG&lt;code&gt;A&lt;/code&gt;C，A的左边为左子树，右边为右子树。&lt;/p&gt;
-&lt;p&gt;D&lt;code&gt;B&lt;/code&gt;FEG中B在后序排列最靠后，所以B为分界点…&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;看懂上面的，可以试一下，如果依靠先序+后续推出二叉树，没办法推出来。&lt;/p&gt;
-&lt;h2 id=&#34;二叉树的操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二叉树的操作&#34;&gt;&lt;/a&gt; 二叉树的操作&lt;/h2&gt;
-&lt;h3 id=&#34;生成&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#生成&#34;&gt;&lt;/a&gt; 生成&lt;/h3&gt;
-&lt;p&gt;我们可以根据前面的遍历来生成特定形状的二叉树。&lt;/p&gt;
-&lt;p&gt;只需要填充空结点，补成完全二叉树。即可。&lt;/p&gt;
-&lt;p&gt;例如，我们可以用顺序存储的方式将数据转换成二叉树。&lt;/p&gt;
-&lt;p&gt;我想介绍递归+先序，来生成树。&lt;/p&gt;
-&lt;p&gt;例如我们想生成这棵树。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/LXNDH89l2Wio5Ma.png&#34; alt=&#34;image-20220919225056910&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;需要先写出来先序，注意空结点用#或者特殊符号表示。&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//先序 string expression = &#34;ABC##DE#G##F##&#34;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    node &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; lchild&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    node &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; rchild&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; d&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;d&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-        lchild &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        rchild &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-string expression &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;ABC##DE#G##F##&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; cnt&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;createTree&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;cnt&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;expression&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;expression&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;cnt&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token char&#34;&gt;&#39;#&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-        cnt&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-        tree &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;expression&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;cnt&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        cnt&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token function&#34;&gt;createTree&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token function&#34;&gt;createTree&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;删除二叉树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#删除二叉树&#34;&gt;&lt;/a&gt; 删除二叉树&lt;/h3&gt;
-&lt;p&gt;在最后经过这个结点，也就是第三次经过时，delete掉，并且让指针指向nullptr。&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;clean&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-    &lt;span class=&#34;token function&#34;&gt;clean&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;clean&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;delete&lt;/span&gt; tree&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    tree &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;复制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#复制&#34;&gt;&lt;/a&gt; 复制&lt;/h3&gt;
-&lt;p&gt;先序复制，类似于生成。要比生成简单很多。&lt;/p&gt;
-&lt;p&gt;第一次经过这个节点时，进行复制操作。&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;copy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; tree&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;viceTree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    viceTree &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;copy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;viceTree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;copy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;viceTree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//主函数&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-
-    node &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;createTree&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;foreachPreOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;endl&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    node &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;viceRoot&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;copy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;viceRoot&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;clean&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-    &lt;span class=&#34;token comment&#34;&gt;//foreachFloor(root);&lt;/span&gt;
-    cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;viceRoot&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;foreachFloor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;viceRoot&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在这里，给出copy以及clean的结果图。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/5FUDOQfnERy4TjK.png&#34; alt=&#34;image-20220920103448252&#34; /&gt;{height=“300px” width=“450px”}&lt;/p&gt;
-&lt;p&gt;可以看到root树已经没有了，而viceroot树是复制的，仍然存在。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;到这里，我们已经完成了二叉树的基本操作，但我们不得不继续探索，仅仅这些只能让我们能够了解二叉树的操作与构成，远不能解决实际问题。下面我们将做一些实例应用二叉树。&lt;/p&gt;
-&lt;p&gt;在此之前，我们还需补充几个有意思的操作，让二叉树的操作熟练于心。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;二叉树的深度计算&lt;/li&gt;
-&lt;li&gt;二叉树叶子结点数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;大家可以发现，二叉树的操作基本都与遍历有关，所以，请大家一定要熟悉遍历的三种方式，以及遍历一笔图。在这里，不得不再次引用遍历图，来加强大家的印象。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/dtplzwjrPnHSW5B.png&#34; alt=&#34;image-20220919203316683&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;h3 id=&#34;计算二叉树深度&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#计算二叉树深度&#34;&gt;&lt;/a&gt; 计算二叉树深度&lt;/h3&gt;
-&lt;p&gt;还拿这个图来说&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/20/LXNDH89l2Wio5Ma.png&#34; alt=&#34;image-20220919225056910&#34; /&gt;{height=“300px” width=“300px”}&lt;/p&gt;
-&lt;p&gt;用大脑很容易计算出，深度为5。那么计算机应该怎么得到这个呢。&lt;/p&gt;
-&lt;p&gt;一个办法是，后序遍历，就是从最左边的最小面开始。统计左右子树的深度。&lt;/p&gt;
-&lt;p&gt;这个栗子。&lt;/p&gt;
-&lt;p&gt;C的左子树深度为0，右子树深度为0，C的深度就是两者最大的+1 = 1。&lt;/p&gt;
-&lt;p&gt;按照后序遍历，需要到第三次路过时，才会进行统计操作。&lt;/p&gt;
-&lt;p&gt;统计D时，应该先统计E,F。&lt;/p&gt;
-&lt;p&gt;统计E时，应该先统计G。&lt;/p&gt;
-&lt;p&gt;G的左子树深度为0，右子树深度为0，G的深度就是两者最大的+1 = 1。&lt;/p&gt;
-&lt;p&gt;E的左子树深度为0，右子树深度为1，E的深度就是两者最大的+1 = 2。&lt;/p&gt;
-&lt;p&gt;同C、G，F的深度为1。&lt;/p&gt;
-&lt;p&gt;D的左子树深度为2，右子树深度为1，D的深度就是两者最大的+1 = 3。&lt;/p&gt;
-&lt;p&gt;B的左子树深度为1，右子树深度为3，B的深度就是两者最大的+1 = 4。&lt;/p&gt;
-&lt;p&gt;A的左子树深度为4，右子树深度为0，A的深度就是两者最大的+1 = 5。&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countDeepth&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; lDeepth &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countDeepth&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; rDeepth &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countDeepth&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lDeepth&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;rDeepth&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;二叉树叶子结点数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二叉树叶子结点数&#34;&gt;&lt;/a&gt; 二叉树叶子结点数&lt;/h3&gt;
-&lt;p&gt;叶子结点的判断是左子树和右子树都是空的，只需要遍历经过结点时，判断左子树和右子树是否为空，如果是叶子结点就返回1。&lt;/p&gt;
-&lt;p&gt;先序遍历&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;后序遍历&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; l &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; r &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; l&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;r&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;中序遍历&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; l &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; r &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; l&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;r&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;hr /&gt;
-&lt;p&gt;ok，到这里二叉树的基本操作介绍完毕。大家有兴趣可以去查阅一些其他资料。接下来，将会介绍一些二叉树的应用。二叉搜索、哈夫曼编码等等，这些应用在日常中无处不在，值得我们去学习怎么样使用。&lt;/p&gt;
-&lt;p&gt;理论必须结合实践，要不然就是空谈了，希望大家把重心放在实践上。&lt;/p&gt;
-&lt;h1 id=&#34;引用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#引用&#34;&gt;&lt;/a&gt; 引用&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1nJ411V7bd&#34;&gt;b站青岛大学-王卓老师&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;CPP primer&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;完整代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#完整代码&#34;&gt;&lt;/a&gt; 完整代码&lt;/h1&gt;
-&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;iostream&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;queue&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;namespace&lt;/span&gt; std&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    node &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; lchild&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    node &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; rchild&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; d&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;d&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-        lchild &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        rchild &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;foreachPreOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;foreachPreOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;foreachPreOrder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-
-&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;foreachFloor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    queue&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; q&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;empty&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-        node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; top &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;front&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;top&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;top&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;top&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;top&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;top&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        q&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;pop&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-
-string expression &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;ABC##DE#G##F##&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; cnt&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-
-&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;createTree&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;cnt&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;expression&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;expression&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;cnt&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token char&#34;&gt;&#39;#&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-        cnt&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-        tree &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;expression&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;cnt&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        cnt&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token function&#34;&gt;createTree&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token function&#34;&gt;createTree&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-
-&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;clean&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-    &lt;span class=&#34;token function&#34;&gt;clean&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;clean&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;delete&lt;/span&gt; tree&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    tree &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-
-&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;copy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; tree&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;viceTree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    viceTree &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;node&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;copy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;viceTree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;copy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;viceTree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countDeepth&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; lDeepth &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countDeepth&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; rDeepth &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countDeepth&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lDeepth&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;rDeepth&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;tree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; l &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;lchild&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;nullptr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; r &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tree&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;rchild&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; l&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;r&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
-
-    node &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;createTree&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-    cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;countLeaf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-</content>
-        <category term="note" />
-        <updated>2022-09-19T04:24:13.000Z</updated>
     </entry>
 </feed>
