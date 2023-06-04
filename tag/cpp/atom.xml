@@ -4,22 +4,23 @@
     <title>ohayo&#39;s blog • Posts by &#34;cpp&#34; tag</title>
     <link href="https://blog.ohayo.live" />
     <updated>2023-04-23T12:25:31.000Z</updated>
-    <category term="cpp" />
-    <category term="app" />
-    <category term="soft" />
     <category term="math" />
     <category term="journal" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="log" />
+    <category term="soft" />
+    <category term="app" />
+    <category term="cpp" />
     <category term="Linux" />
     <category term="python" />
     <category term="JavaScript" />
+    <category term="openProject" />
     <entry>
-        <id>https://blog.ohayo.live/dosign-pattern-2/</id>
+        <id>https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-2/</id>
         <title>设计模式-23种（二）</title>
-        <link rel="alternate" href="https://blog.ohayo.live/dosign-pattern-2/"/>
+        <link rel="alternate" href="https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-2/"/>
         <content type="html">&lt;h1 id=&#34;组件协同模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#组件协同模式&#34;&gt;&lt;/a&gt; 组件协同模式&lt;/h1&gt;
 &lt;p&gt;现代软件专业分工之后的第一个结果是「框架与应用程序的划分」，「组件协作」模式通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时的常用模式。&lt;br /&gt;
 下面是组件协同模式的三种典型模式。&lt;/p&gt;
@@ -725,9 +726,9 @@ Messager&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ml &lt;span cl
         <updated>2023-04-23T12:25:31.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.ohayo.live/dosign-pattern-1/</id>
+        <id>https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-1/</id>
         <title>设计模式-八大设计原则（一）</title>
-        <link rel="alternate" href="https://blog.ohayo.live/dosign-pattern-1/"/>
+        <link rel="alternate" href="https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-1/"/>
         <content type="html">&lt;p align=&#34;center&#34;&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423000022.png&#34; height=300px width=300px&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;「你所用的面向对象，空有招式，但无内涵」&lt;/p&gt;
@@ -826,8 +827,8 @@ Messager&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ml &lt;span cl
 &lt;li&gt;缺点，增加了程序员的心智负担，内存往往没有得到很好的控制。&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="cpp" />
         <category term="note" />
+        <category term="cpp" />
         <updated>2022-04-19T13:02:40.000Z</updated>
     </entry>
 </feed>

@@ -7,27 +7,28 @@
         <language>zh-CN</language>
         <pubDate>Sat, 27 May 2023 09:14:19 +0000</pubDate>
         <lastBuildDate>Sat, 27 May 2023 09:14:19 +0000</lastBuildDate>
-        <category>cpp</category>
-        <category>app</category>
-        <category>soft</category>
         <category>math</category>
         <category>journal</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>log</category>
+        <category>soft</category>
+        <category>app</category>
+        <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
         <category>JavaScript</category>
+        <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/install-app/</guid>
+            <guid isPermalink="true">https://blog.ohayo.live/share/install-app/</guid>
             <title>ubuntu一些应用</title>
-            <link>https://blog.ohayo.live/install-app/</link>
+            <link>https://blog.ohayo.live/share/install-app/</link>
             <category>app</category>
             <pubDate>Sat, 27 May 2023 09:14:19 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;背景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#背景&#34;&gt;&lt;/a&gt; 背景&lt;/h2&gt;
 &lt;p&gt;在公司实习时，用的环境是Linux，之前配置的大多是Linux服务器相关的比较多，忽略了很多应用带来的体验。于是打算写一下自己平时比较喜欢的几个Linux应用，方便以后自己配置环境。&lt;/p&gt;
-&lt;p&gt;本文使用的环境是wsl下的Ubuntu22.04.&lt;/p&gt;
+&lt;p&gt;本文使用的环境是wsl2.0下的Ubuntu22.04.&lt;/p&gt;
 &lt;h2 id=&#34;oh-my-zsh&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#oh-my-zsh&#34;&gt;&lt;/a&gt; oh-my-zsh&lt;/h2&gt;
 &lt;p&gt;oh-my-zsh是zsh终端的插件，可以给zsh换主题，加强zsh的体验。&lt;br /&gt;
 Ubuntu默认是使用的bash，需要先安装zsh。&lt;/p&gt;

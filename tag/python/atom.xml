@@ -4,18 +4,19 @@
     <title>ohayo&#39;s blog • Posts by &#34;python&#34; tag</title>
     <link href="https://blog.ohayo.live" />
     <updated>2022-06-12T09:51:20.000Z</updated>
-    <category term="cpp" />
-    <category term="app" />
-    <category term="soft" />
     <category term="math" />
     <category term="journal" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="log" />
+    <category term="soft" />
+    <category term="app" />
+    <category term="cpp" />
     <category term="Linux" />
     <category term="python" />
     <category term="JavaScript" />
+    <category term="openProject" />
     <entry>
         <id>https://blog.ohayo.live/CS/python/pyinstallerPacketExe/</id>
         <title>pyinstaller打包exe</title>

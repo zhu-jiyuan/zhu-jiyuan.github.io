@@ -7,18 +7,19 @@
         <language>zh-CN</language>
         <pubDate>Fri, 30 Dec 2022 06:53:21 +0000</pubDate>
         <lastBuildDate>Fri, 30 Dec 2022 06:53:21 +0000</lastBuildDate>
-        <category>cpp</category>
-        <category>app</category>
-        <category>soft</category>
         <category>math</category>
         <category>journal</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>log</category>
+        <category>soft</category>
+        <category>app</category>
+        <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
         <category>JavaScript</category>
+        <category>openProject</category>
         <item>
             <guid isPermalink="true">https://blog.ohayo.live/quick-multiplication/</guid>
             <title>快速幂</title>

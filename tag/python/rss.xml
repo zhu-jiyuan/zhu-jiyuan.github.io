@@ -7,18 +7,19 @@
         <language>zh-CN</language>
         <pubDate>Sun, 12 Jun 2022 09:51:20 +0000</pubDate>
         <lastBuildDate>Sun, 12 Jun 2022 09:51:20 +0000</lastBuildDate>
-        <category>cpp</category>
-        <category>app</category>
-        <category>soft</category>
         <category>math</category>
         <category>journal</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>log</category>
+        <category>soft</category>
+        <category>app</category>
+        <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
         <category>JavaScript</category>
+        <category>openProject</category>
         <item>
             <guid isPermalink="true">https://blog.ohayo.live/CS/python/pyinstallerPacketExe/</guid>
             <title>pyinstaller打包exe</title>

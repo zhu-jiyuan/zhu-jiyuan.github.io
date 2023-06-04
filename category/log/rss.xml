@@ -7,18 +7,19 @@
         <language>zh-CN</language>
         <pubDate>Mon, 05 Dec 2022 08:15:00 +0000</pubDate>
         <lastBuildDate>Mon, 05 Dec 2022 08:15:00 +0000</lastBuildDate>
-        <category>cpp</category>
-        <category>app</category>
-        <category>soft</category>
         <category>math</category>
         <category>journal</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>log</category>
+        <category>soft</category>
+        <category>app</category>
+        <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
         <category>JavaScript</category>
+        <category>openProject</category>
         <item>
             <guid isPermalink="true">https://blog.ohayo.live/log/hexo-log/</guid>
             <title>hexo博客更新</title>

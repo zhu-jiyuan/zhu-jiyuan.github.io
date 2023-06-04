@@ -7,22 +7,23 @@
         <language>zh-CN</language>
         <pubDate>Sun, 23 Apr 2023 12:25:31 +0000</pubDate>
         <lastBuildDate>Sun, 23 Apr 2023 12:25:31 +0000</lastBuildDate>
-        <category>cpp</category>
-        <category>app</category>
-        <category>soft</category>
         <category>math</category>
         <category>journal</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>log</category>
+        <category>soft</category>
+        <category>app</category>
+        <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
         <category>JavaScript</category>
+        <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/dosign-pattern-2/</guid>
+            <guid isPermalink="true">https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-2/</guid>
             <title>设计模式-23种（二）</title>
-            <link>https://blog.ohayo.live/dosign-pattern-2/</link>
+            <link>https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-2/</link>
             <category>cpp</category>
             <pubDate>Sun, 23 Apr 2023 12:25:31 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;组件协同模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#组件协同模式&#34;&gt;&lt;/a&gt; 组件协同模式&lt;/h1&gt;
@@ -728,9 +729,9 @@ Messager&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ml &lt;span cl
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/dosign-pattern-1/</guid>
+            <guid isPermalink="true">https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-1/</guid>
             <title>设计模式-八大设计原则（一）</title>
-            <link>https://blog.ohayo.live/dosign-pattern-1/</link>
+            <link>https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-1/</link>
             <category>cpp</category>
             <pubDate>Sat, 22 Apr 2023 10:16:45 +0000</pubDate>
             <description><![CDATA[ &lt;p align=&#34;center&#34;&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423000022.png&#34; height=300px width=300px&gt;&lt;/p&gt;
@@ -794,8 +795,8 @@ Messager&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ml &lt;span cl
             <guid isPermalink="true">https://blog.ohayo.live/CS/cpp/c-five-zone/</guid>
             <title>c++的四大区</title>
             <link>https://blog.ohayo.live/CS/cpp/c-five-zone/</link>
-            <category>cpp</category>
             <category>note</category>
+            <category>cpp</category>
             <pubDate>Tue, 19 Apr 2022 13:02:40 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;今天开始学习使用c++，之前一直使用python比较多。语言各有千秋，只有最合适。好啦，现在到了使用c++的时候惹。希望我能够喜欢上这个语言。&lt;/p&gt;
 &lt;p&gt;let’s go!😽&lt;/p&gt;

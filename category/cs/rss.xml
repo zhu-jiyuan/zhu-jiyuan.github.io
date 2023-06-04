@@ -7,18 +7,19 @@
         <language>zh-CN</language>
         <pubDate>Mon, 26 Sep 2022 12:37:41 +0000</pubDate>
         <lastBuildDate>Mon, 26 Sep 2022 12:37:41 +0000</lastBuildDate>
-        <category>cpp</category>
-        <category>app</category>
-        <category>soft</category>
         <category>math</category>
         <category>journal</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>log</category>
+        <category>soft</category>
+        <category>app</category>
+        <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
         <category>JavaScript</category>
+        <category>openProject</category>
         <item>
             <guid isPermalink="true">https://blog.ohayo.live/CS/dataStruct/tree/huffmanTreeCompress/</guid>
             <title>哈夫曼树应用-压缩文件</title>
@@ -1587,8 +1588,8 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
             <guid isPermalink="true">https://blog.ohayo.live/CS/cpp/c-five-zone/</guid>
             <title>c++的四大区</title>
             <link>https://blog.ohayo.live/CS/cpp/c-five-zone/</link>
-            <category>cpp</category>
             <category>note</category>
+            <category>cpp</category>
             <pubDate>Tue, 19 Apr 2022 13:02:40 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;今天开始学习使用c++，之前一直使用python比较多。语言各有千秋，只有最合适。好啦，现在到了使用c++的时候惹。希望我能够喜欢上这个语言。&lt;/p&gt;
 &lt;p&gt;let’s go!😽&lt;/p&gt;
