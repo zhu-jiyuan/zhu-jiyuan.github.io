@@ -4980,7 +4980,7 @@ skynet<span class="token punctuation">.</span><span class="token function">start
 	<span class="token keyword">end</span>
 <span class="token keyword">end</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>而skynet.launch会调用skynet.core中的command，执行LAUNCH。会在<code>cmd_launch</code>函数中创建snlua加载类似于bootsrtap等lua服务。</p>
+<p>而skynet.launch会调用skynet.core中的command，执行LAUNCH。会在<code>cmd_launch</code>函数中创建snlua加载类似于bootsrtap等lua服务。每个lua服务都会创建一个snlua虚拟机，lua服务之间形成沙盒，通过工作线程进行交互信息，信息在每个服务的结构体中，传递消息也仅仅是指针，这样的效率十分的高。</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">struct</span> <span class="token class-name">command_func</span> cmd_funcs<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
 	<span class="token punctuation">&#123;</span> <span class="token string">"TIMEOUT"</span><span class="token punctuation">,</span> cmd_timeout <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
 	<span class="token punctuation">&#123;</span> <span class="token string">"REG"</span><span class="token punctuation">,</span> cmd_reg <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
