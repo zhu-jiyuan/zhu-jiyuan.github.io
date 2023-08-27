@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;note&#34; tag</title>
-        <link>https://blog.ohayo.live</link>
+        <link>https://blog.csiki.org</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Mon, 26 Sep 2022 12:37:41 +0000</pubDate>
@@ -21,9 +21,9 @@
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/dataStruct/tree/huffmanTreeCompress/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/dataStruct/tree/huffmanTreeCompress/</guid>
             <title>哈夫曼树应用-压缩文件</title>
-            <link>https://blog.ohayo.live/CS/dataStruct/tree/huffmanTreeCompress/</link>
+            <link>https://blog.csiki.org/CS/dataStruct/tree/huffmanTreeCompress/</link>
             <category>note</category>
             <pubDate>Mon, 26 Sep 2022 12:37:41 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;大家好~时隔好几天，我来给大家讲哈夫曼树和它的应用了！&lt;br /&gt;
@@ -548,9 +548,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/dataStruct/tree/patchOfTree/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/dataStruct/tree/patchOfTree/</guid>
             <title>树与二叉树补充I</title>
-            <link>https://blog.ohayo.live/CS/dataStruct/tree/patchOfTree/</link>
+            <link>https://blog.csiki.org/CS/dataStruct/tree/patchOfTree/</link>
             <category>note</category>
             <pubDate>Tue, 20 Sep 2022 11:13:07 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;大家好，按照之前的计划，我们本应该去应用二叉树，实现一些应用的。然鹅，树与森林以及二叉树之间的关系、线索二叉树这些，没有给大家说。这可能会影响大家对之前知识的理解，所以还是补充一下。&lt;br /&gt;
@@ -693,9 +693,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/dataStruct/tree/tree/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/dataStruct/tree/tree/</guid>
             <title>树与二叉树</title>
-            <link>https://blog.ohayo.live/CS/dataStruct/tree/tree/</link>
+            <link>https://blog.csiki.org/CS/dataStruct/tree/tree/</link>
             <category>note</category>
             <pubDate>Mon, 19 Sep 2022 04:24:13 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;树与森林&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树与森林&#34;&gt;&lt;/a&gt; 树与森林&lt;/h1&gt;
@@ -1188,9 +1188,9 @@ string expression &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/dataStruct/stringAndKMP/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/dataStruct/stringAndKMP/</guid>
             <title>字符串匹配</title>
-            <link>https://blog.ohayo.live/CS/dataStruct/stringAndKMP/</link>
+            <link>https://blog.csiki.org/CS/dataStruct/stringAndKMP/</link>
             <category>note</category>
             <pubDate>Mon, 29 Aug 2022 14:40:35 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;子串匹配问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#子串匹配问题&#34;&gt;&lt;/a&gt; 子串匹配问题&lt;/h1&gt;
@@ -1314,7 +1314,7 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
         cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;index&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;endl&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
     &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
 &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;referencepink&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#referencepink&#34;&gt;&lt;/a&gt; [Reference]{.pink}&lt;/h3&gt;
+&lt;h3 id=&#34;reference&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#reference&#34;&gt;&lt;/a&gt; Reference&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV16X4y137qw&#34;&gt;b站next求解&lt;/a&gt;&lt;/p&gt;
@@ -1329,9 +1329,9 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/dataStruct/stackQueueArray/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/dataStruct/stackQueueArray/</guid>
             <title>栈、队列和数组</title>
-            <link>https://blog.ohayo.live/CS/dataStruct/stackQueueArray/</link>
+            <link>https://blog.csiki.org/CS/dataStruct/stackQueueArray/</link>
             <category>note</category>
             <pubDate>Thu, 25 Aug 2022 15:11:11 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;stack&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#stack&#34;&gt;&lt;/a&gt; stack&lt;/h1&gt;
@@ -1517,9 +1517,9 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/learning/git-learning/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/learning/git-learning/</guid>
             <title>学习Git</title>
-            <link>https://blog.ohayo.live/learning/git-learning/</link>
+            <link>https://blog.csiki.org/learning/git-learning/</link>
             <category>note</category>
             <pubDate>Thu, 12 May 2022 09:51:20 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;最近也是产出高峰期耶~&lt;/p&gt;
@@ -1635,9 +1635,9 @@ usage: git add [&amp;lt;options&amp;gt;] [--] &amp;lt;pathspec&amp;gt;...
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/cpp/c-five-zone/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/cpp/c-five-zone/</guid>
             <title>c++的四大区</title>
-            <link>https://blog.ohayo.live/CS/cpp/c-five-zone/</link>
+            <link>https://blog.csiki.org/CS/cpp/c-five-zone/</link>
             <category>note</category>
             <category>cpp</category>
             <pubDate>Tue, 19 Apr 2022 13:02:40 +0000</pubDate>
@@ -1678,9 +1678,9 @@ usage: git add [&amp;lt;options&amp;gt;] [--] &amp;lt;pathspec&amp;gt;...
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/linux/WritingService/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/linux/WritingService/</guid>
             <title>linux中的service</title>
-            <link>https://blog.ohayo.live/CS/linux/WritingService/</link>
+            <link>https://blog.csiki.org/CS/linux/WritingService/</link>
             <category>note</category>
             <category>Linux</category>
             <pubDate>Fri, 07 Jan 2022 16:00:00 +0000</pubDate>
@@ -1719,9 +1719,9 @@ usage: git add [&amp;lt;options&amp;gt;] [--] &amp;lt;pathspec&amp;gt;...
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/linux/linux_init/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/linux/linux_init/</guid>
             <title>linux服务器初始化（个人自用）</title>
-            <link>https://blog.ohayo.live/CS/linux/linux_init/</link>
+            <link>https://blog.csiki.org/CS/linux/linux_init/</link>
             <category>note</category>
             <category>Linux</category>
             <pubDate>Mon, 03 Jan 2022 16:00:00 +0000</pubDate>

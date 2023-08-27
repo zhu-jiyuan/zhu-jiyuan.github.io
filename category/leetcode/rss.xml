@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;leetcode&#34; category</title>
-        <link>https://blog.ohayo.live</link>
+        <link>https://blog.csiki.org</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Tue, 30 Aug 2022 14:05:15 +0000</pubDate>
@@ -21,9 +21,9 @@
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/leetcode/monotonousStack/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/leetcode/monotonousStack/</guid>
             <title>单调栈</title>
-            <link>https://blog.ohayo.live/leetcode/monotonousStack/</link>
+            <link>https://blog.csiki.org/leetcode/monotonousStack/</link>
             <category>单调栈</category>
             <pubDate>Tue, 30 Aug 2022 14:05:15 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;question&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#question&#34;&gt;&lt;/a&gt; Question&lt;/h1&gt;

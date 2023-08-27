@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;soft&#34; category</title>
-        <link>https://blog.ohayo.live</link>
+        <link>https://blog.csiki.org</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Tue, 10 May 2022 08:43:35 +0000</pubDate>
@@ -21,9 +21,9 @@
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/soft/quantumultx/quantumult-x-and-js/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/soft/quantumultx/quantumult-x-and-js/</guid>
             <title>Quantumult X的JavaScript编写</title>
-            <link>https://blog.ohayo.live/soft/quantumultx/quantumult-x-and-js/</link>
+            <link>https://blog.csiki.org/soft/quantumultx/quantumult-x-and-js/</link>
             <category>JavaScript</category>
             <pubDate>Tue, 10 May 2022 08:43:35 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;b站签到&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#b站签到&#34;&gt;&lt;/a&gt; b站签到&amp;gt;.&amp;lt;&lt;/h1&gt;

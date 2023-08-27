@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.ohayo.live</id>
+    <id>https://blog.csiki.org</id>
     <title>ohayo&#39;s blog • Posts by &#34;app&#34; tag</title>
-    <link href="https://blog.ohayo.live" />
+    <link href="https://blog.csiki.org" />
     <updated>2023-05-27T09:14:19.000Z</updated>
     <category term="math" />
     <category term="journal" />
@@ -18,9 +18,9 @@
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.ohayo.live/share/install-app/</id>
+        <id>https://blog.csiki.org/share/install-app/</id>
         <title>ubuntu一些应用</title>
-        <link rel="alternate" href="https://blog.ohayo.live/share/install-app/"/>
+        <link rel="alternate" href="https://blog.csiki.org/share/install-app/"/>
         <content type="html">&lt;h2 id=&#34;背景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#背景&#34;&gt;&lt;/a&gt; 背景&lt;/h2&gt;
 &lt;p&gt;在公司实习时，用的环境是Linux，之前配置的大多是Linux服务器相关的比较多，忽略了很多应用带来的体验。于是打算写一下自己平时比较喜欢的几个Linux应用，方便以后自己配置环境。&lt;/p&gt;
 &lt;p&gt;本文使用的环境是wsl2.0下的Ubuntu22.04.&lt;/p&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;note&#34; category</title>
-        <link>https://blog.ohayo.live</link>
+        <link>https://blog.csiki.org</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Tue, 29 Nov 2022 13:18:06 +0000</pubDate>
@@ -21,9 +21,9 @@
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/learning/tex-math/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/learning/tex-math/</guid>
             <title>简单的数学tex</title>
-            <link>https://blog.ohayo.live/learning/tex-math/</link>
+            <link>https://blog.csiki.org/learning/tex-math/</link>
             <category>math</category>
             <category>tex</category>
             <pubDate>Tue, 29 Nov 2022 13:18:06 +0000</pubDate>
@@ -312,9 +312,9 @@ F(n) = \Pi_{\substack{i=1}}^{n}n
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/learning/git-learning/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/learning/git-learning/</guid>
             <title>学习Git</title>
-            <link>https://blog.ohayo.live/learning/git-learning/</link>
+            <link>https://blog.csiki.org/learning/git-learning/</link>
             <category>note</category>
             <pubDate>Thu, 12 May 2022 09:51:20 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;最近也是产出高峰期耶~&lt;/p&gt;

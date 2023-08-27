@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;python&#34; tag</title>
-        <link>https://blog.ohayo.live</link>
+        <link>https://blog.csiki.org</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sun, 12 Jun 2022 09:51:20 +0000</pubDate>
@@ -21,9 +21,9 @@
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/python/pyinstallerPacketExe/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/python/pyinstallerPacketExe/</guid>
             <title>pyinstaller打包exe</title>
-            <link>https://blog.ohayo.live/CS/python/pyinstallerPacketExe/</link>
+            <link>https://blog.csiki.org/CS/python/pyinstallerPacketExe/</link>
             <category>python</category>
             <pubDate>Sun, 12 Jun 2022 09:51:20 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;pyinstaller打包exe&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pyinstaller打包exe&#34;&gt;&lt;/a&gt; pyinstaller打包exe&lt;/h1&gt;

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.ohayo.live</id>
+    <id>https://blog.csiki.org</id>
     <title>ohayo&#39;s blog • Posts by &#34;python&#34; category</title>
-    <link href="https://blog.ohayo.live" />
+    <link href="https://blog.csiki.org" />
     <updated>2022-06-12T09:51:20.000Z</updated>
     <category term="math" />
     <category term="journal" />
@@ -18,9 +18,9 @@
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.ohayo.live/CS/python/pyinstallerPacketExe/</id>
+        <id>https://blog.csiki.org/CS/python/pyinstallerPacketExe/</id>
         <title>pyinstaller打包exe</title>
-        <link rel="alternate" href="https://blog.ohayo.live/CS/python/pyinstallerPacketExe/"/>
+        <link rel="alternate" href="https://blog.csiki.org/CS/python/pyinstallerPacketExe/"/>
         <content type="html">&lt;h1 id=&#34;pyinstaller打包exe&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pyinstaller打包exe&#34;&gt;&lt;/a&gt; pyinstaller打包exe&lt;/h1&gt;
 &lt;p&gt;python是一门解释性语言，所以当代码运行时，需要python.exe等解释器一句一句的对代码进行翻译（运行）。&lt;/p&gt;
 &lt;p&gt;（本篇重在阐述pyinstaller打包为什么会这么大，精简打包压缩流程）&lt;/p&gt;

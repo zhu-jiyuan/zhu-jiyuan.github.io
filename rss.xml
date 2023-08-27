@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog</title>
-        <link>https://blog.ohayo.live</link>
+        <link>https://blog.csiki.org</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sun, 04 Jun 2023 04:46:57 +0000</pubDate>
@@ -21,9 +21,9 @@
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/learning/openProject/skynet/skynet-02/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/learning/openProject/skynet/skynet-02/</guid>
             <title>skynet源码学习（粗略版）</title>
-            <link>https://blog.ohayo.live/learning/openProject/skynet/skynet-02/</link>
+            <link>https://blog.csiki.org/learning/openProject/skynet/skynet-02/</link>
             <category>openProject</category>
             <pubDate>Sun, 04 Jun 2023 04:46:57 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;本文从skynet的main入口开始，梳理skynet运行流程，中间很多东西不会解释，必要的一些细节还是会解释滴，旨在梳理清楚skynet如何工作、启动skynet项目，发生了什么？后续将带着以下问题开始。&lt;/p&gt;
@@ -1051,9 +1051,9 @@ skynet&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/share/install-app/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/share/install-app/</guid>
             <title>ubuntu一些应用</title>
-            <link>https://blog.ohayo.live/share/install-app/</link>
+            <link>https://blog.csiki.org/share/install-app/</link>
             <category>app</category>
             <pubDate>Sat, 27 May 2023 09:14:19 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;背景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#背景&#34;&gt;&lt;/a&gt; 背景&lt;/h2&gt;
@@ -1128,9 +1128,9 @@ i&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-2/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/dosign_pattern/dosign-pattern-2/</guid>
             <title>设计模式-23种（二）</title>
-            <link>https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-2/</link>
+            <link>https://blog.csiki.org/CS/dosign_pattern/dosign-pattern-2/</link>
             <category>cpp</category>
             <pubDate>Sun, 23 Apr 2023 12:25:31 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;组件协同模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#组件协同模式&#34;&gt;&lt;/a&gt; 组件协同模式&lt;/h1&gt;
@@ -1836,9 +1836,9 @@ Messager&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ml &lt;span cl
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-1/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/dosign_pattern/dosign-pattern-1/</guid>
             <title>设计模式-八大设计原则（一）</title>
-            <link>https://blog.ohayo.live/CS/dosign_pattern/dosign-pattern-1/</link>
+            <link>https://blog.csiki.org/CS/dosign_pattern/dosign-pattern-1/</link>
             <category>cpp</category>
             <pubDate>Sat, 22 Apr 2023 10:16:45 +0000</pubDate>
             <description><![CDATA[ &lt;p align=&#34;center&#34;&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423000022.png&#34; height=300px width=300px&gt;&lt;/p&gt;
@@ -1899,9 +1899,9 @@ Messager&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ml &lt;span cl
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/log/mac-ssh/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/log/mac-ssh/</guid>
             <title>macbook免密ssh</title>
-            <link>https://blog.ohayo.live/log/mac-ssh/</link>
+            <link>https://blog.csiki.org/log/mac-ssh/</link>
             <category>soft</category>
             <pubDate>Fri, 24 Feb 2023 07:34:42 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;win 下使用xshell等软件连接服务器很便捷，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！&lt;/p&gt;
@@ -1925,9 +1925,9 @@ ssh-add &lt;span class=&#34;token parameter variable&#34;&gt;-K&lt;/span&gt; 私
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/journal/day_1/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/journal/day_1/</guid>
             <title>log-是时候迈向新阶段了！</title>
-            <link>https://blog.ohayo.live/journal/day_1/</link>
+            <link>https://blog.csiki.org/journal/day_1/</link>
             <category>journal</category>
             <pubDate>Sat, 31 Dec 2022 04:27:57 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;就在昨天晚上，我正在床上津津有味的看一篇有关快速幂的博文，这小菜一碟～，简单简单，小小快速幂可笑可笑。往下一划，发现这个博主还写了一篇「快速取模」的文章，死去的回忆开始攻击我。&lt;/p&gt;
@@ -1954,9 +1954,9 @@ ssh-add &lt;span class=&#34;token parameter variable&#34;&gt;-K&lt;/span&gt; 私
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/quick-multiplication/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/quick-multiplication/</guid>
             <title>快速幂</title>
-            <link>https://blog.ohayo.live/quick-multiplication/</link>
+            <link>https://blog.csiki.org/quick-multiplication/</link>
             <category>math</category>
             <pubDate>Fri, 30 Dec 2022 06:53:21 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;快速幂&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#快速幂&#34;&gt;&lt;/a&gt; 快速幂&lt;/h1&gt;
@@ -2014,9 +2014,9 @@ ssh-add &lt;span class=&#34;token parameter variable&#34;&gt;-K&lt;/span&gt; 私
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/log/hexo-log/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/log/hexo-log/</guid>
             <title>hexo博客更新</title>
-            <link>https://blog.ohayo.live/log/hexo-log/</link>
+            <link>https://blog.csiki.org/log/hexo-log/</link>
             <category>log</category>
             <pubDate>Mon, 05 Dec 2022 08:15:00 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;更新动机&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#更新动机&#34;&gt;&lt;/a&gt; 更新动机&lt;/h2&gt;
@@ -2028,9 +2028,9 @@ ssh-add &lt;span class=&#34;token parameter variable&#34;&gt;-K&lt;/span&gt; 私
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/learning/tex-math/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/learning/tex-math/</guid>
             <title>简单的数学tex</title>
-            <link>https://blog.ohayo.live/learning/tex-math/</link>
+            <link>https://blog.csiki.org/learning/tex-math/</link>
             <category>math</category>
             <category>tex</category>
             <pubDate>Tue, 29 Nov 2022 13:18:06 +0000</pubDate>
@@ -2319,9 +2319,9 @@ F(n) = \Pi_{\substack{i=1}}^{n}n
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.ohayo.live/CS/dataStruct/tree/huffmanTreeCompress/</guid>
+            <guid isPermalink="true">https://blog.csiki.org/CS/dataStruct/tree/huffmanTreeCompress/</guid>
             <title>哈夫曼树应用-压缩文件</title>
-            <link>https://blog.ohayo.live/CS/dataStruct/tree/huffmanTreeCompress/</link>
+            <link>https://blog.csiki.org/CS/dataStruct/tree/huffmanTreeCompress/</link>
             <category>note</category>
             <pubDate>Mon, 26 Sep 2022 12:37:41 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;大家好~时隔好几天，我来给大家讲哈夫曼树和它的应用了！&lt;br /&gt;

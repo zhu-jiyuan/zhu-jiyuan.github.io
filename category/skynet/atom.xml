@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.ohayo.live</id>
+    <id>https://blog.csiki.org</id>
     <title>ohayo&#39;s blog • Posts by &#34;skynet&#34; category</title>
-    <link href="https://blog.ohayo.live" />
+    <link href="https://blog.csiki.org" />
     <updated>2023-06-04T04:46:57.000Z</updated>
     <category term="math" />
     <category term="journal" />
@@ -18,9 +18,9 @@
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.ohayo.live/learning/openProject/skynet/skynet-02/</id>
+        <id>https://blog.csiki.org/learning/openProject/skynet/skynet-02/</id>
         <title>skynet源码学习（粗略版）</title>
-        <link rel="alternate" href="https://blog.ohayo.live/learning/openProject/skynet/skynet-02/"/>
+        <link rel="alternate" href="https://blog.csiki.org/learning/openProject/skynet/skynet-02/"/>
         <content type="html">&lt;p&gt;本文从skynet的main入口开始，梳理skynet运行流程，中间很多东西不会解释，必要的一些细节还是会解释滴，旨在梳理清楚skynet如何工作、启动skynet项目，发生了什么？后续将带着以下问题开始。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;skynet服务如何工作？skynet服务是什么？&lt;/li&gt;

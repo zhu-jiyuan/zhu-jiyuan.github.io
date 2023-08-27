@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.ohayo.live</id>
+    <id>https://blog.csiki.org</id>
     <title>ohayo&#39;s blog • Posts by &#34;数据结构&#34; category</title>
-    <link href="https://blog.ohayo.live" />
+    <link href="https://blog.csiki.org" />
     <updated>2022-09-26T12:37:41.000Z</updated>
     <category term="math" />
     <category term="journal" />
@@ -18,9 +18,9 @@
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.ohayo.live/CS/dataStruct/tree/huffmanTreeCompress/</id>
+        <id>https://blog.csiki.org/CS/dataStruct/tree/huffmanTreeCompress/</id>
         <title>哈夫曼树应用-压缩文件</title>
-        <link rel="alternate" href="https://blog.ohayo.live/CS/dataStruct/tree/huffmanTreeCompress/"/>
+        <link rel="alternate" href="https://blog.csiki.org/CS/dataStruct/tree/huffmanTreeCompress/"/>
         <content type="html">&lt;p&gt;大家好~时隔好几天，我来给大家讲哈夫曼树和它的应用了！&lt;br /&gt;
 在此前，我们很少谈及c/cpp语言对字节或者bit的操作，或者说是二进制文件的操作。因为今天我内容涉及到bit以及字节的操作，所以我们不得不介绍一些c/cpp与字节的知识。&lt;br /&gt;
 我们将从哈夫曼树开始，构造一棵哈夫曼树，补充一些c/cpp的操作，实现一个简陋的无损压缩&amp;amp;&amp;amp;解压的core。&lt;/p&gt;
@@ -545,9 +545,9 @@
         <updated>2022-09-26T12:37:41.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.ohayo.live/CS/dataStruct/tree/patchOfTree/</id>
+        <id>https://blog.csiki.org/CS/dataStruct/tree/patchOfTree/</id>
         <title>树与二叉树补充I</title>
-        <link rel="alternate" href="https://blog.ohayo.live/CS/dataStruct/tree/patchOfTree/"/>
+        <link rel="alternate" href="https://blog.csiki.org/CS/dataStruct/tree/patchOfTree/"/>
         <content type="html">&lt;p&gt;大家好，按照之前的计划，我们本应该去应用二叉树，实现一些应用的。然鹅，树与森林以及二叉树之间的关系、线索二叉树这些，没有给大家说。这可能会影响大家对之前知识的理解，所以还是补充一下。&lt;br /&gt;
 我知道你已经迫不及待去敲代码了，学好这些理论可以&lt;code&gt;让你更加清晰的认识代码&lt;/code&gt;，帮助你写出&lt;code&gt;更出色的代码&lt;/code&gt;，以及&lt;code&gt;节省思考如何写代码的时间&lt;/code&gt;。这是非常有必要的。&lt;br /&gt;
 当你十分清楚流程，以及思路时，背后的代码，就像喝汤一样。&lt;/p&gt;
@@ -690,9 +690,9 @@
         <updated>2022-09-20T11:13:07.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.ohayo.live/CS/dataStruct/tree/tree/</id>
+        <id>https://blog.csiki.org/CS/dataStruct/tree/tree/</id>
         <title>树与二叉树</title>
-        <link rel="alternate" href="https://blog.ohayo.live/CS/dataStruct/tree/tree/"/>
+        <link rel="alternate" href="https://blog.csiki.org/CS/dataStruct/tree/tree/"/>
         <content type="html">&lt;h1 id=&#34;树与森林&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树与森林&#34;&gt;&lt;/a&gt; 树与森林&lt;/h1&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2022/09/19/zjuKDBnc6d8kTNZ.png&#34; alt=&#34;image-20220919163736434&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;这就是两棵树，暂且称左边的为&lt;code&gt;树A&lt;/code&gt;,右边的为&lt;code&gt;树B&lt;/code&gt;，很明显，我们调换树A的b、c的顺序，两棵树就相同了。&lt;/p&gt;
@@ -1185,9 +1185,9 @@ string expression &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;
         <updated>2022-09-19T04:24:13.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.ohayo.live/CS/dataStruct/stringAndKMP/</id>
+        <id>https://blog.csiki.org/CS/dataStruct/stringAndKMP/</id>
         <title>字符串匹配</title>
-        <link rel="alternate" href="https://blog.ohayo.live/CS/dataStruct/stringAndKMP/"/>
+        <link rel="alternate" href="https://blog.csiki.org/CS/dataStruct/stringAndKMP/"/>
         <content type="html">&lt;h1 id=&#34;子串匹配问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#子串匹配问题&#34;&gt;&lt;/a&gt; 子串匹配问题&lt;/h1&gt;
 &lt;p&gt;子串匹配又叫模式串匹配&lt;/p&gt;
 &lt;p&gt;例如 &lt;code&gt;ab&lt;/code&gt; 是 &lt;code&gt;sdabc&lt;/code&gt;的子串，&lt;code&gt;ab&lt;/code&gt;又称为模式串，&lt;code&gt;sdabc&lt;/code&gt;又成为主串。&lt;/p&gt;
@@ -1309,7 +1309,7 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
         cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;index&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;endl&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
     &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
 &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;referencepink&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#referencepink&#34;&gt;&lt;/a&gt; [Reference]{.pink}&lt;/h3&gt;
+&lt;h3 id=&#34;reference&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#reference&#34;&gt;&lt;/a&gt; Reference&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV16X4y137qw&#34;&gt;b站next求解&lt;/a&gt;&lt;/p&gt;
@@ -1326,9 +1326,9 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
         <updated>2022-08-29T14:40:35.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.ohayo.live/CS/dataStruct/stackQueueArray/</id>
+        <id>https://blog.csiki.org/CS/dataStruct/stackQueueArray/</id>
         <title>栈、队列和数组</title>
-        <link rel="alternate" href="https://blog.ohayo.live/CS/dataStruct/stackQueueArray/"/>
+        <link rel="alternate" href="https://blog.csiki.org/CS/dataStruct/stackQueueArray/"/>
         <content type="html">&lt;h1 id=&#34;stack&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#stack&#34;&gt;&lt;/a&gt; stack&lt;/h1&gt;
 &lt;h2 id=&#34;顺序栈&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#顺序栈&#34;&gt;&lt;/a&gt; 顺序栈&lt;/h2&gt;
 &lt;p&gt;利用数组，进行栈的操作&lt;/p&gt;
