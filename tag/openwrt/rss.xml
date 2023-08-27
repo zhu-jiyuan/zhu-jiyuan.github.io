@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>ohayo&#39;s blog • Posts by &#34;openwrt&#34; tag</title>
+        <link>https://blog.csiki.org</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 27 Aug 2023 15:16:59 +0000</pubDate>
+        <lastBuildDate>Sun, 27 Aug 2023 15:16:59 +0000</lastBuildDate>
+        <category>math</category>
+        <category>openwrt</category>
+        <category>journal</category>
+        <category>note</category>
+        <category>tex</category>
+        <category>单调栈</category>
+        <category>log</category>
+        <category>soft</category>
+        <category>app</category>
+        <category>cpp</category>
+        <category>Linux</category>
+        <category>python</category>
+        <category>JavaScript</category>
+        <category>openProject</category>
+        <item>
+            <guid isPermalink="true">https://blog.csiki.org/tl6088/</guid>
+            <title>tl6088刷机之旅</title>
+            <link>https://blog.csiki.org/tl6088/</link>
+            <category>openwrt</category>
+            <pubDate>Sun, 27 Aug 2023 15:16:59 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;最近又换了一台路由器，TP-link-6088，因为上个月买了台switch，无论怎么换DNS，下载速度依旧感人至深。转手就把小米AX6000卖了，其实小米AX6000已经能满足我的日常的绝大需求，唯一缺点就是自由度不够，迟来的switch打破昔日的平静。&lt;/p&gt;
+&lt;h2 id=&#34;为啥选择tl6088&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为啥选择tl6088&#34;&gt;&lt;/a&gt; 为啥选择tl6088？&lt;/h2&gt;
+&lt;p&gt;对，这是个好问题，身为一个小垃圾佬，先后了解很多路由器，结合我的需求，要能刷openwrt，运行内存至少要512，CPU要好一些，处理网络数据包的同时，要留有余地去跑一些第三方服务。闪存要高一些，至少64。&lt;br /&gt;
+最重要的是价格一定要便宜！！！&lt;br /&gt;
+如此这般，候选路由器1号----红米ax6000，2号----tl6088，3号----tl6080。&lt;br /&gt;
+红米ax6000在配置上几乎与6088完全一样，加上是米家的路由器，再熟悉不过，可惜没有2.5G网口，惨遭淘汰。&lt;br /&gt;
+6088和6080，jd搞活动，价格相差不大，最终选择了6088，6百多拿下。&lt;/p&gt;
+&lt;h2 id=&#34;刷机openwrt&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#刷机openwrt&#34;&gt;&lt;/a&gt; 刷机openwrt&lt;/h2&gt;
+&lt;p&gt;tp家的路由器和米家的不一样，我看很多论坛上说tp的刷机过程比较繁琐。之前玩的红米ax6，刷机已经很繁琐了。我敲，这不会又是一个通宵吧。&lt;/p&gt;
+&lt;p&gt;还好小马过河，实际比红米ax6省事不少，利用6088的vpn漏洞，注入刷机包，再通过tftp服务，把recover传入，整体过程一气呵成，大概20分钟，就刷完了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230827235738.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;具体的参考文章可以看===&amp;gt;&lt;a href=&#34;https://blog.lishun.me/tl-xdr608x-openwrt-install&#34;&gt;这篇文章&lt;/a&gt;，作者很谨慎，传输的文件都加了md5验证文件唯一性，胆大心细，十分nice。&lt;/p&gt;
+&lt;h2 id=&#34;配置openwrt&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置openwrt&#34;&gt;&lt;/a&gt; 配置openwrt&lt;/h2&gt;
+&lt;p&gt;家里的电线光猫，全国通用密码，直接8080端口找到老web地址，把宽带账号&amp;amp;&amp;amp;密码记下来，删除第三个路由模式，创建一个桥接模式，钩上端口，最后关闭光猫的DHCP。&lt;/p&gt;
+&lt;p&gt;openwrt这边就容易多了，我用的是wan6接口拨号上网，其他默认就行。最后设置完Wi-Fi密码，把国家代码改成AU，澳大利亚提高无线功率。&lt;/p&gt;
+&lt;h3 id=&#34;插件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#插件&#34;&gt;&lt;/a&gt; 插件&lt;/h3&gt;
+&lt;p&gt;openwrt最好玩儿的地方。&lt;/p&gt;
+&lt;p&gt;我目前安装的插件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;open clash&lt;/li&gt;
+&lt;li&gt;smartdns&lt;/li&gt;
+&lt;li&gt;upnp&lt;/li&gt;
+&lt;li&gt;uu加速器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;smartdns具有很好的dns查询效果，自己设置完上游dns后，网页打开能快不少，不是吹的。&lt;/p&gt;
+&lt;p&gt;smartdns作为openclash的上游dns，有很好的加速效果，upnp就不用多说了，必装插件，打游戏嗖嗖滴。&lt;/p&gt;
+&lt;p&gt;uu加速器，害，一个臭打游戏的插件，加速主机，要什么小黑盒，都没用。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;简单记录一下新路由器的之旅，openwrt还有很多地方不懂，这周会开始逐步搞懂，最后记录一个通用的图文配置，以备不时之需。&lt;/p&gt;
+&lt;p&gt;唉，这周之前不到2刀买的域名过期了，导致我一堆的服务都歇菜了，azure for student 订阅也没多少了，希望黑5能找到好机子，下周会先配置完nvim，然后研究一下ws协议等，没有这些东西，程序员简直没法生活啊。抽空会更新c语言&amp;amp;&amp;amp;汇编。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.csiki.org/tl6088/</loc>
+    
+    <lastmod>2023-08-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.csiki.org/share/install-app/</loc>
     
     <lastmod>2023-08-27</lastmod>
@@ -270,6 +279,13 @@
   </url>
   
   <url>
+    <loc>https://blog.csiki.org/tags/openwrt/</loc>
+    <lastmod>2023-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.csiki.org/tags/journal/</loc>
     <lastmod>2023-08-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -363,6 +379,13 @@
   </url>
   
   <url>
+    <loc>https://blog.csiki.org/categories/openwrt/</loc>
+    <lastmod>2023-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.csiki.org/categories/journal/</loc>
     <lastmod>2023-08-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -378,6 +401,13 @@
   
   <url>
     <loc>https://blog.csiki.org/categories/leetcode/</loc>
+    <lastmod>2023-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.csiki.org/categories/openwrt/log/</loc>
     <lastmod>2023-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

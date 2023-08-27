@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "ohayo's blog • All posts by \"openwrt\" category",
+    "description": null,
+    "home_page_url": "https://blog.csiki.org",
+    "items": [
+        {
+            "id": "https://blog.csiki.org/tl6088/",
+            "url": "https://blog.csiki.org/tl6088/",
+            "title": "tl6088刷机之旅",
+            "date_published": "2023-08-27T15:16:59.000Z",
+            "content_html": "<p>最近又换了一台路由器，TP-link-6088，因为上个月买了台switch，无论怎么换DNS，下载速度依旧感人至深。转手就把小米AX6000卖了，其实小米AX6000已经能满足我的日常的绝大需求，唯一缺点就是自由度不够，迟来的switch打破昔日的平静。</p>\n<h2 id=\"为啥选择tl6088\"><a class=\"markdownIt-Anchor\" href=\"#为啥选择tl6088\"></a> 为啥选择tl6088？</h2>\n<p>对，这是个好问题，身为一个小垃圾佬，先后了解很多路由器，结合我的需求，要能刷openwrt，运行内存至少要512，CPU要好一些，处理网络数据包的同时，要留有余地去跑一些第三方服务。闪存要高一些，至少64。<br />\n最重要的是价格一定要便宜！！！<br />\n如此这般，候选路由器1号----红米ax6000，2号----tl6088，3号----tl6080。<br />\n红米ax6000在配置上几乎与6088完全一样，加上是米家的路由器，再熟悉不过，可惜没有2.5G网口，惨遭淘汰。<br />\n6088和6080，jd搞活动，价格相差不大，最终选择了6088，6百多拿下。</p>\n<h2 id=\"刷机openwrt\"><a class=\"markdownIt-Anchor\" href=\"#刷机openwrt\"></a> 刷机openwrt</h2>\n<p>tp家的路由器和米家的不一样，我看很多论坛上说tp的刷机过程比较繁琐。之前玩的红米ax6，刷机已经很繁琐了。我敲，这不会又是一个通宵吧。</p>\n<p>还好小马过河，实际比红米ax6省事不少，利用6088的vpn漏洞，注入刷机包，再通过tftp服务，把recover传入，整体过程一气呵成，大概20分钟，就刷完了。</p>\n<p><img data-src=\"https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230827235738.png\" alt=\"image.png\" /></p>\n<p>具体的参考文章可以看===&gt;<a href=\"https://blog.lishun.me/tl-xdr608x-openwrt-install\">这篇文章</a>，作者很谨慎，传输的文件都加了md5验证文件唯一性，胆大心细，十分nice。</p>\n<h2 id=\"配置openwrt\"><a class=\"markdownIt-Anchor\" href=\"#配置openwrt\"></a> 配置openwrt</h2>\n<p>家里的电线光猫，全国通用密码，直接8080端口找到老web地址，把宽带账号&amp;&amp;密码记下来，删除第三个路由模式，创建一个桥接模式，钩上端口，最后关闭光猫的DHCP。</p>\n<p>openwrt这边就容易多了，我用的是wan6接口拨号上网，其他默认就行。最后设置完Wi-Fi密码，把国家代码改成AU，澳大利亚提高无线功率。</p>\n<h3 id=\"插件\"><a class=\"markdownIt-Anchor\" href=\"#插件\"></a> 插件</h3>\n<p>openwrt最好玩儿的地方。</p>\n<p>我目前安装的插件</p>\n<ul>\n<li>open clash</li>\n<li>smartdns</li>\n<li>upnp</li>\n<li>uu加速器</li>\n</ul>\n<p>smartdns具有很好的dns查询效果，自己设置完上游dns后，网页打开能快不少，不是吹的。</p>\n<p>smartdns作为openclash的上游dns，有很好的加速效果，upnp就不用多说了，必装插件，打游戏嗖嗖滴。</p>\n<p>uu加速器，害，一个臭打游戏的插件，加速主机，要什么小黑盒，都没用。</p>\n<hr />\n<p>简单记录一下新路由器的之旅，openwrt还有很多地方不懂，这周会开始逐步搞懂，最后记录一个通用的图文配置，以备不时之需。</p>\n<p>唉，这周之前不到2刀买的域名过期了，导致我一堆的服务都歇菜了，azure for student 订阅也没多少了，希望黑5能找到好机子，下周会先配置完nvim，然后研究一下ws协议等，没有这些东西，程序员简直没法生活啊。抽空会更新c语言&amp;&amp;汇编。</p>\n",
+            "tags": [
+                "openwrt"
+            ]
+        }
+    ]
+}
