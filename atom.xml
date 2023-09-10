@@ -3,9 +3,10 @@
     <id>https://blog.csiki.org</id>
     <title>ohayo&#39;s blog</title>
     <link href="https://blog.csiki.org" />
-    <updated>2023-09-03T12:59:49.000Z</updated>
+    <updated>2023-09-10T14:07:48.000Z</updated>
     <category term="openwrt" />
     <category term="math" />
+    <category term="vector日志采集" />
     <category term="journal" />
     <category term="note" />
     <category term="tex" />
@@ -18,6 +19,115 @@
     <category term="python" />
     <category term="JavaScript" />
     <category term="openProject" />
+    <entry>
+        <id>https://blog.csiki.org/vector-record-tool/</id>
+        <title>vector日志采集-快速开始</title>
+        <link rel="alternate" href="https://blog.csiki.org/vector-record-tool/"/>
+        <content type="html">&lt;blockquote&gt;
+&lt;p&gt;本文默认已经有一丢丢lua基础&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;vector-采集流程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vector-采集流程&#34;&gt;&lt;/a&gt; vector 采集流程&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230910222313.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;vector官网给出的三步走战略，结合具体配置，设置采集源头—&amp;gt;进行数据转换—&amp;gt;保存转换好的数据。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-toml&#34; data-language=&#34;toml&#34;&gt;&lt;code class=&#34;language-toml&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;# 从哪采集&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token table class-name&#34;&gt;sources.generate_syslog&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;demo_logs&#34;&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;format&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;syslog&#34;&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;count&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;# 数据转换&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token table class-name&#34;&gt;transforms.remap_syslog&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;inputs&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;generate_syslog&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;# 转换的输入来自generate_syslog过程的返回值&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;remap&#34;&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;source&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;&#39;&#39;
+  structured = parse_syslog!(.message)
+  . = merge(., structured)
+&#39;&#39;&#39;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;#保存到哪&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token table class-name&#34;&gt;sinks.emit_syslog&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;inputs&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;remap_syslog&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 保存的输入来自remap_syslog过程的返回值&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;console&#34;&lt;/span&gt;          &lt;span class=&#34;token comment&#34;&gt;# 把结果直接输出到终端上&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;encoding.codec&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;json&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这相当的友好，除了toml配置，你还能使用&lt;code&gt;json&lt;/code&gt;或者&lt;s&gt;需要游标卡尺的&lt;/s&gt;&lt;code&gt;yaml&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;采集实战&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#采集实战&#34;&gt;&lt;/a&gt; 采集实战&lt;/h2&gt;
+&lt;p&gt;采集源头（sources）和 保存到哪（sinks）设置起来很容易，官网给出了相关的文档，你能看到很多sources、sink以及我们即将重点实战的数据转换（transforms）。&lt;/p&gt;
+&lt;h3 id=&#34;实战案例背景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实战案例背景&#34;&gt;&lt;/a&gt; 实战案例背景&lt;/h3&gt;
+&lt;p&gt;假设有一个程序会通过syslog输出日志，我们需要采集含有&lt;code&gt;ohayo&lt;/code&gt;字符串的日志，并把它保存到一个文件中。&lt;/p&gt;
+&lt;p&gt;采集源头：syslog&lt;br /&gt;
+数据转换需求：含有&lt;code&gt;ohayo&lt;/code&gt;字符串的日志&lt;br /&gt;
+保存：文件&lt;/p&gt;
+&lt;h3 id=&#34;vector-采集配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vector-采集配置&#34;&gt;&lt;/a&gt; vector 采集配置&lt;/h3&gt;
+&lt;p&gt;采集源头，监听本机的&lt;code&gt;/dev/log&lt;/code&gt;套接字，syslog与vector会通过这个套接字进行进程间通信。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-toml&#34; data-language=&#34;toml&#34;&gt;&lt;code class=&#34;language-toml&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token table class-name&#34;&gt;sources.syslog_1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;socket&#34;&lt;/span&gt;      &lt;span class=&#34;token comment&#34;&gt;# 类型采用套接字方式&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;mode&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;unix_stream&#34;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 采用unix流的方式&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/dev/log&#34;&lt;/span&gt;    &lt;span class=&#34;token comment&#34;&gt;# 监听套接字路径&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;数据转换，这里我使用的是lua，vector官网在极力推它们的remap，甚至给出&lt;code&gt;lua5.4比remap慢了60% &amp;amp;&amp;amp; lua只能在运行时才会出现问题，这不安全&lt;/code&gt;的恐怖言论。&lt;br /&gt;
+O(2n)、O(3n)都是O(n)，长板凳、矮板凳都是板凳。根据剃刀原理…这就是我选lua的理由。&lt;/p&gt;
+&lt;p&gt;PS: remap在面对格式规范的日志输出，要比lua更加方便。而且在启动vector时会进行静态检查。&lt;/p&gt;
+&lt;p&gt;让我们先看一下，lua怎么在vector中转换数据的吧！下图是官网文档。&lt;br /&gt;
+&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/Pasted%20image%2020230908191517.png&#34; alt=&#34;Pasted image 20230908191517.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;vector需要我们在配置中注册三个函数，&lt;code&gt;init | process | shutdown&lt;/code&gt;，&lt;code&gt;第一条日志&lt;/code&gt;来的时候，会执行&lt;code&gt;init&lt;/code&gt;函数，然后会执行&lt;code&gt;process&lt;/code&gt;，当转换结束时，会执行&lt;code&gt;shutdown&lt;/code&gt;。&lt;br /&gt;
+注意，init只有在第一条日志来的时候才执行，shutdown在关闭时执行，而process在每条日志来的时候都会执行。&lt;/p&gt;
+&lt;p&gt;结合配置格式填写如下&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-toml&#34; data-language=&#34;toml&#34;&gt;&lt;code class=&#34;language-toml&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token table class-name&#34;&gt;transforms.milestone_syslog_2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+  &lt;span class=&#34;token comment&#34;&gt;# General&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;lua&#34;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 转换类型lua&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;version&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;2&#34;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 转换api版本，1已经被弃用了。&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;inputs&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;milestone_syslog_1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 从采集源头获取数据&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;search_dirs&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;scripts&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;       &lt;span class=&#34;token comment&#34;&gt;# lua导包的搜寻路径。这里是相对路径./scripts&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;source&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;rd = require(&#39;record&#39;)&#34;&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;# 引入资源，这里面可以写代码哦&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;hooks.process&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;rd.process&#34;&lt;/span&gt;       &lt;span class=&#34;token comment&#34;&gt;# 注册 process函数&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-lua&#34; data-language=&#34;lua&#34;&gt;&lt;code class=&#34;language-lua&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;-- @filename record.lua&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;local&lt;/span&gt; M &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; M&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;event&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; emit&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; string&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;event&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;log&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;message&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;then&lt;/span&gt;
+		&lt;span class=&#34;token function&#34;&gt;emit&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;event&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;token keyword&#34;&gt;end&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; M&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解释一下，vector会把每一个从source采集日志，包装成一个table，日志的内容可以用&lt;code&gt;event.log.message&lt;/code&gt;获取，&lt;code&gt;emit&lt;/code&gt;函数会把&lt;code&gt;event&lt;/code&gt;结构的table发送到sink存储层进行保存。&lt;br /&gt;
+保存的内容是 &lt;code&gt;event.log&lt;/code&gt;，这个table的格式如下。&lt;br /&gt;
+&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230910221924.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;接着设置保存，从转换层（transform）拿到数据，编码成text，设置保存路径即可。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-toml&#34; data-language=&#34;toml&#34;&gt;&lt;code class=&#34;language-toml&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token table class-name&#34;&gt;sinks.milestone_record_file&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;file&#34;&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;inputs&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;milestone_syslog_2&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;idle_timeout_secs&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;30&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;encoding.codec&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;text&#34;&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/tmp/vector-%Y-%m-%d.log&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完整配置文件如下&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-toml&#34; data-language=&#34;toml&#34;&gt;&lt;code class=&#34;language-toml&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token table class-name&#34;&gt;sources.syslog_1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;socket&#34;&lt;/span&gt;      &lt;span class=&#34;token comment&#34;&gt;# 类型采用套接字方式&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;mode&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;unix_stream&#34;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 采用unix流的方式&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/dev/log&#34;&lt;/span&gt;    &lt;span class=&#34;token comment&#34;&gt;# 监听套接字路径&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token table class-name&#34;&gt;transforms.milestone_syslog_2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+  &lt;span class=&#34;token comment&#34;&gt;# General&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;lua&#34;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 转换类型lua&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;version&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;2&#34;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 转换api版本，1已经被弃用了。&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;inputs&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;milestone_syslog_1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 从采集源头获取数据&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;search_dirs&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;scripts&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;       &lt;span class=&#34;token comment&#34;&gt;# lua导包的搜寻路径。这里是相对路径./scripts&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;source&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;rd = require(&#39;record&#39;)&#34;&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;# 引入资源，这里面可以写代码哦,这个lua文件是自己写的哦。&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;hooks.process&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;rd.process&#34;&lt;/span&gt;       &lt;span class=&#34;token comment&#34;&gt;# 注册 process函数&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token table class-name&#34;&gt;sinks.milestone_record_file&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;file&#34;&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;inputs&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;milestone_syslog_2&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;idle_timeout_secs&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;30&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;encoding.codec&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;text&#34;&lt;/span&gt;
+&lt;span class=&#34;token key property&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/tmp/vector-%Y-%m-%d.log&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;sudo vector --config xxx.toml&lt;/code&gt;就可以进行采集了。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;&lt;/a&gt; 总结&lt;/h2&gt;
+&lt;p&gt;如果你对lua有一定了解，那么这篇文章就够了，你可以在转换层做全部事情。BTW，官网文档对各种API写的相当全，比较不错的参看。本文对快速开始使用vector来说已经足够了，如果你的日志是标准内容，请首选remap，快是真的快。&lt;/p&gt;
+</content>
+        <category term="vector日志采集" />
+        <updated>2023-09-10T14:07:48.000Z</updated>
+    </entry>
     <entry>
         <id>https://blog.csiki.org/openwrt-dns/</id>
         <title>openwrt插件篇-openclash&amp;adguardhome</title>
@@ -2103,19 +2213,5 @@ ssh-add &lt;span class=&#34;token parameter variable&#34;&gt;-K&lt;/span&gt; 私
 </content>
         <category term="math" />
         <updated>2022-12-30T06:53:21.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://blog.csiki.org/log/hexo-log/</id>
-        <title>hexo博客更新</title>
-        <link rel="alternate" href="https://blog.csiki.org/log/hexo-log/"/>
-        <content type="html">&lt;h2 id=&#34;更新动机&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#更新动机&#34;&gt;&lt;/a&gt; 更新动机&lt;/h2&gt;
-&lt;p&gt;一直没找到写作、UI都让我感觉很舒服的主题。&lt;/p&gt;
-&lt;p&gt;之前的主题很好看，有很多插件，更多的是用来写「笔记」或者「练习题」，因为写作很不方便，而且时不时渲染会出错，每次都要写好久，就有了这次的换主题。&lt;/p&gt;
-&lt;h2 id=&#34;以后安排&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#以后安排&#34;&gt;&lt;/a&gt; 以后安排&lt;/h2&gt;
-&lt;p&gt;之前的hexo主题，会写以后的错题、考试等等。&lt;br /&gt;
-这个主题会记录数学、分享等等，同时会接着改造。&lt;/p&gt;
-</content>
-        <category term="log" />
-        <updated>2022-12-05T08:15:00.000Z</updated>
     </entry>
 </feed>
