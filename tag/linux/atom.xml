@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.csiki.org</id>
+    <id>https://blog.hayoo.org</id>
     <title>ohayo&#39;s blog • Posts by &#34;linux&#34; tag</title>
-    <link href="https://blog.csiki.org" />
+    <link href="https://blog.hayoo.org" />
     <updated>2022-01-07T16:00:00.000Z</updated>
-    <category term="openwrt" />
     <category term="math" />
     <category term="vector日志采集" />
     <category term="journal" />
@@ -17,12 +16,15 @@
     <category term="cpp" />
     <category term="Linux" />
     <category term="python" />
+    <category term="openwrt" />
+    <category term="shell" />
+    <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.csiki.org/CS/linux/WritingService/</id>
+        <id>https://blog.hayoo.org/CS/linux/WritingService/</id>
         <title>linux中的service</title>
-        <link rel="alternate" href="https://blog.csiki.org/CS/linux/WritingService/"/>
+        <link rel="alternate" href="https://blog.hayoo.org/CS/linux/WritingService/"/>
         <content type="html">&lt;h2 id=&#34;服务编写&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#服务编写&#34;&gt;&lt;/a&gt; 服务编写&lt;/h2&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; /lib/systemd/system/服务名.service&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;line-numbers language-ini&#34; data-language=&#34;ini&#34;&gt;&lt;code class=&#34;language-ini&#34;&gt;
@@ -61,9 +63,9 @@
         <updated>2022-01-07T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.csiki.org/CS/linux/CustomServerInit/</id>
+        <id>https://blog.hayoo.org/CS/linux/CustomServerInit/</id>
         <title>科学上网&amp;基本的网络服务器&amp;内网穿透</title>
-        <link rel="alternate" href="https://blog.csiki.org/CS/linux/CustomServerInit/"/>
+        <link rel="alternate" href="https://blog.hayoo.org/CS/linux/CustomServerInit/"/>
         <content type="html">&lt;h1 id=&#34;科学上网vpn的搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#科学上网vpn的搭建&#34;&gt;&lt;/a&gt; 科学上网VPN的搭建&lt;/h1&gt;
 &lt;p&gt;v2一键脚本&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;#首先用firewall-cmd开v2的端口&lt;/span&gt;
@@ -192,9 +194,9 @@ systemctl restart smbd
         <updated>2022-01-04T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.csiki.org/CS/linux/linux_init/</id>
+        <id>https://blog.hayoo.org/CS/linux/linux_init/</id>
         <title>linux服务器初始化（个人自用）</title>
-        <link rel="alternate" href="https://blog.csiki.org/CS/linux/linux_init/"/>
+        <link rel="alternate" href="https://blog.hayoo.org/CS/linux/linux_init/"/>
         <content type="html">&lt;h1 id=&#34;重置root密码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重置root密码&#34;&gt;&lt;/a&gt; 重置root密码&lt;/h1&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;passwd&lt;/span&gt; root
 

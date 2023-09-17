@@ -2,11 +2,11 @@
     "version": "https://jsonfeed.org/version/1",
     "title": "ohayo's blog • All posts by \"cpp\" category",
     "description": null,
-    "home_page_url": "https://blog.csiki.org",
+    "home_page_url": "https://blog.hayoo.org",
     "items": [
         {
-            "id": "https://blog.csiki.org/CS/cpp/c-five-zone/",
-            "url": "https://blog.csiki.org/CS/cpp/c-five-zone/",
+            "id": "https://blog.hayoo.org/CS/cpp/c-five-zone/",
+            "url": "https://blog.hayoo.org/CS/cpp/c-five-zone/",
             "title": "c++的四大区",
             "date_published": "2022-04-19T13:02:40.000Z",
             "content_html": "<p>今天开始学习使用c++，之前一直使用python比较多。语言各有千秋，只有最合适。好啦，现在到了使用c++的时候惹。希望我能够喜欢上这个语言。</p>\n<p>let’s go!😽</p>\n<h2 id=\"内存四大区\"><a class=\"markdownIt-Anchor\" href=\"#内存四大区\"></a> 内存四大区</h2>\n<p>编程语言的内存管理，都是类似的，以c++为例，分为以下四大区</p>\n<ul>\n<li>代码区</li>\n<li>全局区</li>\n<li>栈区</li>\n<li>堆区</li>\n</ul>\n<p>每个区域都有不同的生命周期，咳咳咳，想要更好的编程，当然要好好学习内存管理。</p>\n<p>这块内容像学习心法一样，之修外，而不修内功，会走火入魔，同时不能更好、更快的学习新的东西，对编程语言也了解不够深入。</p>\n<h3 id=\"代码区\"><a class=\"markdownIt-Anchor\" href=\"#代码区\"></a> 代码区</h3>\n<p>代码区，顾名思义，这是存放代码的地方，但是cpu只认识指令。</p>\n<p>编译器在编译代码后，会把代码翻译成二进制指令集合，代码区就是存放这些指令集合的。</p>\n<p>所以代码区是不能更改的，代码区公用一份内存空间，为了节省空间啦。比如，代码中很多地方都有用到一个函数，但是这个函数在代码区只有一份。c++很抠门的。</p>\n<p>代码区，在程序运行的时候，会优先加载到内存中哟。</p>\n<h3 id=\"全局区\"><a class=\"markdownIt-Anchor\" href=\"#全局区\"></a> 全局区</h3>\n<p>c++的全局区，不同于一些编程语言，全局区包含常量，静态变量，全局变量等等。十分强大。</p>\n<p>全局区的这些东西，同样在编译阶段都会加载完成。</p>\n<p>程序运行时，与代码区一同先加载到内存之中。</p>\n<ul>\n<li>常量，包含字符串常量，数字常量等等</li>\n<li>静态变量，在编译时就会运行加载，并且只运行一次，存在全局区。</li>\n<li>全局变量，有程序员自己定义的变量，作用在全局区，所有的东西都能访问到它。</li>\n</ul>\n<h3 id=\"栈区\"><a class=\"markdownIt-Anchor\" href=\"#栈区\"></a> 栈区</h3>\n<p>栈区，是编译器的管理的内存，所有的临时变量都会储存在这里，交给编译器管理，十分方便，缺点栈的深度有限，有时候，我们需要使用大量递归，会栈溢出。</p>\n<h3 id=\"堆区\"><a class=\"markdownIt-Anchor\" href=\"#堆区\"></a> 堆区</h3>\n<p>堆区又程序员手动管理，例如c语言的malloc或者是c++的new，都是在堆区申请的内存，需要手动管理。</p>\n<ul>\n<li>优点，操作更加灵活方便。给予程序员很高的权限。</li>\n<li>缺点，增加了程序员的心智负担，内存往往没有得到很好的控制。</li>\n</ul>\n",

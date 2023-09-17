@@ -2,12 +2,11 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;log&#34; tag</title>
-        <link>https://blog.csiki.org</link>
+        <link>https://blog.hayoo.org</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Mon, 05 Dec 2022 08:15:00 +0000</pubDate>
         <lastBuildDate>Mon, 05 Dec 2022 08:15:00 +0000</lastBuildDate>
-        <category>openwrt</category>
         <category>math</category>
         <category>vector日志采集</category>
         <category>journal</category>
@@ -20,12 +19,15 @@
         <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
+        <category>openwrt</category>
+        <category>shell</category>
+        <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.csiki.org/log/hexo-log/</guid>
+            <guid isPermalink="true">https://blog.hayoo.org/log/hexo-log/</guid>
             <title>hexo博客更新</title>
-            <link>https://blog.csiki.org/log/hexo-log/</link>
+            <link>https://blog.hayoo.org/log/hexo-log/</link>
             <category>log</category>
             <pubDate>Mon, 05 Dec 2022 08:15:00 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;更新动机&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#更新动机&#34;&gt;&lt;/a&gt; 更新动机&lt;/h2&gt;
@@ -37,9 +39,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.csiki.org/log/redmiAx6/</guid>
+            <guid isPermalink="true">https://blog.hayoo.org/log/openwrt/redmiAx6/</guid>
             <title>折腾红米ax6</title>
-            <link>https://blog.csiki.org/log/redmiAx6/</link>
+            <link>https://blog.hayoo.org/log/openwrt/redmiAx6/</link>
             <category>log</category>
             <pubDate>Sat, 30 Apr 2022 12:47:11 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;此篇记录一下前段时间折腾路由器的经历。哈哈哈哈哈，真是太爽了，路由器这东西，真上头。&lt;/p&gt;

@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "ohayo's blog • All posts by \"shell\" tag",
+    "description": null,
+    "home_page_url": "https://blog.hayoo.org",
+    "items": [
+        {
+            "id": "https://blog.hayoo.org/log/openwrt/shell-ddns/",
+            "url": "https://blog.hayoo.org/log/openwrt/shell-ddns/",
+            "title": "用shell写一个ddns",
+            "date_published": "2023-09-17T12:40:56.000Z",
+            "content_html": "<h2 id=\"ddns\"><a class=\"markdownIt-Anchor\" href=\"#ddns\"></a> DDNS</h2>\n<p>假设有这样一种场景，有台服务器的<code>IP</code>每个一段时间会变化，而我们访问这台机器时，就可能因为这台机器的<code>IP</code>发生了变化，导致不能访问，必须到那台机器上，获取到新的<code>IP</code>地址才能进行访问，这十分的痛苦。</p>\n<p><code>DNS</code>可以把<code>IP</code>和<code>domain(域名)</code>进行映射，让我们可以通过域名就可以找到<code>IP</code>，然后对机器进行访问，如此一来，当服务器<code>IP</code>发生变化时，我们只需要把域名的<code>DNS</code>解析换成新的<code>IP</code>，其他设备用域名访问服务器，就感知不到<code>IP</code>发生了变化。可是手动档换<code>DNS</code>解析并不是一个好主意。</p>\n<p><code>DDNS(Dynamic DNS)</code>可以动态解析<code>IP</code>，当检测到<code>IP</code>发生了变化，就会自动换<code>DNS</code>解析，竟有此等技术，方可高枕无忧。</p>\n<h2 id=\"用shell实现一个simple-ddns\"><a class=\"markdownIt-Anchor\" href=\"#用shell实现一个simple-ddns\"></a> 用shell实现一个simple DDNS</h2>\n<p>DDNS实现方案很多，最简单粗暴的莫过于</p>\n<ol>\n<li>获取本地<code>IP</code></li>\n<li>获取域名<code>IP</code></li>\n<li>比较<code>IP</code>是否相同，如果相同就使用<code>API</code>更新<code>DNS</code></li>\n<li>定时运行上面步骤</li>\n</ol>\n<p><code>shell</code>方案中所用工具</p>\n<ul>\n<li><code>dig｜nslookup</code>等<code>DNS</code>查询工具获取域名<code>IP</code> 。</li>\n<li><code>ip｜ipconfig</code>等命令获取到本机<code>IP</code>。</li>\n<li><code>curl</code>发送网络请求，进行更换<code>DNS</code>解析</li>\n</ul>\n<pre class=\"line-numbers language-bash\" data-language=\"bash\"><code class=\"language-bash\"><span class=\"token comment\"># 这是ipv6的例子</span>\n\n<span class=\"token assign-left variable\">ipv6_address</span><span class=\"token operator\">=</span><span class=\"token variable\"><span class=\"token variable\">$(</span><span class=\"token function\">ip</span> <span class=\"token parameter variable\">-6</span> addr show br-lan <span class=\"token operator\">|</span> <span class=\"token function\">awk</span> <span class=\"token string\">'/inet6 .*global/&#123;gsub(/\\/[0-9]+/, \"\", $2); print $2&#125;'</span><span class=\"token variable\">)</span></span>\n\n<span class=\"token assign-left variable\">ipv6_older</span><span class=\"token operator\">=</span><span class=\"token variable\"><span class=\"token variable\">$(</span><span class=\"token function\">dig</span> AAAA baidu.com +short<span class=\"token variable\">)</span></span>\n\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">[</span> <span class=\"token string\">\"<span class=\"token variable\">$ipv6_address</span>\"</span> <span class=\"token operator\">!=</span> <span class=\"token string\">\"<span class=\"token variable\">$ipv6_older</span>\"</span> <span class=\"token punctuation\">]</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">then</span>\n        <span class=\"token builtin class-name\">echo</span> <span class=\"token variable\">$ipv6_address</span>\n        <span class=\"token function\">curl</span> <span class=\"token parameter variable\">-u</span> <span class=\"token string\">\"xxx\"</span>\n<span class=\"token keyword\">fi</span>\n<span aria-hidden=\"true\" class=\"line-numbers-rows\"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>\n<p>最后再用<code>crontab -e</code>，添加一个定时任务，完结撒花。</p>\n",
+            "tags": [
+                "shell",
+                "DDNS"
+            ]
+        }
+    ]
+}

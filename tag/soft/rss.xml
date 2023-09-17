@@ -2,12 +2,11 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;soft&#34; tag</title>
-        <link>https://blog.csiki.org</link>
+        <link>https://blog.hayoo.org</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Fri, 24 Feb 2023 07:34:42 +0000</pubDate>
         <lastBuildDate>Fri, 24 Feb 2023 07:34:42 +0000</lastBuildDate>
-        <category>openwrt</category>
         <category>math</category>
         <category>vector日志采集</category>
         <category>journal</category>
@@ -20,12 +19,15 @@
         <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
+        <category>openwrt</category>
+        <category>shell</category>
+        <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.csiki.org/log/mac-ssh/</guid>
+            <guid isPermalink="true">https://blog.hayoo.org/log/mac-ssh/</guid>
             <title>macbook免密ssh</title>
-            <link>https://blog.csiki.org/log/mac-ssh/</link>
+            <link>https://blog.hayoo.org/log/mac-ssh/</link>
             <category>soft</category>
             <pubDate>Fri, 24 Feb 2023 07:34:42 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;win 下使用xshell等软件连接服务器很便捷，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！&lt;/p&gt;

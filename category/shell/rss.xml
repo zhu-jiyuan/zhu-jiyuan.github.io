@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>ohayo&#39;s blog • Posts by &#34;shell&#34; category</title>
+        <link>https://blog.hayoo.org</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 17 Sep 2023 12:40:56 +0000</pubDate>
+        <lastBuildDate>Sun, 17 Sep 2023 12:40:56 +0000</lastBuildDate>
+        <category>math</category>
+        <category>vector日志采集</category>
+        <category>journal</category>
+        <category>note</category>
+        <category>tex</category>
+        <category>单调栈</category>
+        <category>log</category>
+        <category>soft</category>
+        <category>app</category>
+        <category>cpp</category>
+        <category>Linux</category>
+        <category>python</category>
+        <category>openwrt</category>
+        <category>shell</category>
+        <category>DDNS</category>
+        <category>JavaScript</category>
+        <category>openProject</category>
+        <item>
+            <guid isPermalink="true">https://blog.hayoo.org/log/openwrt/shell-ddns/</guid>
+            <title>用shell写一个ddns</title>
+            <link>https://blog.hayoo.org/log/openwrt/shell-ddns/</link>
+            <category>shell</category>
+            <category>DDNS</category>
+            <pubDate>Sun, 17 Sep 2023 12:40:56 +0000</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;ddns&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ddns&#34;&gt;&lt;/a&gt; DDNS&lt;/h2&gt;
+&lt;p&gt;假设有这样一种场景，有台服务器的&lt;code&gt;IP&lt;/code&gt;每个一段时间会变化，而我们访问这台机器时，就可能因为这台机器的&lt;code&gt;IP&lt;/code&gt;发生了变化，导致不能访问，必须到那台机器上，获取到新的&lt;code&gt;IP&lt;/code&gt;地址才能进行访问，这十分的痛苦。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;DNS&lt;/code&gt;可以把&lt;code&gt;IP&lt;/code&gt;和&lt;code&gt;domain(域名)&lt;/code&gt;进行映射，让我们可以通过域名就可以找到&lt;code&gt;IP&lt;/code&gt;，然后对机器进行访问，如此一来，当服务器&lt;code&gt;IP&lt;/code&gt;发生变化时，我们只需要把域名的&lt;code&gt;DNS&lt;/code&gt;解析换成新的&lt;code&gt;IP&lt;/code&gt;，其他设备用域名访问服务器，就感知不到&lt;code&gt;IP&lt;/code&gt;发生了变化。可是手动档换&lt;code&gt;DNS&lt;/code&gt;解析并不是一个好主意。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;DDNS(Dynamic DNS)&lt;/code&gt;可以动态解析&lt;code&gt;IP&lt;/code&gt;，当检测到&lt;code&gt;IP&lt;/code&gt;发生了变化，就会自动换&lt;code&gt;DNS&lt;/code&gt;解析，竟有此等技术，方可高枕无忧。&lt;/p&gt;
+&lt;h2 id=&#34;用shell实现一个simple-ddns&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用shell实现一个simple-ddns&#34;&gt;&lt;/a&gt; 用shell实现一个simple DDNS&lt;/h2&gt;
+&lt;p&gt;DDNS实现方案很多，最简单粗暴的莫过于&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;获取本地&lt;code&gt;IP&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;获取域名&lt;code&gt;IP&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;比较&lt;code&gt;IP&lt;/code&gt;是否相同，如果相同就使用&lt;code&gt;API&lt;/code&gt;更新&lt;code&gt;DNS&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;定时运行上面步骤&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;shell&lt;/code&gt;方案中所用工具&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dig｜nslookup&lt;/code&gt;等&lt;code&gt;DNS&lt;/code&gt;查询工具获取域名&lt;code&gt;IP&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ip｜ipconfig&lt;/code&gt;等命令获取到本机&lt;code&gt;IP&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;curl&lt;/code&gt;发送网络请求，进行更换&lt;code&gt;DNS&lt;/code&gt;解析&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;# 这是ipv6的例子&lt;/span&gt;
+
+&lt;span class=&#34;token assign-left variable&#34;&gt;ipv6_address&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;ip&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-6&lt;/span&gt; addr show br-lan &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;awk&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;/inet6 .*global/&amp;#123;gsub(/\/[0-9]+/, &#34;&#34;, $2); print $2&amp;#125;&#39;&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;)&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token assign-left variable&#34;&gt;ipv6_older&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;dig&lt;/span&gt; AAAA baidu.com +short&lt;span class=&#34;token variable&#34;&gt;)&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$ipv6_address&lt;/span&gt;&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$ipv6_older&lt;/span&gt;&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;then&lt;/span&gt;
+        &lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$ipv6_address&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-u&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;xxx&#34;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;fi&lt;/span&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最后再用&lt;code&gt;crontab -e&lt;/code&gt;，添加一个定时任务，完结撒花。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

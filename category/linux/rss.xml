@@ -2,12 +2,11 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;linux&#34; category</title>
-        <link>https://blog.csiki.org</link>
+        <link>https://blog.hayoo.org</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sat, 27 May 2023 09:14:19 +0000</pubDate>
         <lastBuildDate>Sat, 27 May 2023 09:14:19 +0000</lastBuildDate>
-        <category>openwrt</category>
         <category>math</category>
         <category>vector日志采集</category>
         <category>journal</category>
@@ -20,12 +19,15 @@
         <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
+        <category>openwrt</category>
+        <category>shell</category>
+        <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.csiki.org/share/install-app/</guid>
+            <guid isPermalink="true">https://blog.hayoo.org/share/install-app/</guid>
             <title>ubuntu一些应用</title>
-            <link>https://blog.csiki.org/share/install-app/</link>
+            <link>https://blog.hayoo.org/share/install-app/</link>
             <category>app</category>
             <pubDate>Sat, 27 May 2023 09:14:19 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;背景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#背景&#34;&gt;&lt;/a&gt; 背景&lt;/h2&gt;
@@ -100,9 +102,9 @@ i&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.csiki.org/CS/linux/WritingService/</guid>
+            <guid isPermalink="true">https://blog.hayoo.org/CS/linux/WritingService/</guid>
             <title>linux中的service</title>
-            <link>https://blog.csiki.org/CS/linux/WritingService/</link>
+            <link>https://blog.hayoo.org/CS/linux/WritingService/</link>
             <category>note</category>
             <category>Linux</category>
             <pubDate>Fri, 07 Jan 2022 16:00:00 +0000</pubDate>
@@ -141,9 +143,9 @@ i&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.csiki.org/CS/linux/CustomServerInit/</guid>
+            <guid isPermalink="true">https://blog.hayoo.org/CS/linux/CustomServerInit/</guid>
             <title>科学上网&amp;基本的网络服务器&amp;内网穿透</title>
-            <link>https://blog.csiki.org/CS/linux/CustomServerInit/</link>
+            <link>https://blog.hayoo.org/CS/linux/CustomServerInit/</link>
             <category>Linux</category>
             <pubDate>Tue, 04 Jan 2022 16:00:00 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;科学上网vpn的搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#科学上网vpn的搭建&#34;&gt;&lt;/a&gt; 科学上网VPN的搭建&lt;/h1&gt;
@@ -272,9 +274,9 @@ systemctl restart smbd
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.csiki.org/CS/linux/linux_init/</guid>
+            <guid isPermalink="true">https://blog.hayoo.org/CS/linux/linux_init/</guid>
             <title>linux服务器初始化（个人自用）</title>
-            <link>https://blog.csiki.org/CS/linux/linux_init/</link>
+            <link>https://blog.hayoo.org/CS/linux/linux_init/</link>
             <category>note</category>
             <category>Linux</category>
             <pubDate>Mon, 03 Jan 2022 16:00:00 +0000</pubDate>

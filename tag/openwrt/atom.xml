@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.csiki.org</id>
+    <id>https://blog.hayoo.org</id>
     <title>ohayo&#39;s blog • Posts by &#34;openwrt&#34; tag</title>
-    <link href="https://blog.csiki.org" />
+    <link href="https://blog.hayoo.org" />
     <updated>2023-09-03T12:59:49.000Z</updated>
-    <category term="openwrt" />
     <category term="math" />
     <category term="vector日志采集" />
     <category term="journal" />
@@ -17,12 +16,15 @@
     <category term="cpp" />
     <category term="Linux" />
     <category term="python" />
+    <category term="openwrt" />
+    <category term="shell" />
+    <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.csiki.org/openwrt-dns/</id>
+        <id>https://blog.hayoo.org/log/openwrt/openwrt-dns/</id>
         <title>openwrt插件篇-openclash&amp;adguardhome</title>
-        <link rel="alternate" href="https://blog.csiki.org/openwrt-dns/"/>
+        <link rel="alternate" href="https://blog.hayoo.org/log/openwrt/openwrt-dns/"/>
         <content type="html">&lt;p&gt;DNS（&lt;strong&gt;D&lt;/strong&gt;omain &lt;strong&gt;N&lt;/strong&gt;ame &lt;strong&gt;S&lt;/strong&gt;ystem），网络域名系统。可以把它对应手机里的联系人，通过联系人的名字就可以找到电话号码，也能通过手机号找到对应联系人的信息，从而能够准确给特定人拨打电话或者发短信等等。而DNS会把网络域名转换成ip，也能把ip转换成网络域名。&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230903211232.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;adguardhome&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#adguardhome&#34;&gt;&lt;/a&gt; AdguardHome&lt;/h2&gt;
@@ -75,9 +77,9 @@ https://1.1.1.1/dns-query&lt;span aria-hidden=&#34;true&#34; class=&#34;line-num
         <updated>2023-09-03T12:59:49.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.csiki.org/tl6088/</id>
+        <id>https://blog.hayoo.org/log/openwrt/tl6088/</id>
         <title>tl6088刷机之旅</title>
-        <link rel="alternate" href="https://blog.csiki.org/tl6088/"/>
+        <link rel="alternate" href="https://blog.hayoo.org/log/openwrt/tl6088/"/>
         <content type="html">&lt;p&gt;最近又换了一台路由器，TP-link-6088，因为上个月买了台switch，无论怎么换DNS，下载速度依旧感人至深。转手就把小米AX6000卖了，其实小米AX6000已经能满足我的日常的绝大需求，唯一缺点就是自由度不够，迟来的switch打破昔日的平静。&lt;/p&gt;
 &lt;h2 id=&#34;为啥选择tl6088&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为啥选择tl6088&#34;&gt;&lt;/a&gt; 为啥选择tl6088？&lt;/h2&gt;
 &lt;p&gt;对，这是个好问题，身为一个小垃圾佬，先后了解很多路由器，结合我的需求，要能刷openwrt，运行内存至少要512，CPU要好一些，处理网络数据包的同时，要留有余地去跑一些第三方服务。闪存要高一些，至少64。&lt;br /&gt;

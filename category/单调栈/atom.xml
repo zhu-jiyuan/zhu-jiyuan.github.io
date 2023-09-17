@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.csiki.org</id>
+    <id>https://blog.hayoo.org</id>
     <title>ohayo&#39;s blog • Posts by &#34;单调栈&#34; category</title>
-    <link href="https://blog.csiki.org" />
+    <link href="https://blog.hayoo.org" />
     <updated>2022-08-30T14:05:15.000Z</updated>
-    <category term="openwrt" />
     <category term="math" />
     <category term="vector日志采集" />
     <category term="journal" />
@@ -17,12 +16,15 @@
     <category term="cpp" />
     <category term="Linux" />
     <category term="python" />
+    <category term="openwrt" />
+    <category term="shell" />
+    <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.csiki.org/leetcode/monotonousStack/</id>
+        <id>https://blog.hayoo.org/leetcode/monotonousStack/</id>
         <title>单调栈</title>
-        <link rel="alternate" href="https://blog.csiki.org/leetcode/monotonousStack/"/>
+        <link rel="alternate" href="https://blog.hayoo.org/leetcode/monotonousStack/"/>
         <content type="html">&lt;h1 id=&#34;question&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#question&#34;&gt;&lt;/a&gt; Question&lt;/h1&gt;
 &lt;p&gt;nums1 中数字 x 的 下一个更大元素 是指 x 在 nums2 中对应位置 右侧 的 第一个 比 x 大的元素。&lt;/p&gt;
 &lt;p&gt;给你两个 没有重复元素 的数组 nums1 和 nums2 ，下标从 0 开始计数，其中nums1 是 nums2 的子集。&lt;/p&gt;

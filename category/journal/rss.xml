@@ -2,12 +2,11 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;journal&#34; category</title>
-        <link>https://blog.csiki.org</link>
+        <link>https://blog.hayoo.org</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sat, 31 Dec 2022 04:27:57 +0000</pubDate>
         <lastBuildDate>Sat, 31 Dec 2022 04:27:57 +0000</lastBuildDate>
-        <category>openwrt</category>
         <category>math</category>
         <category>vector日志采集</category>
         <category>journal</category>
@@ -20,12 +19,15 @@
         <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
+        <category>openwrt</category>
+        <category>shell</category>
+        <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.csiki.org/journal/day_1/</guid>
+            <guid isPermalink="true">https://blog.hayoo.org/journal/day_1/</guid>
             <title>log-是时候迈向新阶段了！</title>
-            <link>https://blog.csiki.org/journal/day_1/</link>
+            <link>https://blog.hayoo.org/journal/day_1/</link>
             <category>journal</category>
             <pubDate>Sat, 31 Dec 2022 04:27:57 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;就在昨天晚上，我正在床上津津有味的看一篇有关快速幂的博文，这小菜一碟～，简单简单，小小快速幂可笑可笑。往下一划，发现这个博主还写了一篇「快速取模」的文章，死去的回忆开始攻击我。&lt;/p&gt;

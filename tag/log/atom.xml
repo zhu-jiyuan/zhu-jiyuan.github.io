@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.csiki.org</id>
+    <id>https://blog.hayoo.org</id>
     <title>ohayo&#39;s blog • Posts by &#34;log&#34; tag</title>
-    <link href="https://blog.csiki.org" />
+    <link href="https://blog.hayoo.org" />
     <updated>2022-12-05T08:15:00.000Z</updated>
-    <category term="openwrt" />
     <category term="math" />
     <category term="vector日志采集" />
     <category term="journal" />
@@ -17,12 +16,15 @@
     <category term="cpp" />
     <category term="Linux" />
     <category term="python" />
+    <category term="openwrt" />
+    <category term="shell" />
+    <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.csiki.org/log/hexo-log/</id>
+        <id>https://blog.hayoo.org/log/hexo-log/</id>
         <title>hexo博客更新</title>
-        <link rel="alternate" href="https://blog.csiki.org/log/hexo-log/"/>
+        <link rel="alternate" href="https://blog.hayoo.org/log/hexo-log/"/>
         <content type="html">&lt;h2 id=&#34;更新动机&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#更新动机&#34;&gt;&lt;/a&gt; 更新动机&lt;/h2&gt;
 &lt;p&gt;一直没找到写作、UI都让我感觉很舒服的主题。&lt;/p&gt;
 &lt;p&gt;之前的主题很好看，有很多插件，更多的是用来写「笔记」或者「练习题」，因为写作很不方便，而且时不时渲染会出错，每次都要写好久，就有了这次的换主题。&lt;/p&gt;
@@ -34,9 +36,9 @@
         <updated>2022-12-05T08:15:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.csiki.org/log/redmiAx6/</id>
+        <id>https://blog.hayoo.org/log/openwrt/redmiAx6/</id>
         <title>折腾红米ax6</title>
-        <link rel="alternate" href="https://blog.csiki.org/log/redmiAx6/"/>
+        <link rel="alternate" href="https://blog.hayoo.org/log/openwrt/redmiAx6/"/>
         <content type="html">&lt;p&gt;此篇记录一下前段时间折腾路由器的经历。哈哈哈哈哈，真是太爽了，路由器这东西，真上头。&lt;/p&gt;
 &lt;p&gt;📍&lt;/p&gt;
 &lt;h1 id=&#34;选择路由器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#选择路由器&#34;&gt;&lt;/a&gt; 选择路由器&lt;/h1&gt;

@@ -2,12 +2,11 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;cpp&#34; category</title>
-        <link>https://blog.csiki.org</link>
+        <link>https://blog.hayoo.org</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Tue, 19 Apr 2022 13:02:40 +0000</pubDate>
         <lastBuildDate>Tue, 19 Apr 2022 13:02:40 +0000</lastBuildDate>
-        <category>openwrt</category>
         <category>math</category>
         <category>vector日志采集</category>
         <category>journal</category>
@@ -20,12 +19,15 @@
         <category>cpp</category>
         <category>Linux</category>
         <category>python</category>
+        <category>openwrt</category>
+        <category>shell</category>
+        <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.csiki.org/CS/cpp/c-five-zone/</guid>
+            <guid isPermalink="true">https://blog.hayoo.org/CS/cpp/c-five-zone/</guid>
             <title>c++的四大区</title>
-            <link>https://blog.csiki.org/CS/cpp/c-five-zone/</link>
+            <link>https://blog.hayoo.org/CS/cpp/c-five-zone/</link>
             <category>note</category>
             <category>cpp</category>
             <pubDate>Tue, 19 Apr 2022 13:02:40 +0000</pubDate>
