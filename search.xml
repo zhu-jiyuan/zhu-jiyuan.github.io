@@ -2187,9 +2187,17 @@ systemctl restart smbd
 <span class="token key attr-name">local_port</span> <span class="token punctuation">=</span> <span class="token value attr-value">80</span>
 <span class="token key attr-name">remote_port</span> <span class="token punctuation">=</span> <span class="token value attr-value">7002</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>cmd下启动即可。</p>
+<p>cmd下，frp！启动！。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./frpc <span class="token parameter variable">-c</span> ./frpc.ini<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>用ipad随时随地通过服务器ip远程连接家里的电脑</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105230626923.png" alt="image-20220105230626923" /></p>
+<h3 id="三-安装nssm自启管理服务设置开机自启"><a class="markdownIt-Anchor" href="#三-安装nssm自启管理服务设置开机自启"></a> 三、安装nssm自启管理服务&amp;&amp;设置开机自启</h3>
+<p>nssm是一款古老的window后台服务管理软件，偶然一次在chat-gpt上得知，使用上的体验超乎我的想象，居然还挺好用，只需要命令行操作就行。</p>
+<p><a href="https://nssm.cc/download">官网下载nssm</a></p>
+<p>在管理员权限下</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nssm <span class="token function">install</span> frpc <span class="token string">"路径<span class="token entity" title="\f">\f</span>rpc.exe"</span> <span class="token string">"-c 路径<span class="token entity" title="\f">\f</span>rpc.ini"</span>
+nssm start frpc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>未完结，先撒花。</p>
 ]]></content>
       <categories>
         <category>CS</category>

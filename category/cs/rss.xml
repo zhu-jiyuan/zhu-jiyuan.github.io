@@ -1798,9 +1798,17 @@ systemctl restart smbd
 &lt;span class=&#34;token key attr-name&#34;&gt;local_port&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;80&lt;/span&gt;
 &lt;span class=&#34;token key attr-name&#34;&gt;remote_port&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token value attr-value&#34;&gt;7002&lt;/span&gt;
 &lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;cmd下启动即可。&lt;/p&gt;
+&lt;p&gt;cmd下，frp！启动！。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;./frpc &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; ./frpc.ini&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;用ipad随时随地通过服务器ip远程连接家里的电脑&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105230626923.png&#34; alt=&#34;image-20220105230626923&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;三-安装nssm自启管理服务设置开机自启&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三-安装nssm自启管理服务设置开机自启&#34;&gt;&lt;/a&gt; 三、安装nssm自启管理服务&amp;amp;&amp;amp;设置开机自启&lt;/h3&gt;
+&lt;p&gt;nssm是一款古老的window后台服务管理软件，偶然一次在chat-gpt上得知，使用上的体验超乎我的想象，居然还挺好用，只需要命令行操作就行。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://nssm.cc/download&#34;&gt;官网下载nssm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在管理员权限下&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;nssm &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; frpc &lt;span class=&#34;token string&#34;&gt;&#34;路径&lt;span class=&#34;token entity&#34; title=&#34;\f&#34;&gt;\f&lt;/span&gt;rpc.exe&#34;&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;-c 路径&lt;span class=&#34;token entity&#34; title=&#34;\f&#34;&gt;\f&lt;/span&gt;rpc.ini&#34;&lt;/span&gt;
+nssm start frpc&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;未完结，先撒花。&lt;/p&gt;
  ]]></description>
         </item>
         <item>
