@@ -3,24 +3,83 @@
     <id>https://blog.hayoo.org</id>
     <title>ohayo&#39;s blog • Posts by &#34;log&#34; tag</title>
     <link href="https://blog.hayoo.org" />
-    <updated>2022-12-05T08:15:00.000Z</updated>
+    <updated>2024-04-29T14:35:48.000Z</updated>
     <category term="math" />
+    <category term="openwrt" />
+    <category term="log" />
     <category term="vector日志采集" />
     <category term="journal" />
+    <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
-    <category term="note" />
-    <category term="log" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
     <category term="Linux" />
     <category term="python" />
-    <category term="openwrt" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
+    <entry>
+        <id>https://blog.hayoo.org/soft-router-is-joker/</id>
+        <title>没必要的软路由</title>
+        <link rel="alternate" href="https://blog.hayoo.org/soft-router-is-joker/"/>
+        <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;p&gt;小学到初二，家里的网线从宽带我世界的电话拨号，升级到了光纤，我的游戏事业也如日中天，形势一片大好之际，我爸妈把网线掐了，直到高中毕业，在此期间我攻坚克难、不畏艰险，先后破解了邻居家的WiFi密码，掉包率极高，在电竞黄金期，摧毁了我的电竞梦想。&lt;/p&gt;
+&lt;p&gt;毕业后，第一次租房30m宽带，100块才能使用50m，恰好当时拿下了switch，下个塞尔达都要等一天，看直播不能玩游戏。直接给我整破防了。。。&lt;/p&gt;
+&lt;p&gt;家里一定要有好的网络体验！&lt;/p&gt;
+&lt;p&gt;以下是我认为好的网络体验。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;switch等学习机能全速下载&lt;/li&gt;
+&lt;li&gt;全家设备能透明进行科学上网&lt;/li&gt;
+&lt;li&gt;网络延迟要低，dns不能泄露&lt;/li&gt;
+&lt;li&gt;稳定！稳定！稳定！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;不值得的软路由&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#不值得的软路由&#34;&gt;&lt;/a&gt; 不值得的软路由&lt;/h2&gt;
+&lt;p&gt;混迹在各个论坛，经常会刷到软路由、n1等等帖子，通过这些帖子的描述，软路由其实就是一个功耗低一点的小电脑，通常会刷成openwrt、爱快这些系统，光猫网线连上它而后一起放入弱电箱，软路由再连路由器。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.oover.dev/images/20240429231321.png&#34; alt=&#34;Pasted image 20240429231321.png&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;软路由玩法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#软路由玩法&#34;&gt;&lt;/a&gt; 软路由玩法&lt;/h3&gt;
+&lt;p&gt;软路由的配置可以自定义，通常要比路由器的配置高很多，举个例子，这些老哥通常会整一个x86的cpu、4g内存、128g存储的配置。然后在软路由里面安装docker、科学上网等工具，充当一个小服务器使用。&lt;/p&gt;
+&lt;p&gt;比如它安装了科学上网，因为路由器的数据包要经过它，在软路由这一跳，会完成科学代理操作，这就实现了家中网络都能无感科学上网。&lt;/p&gt;
+&lt;p&gt;功耗低费电少，cpu性能好，加上家里带宽一般都比较大，docker里面跑一些薅羊毛脚本，挂载alist等网盘，亦或是各种骚操作，完成可以充当服务器使用。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;每每看到这些帖子，我都忍不住想要去捡点这些垃圾，猛猛吃上几口。直到我了解到近年来mtk的arm cpu愈发强大，今非昔比。&lt;/p&gt;
+&lt;h2 id=&#34;硬路由足矣&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#硬路由足矣&#34;&gt;&lt;/a&gt; 硬路由足矣！&lt;/h2&gt;
+&lt;p&gt;硬路由其实就是我们平时所使用的路由器，早期路由器的cpu十分拉跨，忙中偷闲基本不可能，处理网络数据包都费劲。现在路由器cpu已经足够好了，且支持硬件加速。如此一来，软路由多了一跳，还没硬件加速，岂不是多次一举。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.oover.dev/images/20240430100254.png&#34; alt=&#34;Pasted image 20240429231321.png&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;硬路由玩法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#硬路由玩法&#34;&gt;&lt;/a&gt; 硬路由玩法&lt;/h2&gt;
+&lt;p&gt;硬路由出厂的系统，基本都是基于openwrt做的深度魔改，主打一个稳定。想要安装科学上网等插件，是不可能滴。因此必须获得它的ssh权限，才能做老系统不敢做之事。&lt;/p&gt;
+&lt;p&gt;本科期间搞了一台红米ax6，那台路由器，刷了openwrt之后，上网体验也是极好的，运行一些插件后，cpu完全能妥妥应对，只是没有2.5G口、不能玩docker等（因为存储小，无法扩容），略感遗憾。&lt;/p&gt;
+&lt;p&gt;23年8月痛下死手，买了TP的6088，512MB运存， 64MB闪存，2个2.5G口，4个千兆，一个USB，配置在700的价位还算不错。usb接口可以插上ssd来增加存储，之后就能使用docker了。&lt;/p&gt;
+&lt;p&gt;到手第一天，根据6088vpn漏洞，刷了&lt;code&gt;ImmortalWrt&lt;/code&gt;，加上了一块128g的ssd，装了docker一些乱起八糟的插件，体验上并不好，毕竟只有512MB内存，加上很多插件存在一些bug，引起cpu飙升。&lt;/p&gt;
+&lt;p&gt;在路由器上跑docker，是不可取的，all in one + 中心化，一旦路由器某个服务出现问题，家里直接没网。最终只保留了&lt;code&gt;mosdns，wireguard，homeproxy&lt;/code&gt;以及自己用shell写的ddns。十分稳定，mtk确实可以，平均负载基本都是0。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.oover.dev/images/20240430103013.png&#34; alt=&#34;Pasted image 20240430103013.png&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;插件吐槽&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#插件吐槽&#34;&gt;&lt;/a&gt; 插件吐槽&lt;/h3&gt;
+&lt;p&gt;这里不得不插一嘴，插件的选择，其实openwrt很稳定的，搞懂之后，结合自己的路由器和一些老哥的前车之鉴做一些小调整，上网体验没得说。&lt;/p&gt;
+&lt;p&gt;很多不稳定是插件导致的，比如最早我使用的openclash，因为fakeip导致平时网络工具经常无法正常使用，像ping等，折腾了许久配置，前前后后redirect等方案都在openclash上进行了尝试，然而还是会在使用几天后，莫名的国内访问延迟上涨，跳点大。甚至去读了一部分metaclash源码，写的很一般。后来换成了pw，pw更是卧龙凤雏，开启大陆优化，国内延迟会降到没开pw时的大小，和openclash一样，大概2天左右，就会跳点变大，cpu飙升。&lt;br /&gt;
+结合日志，加上cpu和内存根本没到瓶颈，也不是mosdns的问题，不得其解。&lt;/p&gt;
+&lt;p&gt;后来看到了sing-box内核，简单测试了一下，占用和性能都比clash要好，就选择了基于sing-box的homeproxy，仅仅踩了一些分流的坑，界面上也要简洁很多。国内速度和没开代理一样，用的bwg gia hy2，没感觉有晚高峰什么的，一直很流畅稳定。&lt;br /&gt;
+（分流的坑是因为GPT网页开启了http/3，如果不开启udp服务器代理或者不禁用它，就无法正常使用。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;docker的需求都交给了腾讯云，通过ipv6 wireguard回家访问，而且硬路由还有硬件加速，实在想不出，软路由有什么好的，还多了一跳。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;&lt;/a&gt; 总结&lt;/h2&gt;
+&lt;p&gt;路由器今非昔比，路由器有10胜，软路由有10败。&lt;/p&gt;
+&lt;p&gt;路由器有硬件加速，软路由没有，此乃一胜。&lt;br /&gt;
+路由器已经一胜了，软路由零胜，此乃二胜。&lt;br /&gt;
+路由器已经二胜了，软路由零胜，此乃三胜。&lt;br /&gt;
+路由器已经三胜了，软路由零胜，此乃四胜。&lt;br /&gt;
+路由器已经四胜了，软路由零胜，此乃五胜。&lt;br /&gt;
+路由器已经五胜了，软路由零胜，此乃六胜。&lt;br /&gt;
+路由器已经六胜了，软路由零胜，此乃七胜。&lt;br /&gt;
+路由器已经七胜了，软路由零胜，此乃八胜。&lt;br /&gt;
+路由器已经八胜了，软路由零胜，此乃九胜。&lt;br /&gt;
+路由器已经九胜了，软路由零胜，此乃十胜。&lt;/p&gt;
+</content>
+        <category term="openwrt" />
+        <category term="log" />
+        <updated>2024-04-29T14:35:48.000Z</updated>
+    </entry>
     <entry>
         <id>https://blog.hayoo.org/log/hexo-log/</id>
         <title>hexo博客更新</title>

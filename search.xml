@@ -64,6 +64,68 @@
       </tags>
   </entry>
   <entry>
+    <title>没必要的软路由</title>
+    <url>/soft-router-is-joker/</url>
+    <content><![CDATA[<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>小学到初二，家里的网线从宽带我世界的电话拨号，升级到了光纤，我的游戏事业也如日中天，形势一片大好之际，我爸妈把网线掐了，直到高中毕业，在此期间我攻坚克难、不畏艰险，先后破解了邻居家的WiFi密码，掉包率极高，在电竞黄金期，摧毁了我的电竞梦想。</p>
+<p>毕业后，第一次租房30m宽带，100块才能使用50m，恰好当时拿下了switch，下个塞尔达都要等一天，看直播不能玩游戏。直接给我整破防了。。。</p>
+<p>家里一定要有好的网络体验！</p>
+<p>以下是我认为好的网络体验。</p>
+<ul>
+<li>switch等学习机能全速下载</li>
+<li>全家设备能透明进行科学上网</li>
+<li>网络延迟要低，dns不能泄露</li>
+<li>稳定！稳定！稳定！</li>
+</ul>
+<h2 id="不值得的软路由"><a class="markdownIt-Anchor" href="#不值得的软路由"></a> 不值得的软路由</h2>
+<p>混迹在各个论坛，经常会刷到软路由、n1等等帖子，通过这些帖子的描述，软路由其实就是一个功耗低一点的小电脑，通常会刷成openwrt、爱快这些系统，光猫网线连上它而后一起放入弱电箱，软路由再连路由器。</p>
+<p><img data-src="https://static.oover.dev/images/20240429231321.png" alt="Pasted image 20240429231321.png" /></p>
+<h3 id="软路由玩法"><a class="markdownIt-Anchor" href="#软路由玩法"></a> 软路由玩法</h3>
+<p>软路由的配置可以自定义，通常要比路由器的配置高很多，举个例子，这些老哥通常会整一个x86的cpu、4g内存、128g存储的配置。然后在软路由里面安装docker、科学上网等工具，充当一个小服务器使用。</p>
+<p>比如它安装了科学上网，因为路由器的数据包要经过它，在软路由这一跳，会完成科学代理操作，这就实现了家中网络都能无感科学上网。</p>
+<p>功耗低费电少，cpu性能好，加上家里带宽一般都比较大，docker里面跑一些薅羊毛脚本，挂载alist等网盘，亦或是各种骚操作，完成可以充当服务器使用。</p>
+<hr />
+<p>每每看到这些帖子，我都忍不住想要去捡点这些垃圾，猛猛吃上几口。直到我了解到近年来mtk的arm cpu愈发强大，今非昔比。</p>
+<h2 id="硬路由足矣"><a class="markdownIt-Anchor" href="#硬路由足矣"></a> 硬路由足矣！</h2>
+<p>硬路由其实就是我们平时所使用的路由器，早期路由器的cpu十分拉跨，忙中偷闲基本不可能，处理网络数据包都费劲。现在路由器cpu已经足够好了，且支持硬件加速。如此一来，软路由多了一跳，还没硬件加速，岂不是多次一举。</p>
+<p><img data-src="https://static.oover.dev/images/20240430100254.png" alt="Pasted image 20240429231321.png" /></p>
+<h2 id="硬路由玩法"><a class="markdownIt-Anchor" href="#硬路由玩法"></a> 硬路由玩法</h2>
+<p>硬路由出厂的系统，基本都是基于openwrt做的深度魔改，主打一个稳定。想要安装科学上网等插件，是不可能滴。因此必须获得它的ssh权限，才能做老系统不敢做之事。</p>
+<p>本科期间搞了一台红米ax6，那台路由器，刷了openwrt之后，上网体验也是极好的，运行一些插件后，cpu完全能妥妥应对，只是没有2.5G口、不能玩docker等（因为存储小，无法扩容），略感遗憾。</p>
+<p>23年8月痛下死手，买了TP的6088，512MB运存， 64MB闪存，2个2.5G口，4个千兆，一个USB，配置在700的价位还算不错。usb接口可以插上ssd来增加存储，之后就能使用docker了。</p>
+<p>到手第一天，根据6088vpn漏洞，刷了<code>ImmortalWrt</code>，加上了一块128g的ssd，装了docker一些乱起八糟的插件，体验上并不好，毕竟只有512MB内存，加上很多插件存在一些bug，引起cpu飙升。</p>
+<p>在路由器上跑docker，是不可取的，all in one + 中心化，一旦路由器某个服务出现问题，家里直接没网。最终只保留了<code>mosdns，wireguard，homeproxy</code>以及自己用shell写的ddns。十分稳定，mtk确实可以，平均负载基本都是0。</p>
+<p><img data-src="https://static.oover.dev/images/20240430103013.png" alt="Pasted image 20240430103013.png" /></p>
+<h3 id="插件吐槽"><a class="markdownIt-Anchor" href="#插件吐槽"></a> 插件吐槽</h3>
+<p>这里不得不插一嘴，插件的选择，其实openwrt很稳定的，搞懂之后，结合自己的路由器和一些老哥的前车之鉴做一些小调整，上网体验没得说。</p>
+<p>很多不稳定是插件导致的，比如最早我使用的openclash，因为fakeip导致平时网络工具经常无法正常使用，像ping等，折腾了许久配置，前前后后redirect等方案都在openclash上进行了尝试，然而还是会在使用几天后，莫名的国内访问延迟上涨，跳点大。甚至去读了一部分metaclash源码，写的很一般。后来换成了pw，pw更是卧龙凤雏，开启大陆优化，国内延迟会降到没开pw时的大小，和openclash一样，大概2天左右，就会跳点变大，cpu飙升。<br />
+结合日志，加上cpu和内存根本没到瓶颈，也不是mosdns的问题，不得其解。</p>
+<p>后来看到了sing-box内核，简单测试了一下，占用和性能都比clash要好，就选择了基于sing-box的homeproxy，仅仅踩了一些分流的坑，界面上也要简洁很多。国内速度和没开代理一样，用的bwg gia hy2，没感觉有晚高峰什么的，一直很流畅稳定。<br />
+（分流的坑是因为GPT网页开启了http/3，如果不开启udp服务器代理或者不禁用它，就无法正常使用。</p>
+<hr />
+<p>docker的需求都交给了腾讯云，通过ipv6 wireguard回家访问，而且硬路由还有硬件加速，实在想不出，软路由有什么好的，还多了一跳。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>路由器今非昔比，路由器有10胜，软路由有10败。</p>
+<p>路由器有硬件加速，软路由没有，此乃一胜。<br />
+路由器已经一胜了，软路由零胜，此乃二胜。<br />
+路由器已经二胜了，软路由零胜，此乃三胜。<br />
+路由器已经三胜了，软路由零胜，此乃四胜。<br />
+路由器已经四胜了，软路由零胜，此乃五胜。<br />
+路由器已经五胜了，软路由零胜，此乃六胜。<br />
+路由器已经六胜了，软路由零胜，此乃七胜。<br />
+路由器已经七胜了，软路由零胜，此乃八胜。<br />
+路由器已经八胜了，软路由零胜，此乃九胜。<br />
+路由器已经九胜了，软路由零胜，此乃十胜。</p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>openwrt</tag>
+        <tag>log</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vector日志采集-快速开始</title>
     <url>/vector-record-tool/</url>
     <content><![CDATA[<blockquote>
@@ -205,6 +267,127 @@ O(2n)、O(3n)都是O(n)，长板凳、矮板凳都是板凳。根据剃刀原理
       </categories>
       <tags>
         <tag>journal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习Git</title>
+    <url>/learning/git-learning/</url>
+    <content><![CDATA[<p>最近也是产出高峰期耶~</p>
+<p>咱的电脑是一个对于<strong>物理学</strong>学生十分够用<s>拉跨</s>的笔电。</p>
+<p>在我大二下学期，平时从不耍脾气的它，硬盘坏了，咱的代码自然是未能渡劫。</p>
+<img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512180313240.png" alt="image-20220512180313240" style="zoom: 8%;" />
+<p>有了上次教训之后嘞，时隔3个月，好吧，半年。终于开始学一手Git，来解决一下这个问题了。</p>
+<p>下面的内容是看的git官网下的book。</p>
+<hr />
+<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
+<h1 id="为什么学习git"><a class="markdownIt-Anchor" href="#为什么学习git"></a> 为什么学习Git</h1>
+<p>Git就是用来解决版本控制，和避免像我刚刚那样，硬盘坏了，再也回不去了。</p>
+<p>传统的版本控制，把东西上传到一台机器上面，所有人通过SSH登取出来就好，但是可能会出现咱电脑的硬盘耍小脾气的情况。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181105529.png" alt="传统的版本控制" /></p>
+<p>Git是分布式的版本控制。就是说，服务器宕机了，在任何一个fork的主机上都可恢复数据。好耶~</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181358000.png" alt="分布式的版本控制" /></p>
+<h1 id="git的工作流程"><a class="markdownIt-Anchor" href="#git的工作流程"></a> git的工作流程</h1>
+<p>流程官网写的实在太好了！落泪~<s>忍不住copy</s></p>
+<p>git有三种状态 <strong>已提交（committed）</strong>、<strong>已修改（modified）</strong> 和 <strong>已暂存（staged）</strong>。</p>
+<ul>
+<li>已修改表示修改了文件，但还没保存到数据库中。</li>
+<li>已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
+<li>已提交表示数据已经安全地保存在本地数据库中。</li>
+</ul>
+<p>这会让我们的 Git 项目拥有三个阶段：工作区、暂存区以及 Git 目录。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512184737778.png" alt="image-20220512184737778" /></p>
+<p>工作区是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
+<p>暂存区是一个文件，保存了下次将要提交的文件列表信息，一般在 Git 仓库目录中。 按照 Git 的术语叫做“索引”，不过一般说法还是叫“暂存区”。</p>
+<p>Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，复制的就是这里的数据。</p>
+<p>基本的 Git 工作流程如下：</p>
+<ol>
+<li>在工作区中修改文件。</li>
+<li>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</li>
+<li>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</li>
+</ol>
+<p>如果 Git 目录中保存着特定版本的文件，就属于 <strong>已提交</strong> 状态。 如果文件已修改并放入暂存区，就属于 <strong>已暂存</strong> 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 <strong>已修改</strong> 状态。</p>
+<h2 id="版本控制快照的创建"><a class="markdownIt-Anchor" href="#版本控制快照的创建"></a> 版本控制快照的创建</h2>
+<blockquote>
+<p>快照可以理解为简单的备份</p>
+</blockquote>
+<p>有些版本是这样储存的</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183249206.png" alt="image-20220512183249206" /></p>
+<p>Git是这样的</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183441894.png" alt="image-20220512183441894" /></p>
+<p>不管文件改变没，都会在快照中备份，但是为了效率，如果文件没改变，git会备份一个指向源文件的指针。</p>
+<h2 id="全部本地化"><a class="markdownIt-Anchor" href="#全部本地化"></a> 全部本地化</h2>
+<p>git拉取的是全部的镜像，所以当咱想要查看某个版本的文件时，在本地查看就好啦~</p>
+<h2 id="校验"><a class="markdownIt-Anchor" href="#校验"></a> 校验</h2>
+<p>git会在存储数据前，对所有的文件进行sha-1的hash转换，git的索引就是这个hash值，o（1）的时间复杂度查找哦~</p>
+<p>这个校验，也会让文件即使发生一个空格的变化，也会被记录下来。好耶~</p>
+<h1 id="配置git"><a class="markdownIt-Anchor" href="#配置git"></a> 配置git</h1>
+<p>git会记录每个用户的上传等信息，因此，需要配置信息。</p>
+<p>正如官网所说</p>
+<blockquote>
+<p>安装完 Git 之后，要做的第一件事就是设置你的用户名和邮件地址。 这一点很重要，因为每一个 Git 提交都会使用这些信息，它们会写入到你的每一次提交中，不可更改</p>
+</blockquote>
+<h2 id="用户信息"><a class="markdownIt-Anchor" href="#用户信息"></a> 用户信息</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"zhu-jiyuan"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token number">848433033</span>@qq.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>–global表示的是全局配置。</p>
+<p>咱可以用下面的命令，来看配置在哪</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--list</span> --show-origin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512205411242.png" alt="image-20220512205411242" /></p>
+<p>列出全部的配置列表（包含全局和局部</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--list</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>官网中提示道：你可能会看到重复的变量名，因为 Git 会从不同的文件中读取同一个配置（例如：<code>/etc/gitconfig</code> 与 <code>~/.gitconfig</code>）。 这种情况下，Git 会使用它找到的每一个变量的最后一个配置。</p>
+<p>你可以通过输入 <code>git config &lt;key&gt;</code>： 来检查 Git 的某一项配置</p>
+<pre class="line-numbers language-console" data-language="console"><code class="language-console">$ git config user.name
+John Doe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>Note</th>
+<th>由于 Git 会从多个文件中读取同一配置变量的不同值，因此你可能会在其中看到意料之外的值而不知道为什么。 此时，你可以查询 Git 中该变量的 <strong>原始</strong> 值，它会告诉你哪一个配置文件最后设置了该值：<code>$ git config --show-origin rerere.autoUpdate file:/home/johndoe/.gitconfig	false</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="获取帮助"><a class="markdownIt-Anchor" href="#获取帮助"></a> 获取帮助</h1>
+<p>若你使用 Git 时需要获取帮助，有三种等价的方法可以找到 Git 命令的综合手册（manpage）：</p>
+<pre class="line-numbers language-console" data-language="console"><code class="language-console">$ git help &lt;verb&gt;
+$ git &lt;verb&gt; --help
+$ man git-&lt;verb&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>例如，要想获得 <code>git config</code> 命令的手册，执行</p>
+<pre class="line-numbers language-console" data-language="console"><code class="language-console">$ git help config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这些命令很棒，因为你随时随地可以使用而无需联网。 如果你觉得手册或者本书的内容还不够用，你可以尝试在 Freenode IRC 服务器 <a href="https://freenode.net/">https://freenode.net</a> 上的 <code>#git</code> 或 <code>#github</code> 频道寻求帮助。 这些频道经常有上百人在线，他们都精通 Git 并且乐于助人。</p>
+<p>此外，如果你不需要全面的手册，只需要可用选项的快速参考，那么可以用 <code>-h</code> 选项获得更简明的 “help” 输出：</p>
+<pre class="line-numbers language-console" data-language="console"><code class="language-console">$ git add -h
+usage: git add [&lt;options&gt;] [--] &lt;pathspec&gt;...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    --renormalize         renormalize EOL of tracked files (implies -u)
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don&#39;t add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+    --chmod (+|-)x        override the executable bit of the listed files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我也不想抄，可是它<s>叫我哥哥诶</s>写的太好了。</p>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
       </tags>
   </entry>
   <entry>
@@ -654,127 +837,6 @@ nums1 中的所有整数同样出现在 nums2 中</p>
       </categories>
       <tags>
         <tag>单调栈</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学习Git</title>
-    <url>/learning/git-learning/</url>
-    <content><![CDATA[<p>最近也是产出高峰期耶~</p>
-<p>咱的电脑是一个对于<strong>物理学</strong>学生十分够用<s>拉跨</s>的笔电。</p>
-<p>在我大二下学期，平时从不耍脾气的它，硬盘坏了，咱的代码自然是未能渡劫。</p>
-<img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512180313240.png" alt="image-20220512180313240" style="zoom: 8%;" />
-<p>有了上次教训之后嘞，时隔3个月，好吧，半年。终于开始学一手Git，来解决一下这个问题了。</p>
-<p>下面的内容是看的git官网下的book。</p>
-<hr />
-<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
-<h1 id="为什么学习git"><a class="markdownIt-Anchor" href="#为什么学习git"></a> 为什么学习Git</h1>
-<p>Git就是用来解决版本控制，和避免像我刚刚那样，硬盘坏了，再也回不去了。</p>
-<p>传统的版本控制，把东西上传到一台机器上面，所有人通过SSH登取出来就好，但是可能会出现咱电脑的硬盘耍小脾气的情况。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181105529.png" alt="传统的版本控制" /></p>
-<p>Git是分布式的版本控制。就是说，服务器宕机了，在任何一个fork的主机上都可恢复数据。好耶~</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512181358000.png" alt="分布式的版本控制" /></p>
-<h1 id="git的工作流程"><a class="markdownIt-Anchor" href="#git的工作流程"></a> git的工作流程</h1>
-<p>流程官网写的实在太好了！落泪~<s>忍不住copy</s></p>
-<p>git有三种状态 <strong>已提交（committed）</strong>、<strong>已修改（modified）</strong> 和 <strong>已暂存（staged）</strong>。</p>
-<ul>
-<li>已修改表示修改了文件，但还没保存到数据库中。</li>
-<li>已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
-<li>已提交表示数据已经安全地保存在本地数据库中。</li>
-</ul>
-<p>这会让我们的 Git 项目拥有三个阶段：工作区、暂存区以及 Git 目录。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512184737778.png" alt="image-20220512184737778" /></p>
-<p>工作区是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
-<p>暂存区是一个文件，保存了下次将要提交的文件列表信息，一般在 Git 仓库目录中。 按照 Git 的术语叫做“索引”，不过一般说法还是叫“暂存区”。</p>
-<p>Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，复制的就是这里的数据。</p>
-<p>基本的 Git 工作流程如下：</p>
-<ol>
-<li>在工作区中修改文件。</li>
-<li>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</li>
-<li>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</li>
-</ol>
-<p>如果 Git 目录中保存着特定版本的文件，就属于 <strong>已提交</strong> 状态。 如果文件已修改并放入暂存区，就属于 <strong>已暂存</strong> 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 <strong>已修改</strong> 状态。</p>
-<h2 id="版本控制快照的创建"><a class="markdownIt-Anchor" href="#版本控制快照的创建"></a> 版本控制快照的创建</h2>
-<blockquote>
-<p>快照可以理解为简单的备份</p>
-</blockquote>
-<p>有些版本是这样储存的</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183249206.png" alt="image-20220512183249206" /></p>
-<p>Git是这样的</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512183441894.png" alt="image-20220512183441894" /></p>
-<p>不管文件改变没，都会在快照中备份，但是为了效率，如果文件没改变，git会备份一个指向源文件的指针。</p>
-<h2 id="全部本地化"><a class="markdownIt-Anchor" href="#全部本地化"></a> 全部本地化</h2>
-<p>git拉取的是全部的镜像，所以当咱想要查看某个版本的文件时，在本地查看就好啦~</p>
-<h2 id="校验"><a class="markdownIt-Anchor" href="#校验"></a> 校验</h2>
-<p>git会在存储数据前，对所有的文件进行sha-1的hash转换，git的索引就是这个hash值，o（1）的时间复杂度查找哦~</p>
-<p>这个校验，也会让文件即使发生一个空格的变化，也会被记录下来。好耶~</p>
-<h1 id="配置git"><a class="markdownIt-Anchor" href="#配置git"></a> 配置git</h1>
-<p>git会记录每个用户的上传等信息，因此，需要配置信息。</p>
-<p>正如官网所说</p>
-<blockquote>
-<p>安装完 Git 之后，要做的第一件事就是设置你的用户名和邮件地址。 这一点很重要，因为每一个 Git 提交都会使用这些信息，它们会写入到你的每一次提交中，不可更改</p>
-</blockquote>
-<h2 id="用户信息"><a class="markdownIt-Anchor" href="#用户信息"></a> 用户信息</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"zhu-jiyuan"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token number">848433033</span>@qq.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>–global表示的是全局配置。</p>
-<p>咱可以用下面的命令，来看配置在哪</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--list</span> --show-origin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220512205411242.png" alt="image-20220512205411242" /></p>
-<p>列出全部的配置列表（包含全局和局部</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--list</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>官网中提示道：你可能会看到重复的变量名，因为 Git 会从不同的文件中读取同一个配置（例如：<code>/etc/gitconfig</code> 与 <code>~/.gitconfig</code>）。 这种情况下，Git 会使用它找到的每一个变量的最后一个配置。</p>
-<p>你可以通过输入 <code>git config &lt;key&gt;</code>： 来检查 Git 的某一项配置</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">$ git config user.name
-John Doe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>Note</th>
-<th>由于 Git 会从多个文件中读取同一配置变量的不同值，因此你可能会在其中看到意料之外的值而不知道为什么。 此时，你可以查询 Git 中该变量的 <strong>原始</strong> 值，它会告诉你哪一个配置文件最后设置了该值：<code>$ git config --show-origin rerere.autoUpdate file:/home/johndoe/.gitconfig	false</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h1 id="获取帮助"><a class="markdownIt-Anchor" href="#获取帮助"></a> 获取帮助</h1>
-<p>若你使用 Git 时需要获取帮助，有三种等价的方法可以找到 Git 命令的综合手册（manpage）：</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">$ git help &lt;verb&gt;
-$ git &lt;verb&gt; --help
-$ man git-&lt;verb&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>例如，要想获得 <code>git config</code> 命令的手册，执行</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">$ git help config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这些命令很棒，因为你随时随地可以使用而无需联网。 如果你觉得手册或者本书的内容还不够用，你可以尝试在 Freenode IRC 服务器 <a href="https://freenode.net/">https://freenode.net</a> 上的 <code>#git</code> 或 <code>#github</code> 频道寻求帮助。 这些频道经常有上百人在线，他们都精通 Git 并且乐于助人。</p>
-<p>此外，如果你不需要全面的手册，只需要可用选项的快速参考，那么可以用 <code>-h</code> 选项获得更简明的 “help” 输出：</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">$ git add -h
-usage: git add [&lt;options&gt;] [--] &lt;pathspec&gt;...
-
-    -n, --dry-run         dry run
-    -v, --verbose         be verbose
-
-    -i, --interactive     interactive picking
-    -p, --patch           select hunks interactively
-    -e, --edit            edit current diff and apply
-    -f, --force           allow adding otherwise ignored files
-    -u, --update          update tracked files
-    --renormalize         renormalize EOL of tracked files (implies -u)
-    -N, --intent-to-add   record only the fact that the path will be added later
-    -A, --all             add changes from all tracked and untracked files
-    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
-    --refresh             don&#39;t add, only refresh the index
-    --ignore-errors       just skip files which cannot be added because of errors
-    --ignore-missing      check if - even missing - files are ignored in dry run
-    --chmod (+|-)x        override the executable bit of the listed files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>我也不想抄，可是它<s>叫我哥哥诶</s>写的太好了。</p>
-]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>note</tag>
       </tags>
   </entry>
   <entry>
