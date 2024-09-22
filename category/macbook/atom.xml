@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.hayoo.org</id>
+    <id>https://blog.oover.dev</id>
     <title>ohayo&#39;s blog • Posts by &#34;macbook&#34; category</title>
-    <link href="https://blog.hayoo.org" />
+    <link href="https://blog.oover.dev" />
     <updated>2023-02-24T07:34:42.000Z</updated>
     <category term="math" />
     <category term="openwrt" />
     <category term="log" />
-    <category term="vector日志采集" />
     <category term="journal" />
+    <category term="vector日志采集" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
-    <category term="Linux" />
     <category term="python" />
+    <category term="Linux" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.hayoo.org/log/ssh-config/</id>
+        <id>https://blog.oover.dev/log/ssh-config/</id>
         <title>配置ssh密钥登录</title>
-        <link rel="alternate" href="https://blog.hayoo.org/log/ssh-config/"/>
+        <link rel="alternate" href="https://blog.oover.dev/log/ssh-config/"/>
         <content type="html">&lt;p&gt;win 下使用xshell等软件连接服务器很便捷，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！&lt;/p&gt;
 &lt;h2 id=&#34;配置公私钥对&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置公私钥对&#34;&gt;&lt;/a&gt; 配置公私钥对&lt;/h2&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;

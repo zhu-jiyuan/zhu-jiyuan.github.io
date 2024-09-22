@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;ssh&#34; category</title>
-        <link>https://blog.hayoo.org</link>
+        <link>https://blog.oover.dev</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Fri, 24 Feb 2023 07:34:42 +0000</pubDate>
@@ -10,24 +10,24 @@
         <category>math</category>
         <category>openwrt</category>
         <category>log</category>
-        <category>vector日志采集</category>
         <category>journal</category>
+        <category>vector日志采集</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>soft</category>
         <category>app</category>
         <category>cpp</category>
-        <category>Linux</category>
         <category>python</category>
+        <category>Linux</category>
         <category>shell</category>
         <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.hayoo.org/log/ssh-config/</guid>
+            <guid isPermalink="true">https://blog.oover.dev/log/ssh-config/</guid>
             <title>配置ssh密钥登录</title>
-            <link>https://blog.hayoo.org/log/ssh-config/</link>
+            <link>https://blog.oover.dev/log/ssh-config/</link>
             <category>soft</category>
             <pubDate>Fri, 24 Feb 2023 07:34:42 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;win 下使用xshell等软件连接服务器很便捷，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！&lt;/p&gt;

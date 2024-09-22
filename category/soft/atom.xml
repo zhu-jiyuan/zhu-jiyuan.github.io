@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.hayoo.org</id>
+    <id>https://blog.oover.dev</id>
     <title>ohayo&#39;s blog • Posts by &#34;soft&#34; category</title>
-    <link href="https://blog.hayoo.org" />
+    <link href="https://blog.oover.dev" />
     <updated>2022-05-10T08:43:35.000Z</updated>
     <category term="math" />
     <category term="openwrt" />
     <category term="log" />
-    <category term="vector日志采集" />
     <category term="journal" />
+    <category term="vector日志采集" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
-    <category term="Linux" />
     <category term="python" />
+    <category term="Linux" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.hayoo.org/soft/quantumultx/quantumult-x-and-js/</id>
+        <id>https://blog.oover.dev/soft/quantumultx/quantumult-x-and-js/</id>
         <title>Quantumult X的JavaScript编写</title>
-        <link rel="alternate" href="https://blog.hayoo.org/soft/quantumultx/quantumult-x-and-js/"/>
+        <link rel="alternate" href="https://blog.oover.dev/soft/quantumultx/quantumult-x-and-js/"/>
         <content type="html">&lt;h1 id=&#34;b站签到&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#b站签到&#34;&gt;&lt;/a&gt; b站签到&amp;gt;.&amp;lt;&lt;/h1&gt;
 &lt;h2 id=&#34;抓签到包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#抓签到包&#34;&gt;&lt;/a&gt; 抓签到包&lt;/h2&gt;
 &lt;p&gt;F12，签到，找签到数据包&lt;/p&gt;

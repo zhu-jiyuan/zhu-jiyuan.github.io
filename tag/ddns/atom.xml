@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.hayoo.org</id>
+    <id>https://blog.oover.dev</id>
     <title>ohayo&#39;s blog • Posts by &#34;ddns&#34; tag</title>
-    <link href="https://blog.hayoo.org" />
+    <link href="https://blog.oover.dev" />
     <updated>2023-09-17T12:40:56.000Z</updated>
     <category term="math" />
     <category term="openwrt" />
     <category term="log" />
-    <category term="vector日志采集" />
     <category term="journal" />
+    <category term="vector日志采集" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
-    <category term="Linux" />
     <category term="python" />
+    <category term="Linux" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.hayoo.org/log/openwrt/shell-ddns/</id>
+        <id>https://blog.oover.dev/log/openwrt/shell-ddns/</id>
         <title>用shell写一个ddns</title>
-        <link rel="alternate" href="https://blog.hayoo.org/log/openwrt/shell-ddns/"/>
+        <link rel="alternate" href="https://blog.oover.dev/log/openwrt/shell-ddns/"/>
         <content type="html">&lt;h2 id=&#34;ddns&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ddns&#34;&gt;&lt;/a&gt; DDNS&lt;/h2&gt;
 &lt;p&gt;假设有这样一种场景，有台服务器的&lt;code&gt;IP&lt;/code&gt;每个一段时间会变化，而我们访问这台机器时，就可能因为这台机器的&lt;code&gt;IP&lt;/code&gt;发生了变化，导致不能访问，必须到那台机器上，获取到新的&lt;code&gt;IP&lt;/code&gt;地址才能进行访问，这十分的痛苦。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;DNS&lt;/code&gt;可以把&lt;code&gt;IP&lt;/code&gt;和&lt;code&gt;domain(域名)&lt;/code&gt;进行映射，让我们可以通过域名就可以找到&lt;code&gt;IP&lt;/code&gt;，然后对机器进行访问，如此一来，当服务器&lt;code&gt;IP&lt;/code&gt;发生变化时，我们只需要把域名的&lt;code&gt;DNS&lt;/code&gt;解析换成新的&lt;code&gt;IP&lt;/code&gt;，其他设备用域名访问服务器，就感知不到&lt;code&gt;IP&lt;/code&gt;发生了变化。可是手动档换&lt;code&gt;DNS&lt;/code&gt;解析并不是一个好主意。&lt;/p&gt;

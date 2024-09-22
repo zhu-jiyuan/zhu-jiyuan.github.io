@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.hayoo.org</id>
+    <id>https://blog.oover.dev</id>
     <title>ohayo&#39;s blog • Posts by &#34;log&#34; category</title>
-    <link href="https://blog.hayoo.org" />
+    <link href="https://blog.oover.dev" />
     <updated>2023-09-03T12:59:49.000Z</updated>
     <category term="math" />
     <category term="openwrt" />
     <category term="log" />
-    <category term="vector日志采集" />
     <category term="journal" />
+    <category term="vector日志采集" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
-    <category term="Linux" />
     <category term="python" />
+    <category term="Linux" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.hayoo.org/log/openwrt/openwrt-dns/</id>
+        <id>https://blog.oover.dev/log/openwrt/openwrt-dns/</id>
         <title>openwrt插件篇-openclash&amp;adguardhome</title>
-        <link rel="alternate" href="https://blog.hayoo.org/log/openwrt/openwrt-dns/"/>
+        <link rel="alternate" href="https://blog.oover.dev/log/openwrt/openwrt-dns/"/>
         <content type="html">&lt;p&gt;DNS（&lt;strong&gt;D&lt;/strong&gt;omain &lt;strong&gt;N&lt;/strong&gt;ame &lt;strong&gt;S&lt;/strong&gt;ystem），网络域名系统。可以把它对应手机里的联系人，通过联系人的名字就可以找到电话号码，也能通过手机号找到对应联系人的信息，从而能够准确给特定人拨打电话或者发短信等等。而DNS会把网络域名转换成ip，也能把ip转换成网络域名。&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230903211232.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;adguardhome&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#adguardhome&#34;&gt;&lt;/a&gt; AdguardHome&lt;/h2&gt;
@@ -77,9 +77,9 @@ https://1.1.1.1/dns-query&lt;span aria-hidden=&#34;true&#34; class=&#34;line-num
         <updated>2023-09-03T12:59:49.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/log/openwrt/tl6088/</id>
+        <id>https://blog.oover.dev/log/openwrt/tl6088/</id>
         <title>tl6088刷机之旅</title>
-        <link rel="alternate" href="https://blog.hayoo.org/log/openwrt/tl6088/"/>
+        <link rel="alternate" href="https://blog.oover.dev/log/openwrt/tl6088/"/>
         <content type="html">&lt;p&gt;最近又换了一台路由器，TP-link-6088，因为上个月买了台switch，无论怎么换DNS，下载速度依旧感人至深。转手就把小米AX6000卖了，其实小米AX6000已经能满足我的日常的绝大需求，唯一缺点就是自由度不够，迟来的switch打破昔日的平静。&lt;/p&gt;
 &lt;h2 id=&#34;为啥选择tl6088&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为啥选择tl6088&#34;&gt;&lt;/a&gt; 为啥选择tl6088？&lt;/h2&gt;
 &lt;p&gt;对，这是个好问题，身为一个小垃圾佬，先后了解很多路由器，结合我的需求，要能刷openwrt，运行内存至少要512，CPU要好一些，处理网络数据包的同时，要留有余地去跑一些第三方服务。闪存要高一些，至少64。&lt;br /&gt;
@@ -115,9 +115,9 @@ https://1.1.1.1/dns-query&lt;span aria-hidden=&#34;true&#34; class=&#34;line-num
         <updated>2023-08-27T15:16:59.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/log/hexo-log/</id>
+        <id>https://blog.oover.dev/log/hexo-log/</id>
         <title>hexo博客更新</title>
-        <link rel="alternate" href="https://blog.hayoo.org/log/hexo-log/"/>
+        <link rel="alternate" href="https://blog.oover.dev/log/hexo-log/"/>
         <content type="html">&lt;h2 id=&#34;更新动机&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#更新动机&#34;&gt;&lt;/a&gt; 更新动机&lt;/h2&gt;
 &lt;p&gt;一直没找到写作、UI都让我感觉很舒服的主题。&lt;/p&gt;
 &lt;p&gt;之前的主题很好看，有很多插件，更多的是用来写「笔记」或者「练习题」，因为写作很不方便，而且时不时渲染会出错，每次都要写好久，就有了这次的换主题。&lt;/p&gt;
@@ -129,9 +129,9 @@ https://1.1.1.1/dns-query&lt;span aria-hidden=&#34;true&#34; class=&#34;line-num
         <updated>2022-12-05T08:15:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/log/openwrt/redmiAx6/</id>
+        <id>https://blog.oover.dev/log/openwrt/redmiAx6/</id>
         <title>折腾红米ax6</title>
-        <link rel="alternate" href="https://blog.hayoo.org/log/openwrt/redmiAx6/"/>
+        <link rel="alternate" href="https://blog.oover.dev/log/openwrt/redmiAx6/"/>
         <content type="html">&lt;p&gt;此篇记录一下前段时间折腾路由器的经历。哈哈哈哈哈，真是太爽了，路由器这东西，真上头。&lt;/p&gt;
 &lt;p&gt;📍&lt;/p&gt;
 &lt;h1 id=&#34;选择路由器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#选择路由器&#34;&gt;&lt;/a&gt; 选择路由器&lt;/h1&gt;

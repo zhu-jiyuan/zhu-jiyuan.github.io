@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;数据结构&#34; category</title>
-        <link>https://blog.hayoo.org</link>
+        <link>https://blog.oover.dev</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Mon, 26 Sep 2022 12:37:41 +0000</pubDate>
@@ -10,24 +10,24 @@
         <category>math</category>
         <category>openwrt</category>
         <category>log</category>
-        <category>vector日志采集</category>
         <category>journal</category>
+        <category>vector日志采集</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>soft</category>
         <category>app</category>
         <category>cpp</category>
-        <category>Linux</category>
         <category>python</category>
+        <category>Linux</category>
         <category>shell</category>
         <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.hayoo.org/CS/dataStruct/tree/huffmanTreeCompress/</guid>
+            <guid isPermalink="true">https://blog.oover.dev/CS/dataStruct/tree/huffmanTreeCompress/</guid>
             <title>哈夫曼树应用-压缩文件</title>
-            <link>https://blog.hayoo.org/CS/dataStruct/tree/huffmanTreeCompress/</link>
+            <link>https://blog.oover.dev/CS/dataStruct/tree/huffmanTreeCompress/</link>
             <category>note</category>
             <pubDate>Mon, 26 Sep 2022 12:37:41 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;大家好~时隔好几天，我来给大家讲哈夫曼树和它的应用了！&lt;br /&gt;
@@ -552,9 +552,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.hayoo.org/CS/dataStruct/tree/patchOfTree/</guid>
+            <guid isPermalink="true">https://blog.oover.dev/CS/dataStruct/tree/patchOfTree/</guid>
             <title>树与二叉树补充I</title>
-            <link>https://blog.hayoo.org/CS/dataStruct/tree/patchOfTree/</link>
+            <link>https://blog.oover.dev/CS/dataStruct/tree/patchOfTree/</link>
             <category>note</category>
             <pubDate>Tue, 20 Sep 2022 11:13:07 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;大家好，按照之前的计划，我们本应该去应用二叉树，实现一些应用的。然鹅，树与森林以及二叉树之间的关系、线索二叉树这些，没有给大家说。这可能会影响大家对之前知识的理解，所以还是补充一下。&lt;br /&gt;
@@ -697,9 +697,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.hayoo.org/CS/dataStruct/tree/tree/</guid>
+            <guid isPermalink="true">https://blog.oover.dev/CS/dataStruct/tree/tree/</guid>
             <title>树与二叉树</title>
-            <link>https://blog.hayoo.org/CS/dataStruct/tree/tree/</link>
+            <link>https://blog.oover.dev/CS/dataStruct/tree/tree/</link>
             <category>note</category>
             <pubDate>Mon, 19 Sep 2022 04:24:13 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;树与森林&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树与森林&#34;&gt;&lt;/a&gt; 树与森林&lt;/h1&gt;
@@ -1192,9 +1192,9 @@ string expression &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.hayoo.org/CS/dataStruct/stringAndKMP/</guid>
+            <guid isPermalink="true">https://blog.oover.dev/CS/dataStruct/stringAndKMP/</guid>
             <title>字符串匹配</title>
-            <link>https://blog.hayoo.org/CS/dataStruct/stringAndKMP/</link>
+            <link>https://blog.oover.dev/CS/dataStruct/stringAndKMP/</link>
             <category>note</category>
             <pubDate>Mon, 29 Aug 2022 14:40:35 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;子串匹配问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#子串匹配问题&#34;&gt;&lt;/a&gt; 子串匹配问题&lt;/h1&gt;
@@ -1333,9 +1333,9 @@ result &lt;span class=&#34;token function&#34;&gt;isSubstring&lt;/span&gt;&lt;sp
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.hayoo.org/CS/dataStruct/stackQueueArray/</guid>
+            <guid isPermalink="true">https://blog.oover.dev/CS/dataStruct/stackQueueArray/</guid>
             <title>栈、队列和数组</title>
-            <link>https://blog.hayoo.org/CS/dataStruct/stackQueueArray/</link>
+            <link>https://blog.oover.dev/CS/dataStruct/stackQueueArray/</link>
             <category>note</category>
             <pubDate>Thu, 25 Aug 2022 15:11:11 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;stack&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#stack&#34;&gt;&lt;/a&gt; stack&lt;/h1&gt;

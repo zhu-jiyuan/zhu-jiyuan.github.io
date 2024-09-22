@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.hayoo.org</id>
+    <id>https://blog.oover.dev</id>
     <title>ohayo&#39;s blog • Posts by &#34;journal&#34; category</title>
-    <link href="https://blog.hayoo.org" />
+    <link href="https://blog.oover.dev" />
     <updated>2022-12-31T04:27:57.000Z</updated>
     <category term="math" />
     <category term="openwrt" />
     <category term="log" />
-    <category term="vector日志采集" />
     <category term="journal" />
+    <category term="vector日志采集" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
-    <category term="Linux" />
     <category term="python" />
+    <category term="Linux" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.hayoo.org/journal/day_1/</id>
+        <id>https://blog.oover.dev/journal/day_1/</id>
         <title>log-是时候迈向新阶段了！</title>
-        <link rel="alternate" href="https://blog.hayoo.org/journal/day_1/"/>
+        <link rel="alternate" href="https://blog.oover.dev/journal/day_1/"/>
         <content type="html">&lt;p&gt;就在昨天晚上，我正在床上津津有味的看一篇有关快速幂的博文，这小菜一碟～，简单简单，小小快速幂可笑可笑。往下一划，发现这个博主还写了一篇「快速取模」的文章，死去的回忆开始攻击我。&lt;/p&gt;
 &lt;p&gt;计算机是如何实现加减乘除、取模运算？&lt;/p&gt;
 &lt;p&gt;只记得这是计算机组成原理的东西，完蛋了。&lt;/p&gt;

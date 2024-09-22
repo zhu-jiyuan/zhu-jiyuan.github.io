@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.hayoo.org</id>
+    <id>https://blog.oover.dev</id>
     <title>ohayo&#39;s blog</title>
-    <link href="https://blog.hayoo.org" />
+    <link href="https://blog.oover.dev" />
     <updated>2024-04-29T14:35:48.000Z</updated>
     <category term="math" />
     <category term="openwrt" />
     <category term="log" />
-    <category term="vector日志采集" />
     <category term="journal" />
+    <category term="vector日志采集" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
-    <category term="Linux" />
     <category term="python" />
+    <category term="Linux" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.hayoo.org/soft-router-is-joker/</id>
+        <id>https://blog.oover.dev/soft-router-is-joker/</id>
         <title>没必要的软路由</title>
-        <link rel="alternate" href="https://blog.hayoo.org/soft-router-is-joker/"/>
+        <link rel="alternate" href="https://blog.oover.dev/soft-router-is-joker/"/>
         <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;小学到初二，家里的网线从宽带我世界的电话拨号，升级到了光纤，我的游戏事业也如日中天，形势一片大好之际，我爸妈把网线掐了，直到高中毕业，在此期间我攻坚克难、不畏艰险，先后破解了邻居家的WiFi密码，掉包率极高，在电竞黄金期，摧毁了我的电竞梦想。&lt;/p&gt;
 &lt;p&gt;毕业后，第一次租房30m宽带，100块才能使用50m，恰好当时拿下了switch，下个塞尔达都要等一天，看直播不能玩游戏。直接给我整破防了。。。&lt;/p&gt;
@@ -81,9 +81,9 @@
         <updated>2024-04-29T14:35:48.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/log/openwrt/shell-ddns/</id>
+        <id>https://blog.oover.dev/log/openwrt/shell-ddns/</id>
         <title>用shell写一个ddns</title>
-        <link rel="alternate" href="https://blog.hayoo.org/log/openwrt/shell-ddns/"/>
+        <link rel="alternate" href="https://blog.oover.dev/log/openwrt/shell-ddns/"/>
         <content type="html">&lt;h2 id=&#34;ddns&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ddns&#34;&gt;&lt;/a&gt; DDNS&lt;/h2&gt;
 &lt;p&gt;假设有这样一种场景，有台服务器的&lt;code&gt;IP&lt;/code&gt;每个一段时间会变化，而我们访问这台机器时，就可能因为这台机器的&lt;code&gt;IP&lt;/code&gt;发生了变化，导致不能访问，必须到那台机器上，获取到新的&lt;code&gt;IP&lt;/code&gt;地址才能进行访问，这十分的痛苦。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;DNS&lt;/code&gt;可以把&lt;code&gt;IP&lt;/code&gt;和&lt;code&gt;domain(域名)&lt;/code&gt;进行映射，让我们可以通过域名就可以找到&lt;code&gt;IP&lt;/code&gt;，然后对机器进行访问，如此一来，当服务器&lt;code&gt;IP&lt;/code&gt;发生变化时，我们只需要把域名的&lt;code&gt;DNS&lt;/code&gt;解析换成新的&lt;code&gt;IP&lt;/code&gt;，其他设备用域名访问服务器，就感知不到&lt;code&gt;IP&lt;/code&gt;发生了变化。可是手动档换&lt;code&gt;DNS&lt;/code&gt;解析并不是一个好主意。&lt;/p&gt;
@@ -120,9 +120,9 @@
         <updated>2023-09-17T12:40:56.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/vector-record-tool/</id>
+        <id>https://blog.oover.dev/vector-record-tool/</id>
         <title>vector日志采集-快速开始</title>
-        <link rel="alternate" href="https://blog.hayoo.org/vector-record-tool/"/>
+        <link rel="alternate" href="https://blog.oover.dev/vector-record-tool/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;本文默认已经有一丢丢lua基础&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -229,9 +229,9 @@ O(2n)、O(3n)都是O(n)，长板凳、矮板凳都是板凳。根据剃刀原理
         <updated>2023-09-10T14:07:48.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/log/openwrt/openwrt-dns/</id>
+        <id>https://blog.oover.dev/log/openwrt/openwrt-dns/</id>
         <title>openwrt插件篇-openclash&amp;adguardhome</title>
-        <link rel="alternate" href="https://blog.hayoo.org/log/openwrt/openwrt-dns/"/>
+        <link rel="alternate" href="https://blog.oover.dev/log/openwrt/openwrt-dns/"/>
         <content type="html">&lt;p&gt;DNS（&lt;strong&gt;D&lt;/strong&gt;omain &lt;strong&gt;N&lt;/strong&gt;ame &lt;strong&gt;S&lt;/strong&gt;ystem），网络域名系统。可以把它对应手机里的联系人，通过联系人的名字就可以找到电话号码，也能通过手机号找到对应联系人的信息，从而能够准确给特定人拨打电话或者发短信等等。而DNS会把网络域名转换成ip，也能把ip转换成网络域名。&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230903211232.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;adguardhome&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#adguardhome&#34;&gt;&lt;/a&gt; AdguardHome&lt;/h2&gt;
@@ -284,9 +284,9 @@ https://1.1.1.1/dns-query&lt;span aria-hidden=&#34;true&#34; class=&#34;line-num
         <updated>2023-09-03T12:59:49.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/log/openwrt/tl6088/</id>
+        <id>https://blog.oover.dev/log/openwrt/tl6088/</id>
         <title>tl6088刷机之旅</title>
-        <link rel="alternate" href="https://blog.hayoo.org/log/openwrt/tl6088/"/>
+        <link rel="alternate" href="https://blog.oover.dev/log/openwrt/tl6088/"/>
         <content type="html">&lt;p&gt;最近又换了一台路由器，TP-link-6088，因为上个月买了台switch，无论怎么换DNS，下载速度依旧感人至深。转手就把小米AX6000卖了，其实小米AX6000已经能满足我的日常的绝大需求，唯一缺点就是自由度不够，迟来的switch打破昔日的平静。&lt;/p&gt;
 &lt;h2 id=&#34;为啥选择tl6088&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为啥选择tl6088&#34;&gt;&lt;/a&gt; 为啥选择tl6088？&lt;/h2&gt;
 &lt;p&gt;对，这是个好问题，身为一个小垃圾佬，先后了解很多路由器，结合我的需求，要能刷openwrt，运行内存至少要512，CPU要好一些，处理网络数据包的同时，要留有余地去跑一些第三方服务。闪存要高一些，至少64。&lt;br /&gt;
@@ -322,9 +322,9 @@ https://1.1.1.1/dns-query&lt;span aria-hidden=&#34;true&#34; class=&#34;line-num
         <updated>2023-08-27T15:16:59.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/learning/openProject/skynet/skynet-02/</id>
+        <id>https://blog.oover.dev/learning/openProject/skynet/skynet-02/</id>
         <title>skynet源码学习（粗略版）</title>
-        <link rel="alternate" href="https://blog.hayoo.org/learning/openProject/skynet/skynet-02/"/>
+        <link rel="alternate" href="https://blog.oover.dev/learning/openProject/skynet/skynet-02/"/>
         <content type="html">&lt;p&gt;本文从skynet的main入口开始，梳理skynet运行流程，中间很多东西不会解释，必要的一些细节还是会解释滴，旨在梳理清楚skynet如何工作、启动skynet项目，发生了什么？后续将带着以下问题开始。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;skynet服务如何工作？skynet服务是什么？&lt;/li&gt;
@@ -1352,9 +1352,9 @@ skynet&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class
         <updated>2023-06-04T04:46:57.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/share/install-app/</id>
+        <id>https://blog.oover.dev/share/install-app/</id>
         <title>ubuntu一些应用</title>
-        <link rel="alternate" href="https://blog.hayoo.org/share/install-app/"/>
+        <link rel="alternate" href="https://blog.oover.dev/share/install-app/"/>
         <content type="html">&lt;h2 id=&#34;背景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#背景&#34;&gt;&lt;/a&gt; 背景&lt;/h2&gt;
 &lt;p&gt;在公司实习时，用的环境是Linux，之前配置的大多是Linux服务器相关的比较多，忽略了很多应用带来的体验。于是打算写一下自己平时比较喜欢的几个Linux应用，方便以后自己配置环境。&lt;/p&gt;
 &lt;p&gt;本文使用的环境是wsl2.0下的Ubuntu22.04.&lt;/p&gt;
@@ -1429,9 +1429,9 @@ i&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34
         <updated>2023-05-27T09:14:19.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/CS/dosign_pattern/dosign-pattern-2/</id>
+        <id>https://blog.oover.dev/CS/dosign_pattern/dosign-pattern-2/</id>
         <title>设计模式-23种（二）</title>
-        <link rel="alternate" href="https://blog.hayoo.org/CS/dosign_pattern/dosign-pattern-2/"/>
+        <link rel="alternate" href="https://blog.oover.dev/CS/dosign_pattern/dosign-pattern-2/"/>
         <content type="html">&lt;h1 id=&#34;组件协同模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#组件协同模式&#34;&gt;&lt;/a&gt; 组件协同模式&lt;/h1&gt;
 &lt;p&gt;现代软件专业分工之后的第一个结果是「框架与应用程序的划分」，「组件协作」模式通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时的常用模式。&lt;br /&gt;
 下面是组件协同模式的三种典型模式。&lt;/p&gt;
@@ -2137,9 +2137,9 @@ Messager&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ml &lt;span cl
         <updated>2023-04-23T12:25:31.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/CS/dosign_pattern/dosign-pattern-1/</id>
+        <id>https://blog.oover.dev/CS/dosign_pattern/dosign-pattern-1/</id>
         <title>设计模式-八大设计原则（一）</title>
-        <link rel="alternate" href="https://blog.hayoo.org/CS/dosign_pattern/dosign-pattern-1/"/>
+        <link rel="alternate" href="https://blog.oover.dev/CS/dosign_pattern/dosign-pattern-1/"/>
         <content type="html">&lt;p align=&#34;center&#34;&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423000022.png&#34; height=300px width=300px&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;「你所用的面向对象，空有招式，但无内涵」&lt;/p&gt;
@@ -2200,9 +2200,9 @@ Messager&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ml &lt;span cl
         <updated>2023-04-22T10:16:45.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.hayoo.org/log/ssh-config/</id>
+        <id>https://blog.oover.dev/log/ssh-config/</id>
         <title>配置ssh密钥登录</title>
-        <link rel="alternate" href="https://blog.hayoo.org/log/ssh-config/"/>
+        <link rel="alternate" href="https://blog.oover.dev/log/ssh-config/"/>
         <content type="html">&lt;p&gt;win 下使用xshell等软件连接服务器很便捷，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！&lt;/p&gt;
 &lt;h2 id=&#34;配置公私钥对&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置公私钥对&#34;&gt;&lt;/a&gt; 配置公私钥对&lt;/h2&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;

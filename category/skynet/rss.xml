@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;skynet&#34; category</title>
-        <link>https://blog.hayoo.org</link>
+        <link>https://blog.oover.dev</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sun, 04 Jun 2023 04:46:57 +0000</pubDate>
@@ -10,24 +10,24 @@
         <category>math</category>
         <category>openwrt</category>
         <category>log</category>
-        <category>vector日志采集</category>
         <category>journal</category>
+        <category>vector日志采集</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>soft</category>
         <category>app</category>
         <category>cpp</category>
-        <category>Linux</category>
         <category>python</category>
+        <category>Linux</category>
         <category>shell</category>
         <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.hayoo.org/learning/openProject/skynet/skynet-02/</guid>
+            <guid isPermalink="true">https://blog.oover.dev/learning/openProject/skynet/skynet-02/</guid>
             <title>skynet源码学习（粗略版）</title>
-            <link>https://blog.hayoo.org/learning/openProject/skynet/skynet-02/</link>
+            <link>https://blog.oover.dev/learning/openProject/skynet/skynet-02/</link>
             <category>openProject</category>
             <pubDate>Sun, 04 Jun 2023 04:46:57 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;本文从skynet的main入口开始，梳理skynet运行流程，中间很多东西不会解释，必要的一些细节还是会解释滴，旨在梳理清楚skynet如何工作、启动skynet项目，发生了什么？后续将带着以下问题开始。&lt;/p&gt;
