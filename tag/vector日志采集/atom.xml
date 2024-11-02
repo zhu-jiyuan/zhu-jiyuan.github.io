@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.oover.dev</id>
+    <id>https://blog.bysegfault.com</id>
     <title>ohayo&#39;s blog • Posts by &#34;vector日志采集&#34; tag</title>
-    <link href="https://blog.oover.dev" />
+    <link href="https://blog.bysegfault.com" />
     <updated>2023-09-10T14:07:48.000Z</updated>
     <category term="math" />
     <category term="openwrt" />
     <category term="log" />
-    <category term="journal" />
     <category term="vector日志采集" />
+    <category term="journal" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
-    <category term="python" />
     <category term="Linux" />
+    <category term="python" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.oover.dev/vector-record-tool/</id>
+        <id>https://blog.bysegfault.com/vector-record-tool/</id>
         <title>vector日志采集-快速开始</title>
-        <link rel="alternate" href="https://blog.oover.dev/vector-record-tool/"/>
+        <link rel="alternate" href="https://blog.bysegfault.com/vector-record-tool/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;本文默认已经有一丢丢lua基础&lt;/p&gt;
 &lt;/blockquote&gt;

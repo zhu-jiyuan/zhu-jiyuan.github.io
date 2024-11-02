@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;tools&#34; category</title>
-        <link>https://blog.oover.dev</link>
+        <link>https://blog.bysegfault.com</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Mon, 29 Apr 2024 14:35:48 +0000</pubDate>
@@ -10,24 +10,24 @@
         <category>math</category>
         <category>openwrt</category>
         <category>log</category>
-        <category>journal</category>
         <category>vector日志采集</category>
+        <category>journal</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>soft</category>
         <category>app</category>
         <category>cpp</category>
-        <category>python</category>
         <category>Linux</category>
+        <category>python</category>
         <category>shell</category>
         <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.oover.dev/soft-router-is-joker/</guid>
+            <guid isPermalink="true">https://blog.bysegfault.com/soft-router-is-joker/</guid>
             <title>没必要的软路由</title>
-            <link>https://blog.oover.dev/soft-router-is-joker/</link>
+            <link>https://blog.bysegfault.com/soft-router-is-joker/</link>
             <category>openwrt</category>
             <category>log</category>
             <pubDate>Mon, 29 Apr 2024 14:35:48 +0000</pubDate>
@@ -84,9 +84,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.oover.dev/vector-record-tool/</guid>
+            <guid isPermalink="true">https://blog.bysegfault.com/vector-record-tool/</guid>
             <title>vector日志采集-快速开始</title>
-            <link>https://blog.oover.dev/vector-record-tool/</link>
+            <link>https://blog.bysegfault.com/vector-record-tool/</link>
             <category>vector日志采集</category>
             <pubDate>Sun, 10 Sep 2023 14:07:48 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;note&#34; category</title>
-        <link>https://blog.oover.dev</link>
+        <link>https://blog.bysegfault.com</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Tue, 29 Nov 2022 13:18:06 +0000</pubDate>
@@ -10,24 +10,24 @@
         <category>math</category>
         <category>openwrt</category>
         <category>log</category>
-        <category>journal</category>
         <category>vector日志采集</category>
+        <category>journal</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>soft</category>
         <category>app</category>
         <category>cpp</category>
-        <category>python</category>
         <category>Linux</category>
+        <category>python</category>
         <category>shell</category>
         <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.oover.dev/learning/tex-math/</guid>
+            <guid isPermalink="true">https://blog.bysegfault.com/learning/tex-math/</guid>
             <title>简单的数学tex</title>
-            <link>https://blog.oover.dev/learning/tex-math/</link>
+            <link>https://blog.bysegfault.com/learning/tex-math/</link>
             <category>math</category>
             <category>tex</category>
             <pubDate>Tue, 29 Nov 2022 13:18:06 +0000</pubDate>
@@ -316,9 +316,9 @@ F(n) = \Pi_{\substack{i=1}}^{n}n
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.oover.dev/learning/git-learning/</guid>
+            <guid isPermalink="true">https://blog.bysegfault.com/learning/git-learning/</guid>
             <title>学习Git</title>
-            <link>https://blog.oover.dev/learning/git-learning/</link>
+            <link>https://blog.bysegfault.com/learning/git-learning/</link>
             <category>note</category>
             <pubDate>Thu, 12 May 2022 09:51:20 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;最近也是产出高峰期耶~&lt;/p&gt;

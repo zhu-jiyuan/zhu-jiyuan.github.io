@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;shell&#34; tag</title>
-        <link>https://blog.oover.dev</link>
+        <link>https://blog.bysegfault.com</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sun, 17 Sep 2023 12:40:56 +0000</pubDate>
@@ -10,24 +10,24 @@
         <category>math</category>
         <category>openwrt</category>
         <category>log</category>
-        <category>journal</category>
         <category>vector日志采集</category>
+        <category>journal</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>soft</category>
         <category>app</category>
         <category>cpp</category>
-        <category>python</category>
         <category>Linux</category>
+        <category>python</category>
         <category>shell</category>
         <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.oover.dev/log/openwrt/shell-ddns/</guid>
+            <guid isPermalink="true">https://blog.bysegfault.com/log/openwrt/shell-ddns/</guid>
             <title>用shell写一个ddns</title>
-            <link>https://blog.oover.dev/log/openwrt/shell-ddns/</link>
+            <link>https://blog.bysegfault.com/log/openwrt/shell-ddns/</link>
             <category>shell</category>
             <category>DDNS</category>
             <pubDate>Sun, 17 Sep 2023 12:40:56 +0000</pubDate>

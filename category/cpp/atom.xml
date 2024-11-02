@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.oover.dev</id>
+    <id>https://blog.bysegfault.com</id>
     <title>ohayo&#39;s blog • Posts by &#34;cpp&#34; category</title>
-    <link href="https://blog.oover.dev" />
+    <link href="https://blog.bysegfault.com" />
     <updated>2022-04-19T13:02:40.000Z</updated>
     <category term="math" />
     <category term="openwrt" />
     <category term="log" />
-    <category term="journal" />
     <category term="vector日志采集" />
+    <category term="journal" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
-    <category term="python" />
     <category term="Linux" />
+    <category term="python" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.oover.dev/CS/cpp/c-five-zone/</id>
+        <id>https://blog.bysegfault.com/CS/cpp/c-five-zone/</id>
         <title>c++的四大区</title>
-        <link rel="alternate" href="https://blog.oover.dev/CS/cpp/c-five-zone/"/>
+        <link rel="alternate" href="https://blog.bysegfault.com/CS/cpp/c-five-zone/"/>
         <content type="html">&lt;p&gt;今天开始学习使用c++，之前一直使用python比较多。语言各有千秋，只有最合适。好啦，现在到了使用c++的时候惹。希望我能够喜欢上这个语言。&lt;/p&gt;
 &lt;p&gt;let’s go!😽&lt;/p&gt;
 &lt;h2 id=&#34;内存四大区&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内存四大区&#34;&gt;&lt;/a&gt; 内存四大区&lt;/h2&gt;

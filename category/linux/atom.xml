@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.oover.dev</id>
+    <id>https://blog.bysegfault.com</id>
     <title>ohayo&#39;s blog • Posts by &#34;linux&#34; category</title>
-    <link href="https://blog.oover.dev" />
+    <link href="https://blog.bysegfault.com" />
     <updated>2023-05-27T09:14:19.000Z</updated>
     <category term="math" />
     <category term="openwrt" />
     <category term="log" />
-    <category term="journal" />
     <category term="vector日志采集" />
+    <category term="journal" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
-    <category term="python" />
     <category term="Linux" />
+    <category term="python" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.oover.dev/share/install-app/</id>
+        <id>https://blog.bysegfault.com/share/install-app/</id>
         <title>ubuntu一些应用</title>
-        <link rel="alternate" href="https://blog.oover.dev/share/install-app/"/>
+        <link rel="alternate" href="https://blog.bysegfault.com/share/install-app/"/>
         <content type="html">&lt;h2 id=&#34;背景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#背景&#34;&gt;&lt;/a&gt; 背景&lt;/h2&gt;
 &lt;p&gt;在公司实习时，用的环境是Linux，之前配置的大多是Linux服务器相关的比较多，忽略了很多应用带来的体验。于是打算写一下自己平时比较喜欢的几个Linux应用，方便以后自己配置环境。&lt;/p&gt;
 &lt;p&gt;本文使用的环境是wsl2.0下的Ubuntu22.04.&lt;/p&gt;
@@ -99,9 +99,9 @@ i&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34
         <updated>2023-05-27T09:14:19.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.oover.dev/CS/linux/WritingService/</id>
+        <id>https://blog.bysegfault.com/CS/linux/WritingService/</id>
         <title>linux中的service</title>
-        <link rel="alternate" href="https://blog.oover.dev/CS/linux/WritingService/"/>
+        <link rel="alternate" href="https://blog.bysegfault.com/CS/linux/WritingService/"/>
         <content type="html">&lt;h2 id=&#34;服务编写&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#服务编写&#34;&gt;&lt;/a&gt; 服务编写&lt;/h2&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; /lib/systemd/system/服务名.service&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;line-numbers language-ini&#34; data-language=&#34;ini&#34;&gt;&lt;code class=&#34;language-ini&#34;&gt;
@@ -140,9 +140,9 @@ i&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34
         <updated>2022-01-07T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.oover.dev/CS/linux/CustomServerInit/</id>
+        <id>https://blog.bysegfault.com/CS/linux/CustomServerInit/</id>
         <title>科学上网&amp;基本的网络服务器&amp;内网穿透</title>
-        <link rel="alternate" href="https://blog.oover.dev/CS/linux/CustomServerInit/"/>
+        <link rel="alternate" href="https://blog.bysegfault.com/CS/linux/CustomServerInit/"/>
         <content type="html">&lt;h1 id=&#34;科学上网vpn的搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#科学上网vpn的搭建&#34;&gt;&lt;/a&gt; 科学上网VPN的搭建&lt;/h1&gt;
 &lt;p&gt;v2一键脚本&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;#首先用firewall-cmd开v2的端口&lt;/span&gt;
@@ -279,9 +279,9 @@ nssm start frpc&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&
         <updated>2022-01-04T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.oover.dev/CS/linux/linux_init/</id>
+        <id>https://blog.bysegfault.com/CS/linux/linux_init/</id>
         <title>linux服务器初始化（个人自用）</title>
-        <link rel="alternate" href="https://blog.oover.dev/CS/linux/linux_init/"/>
+        <link rel="alternate" href="https://blog.bysegfault.com/CS/linux/linux_init/"/>
         <content type="html">&lt;h1 id=&#34;重置root密码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重置root密码&#34;&gt;&lt;/a&gt; 重置root密码&lt;/h1&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;passwd&lt;/span&gt; root
 

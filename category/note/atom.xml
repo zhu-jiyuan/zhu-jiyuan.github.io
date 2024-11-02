@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.oover.dev</id>
+    <id>https://blog.bysegfault.com</id>
     <title>ohayo&#39;s blog • Posts by &#34;note&#34; category</title>
-    <link href="https://blog.oover.dev" />
+    <link href="https://blog.bysegfault.com" />
     <updated>2022-11-29T13:18:06.000Z</updated>
     <category term="math" />
     <category term="openwrt" />
     <category term="log" />
-    <category term="journal" />
     <category term="vector日志采集" />
+    <category term="journal" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
-    <category term="python" />
     <category term="Linux" />
+    <category term="python" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.oover.dev/learning/tex-math/</id>
+        <id>https://blog.bysegfault.com/learning/tex-math/</id>
         <title>简单的数学tex</title>
-        <link rel="alternate" href="https://blog.oover.dev/learning/tex-math/"/>
+        <link rel="alternate" href="https://blog.bysegfault.com/learning/tex-math/"/>
         <content type="html">&lt;h1 id=&#34;tex中的数学表示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tex中的数学表示&#34;&gt;&lt;/a&gt; Tex中的数学表示&lt;/h1&gt;
 &lt;h2 id=&#34;官网文档&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#官网文档&#34;&gt;&lt;/a&gt; 官网文档&lt;/h2&gt;
 &lt;ul&gt;
@@ -313,9 +313,9 @@ F(n) = \Pi_{\substack{i=1}}^{n}n
         <updated>2022-11-29T13:18:06.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.oover.dev/learning/git-learning/</id>
+        <id>https://blog.bysegfault.com/learning/git-learning/</id>
         <title>学习Git</title>
-        <link rel="alternate" href="https://blog.oover.dev/learning/git-learning/"/>
+        <link rel="alternate" href="https://blog.bysegfault.com/learning/git-learning/"/>
         <content type="html">&lt;p&gt;最近也是产出高峰期耶~&lt;/p&gt;
 &lt;p&gt;咱的电脑是一个对于&lt;strong&gt;物理学&lt;/strong&gt;学生十分够用&lt;s&gt;拉跨&lt;/s&gt;的笔电。&lt;/p&gt;
 &lt;p&gt;在我大二下学期，平时从不耍脾气的它，硬盘坏了，咱的代码自然是未能渡劫。&lt;/p&gt;

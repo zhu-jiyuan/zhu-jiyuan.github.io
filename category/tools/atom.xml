@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.oover.dev</id>
+    <id>https://blog.bysegfault.com</id>
     <title>ohayo&#39;s blog • Posts by &#34;tools&#34; category</title>
-    <link href="https://blog.oover.dev" />
+    <link href="https://blog.bysegfault.com" />
     <updated>2024-04-29T14:35:48.000Z</updated>
     <category term="math" />
     <category term="openwrt" />
     <category term="log" />
-    <category term="journal" />
     <category term="vector日志采集" />
+    <category term="journal" />
     <category term="note" />
     <category term="tex" />
     <category term="单调栈" />
     <category term="soft" />
     <category term="app" />
     <category term="cpp" />
-    <category term="python" />
     <category term="Linux" />
+    <category term="python" />
     <category term="shell" />
     <category term="DDNS" />
     <category term="JavaScript" />
     <category term="openProject" />
     <entry>
-        <id>https://blog.oover.dev/soft-router-is-joker/</id>
+        <id>https://blog.bysegfault.com/soft-router-is-joker/</id>
         <title>没必要的软路由</title>
-        <link rel="alternate" href="https://blog.oover.dev/soft-router-is-joker/"/>
+        <link rel="alternate" href="https://blog.bysegfault.com/soft-router-is-joker/"/>
         <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;小学到初二，家里的网线从宽带我世界的电话拨号，升级到了光纤，我的游戏事业也如日中天，形势一片大好之际，我爸妈把网线掐了，直到高中毕业，在此期间我攻坚克难、不畏艰险，先后破解了邻居家的WiFi密码，掉包率极高，在电竞黄金期，摧毁了我的电竞梦想。&lt;/p&gt;
 &lt;p&gt;毕业后，第一次租房30m宽带，100块才能使用50m，恰好当时拿下了switch，下个塞尔达都要等一天，看直播不能玩游戏。直接给我整破防了。。。&lt;/p&gt;
@@ -81,9 +81,9 @@
         <updated>2024-04-29T14:35:48.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.oover.dev/vector-record-tool/</id>
+        <id>https://blog.bysegfault.com/vector-record-tool/</id>
         <title>vector日志采集-快速开始</title>
-        <link rel="alternate" href="https://blog.oover.dev/vector-record-tool/"/>
+        <link rel="alternate" href="https://blog.bysegfault.com/vector-record-tool/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;本文默认已经有一丢丢lua基础&lt;/p&gt;
 &lt;/blockquote&gt;

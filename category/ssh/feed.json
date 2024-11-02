@@ -2,11 +2,11 @@
     "version": "https://jsonfeed.org/version/1",
     "title": "ohayo's blog • All posts by \"ssh\" category",
     "description": null,
-    "home_page_url": "https://blog.oover.dev",
+    "home_page_url": "https://blog.bysegfault.com",
     "items": [
         {
-            "id": "https://blog.oover.dev/log/ssh-config/",
-            "url": "https://blog.oover.dev/log/ssh-config/",
+            "id": "https://blog.bysegfault.com/log/ssh-config/",
+            "url": "https://blog.bysegfault.com/log/ssh-config/",
             "title": "配置ssh密钥登录",
             "date_published": "2023-02-24T07:34:42.000Z",
             "content_html": "<p>win 下使用xshell等软件连接服务器很便捷，换了Mac之后，感觉terminal就可以完成目前我的全部需求，这种情况下，使用公私钥对登陆，很方便、很有必要！</p>\n<h2 id=\"配置公私钥对\"><a class=\"markdownIt-Anchor\" href=\"#配置公私钥对\"></a> 配置公私钥对</h2>\n<pre class=\"line-numbers language-bash\" data-language=\"bash\"><code class=\"language-bash\">\n<span class=\"token builtin class-name\">cd</span> ~/.ssh\n\n<span class=\"token comment\"># Comment最好填邮箱，这样服务器管理起来比较方便</span>\nssh-keygen <span class=\"token parameter variable\">-t</span> ed25519 <span class=\"token parameter variable\">-C</span> <span class=\"token string\">\"Comment\"</span>\n\n<span class=\"token comment\"># 把公钥上传到服务器</span>\nssh-copy-id <span class=\"token parameter variable\">-i</span> 公钥文件名 用户名@服务器ip\n\n<span class=\"token comment\"># 把私钥添加到ssh列表中</span>\nssh-add <span class=\"token parameter variable\">-K</span> 私钥文件名\n<span aria-hidden=\"true\" class=\"line-numbers-rows\"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>\n<ol>\n<li>进入ssh配置文件夹下</li>\n<li>生成公私钥对</li>\n<li>把公钥上传到服务器</li>\n<li>把私钥添加到ssh列表中</li>\n</ol>\n<h2 id=\"给服务器起别名\"><a class=\"markdownIt-Anchor\" href=\"#给服务器起别名\"></a> 给服务器起别名</h2>\n<p>起别名，可以帮助我们更方便的使用ssh、scp等工具。</p>\n<p><code>touch ~/.ssh/config</code>创建配置文件。<br />\n比如我要给我的路由器起别名<code>openwrt</code>，仅仅需要在<code>~/.ssh/config</code>下填写如下。</p>\n<pre class=\"line-numbers language-config\" data-language=\"config\"><code class=\"language-config\">Host openwrt\n    HostName openwrt.lan\n    User root\n    Port 255\n    IdentityFIle ~&#x2F;.ssh&#x2F;server<span aria-hidden=\"true\" class=\"line-numbers-rows\"><span></span><span></span><span></span><span></span><span></span></span></code></pre>\n<p>现在就可以使用<code>ssh openwrt</code>对路由器进行访问啦！</p>\n<p>config的配置详情可以去看<code>man ssh_config</code>手册，里面很详细的介绍了config的配置参数等。</p>\n<h2 id=\"change-log\"><a class=\"markdownIt-Anchor\" href=\"#change-log\"></a> Change log</h2>\n<ul>\n<li>2023.09.24 追加如何给服务器起别名</li>\n</ul>\n",

@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>ohayo&#39;s blog • Posts by &#34;openwrt&#34; tag</title>
-        <link>https://blog.oover.dev</link>
+        <link>https://blog.bysegfault.com</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Mon, 29 Apr 2024 14:35:48 +0000</pubDate>
@@ -10,24 +10,24 @@
         <category>math</category>
         <category>openwrt</category>
         <category>log</category>
-        <category>journal</category>
         <category>vector日志采集</category>
+        <category>journal</category>
         <category>note</category>
         <category>tex</category>
         <category>单调栈</category>
         <category>soft</category>
         <category>app</category>
         <category>cpp</category>
-        <category>python</category>
         <category>Linux</category>
+        <category>python</category>
         <category>shell</category>
         <category>DDNS</category>
         <category>JavaScript</category>
         <category>openProject</category>
         <item>
-            <guid isPermalink="true">https://blog.oover.dev/soft-router-is-joker/</guid>
+            <guid isPermalink="true">https://blog.bysegfault.com/soft-router-is-joker/</guid>
             <title>没必要的软路由</title>
-            <link>https://blog.oover.dev/soft-router-is-joker/</link>
+            <link>https://blog.bysegfault.com/soft-router-is-joker/</link>
             <category>openwrt</category>
             <category>log</category>
             <pubDate>Mon, 29 Apr 2024 14:35:48 +0000</pubDate>
@@ -84,9 +84,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.oover.dev/log/openwrt/openwrt-dns/</guid>
+            <guid isPermalink="true">https://blog.bysegfault.com/log/openwrt/openwrt-dns/</guid>
             <title>openwrt插件篇-openclash&amp;adguardhome</title>
-            <link>https://blog.oover.dev/log/openwrt/openwrt-dns/</link>
+            <link>https://blog.bysegfault.com/log/openwrt/openwrt-dns/</link>
             <category>openwrt</category>
             <pubDate>Sun, 03 Sep 2023 12:59:49 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;DNS（&lt;strong&gt;D&lt;/strong&gt;omain &lt;strong&gt;N&lt;/strong&gt;ame &lt;strong&gt;S&lt;/strong&gt;ystem），网络域名系统。可以把它对应手机里的联系人，通过联系人的名字就可以找到电话号码，也能通过手机号找到对应联系人的信息，从而能够准确给特定人拨打电话或者发短信等等。而DNS会把网络域名转换成ip，也能把ip转换成网络域名。&lt;/p&gt;
@@ -139,9 +139,9 @@ https://1.1.1.1/dns-query&lt;span aria-hidden=&#34;true&#34; class=&#34;line-num
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://blog.oover.dev/log/openwrt/tl6088/</guid>
+            <guid isPermalink="true">https://blog.bysegfault.com/log/openwrt/tl6088/</guid>
             <title>tl6088刷机之旅</title>
-            <link>https://blog.oover.dev/log/openwrt/tl6088/</link>
+            <link>https://blog.bysegfault.com/log/openwrt/tl6088/</link>
             <category>openwrt</category>
             <pubDate>Sun, 27 Aug 2023 15:16:59 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;最近又换了一台路由器，TP-link-6088，因为上个月买了台switch，无论怎么换DNS，下载速度依旧感人至深。转手就把小米AX6000卖了，其实小米AX6000已经能满足我的日常的绝大需求，唯一缺点就是自由度不够，迟来的switch打破昔日的平静。&lt;/p&gt;
