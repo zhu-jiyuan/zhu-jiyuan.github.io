@@ -33,7 +33,7 @@
             <description><![CDATA[ &lt;p&gt;就在昨天晚上，我正在床上津津有味的看一篇有关快速幂的博文，这小菜一碟～，简单简单，小小快速幂可笑可笑。往下一划，发现这个博主还写了一篇「快速取模」的文章，死去的回忆开始攻击我。&lt;/p&gt;
 &lt;p&gt;计算机是如何实现加减乘除、取模运算？&lt;/p&gt;
 &lt;p&gt;只记得这是计算机组成原理的东西，完蛋了。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/61FFA961-08C5-4C57-816A-8A5CF398CD93.jpeg&#34; alt=&#34;61FFA961-08C5-4C57-816A-8A5CF398CD93&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/61FFA961-08C5-4C57-816A-8A5CF398CD93.jpeg&#34; alt=&#34;61FFA961-08C5-4C57-816A-8A5CF398CD93&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;我没有养成计算机思考思维！&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;endl
   &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;

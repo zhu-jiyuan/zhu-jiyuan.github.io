@@ -105,7 +105,7 @@
 &lt;h3 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;&lt;/a&gt; 总结&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;定义：「定义一个操作中的算法的骨架（稳定），而将一些步骤延迟（变化）到子类中。Template Method使得子类可以不改变（复用）一个算法的结构即可重定义（override重写）该算法的某些特定步骤」&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;下面是它的结构图。&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230424215309.png&#34; alt=&#34;image.png&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230424215309.png&#34; alt=&#34;image.png&#34; /&gt;&lt;br /&gt;
 模板方法是不是很好用，不要你调用我！让我来调用你。&lt;/p&gt;
 &lt;h2 id=&#34;strategy策略模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strategy策略模式&#34;&gt;&lt;/a&gt; Strategy（策略模式）&lt;/h2&gt;
 &lt;p&gt;策略模式特别像模板方法。举个栗子，就能马上明白。&lt;/p&gt;
@@ -165,7 +165,7 @@
 &lt;h3 id=&#34;总结-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结-2&#34;&gt;&lt;/a&gt; 总结&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;定义：「定义一系列算法，把它们一个个封装起来，并且使他们可互相替换（变化）。该模式使得算法可独立于使用它的客户程序（稳定）而变化（扩展，子变化）。」&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;结构如下&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230424225921.png&#34; alt=&#34;image.png&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230424225921.png&#34; alt=&#34;image.png&#34; /&gt;&lt;br /&gt;
 策略模式，可以很好的解决if else 这种没有止境或者不确定后续是否还会添加其他选项的代码，实在是妙啊。&lt;/p&gt;
 &lt;h2 id=&#34;observe-event观察者模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#observe-event观察者模式&#34;&gt;&lt;/a&gt; Observe | Event（观察者模式）&lt;/h2&gt;
 &lt;p&gt;观察者一般都是站在第三方角度上，observe中文有着「观察」的意思，而Event有着「事件」的意思，从字面意思上直观了解，不是那么容易懂。举个例子，当一个程序跑起来了，我们想看一下中间过程中发生的情况，这时我们就可以插入一段「代码（像Log）」可以让我们观察程序中间过程中的执行情况，也可以把这个观察，说成一种事件，「观察程序中间过程」事件。&lt;/p&gt;
@@ -245,7 +245,7 @@
 &lt;p&gt;这样写没毛病，让我们试想一下，如果此时我们再加一个进度条，比如在终端上打印进度信息，或者再加几个观察进度程序，如此上面的&lt;code&gt;FileSplitter&lt;/code&gt;类将不能满足我们的要求。&lt;/p&gt;
 &lt;p&gt;『我们有时需要让一个类引起的变化，通知到其他一个或多个类。 』&lt;/p&gt;
 &lt;p&gt;继续之前的例子，按照我们的要求，当&lt;code&gt;FileSplitter&lt;/code&gt;类变化时，其中我们加入的多个进度条类也会发生变化，也就是说&lt;code&gt;FileSplitter&lt;/code&gt;类变化会通知其他进度条类。&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230425214659.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230425214659.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;这些需要&lt;code&gt;FileSplitter&lt;/code&gt;类应该具有一些共同的函数等，可以把这些东西给抽象为一个接口。&lt;br /&gt;
 例如这样&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;IProgress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
@@ -374,7 +374,7 @@
 &lt;h3 id=&#34;总结-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结-3&#34;&gt;&lt;/a&gt; 总结&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;定义：「定义对象间的一种一对多（变化）的依赖关系，以便当一个对象（subject）的状态发生改变时，所有依赖于它的对象都得到通知并自动更新。」&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;结构如下&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230425215654.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230425215654.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;是不是有种学到啦的感觉，观察者模式，可以让一个类通知许多类的改变，仅仅把这些的共同地方抽象出来，就可以让 代码变的健壮起来。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h1 id=&#34;单一职责模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单一职责模式&#34;&gt;&lt;/a&gt; 单一职责模式&lt;/h1&gt;
@@ -468,7 +468,7 @@
 &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;现在，回头看一下代码，很明显，每当我们去添加一个扩展功能类，比如反转流，这样就要再继承 &lt;code&gt;FileStream、NetworkStream&lt;/code&gt;写两个类，或者当我们去添加一个流，比如内存流，这样就要继承内存流去写很多扩展类。&lt;/p&gt;
 &lt;p&gt;假设，&lt;code&gt;FileStream、NetworkStream&lt;/code&gt;这样的类有&lt;strong&gt;N&lt;/strong&gt;个，加密流这样的扩展有&lt;strong&gt;M&lt;/strong&gt;个，那么一共要写&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1+N+N*M&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.72777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.76666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;个。&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230427013929.png&#34; alt=&#34;Pasted image 20230427013929&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230427013929.png&#34; alt=&#34;Pasted image 20230427013929&#34; /&gt;&lt;br /&gt;
 不难发现，在扩展类中，实现的东西都相同，很容易联系到多态。那么扩展类就可以写成下面这样，比如&lt;code&gt;CryptoStream&lt;/code&gt;类。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;CryptoStream&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token base-clause&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Stream&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
 Stream&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; stream&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
@@ -532,7 +532,7 @@ Stream&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; stream&lt;span c
 &lt;h3 id=&#34;总结-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结-4&#34;&gt;&lt;/a&gt; 总结&lt;/h3&gt;
 &lt;p&gt;定义：动态（组合）地给一个对象增加一些额外的职责。就增加功能而言，Decorator模式比生成子类（继承）更为灵活（消除重复代码&amp;amp;减少子类个数）&lt;/p&gt;
 &lt;p&gt;结构如下&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230428012216.png&#34; alt=&#34;Pasted image 20230428012216&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230428012216.png&#34; alt=&#34;Pasted image 20230428012216&#34; /&gt;&lt;br /&gt;
 &lt;strong&gt;仔细想想，其实CryptoFileStream继承FileStream是不合理的，因为前者仅仅是后者的一个扩展，并没有is a的关系，也不朝着同一个方向变化。&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;bridge桥模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bridge桥模式&#34;&gt;&lt;/a&gt; Bridge（桥模式）&lt;/h2&gt;
 &lt;p&gt;桥模式与装饰器模式十分相似，都是为了解决继承使得类数量爆炸增长的问题。&lt;/p&gt;
@@ -722,7 +722,7 @@ Messager&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ml &lt;span cl
 &lt;h3 id=&#34;总结-5&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结-5&#34;&gt;&lt;/a&gt; 总结&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;定义：将抽象部分（业务功能）与实现部分（平台实现）分离，使它们都可以独立地变化。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;结构如下&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/Pasted%20image%2020230428224539.png&#34; alt=&#34;Pasted image 20230428224539&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230428224539.png&#34; alt=&#34;Pasted image 20230428224539&#34; /&gt;&lt;br /&gt;
 桥模式与装饰器模式，都有异曲同工之妙，都是将继承换为多态，总而避免了类数量的急剧增长。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h1 id=&#34;对象创建模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对象创建模式&#34;&gt;&lt;/a&gt; 对象创建模式&lt;/h1&gt;
@@ -744,8 +744,8 @@ Messager&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ml &lt;span cl
 &lt;/blockquote&gt;
 &lt;p&gt;只学招式，不学心法，武功瓶颈难以突破，更有甚者潜心修炼，数十年如一日，却不及他人一个月，走火入魔，此举实在是得不偿失。&lt;br /&gt;
 你是否想如同杨过那样，年纪轻轻就已经成为武林大侠，即使郭靖一样的资质，也可以在短期内，上能九天揽月，下能五洋抓鳖。是的，你妹看错！&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423003635.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go@master/img/20230423192658.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230423003635.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230423192658.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;设计模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#设计模式&#34;&gt;&lt;/a&gt; 设计模式&lt;/h2&gt;
 &lt;p&gt;只要你学过java、python或者是cpp等任意一门面向对象语言，23种设计模式代码部分都能看懂。代码部分都能理解，直接开始上手干它，不就完了吗？非也非也，小伙子，这些代码只是辅助理解23种设计模式是如何解决日常编程问题的，其中真经要诀不可得也。&lt;br /&gt;
 所以嘞，在学习设计模式时，我们要关注『 如何使用设计模式八大原则分析问题，解决问题』，而不是用什么设计模式。&lt;/p&gt;

@@ -134,7 +134,7 @@ firewall-cmd --add-service&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&
 systemctl restart smbd
 
 &lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105225934309.png&#34; alt=&#34;image-20220105225934309&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/image-20220105225934309.png&#34; alt=&#34;image-20220105225934309&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;注意&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意&#34;&gt;&lt;/a&gt; 注意&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;windows下要先在设置中开启smb服务，才能访问&lt;/li&gt;
@@ -194,7 +194,7 @@ systemctl restart smbd
 &lt;p&gt;cmd下，frp！启动！。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;./frpc &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; ./frpc.ini&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;用ipad随时随地通过服务器ip远程连接家里的电脑&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220105230626923.png&#34; alt=&#34;image-20220105230626923&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/image-20220105230626923.png&#34; alt=&#34;image-20220105230626923&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;三-安装nssm自启管理服务设置开机自启&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三-安装nssm自启管理服务设置开机自启&#34;&gt;&lt;/a&gt; 三、安装nssm自启管理服务&amp;amp;&amp;amp;设置开机自启&lt;/h3&gt;
 &lt;p&gt;nssm是一款古老的window后台服务管理软件，偶然一次在chat-gpt上得知，使用上的体验超乎我的想象，居然还挺好用，只需要命令行操作就行。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://nssm.cc/download&#34;&gt;官网下载nssm&lt;/a&gt;&lt;/p&gt;
@@ -223,7 +223,7 @@ nssm start frpc&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&
 &lt;h1 id=&#34;安装vim并设置主编辑器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装vim并设置主编辑器&#34;&gt;&lt;/a&gt; 安装vim并设置主编辑器&lt;/h1&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;
 select-editor&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220421130919271.png&#34; alt=&#34;image-20220421130919271&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/image-20220421130919271.png&#34; alt=&#34;image-20220421130919271&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;给vi起别名&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#给vi起别名&#34;&gt;&lt;/a&gt; 给vi起别名&lt;/h2&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;alias vi=vim&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt; /etc/profile
 &lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; /etc/profile&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;

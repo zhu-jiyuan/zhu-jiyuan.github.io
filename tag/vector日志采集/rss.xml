@@ -34,7 +34,7 @@
 &lt;p&gt;本文默认已经有一丢丢lua基础&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;vector-采集流程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vector-采集流程&#34;&gt;&lt;/a&gt; vector 采集流程&lt;/h2&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230910222313.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230910222313.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;vector官网给出的三步走战略，结合具体配置，设置采集源头—&amp;gt;进行数据转换—&amp;gt;保存转换好的数据。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-toml&#34; data-language=&#34;toml&#34;&gt;&lt;code class=&#34;language-toml&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;# 从哪采集&lt;/span&gt;
 &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token table class-name&#34;&gt;sources.generate_syslog&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
@@ -74,7 +74,7 @@
 O(2n)、O(3n)都是O(n)，长板凳、矮板凳都是板凳。根据剃刀原理…这就是我选lua的理由。&lt;/p&gt;
 &lt;p&gt;PS: remap在面对格式规范的日志输出，要比lua更加方便。而且在启动vector时会进行静态检查。&lt;/p&gt;
 &lt;p&gt;让我们先看一下，lua怎么在vector中转换数据的吧！下图是官网文档。&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/Pasted%20image%2020230908191517.png&#34; alt=&#34;Pasted image 20230908191517.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230908191517.png&#34; alt=&#34;Pasted image 20230908191517.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;vector需要我们在配置中注册三个函数，&lt;code&gt;init | process | shutdown&lt;/code&gt;，&lt;code&gt;第一条日志&lt;/code&gt;来的时候，会执行&lt;code&gt;init&lt;/code&gt;函数，然后会执行&lt;code&gt;process&lt;/code&gt;，当转换结束时，会执行&lt;code&gt;shutdown&lt;/code&gt;。&lt;br /&gt;
 注意，init只有在第一条日志来的时候才执行，shutdown在关闭时执行，而process在每条日志来的时候都会执行。&lt;/p&gt;
 &lt;p&gt;结合配置格式填写如下&lt;/p&gt;
@@ -98,7 +98,7 @@ O(2n)、O(3n)都是O(n)，长板凳、矮板凳都是板凳。根据剃刀原理
 &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; M&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;解释一下，vector会把每一个从source采集日志，包装成一个table，日志的内容可以用&lt;code&gt;event.log.message&lt;/code&gt;获取，&lt;code&gt;emit&lt;/code&gt;函数会把&lt;code&gt;event&lt;/code&gt;结构的table发送到sink存储层进行保存。&lt;br /&gt;
 保存的内容是 &lt;code&gt;event.log&lt;/code&gt;，这个table的格式如下。&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230910221924.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230910221924.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;接着设置保存，从转换层（transform）拿到数据，编码成text，设置保存路径即可。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-toml&#34; data-language=&#34;toml&#34;&gt;&lt;code class=&#34;language-toml&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token table class-name&#34;&gt;sinks.milestone_record_file&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
 &lt;span class=&#34;token key property&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;file&#34;&lt;/span&gt;

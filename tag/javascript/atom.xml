@@ -28,8 +28,8 @@
         <content type="html">&lt;h1 id=&#34;b站签到&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#b站签到&#34;&gt;&lt;/a&gt; b站签到&amp;gt;.&amp;lt;&lt;/h1&gt;
 &lt;h2 id=&#34;抓签到包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#抓签到包&#34;&gt;&lt;/a&gt; 抓签到包&lt;/h2&gt;
 &lt;p&gt;F12，签到，找签到数据包&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220510170502967.png&#34; alt=&#34;image-20220510170502967&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220510170538309.png&#34; alt=&#34;image-20220510170538309&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/image-20220510170502967.png&#34; alt=&#34;image-20220510170502967&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/image-20220510170538309.png&#34; alt=&#34;image-20220510170538309&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;编写脚本&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#编写脚本&#34;&gt;&lt;/a&gt; 编写脚本&lt;/h2&gt;
 &lt;p&gt;其实Quantumult X有自动生成脚本，但是面对复杂的，它是解决不了的啦。&lt;/p&gt;
 &lt;p&gt;下面是我写的一个类，可以方便以后进行操作哈。&lt;/p&gt;
@@ -74,7 +74,7 @@
 	&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
 &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;先在Quantumult X下创建一个js文件&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220510171348307.png&#34; alt=&#34;image-20220510171348307&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/image-20220510171348307.png&#34; alt=&#34;image-20220510171348307&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;把刚刚的类复制到最下面，然后就可以写代码啦。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//先初始化一个类&lt;/span&gt;
 &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; $ &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;initEnv&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -105,7 +105,7 @@
 &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
 &lt;span class=&#34;token comment&#34;&gt;//调用函数即可&lt;/span&gt;
 &lt;span class=&#34;token function&#34;&gt;dosign&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220510172959875.png&#34; alt=&#34;image-20220510172959875&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/image-20220510172959875.png&#34; alt=&#34;image-20220510172959875&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;根据俩次的请求回应，我们修改一下签到函数。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;dosign&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
     &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; url &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;https://api.live.bilibili.com/xlive/web-ucenter/v1/sign/DoSign&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
@@ -134,11 +134,11 @@
     &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;运行结果如下&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220510173731266.png&#34; alt=&#34;image-20220510173731266&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/image-20220510173731266.png&#34; alt=&#34;image-20220510173731266&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;自动获取cookie&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自动获取cookie&#34;&gt;&lt;/a&gt; 自动获取COOKIE&lt;/h2&gt;
 &lt;p&gt;Quantumult X内部有一个小型的数据库，也就是官网的数据持久化操作。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220510174340728.png&#34; alt=&#34;image-20220510174340728&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/image-20220510174424044.png&#34; alt=&#34;image-20220510174424044&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/image-20220510174340728.png&#34; alt=&#34;image-20220510174340728&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/image-20220510174424044.png&#34; alt=&#34;image-20220510174424044&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;同时Quantumult X的rewrite操作可以运行js脚本，我们只需要，把cookie放入这里面就行啦。&lt;/p&gt;
 &lt;h2 id=&#34;cookie存入函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cookie存入函数&#34;&gt;&lt;/a&gt; cookie存入函数&lt;/h2&gt;
 &lt;p&gt;下面的代码是在Github上找到一个获取COOKIE的模板。&lt;/p&gt;

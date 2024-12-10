@@ -65,14 +65,14 @@
         <title>openwrt插件篇-openclash&amp;adguardhome</title>
         <link rel="alternate" href="https://blog.bysegfault.com/log/openwrt/openwrt-dns/"/>
         <content type="html">&lt;p&gt;DNS（&lt;strong&gt;D&lt;/strong&gt;omain &lt;strong&gt;N&lt;/strong&gt;ame &lt;strong&gt;S&lt;/strong&gt;ystem），网络域名系统。可以把它对应手机里的联系人，通过联系人的名字就可以找到电话号码，也能通过手机号找到对应联系人的信息，从而能够准确给特定人拨打电话或者发短信等等。而DNS会把网络域名转换成ip，也能把ip转换成网络域名。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230903211232.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230903211232.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;adguardhome&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#adguardhome&#34;&gt;&lt;/a&gt; AdguardHome&lt;/h2&gt;
 &lt;p&gt;AdguardHome 是一个本地DNS转发器，同时能过滤广告或者网站等，&lt;code&gt;GitHub&lt;/code&gt;开源。下文简称为ADHome。&lt;br /&gt;
 值得庆幸的是，ADHome在openwrt上也能用，首先说一下这个软件能带来哪些好处。&lt;/p&gt;
 &lt;p&gt;在上图，浏览一个网站时，会先进行DNS查询，获取网站的IP，这个过程十分慢，会极大影响上网体验，其次在我们连接到Wi-Fi上网时，很可能我们正在使用的设备DNS会被劫持，也就是说不是&lt;code&gt;8.8.8.8|1.1.1.1&lt;/code&gt;等公共的DNS服务器，它可能是某个老油条自己搭建的一个，同时把你想访问的网站ip，换成他设定的，这就十分的危险了。&lt;/p&gt;
 &lt;p&gt;把DNS默认设置为ADHome的DNS服务端口，你的每一条DNS请求都会走ADHome的DNS服务，就可以防止DNS被劫持，同时为ADHome设置一些公共的DNS服务器上游，在收到DNS请求时，它会并发向这些上游DNS服务器请求，根据你的选择，可以返回最快的，也可以是其他情况。&lt;/p&gt;
 &lt;p&gt;如此说来，ADHome兼并smartdns等软件的功能，同时还具备过滤功能，可以设置黑名单来屏蔽广告等。没有理由不装！！！&lt;a href=&#34;https://github.com/rufengsuixing/luci-app-adguardhome&#34;&gt;openwrt链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230903214014.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230903214014.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;以下是我的dns备用&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-text&#34; data-language=&#34;text&#34;&gt;&lt;code class=&#34;language-text&#34;&gt;# 上游服务器
 114.114.114.114
@@ -88,7 +88,7 @@ https://public.dns.iij.jp/dns-query
 https://dns.google/dns-query
 https://1.1.1.1/dns-query&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;去广告用的是anti-ad公开的广告库—&amp;gt;&lt;a href=&#34;https://anti-ad.net/easylist.txt&#34;&gt;传送&lt;/a&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230903214228.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230903214228.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;openclash&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#openclash&#34;&gt;&lt;/a&gt; openclash&lt;/h2&gt;
 &lt;p&gt;openclash是clash的openwrt版本，安装完meta内核，基本和电脑端的规则兼容，一套规则，全平台使用，还是很不错滴。&lt;br /&gt;
 就不过多写这个了。&lt;/p&gt;
@@ -96,19 +96,19 @@ https://1.1.1.1/dns-query&lt;span aria-hidden=&#34;true&#34; class=&#34;line-num
 &lt;p&gt;这才是硬路由的终极方案，openclash劫持53端口的DNS转发，同时将openclash的DNS上游设置为ADHome。&lt;br /&gt;
 如此一来，DNS请求—&amp;gt;53端口DNS—&amp;gt;openclash—&amp;gt;ADHome。&lt;/p&gt;
 &lt;p&gt;openclash配置如下，其中8053为ADHome服务端口。&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230903215059.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230903215059.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;ADHome配置如下&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230903215153.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230903215153.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;dns测速对比&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dns测速对比&#34;&gt;&lt;/a&gt; DNS测速对比&lt;/h2&gt;
 &lt;p&gt;根据使用情况，smartdns与ADHome dns查询速度基本一致，这里对比的是smartdns与正常情况下的DNS。&lt;br /&gt;
 速率对比是玄学，主要用途是为了防止DNS被劫持。&lt;/p&gt;
 &lt;p&gt;正常情况如下&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230903215643.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230903215643.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;使用smartdns情况如下&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230903215805.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230903215805.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;尽管dns查询速度这块是玄学，实际使用上来说，提升是有的，搭配openclash秒开YouTube。&lt;/p&gt;
 &lt;p&gt;最后不得不说6088这款路由器，真滴强，openclash➕ADHome等应用一点压力都没。&lt;br /&gt;
-&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230903220047.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230903220047.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;想把博客从hexo转移到hugo，之前改的配置，都不记得改了那里，很难受，算了，先这样吧，等11.11买完新电脑，再迁移吧。&lt;/p&gt;
 </content>
@@ -129,7 +129,7 @@ https://1.1.1.1/dns-query&lt;span aria-hidden=&#34;true&#34; class=&#34;line-num
 &lt;h2 id=&#34;刷机openwrt&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#刷机openwrt&#34;&gt;&lt;/a&gt; 刷机openwrt&lt;/h2&gt;
 &lt;p&gt;tp家的路由器和米家的不一样，我看很多论坛上说tp的刷机过程比较繁琐。之前玩的红米ax6，刷机已经很繁琐了。我敲，这不会又是一个通宵吧。&lt;/p&gt;
 &lt;p&gt;还好小马过河，实际比红米ax6省事不少，利用6088的vpn漏洞，注入刷机包，再通过tftp服务，把recover传入，整体过程一气呵成，大概20分钟，就刷完了。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://fastly.jsdelivr.net/gh/zhu-jiyuan/picture_go/img/20230827235738.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/20230827235738.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;具体的参考文章可以看===&amp;gt;&lt;a href=&#34;https://blog.lishun.me/tl-xdr608x-openwrt-install&#34;&gt;这篇文章&lt;/a&gt;，作者很谨慎，传输的文件都加了md5验证文件唯一性，胆大心细，十分nice。&lt;/p&gt;
 &lt;h2 id=&#34;配置openwrt&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置openwrt&#34;&gt;&lt;/a&gt; 配置openwrt&lt;/h2&gt;
 &lt;p&gt;家里的电线光猫，全国通用密码，直接8080端口找到老web地址，把宽带账号&amp;amp;&amp;amp;密码记下来，删除第三个路由模式，创建一个桥接模式，钩上端口，最后关闭光猫的DHCP。&lt;/p&gt;
