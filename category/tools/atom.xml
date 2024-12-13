@@ -128,7 +128,7 @@
 O(2n)、O(3n)都是O(n)，长板凳、矮板凳都是板凳。根据剃刀原理…这就是我选lua的理由。&lt;/p&gt;
 &lt;p&gt;PS: remap在面对格式规范的日志输出，要比lua更加方便。而且在启动vector时会进行静态检查。&lt;/p&gt;
 &lt;p&gt;让我们先看一下，lua怎么在vector中转换数据的吧！下图是官网文档。&lt;br /&gt;
-&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230908191517.png&#34; alt=&#34;Pasted image 20230908191517.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230908191517.png&#34; alt=&#34;Pasted image 20230908191517.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;vector需要我们在配置中注册三个函数，&lt;code&gt;init | process | shutdown&lt;/code&gt;，&lt;code&gt;第一条日志&lt;/code&gt;来的时候，会执行&lt;code&gt;init&lt;/code&gt;函数，然后会执行&lt;code&gt;process&lt;/code&gt;，当转换结束时，会执行&lt;code&gt;shutdown&lt;/code&gt;。&lt;br /&gt;
 注意，init只有在第一条日志来的时候才执行，shutdown在关闭时执行，而process在每条日志来的时候都会执行。&lt;/p&gt;
 &lt;p&gt;结合配置格式填写如下&lt;/p&gt;

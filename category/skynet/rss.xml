@@ -131,7 +131,7 @@ config&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;profile &lt;sp
 &lt;span class=&#34;token function&#34;&gt;skynet_socket_init&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;token function&#34;&gt;skynet_profile_enable&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;config&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;profile&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;我们知道skynet中服务地址的构成。高八位是节点地址，低24位是服务地址。&lt;br /&gt;
-&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230604183714.png&#34; alt=&#34;Pasted image 20230604183714&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230604183714.png&#34; alt=&#34;20230604183714&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;而&lt;code&gt;skynet_harbor_init&lt;/code&gt;仅仅只做了一件事，把高8位设置为配置文件的节点号。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;
 &lt;span class=&#34;token function&#34;&gt;skynet_harbor_init&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; harbor&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
@@ -294,10 +294,10 @@ ctx&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;handle &lt;span 
 这里要先用几个图解释一下。&lt;br /&gt;
 当服务创建好后，它的消息队列会push到skynet全局队列GQ中。&lt;br /&gt;
 而服务本身有一个skynet_message队列，这个队列是存放其他服务发的消息的。&lt;br /&gt;
-&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230604194028.png&#34; alt=&#34;Pasted image 20230604194028&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230604194028.png&#34; alt=&#34;20230604194028&#34; /&gt;&lt;br /&gt;
 全局队列中的每个消息队列对应一个服务，而其他服务发送需要处理的消息在消息队列中的skynet_message队列中。需要注意的是，全局队列是链表的形式，而skynet_message队列是数组循环队列。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;start(config-&amp;gt;thread);&lt;/code&gt;会创建很多工作线程，这些工作线程从GQ中，抢消息队列，如果消息队列中有消息，就用消息队列对应服务的回调函数处理这条消息。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230604194804.png&#34; alt=&#34;Pasted image 20230604194804&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230604194804.png&#34; alt=&#34;Pasted image 20230604194804&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;下面开始从源码分析这些线程是怎么创建与工作的。&lt;br /&gt;
 在创建这些工作线程之前，先创建了监视器、定时器、socket三个线程，而监视器线程中有与工作线程数量对应的skynet_monitor监视器。&lt;br /&gt;
 这里的在创建定时器和socket线程时也传入了监视器实例，主要目的是为了通过监视器实例来控制工作线程。&lt;/p&gt;

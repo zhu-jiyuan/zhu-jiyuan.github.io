@@ -58,7 +58,7 @@ Ubuntu默认是使用的bash，需要先安装zsh。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; ~/.zshrc
 &lt;span class=&#34;token comment&#34;&gt;#把theme换成gentoo&lt;/span&gt;
 &lt;span class=&#34;token assign-left variable&#34;&gt;ZSH_THEME&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;gentoo&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230527173150.png&#34; alt=&#34;Pasted image 20230527173150&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230527173150.png&#34; alt=&#34;Pasted image 20230527173150&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;简洁美观，还显示git分支。&lt;/p&gt;
 &lt;h2 id=&#34;安装lua&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装lua&#34;&gt;&lt;/a&gt; 安装lua&lt;/h2&gt;
 &lt;p&gt;推荐使用lua官网&lt;a href=&#34;http://www.lua.org/download.html&#34;&gt;Lua: download&lt;/a&gt;进行安装，以确保安装的是最新版本。&lt;/p&gt;
@@ -70,7 +70,7 @@ Ubuntu默认是使用的bash，需要先安装zsh。&lt;/p&gt;
 &lt;h2 id=&#34;安装luarocks&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装luarocks&#34;&gt;&lt;/a&gt; 安装luarocks&lt;/h2&gt;
 &lt;p&gt;luarocks是lua一个很好用的第三方包管理工具，推荐官网安装&lt;a href=&#34;https://luarocks.org/#quick-start&#34;&gt;LuaRocks - The Lua package manager&lt;/a&gt;以确保是最新版本。&lt;/p&gt;
 &lt;p&gt;因为我是自己编译安装的lua，和apt等命令行安装的路径可能不同，这里要知道lua的安装路径是哪里，不然luarocks不能和lua匹配，各种问题接踵而来。&lt;br /&gt;
-&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230527174202.png&#34; alt=&#34;Pasted image 20230527174202&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230527174202.png&#34; alt=&#34;Pasted image 20230527174202&#34; /&gt;&lt;br /&gt;
 在安装lua时可以看到安装目录。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; https://luarocks.org/releases/luarocks-3.9.2.tar.gz
 &lt;span class=&#34;token function&#34;&gt;tar&lt;/span&gt; zxpf luarocks-3.9.2.tar.gz

@@ -172,7 +172,7 @@
 O(2n)、O(3n)都是O(n)，长板凳、矮板凳都是板凳。根据剃刀原理…这就是我选lua的理由。&lt;/p&gt;
 &lt;p&gt;PS: remap在面对格式规范的日志输出，要比lua更加方便。而且在启动vector时会进行静态检查。&lt;/p&gt;
 &lt;p&gt;让我们先看一下，lua怎么在vector中转换数据的吧！下图是官网文档。&lt;br /&gt;
-&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230908191517.png&#34; alt=&#34;Pasted image 20230908191517.png&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230908191517.png&#34; alt=&#34;Pasted image 20230908191517.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;vector需要我们在配置中注册三个函数，&lt;code&gt;init | process | shutdown&lt;/code&gt;，&lt;code&gt;第一条日志&lt;/code&gt;来的时候，会执行&lt;code&gt;init&lt;/code&gt;函数，然后会执行&lt;code&gt;process&lt;/code&gt;，当转换结束时，会执行&lt;code&gt;shutdown&lt;/code&gt;。&lt;br /&gt;
 注意，init只有在第一条日志来的时候才执行，shutdown在关闭时执行，而process在每条日志来的时候都会执行。&lt;/p&gt;
 &lt;p&gt;结合配置格式填写如下&lt;/p&gt;
@@ -431,7 +431,7 @@ config&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;profile &lt;sp
 &lt;span class=&#34;token function&#34;&gt;skynet_socket_init&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;token function&#34;&gt;skynet_profile_enable&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;config&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;profile&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;我们知道skynet中服务地址的构成。高八位是节点地址，低24位是服务地址。&lt;br /&gt;
-&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230604183714.png&#34; alt=&#34;Pasted image 20230604183714&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230604183714.png&#34; alt=&#34;20230604183714&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;而&lt;code&gt;skynet_harbor_init&lt;/code&gt;仅仅只做了一件事，把高8位设置为配置文件的节点号。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;
 &lt;span class=&#34;token function&#34;&gt;skynet_harbor_init&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; harbor&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
@@ -594,10 +594,10 @@ ctx&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;handle &lt;span 
 这里要先用几个图解释一下。&lt;br /&gt;
 当服务创建好后，它的消息队列会push到skynet全局队列GQ中。&lt;br /&gt;
 而服务本身有一个skynet_message队列，这个队列是存放其他服务发的消息的。&lt;br /&gt;
-&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230604194028.png&#34; alt=&#34;Pasted image 20230604194028&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230604194028.png&#34; alt=&#34;20230604194028&#34; /&gt;&lt;br /&gt;
 全局队列中的每个消息队列对应一个服务，而其他服务发送需要处理的消息在消息队列中的skynet_message队列中。需要注意的是，全局队列是链表的形式，而skynet_message队列是数组循环队列。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;start(config-&amp;gt;thread);&lt;/code&gt;会创建很多工作线程，这些工作线程从GQ中，抢消息队列，如果消息队列中有消息，就用消息队列对应服务的回调函数处理这条消息。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230604194804.png&#34; alt=&#34;Pasted image 20230604194804&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230604194804.png&#34; alt=&#34;Pasted image 20230604194804&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;下面开始从源码分析这些线程是怎么创建与工作的。&lt;br /&gt;
 在创建这些工作线程之前，先创建了监视器、定时器、socket三个线程，而监视器线程中有与工作线程数量对应的skynet_monitor监视器。&lt;br /&gt;
 这里的在创建定时器和socket线程时也传入了监视器实例，主要目的是为了通过监视器实例来控制工作线程。&lt;/p&gt;
@@ -1388,7 +1388,7 @@ Ubuntu默认是使用的bash，需要先安装zsh。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; ~/.zshrc
 &lt;span class=&#34;token comment&#34;&gt;#把theme换成gentoo&lt;/span&gt;
 &lt;span class=&#34;token assign-left variable&#34;&gt;ZSH_THEME&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;gentoo&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230527173150.png&#34; alt=&#34;Pasted image 20230527173150&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230527173150.png&#34; alt=&#34;Pasted image 20230527173150&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;简洁美观，还显示git分支。&lt;/p&gt;
 &lt;h2 id=&#34;安装lua&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装lua&#34;&gt;&lt;/a&gt; 安装lua&lt;/h2&gt;
 &lt;p&gt;推荐使用lua官网&lt;a href=&#34;http://www.lua.org/download.html&#34;&gt;Lua: download&lt;/a&gt;进行安装，以确保安装的是最新版本。&lt;/p&gt;
@@ -1400,7 +1400,7 @@ Ubuntu默认是使用的bash，需要先安装zsh。&lt;/p&gt;
 &lt;h2 id=&#34;安装luarocks&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装luarocks&#34;&gt;&lt;/a&gt; 安装luarocks&lt;/h2&gt;
 &lt;p&gt;luarocks是lua一个很好用的第三方包管理工具，推荐官网安装&lt;a href=&#34;https://luarocks.org/#quick-start&#34;&gt;LuaRocks - The Lua package manager&lt;/a&gt;以确保是最新版本。&lt;/p&gt;
 &lt;p&gt;因为我是自己编译安装的lua，和apt等命令行安装的路径可能不同，这里要知道lua的安装路径是哪里，不然luarocks不能和lua匹配，各种问题接踵而来。&lt;br /&gt;
-&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230527174202.png&#34; alt=&#34;Pasted image 20230527174202&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230527174202.png&#34; alt=&#34;Pasted image 20230527174202&#34; /&gt;&lt;br /&gt;
 在安装lua时可以看到安装目录。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; https://luarocks.org/releases/luarocks-3.9.2.tar.gz
 &lt;span class=&#34;token function&#34;&gt;tar&lt;/span&gt; zxpf luarocks-3.9.2.tar.gz
@@ -1875,7 +1875,7 @@ i&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34
 &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;现在，回头看一下代码，很明显，每当我们去添加一个扩展功能类，比如反转流，这样就要再继承 &lt;code&gt;FileStream、NetworkStream&lt;/code&gt;写两个类，或者当我们去添加一个流，比如内存流，这样就要继承内存流去写很多扩展类。&lt;/p&gt;
 &lt;p&gt;假设，&lt;code&gt;FileStream、NetworkStream&lt;/code&gt;这样的类有&lt;strong&gt;N&lt;/strong&gt;个，加密流这样的扩展有&lt;strong&gt;M&lt;/strong&gt;个，那么一共要写&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1+N+N*M&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.72777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.76666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;个。&lt;br /&gt;
-&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230427013929.png&#34; alt=&#34;Pasted image 20230427013929&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230427013929.png&#34; alt=&#34;20230427013929&#34; /&gt;&lt;br /&gt;
 不难发现，在扩展类中，实现的东西都相同，很容易联系到多态。那么扩展类就可以写成下面这样，比如&lt;code&gt;CryptoStream&lt;/code&gt;类。&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;CryptoStream&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token base-clause&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Stream&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
 Stream&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; stream&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
@@ -1939,7 +1939,7 @@ Stream&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; stream&lt;span c
 &lt;h3 id=&#34;总结-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结-4&#34;&gt;&lt;/a&gt; 总结&lt;/h3&gt;
 &lt;p&gt;定义：动态（组合）地给一个对象增加一些额外的职责。就增加功能而言，Decorator模式比生成子类（继承）更为灵活（消除重复代码&amp;amp;减少子类个数）&lt;/p&gt;
 &lt;p&gt;结构如下&lt;br /&gt;
-&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230428012216.png&#34; alt=&#34;Pasted image 20230428012216&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230428012216.png&#34; alt=&#34;20230428012216&#34; /&gt;&lt;br /&gt;
 &lt;strong&gt;仔细想想，其实CryptoFileStream继承FileStream是不合理的，因为前者仅仅是后者的一个扩展，并没有is a的关系，也不朝着同一个方向变化。&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;bridge桥模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bridge桥模式&#34;&gt;&lt;/a&gt; Bridge（桥模式）&lt;/h2&gt;
 &lt;p&gt;桥模式与装饰器模式十分相似，都是为了解决继承使得类数量爆炸增长的问题。&lt;/p&gt;
@@ -2129,7 +2129,7 @@ Messager&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ml &lt;span cl
 &lt;h3 id=&#34;总结-5&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结-5&#34;&gt;&lt;/a&gt; 总结&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;定义：将抽象部分（业务功能）与实现部分（平台实现）分离，使它们都可以独立地变化。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;结构如下&lt;br /&gt;
-&lt;img data-src=&#34;https://static.bysegfault.com/old_img/Pasted%20image%2020230428224539.png&#34; alt=&#34;Pasted image 20230428224539&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://static.bysegfault.com/old_img/2020230428224539.png&#34; alt=&#34;20230428224539&#34; /&gt;&lt;br /&gt;
 桥模式与装饰器模式，都有异曲同工之妙，都是将继承换为多态，总而避免了类数量的急剧增长。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h1 id=&#34;对象创建模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对象创建模式&#34;&gt;&lt;/a&gt; 对象创建模式&lt;/h1&gt;
